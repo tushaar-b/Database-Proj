@@ -63,6 +63,18 @@ class PortfolioCreate(BaseModel):
     target_hhi_limit: Decimal = Field(default=Decimal("0.250"), gt=0, le=1, max_digits=4, decimal_places=3)
 
 
+class PortfolioUpdate(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    portfolio_name: str | None = Field(default=None, min_length=1, max_length=255)
+    target_hhi_limit: Decimal | None = Field(default=None, gt=0, le=1, max_digits=4, decimal_places=3)
+
+
+class HoldingInput(BaseModel):
+    security_id: UUID
+    quantity: int = Field(gt=0)
+    average_buy_price: Decimal = Field(gt=0, max_digits=10, decimal_places=2)
+
+
 class RebalanceOperation(BaseModel):
     security_id: UUID
     side: Literal["BUY", "SELL"]

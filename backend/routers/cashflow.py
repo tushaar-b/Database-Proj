@@ -11,6 +11,13 @@ from backend.schemas import CashflowEvaluate, ExpenseInput, IncomeInput
 router = APIRouter(prefix="/cashflow", tags=["Cashflow"])
 
 
+@router.get("/{user_id}/income")
+def list_income(user_id: UUID, conn=Depends(advisory_connection)):
+    with conn.cursor(cursor_factory=RealDictCursor) as cur:
+        cur.execute("SELECT income_id::text,user_id::text,source_category,gross_amount,frequency::text,last_updated FROM income_stream WHERE user_id=%s ORDER BY last_updated DESC,income_id", (str(user_id),))
+        return [dict(row) for row in cur.fetchall()]
+
+
 @router.post("/{user_id}/income", status_code=status.HTTP_201_CREATED)
 def add_income(user_id: UUID, body: IncomeInput, conn=Depends(advisory_connection)):
     with conn:
@@ -48,6 +55,13 @@ def delete_income(income_id: UUID, conn=Depends(advisory_connection)):
             if cur.rowcount == 0:
                 raise HTTPException(status_code=404, detail="Income stream not found")
     return Response(status_code=status.HTTP_204_NO_CONTENT)
+
+
+@router.get("/{user_id}/expenses")
+def list_expenses(user_id: UUID, conn=Depends(advisory_connection)):
+    with conn.cursor(cursor_factory=RealDictCursor) as cur:
+        cur.execute("SELECT expense_id::text,user_id::text,category,amount,is_mandatory,recurrence_interval FROM expense_item WHERE user_id=%s ORDER BY category,expense_id", (str(user_id),))
+        return [dict(row) for row in cur.fetchall()]
 
 
 @router.post("/{user_id}/expenses", status_code=status.HTTP_201_CREATED)
@@ -128,7 +142,7 @@ def get_summary(user_id: UUID, conn=Depends(advisory_connection)):
     with conn.cursor() as cur:
         cur.execute("SELECT liquid_safety_reserve FROM surplus_snapshot WHERE user_id=%s ORDER BY evaluated_at DESC,snapshot_id DESC LIMIT 1", (str(user_id),))
         row = cur.fetchone()
-    reserve = row[0] if row else Decimal(str(settings.DEFAULT_LIQUID_SAFETY_RESERVE))
+    reserve = row[0] if row and row[0] is not None else Decimal(str(settings.DEFAULT_LIQUID_SAFETY_RESERVE))
     return {"user_id": str(user_id), **_summary(conn, str(user_id), reserve)}
 
 
@@ -139,8 +153,8 @@ def evaluate_cashflow(user_id: UUID, body: CashflowEvaluate | None = None, conn=
     total_expense = snapshot["monthly_mandatory_expenses"] + snapshot["monthly_discretionary_expenses"]
     with conn:
         with conn.cursor(cursor_factory=RealDictCursor) as cur:
-            cur.execute("""INSERT INTO surplus_snapshot(user_id,total_income,total_expense,computed_surplus,investable_buffer)
-                           VALUES (%s,%s,%s,%s,%s) RETURNING snapshot_id,evaluated_date""",
-                        (str(user_id), snapshot["monthly_income"], total_expense, snapshot["computed_surplus"], snapshot["investable_buffer"]))
+            cur.execute("""INSERT INTO surplus_snapshot(user_id,total_income,total_expense,computed_surplus,investable_buffer,liquid_safety_reserve)
+                           VALUES (%s,%s,%s,%s,%s,%s) RETURNING snapshot_id,evaluated_date,liquid_safety_reserve""",
+                        (str(user_id), snapshot["monthly_income"], total_expense, snapshot["computed_surplus"], snapshot["investable_buffer"], reserve))
             persisted = dict(cur.fetchone())
     return {"user_id": str(user_id), **snapshot, **persisted}

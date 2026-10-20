@@ -1,19 +1,18 @@
 """Configuration loader for IntelliVest Backend Application Gateway."""
-import os
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from pydantic import Field
 
 
 class Settings(BaseSettings):
     APP_ENV: str = "development"
-    APP_HOST: str = "0.0.0.0"
+    # The MVP has no login system; bind locally and reject non-loopback clients.
+    APP_HOST: str = "127.0.0.1"
     APP_PORT: int = 8000
-    SECRET_KEY: str = "intellivest_dev_secret_key"
-    ALLOWED_ORIGINS: str = "http://localhost:3000,http://localhost:5173"
+    ALLOWED_ORIGINS: str = "http://localhost:3000,http://localhost:5173,http://127.0.0.1:5173"
 
     # Databases
-    ADVISORY_DB_URL: str = "postgresql://postgres:postgres@localhost:5434/advisory_db"
-    RISK_DB_URL: str = "postgresql://postgres:postgres@localhost:5433/risk_db"
+    ADVISORY_DB_URL: str
+    RISK_DB_URL: str
 
     # Market Data
     MARKET_DATA_PROVIDER: str = "yfinance"

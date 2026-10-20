@@ -31,10 +31,11 @@ def test_phase4_end_to_end_affordability_risk_feedback_and_rebalance(monkeypatch
     monkeypatch.setattr(settings, "RISK_DAILY_VOLATILITY_LIMIT", 1.0)
     user_id = None
     portfolio_id = None
+    empty_portfolio_id = None
     applied_event_ids = []
 
     try:
-        with TestClient(app) as client:
+        with TestClient(app, client=("127.0.0.1", 50000)) as client:
             create = client.post("/users", json={
                 "full_name": "Phase 4 disposable user",
                 "email": f"phase4-{uuid4().hex}@example.test",
@@ -55,6 +56,7 @@ def test_phase4_end_to_end_affordability_risk_feedback_and_rebalance(monkeypatch
                 "source_category": "Annual bonus", "gross_amount": "120000.00", "frequency": "YEARLY",
             })
             assert income1.status_code == income2.status_code == 201
+            assert len(client.get(f"/cashflow/{user_id}/income").json()) == 2
             updated_income = client.put(f"/cashflow/income/{income2.json()['income_id']}", json={
                 "source_category": "Annual bonus", "gross_amount": "120000.00", "frequency": "YEARLY",
             })
@@ -66,6 +68,7 @@ def test_phase4_end_to_end_affordability_risk_feedback_and_rebalance(monkeypatch
             assert client.post(f"/cashflow/{user_id}/expenses", json={
                 "category": "Rent", "amount": "35000.00", "is_mandatory": True, "recurrence_interval": "MONTHLY",
             }).status_code == 201
+            assert len(client.get(f"/cashflow/{user_id}/expenses").json()) == 1
             assert client.post(f"/cashflow/{user_id}/expenses", json={
                 "category": "Annual insurance", "amount": "120000.00", "is_mandatory": True, "recurrence_interval": "YEARLY",
             }).status_code == 201
@@ -84,6 +87,10 @@ def test_phase4_end_to_end_affordability_risk_feedback_and_rebalance(monkeypatch
             assert Decimal(str(cashflow["monthly_discretionary_expenses"])) == Decimal("12000.00")
             assert Decimal(str(cashflow["computed_surplus"])) == Decimal("65000.00")
             assert Decimal(str(cashflow["investable_buffer"])) == Decimal("55000.00")
+            summary = client.get(f"/cashflow/{user_id}/summary")
+            assert summary.status_code == 200, summary.text
+            assert Decimal(str(summary.json()["liquid_safety_reserve"])) == Decimal("10000.00")
+            assert Decimal(str(summary.json()["investable_buffer"])) == Decimal("55000.00")
 
             initial = client.post(f"/recommendations/{user_id}/generate")
             assert initial.status_code == 201, initial.text
@@ -110,6 +117,8 @@ def test_phase4_end_to_end_affordability_risk_feedback_and_rebalance(monkeypatch
                 with risk_conn.cursor() as cur:
                     cur.execute("SELECT security_id,close_price FROM security_master JOIN LATERAL (SELECT close_price FROM daily_market_quote WHERE security_id=security_master.security_id ORDER BY trade_date DESC LIMIT 1) q ON TRUE WHERE ticker_symbol='RELIANCE'")
                     security_id, latest_price = cur.fetchone()
+                    cur.execute("SELECT security_id,close_price FROM security_master JOIN LATERAL (SELECT close_price FROM daily_market_quote WHERE security_id=security_master.security_id ORDER BY trade_date DESC LIMIT 1) q ON TRUE WHERE ticker_symbol='INFY'")
+                    second_security_id, second_price = cur.fetchone()
             finally:
                 risk_conn.close()
             created_portfolio = client.post("/portfolios", json={
@@ -118,13 +127,28 @@ def test_phase4_end_to_end_affordability_risk_feedback_and_rebalance(monkeypatch
             })
             assert created_portfolio.status_code == 201, created_portfolio.text
             portfolio_id = created_portfolio.json()["portfolio_id"]
-            risk_conn = psycopg2.connect(settings.RISK_DB_URL)
-            try:
-                with risk_conn:
-                    with risk_conn.cursor() as cur:
-                        cur.execute("INSERT INTO holding(portfolio_id,security_id,quantity,average_buy_price) VALUES (%s,%s,1,%s)", (portfolio_id, security_id, latest_price))
-            finally:
-                risk_conn.close()
+            imported_holding = client.post(f"/portfolios/{portfolio_id}/holdings", json={
+                "security_id": str(security_id), "quantity": 1, "average_buy_price": str(latest_price),
+            })
+            assert imported_holding.status_code == 201, imported_holding.text
+            assert imported_holding.json()["position_source"] == "imported"
+            assert client.put(f"/portfolios/{portfolio_id}/holdings/{security_id}", json={
+                "security_id": str(security_id), "quantity": 1, "average_buy_price": str(latest_price),
+            }).status_code == 200
+            assert len(client.get("/portfolios/securities", params={"q": "INFY"}).json()) >= 1
+            temporary_holding = client.post(f"/portfolios/{portfolio_id}/holdings", json={
+                "security_id": str(second_security_id), "quantity": 1, "average_buy_price": str(second_price),
+            })
+            assert temporary_holding.status_code == 201, temporary_holding.text
+            assert client.delete(f"/portfolios/{portfolio_id}/holdings/{second_security_id}").status_code == 204
+            assert client.patch(f"/portfolios/{portfolio_id}", json={"portfolio_name": "Phase 4 verification"}).status_code == 200
+            empty_portfolio = client.post("/portfolios", json={
+                "user_id": user_id, "portfolio_name": "PHASE4_EMPTY_DELETE_TEST", "cash_balance": "0.00",
+            })
+            assert empty_portfolio.status_code == 201, empty_portfolio.text
+            empty_portfolio_id = empty_portfolio.json()["portfolio_id"]
+            assert client.delete(f"/portfolios/{empty_portfolio_id}").status_code == 204
+            empty_portfolio_id = None
             assert len(client.get("/portfolios", params={"user_id": user_id}).json()) == 1
 
             risk = client.get(f"/portfolios/{portfolio_id}/risk")
@@ -184,6 +208,10 @@ def test_phase4_end_to_end_affordability_risk_feedback_and_rebalance(monkeypatch
             assert portfolio.status_code == holdings.status_code == 200
             assert Decimal(str(portfolio.json()["cash_balance"])) >= 0
             assert all(row["quantity"] >= 0 for row in holdings.json())
+            assert client.put(f"/portfolios/{portfolio_id}/holdings/{security_id}", json={
+                "security_id": str(security_id), "quantity": 1, "average_buy_price": str(latest_price),
+            }).status_code == 409
+            assert client.delete(f"/portfolios/{portfolio_id}").status_code == 409
             ledger_conn = psycopg2.connect(settings.RISK_DB_URL)
             try:
                 with ledger_conn.cursor() as cur:
@@ -213,8 +241,8 @@ def test_phase4_end_to_end_affordability_risk_feedback_and_rebalance(monkeypatch
                     with risk_conn.cursor() as cur:
                         cur.execute("SELECT event_id FROM risk_feedback_outbox WHERE user_id=%s", (user_id,))
                         applied_event_ids = [str(row[0]) for row in cur.fetchall()]
-                        if portfolio_id:
-                            cur.execute("DELETE FROM portfolio WHERE portfolio_id=%s", (portfolio_id,))
+                        if portfolio_id or empty_portfolio_id:
+                            cur.execute("DELETE FROM portfolio WHERE portfolio_id=ANY(%s::uuid[])", ([value for value in (portfolio_id, empty_portfolio_id) if value],))
                         cur.execute("DELETE FROM risk_feedback_outbox WHERE user_id=%s", (user_id,))
                         cur.execute("DELETE FROM risk_feedback_state WHERE user_id=%s", (user_id,))
                 with advisory_conn:

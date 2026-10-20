@@ -5,6 +5,7 @@ from backend.config import settings
 from backend.database import close_pools
 from backend.routers import alerts, cashflow, portfolios, recommendations, rebalance, users
 from contextlib import asynccontextmanager
+import ipaddress
 import psycopg2
 from fastapi.responses import JSONResponse
 import logging
@@ -23,6 +24,19 @@ app = FastAPI(
     version="0.1.0",
     lifespan=lifespan,
 )
+
+
+@app.middleware("http")
+async def local_only(request, call_next):
+    """Keep this unauthenticated MVP API bound to local clients only."""
+    client = request.client.host if request.client else ""
+    try:
+        is_local = ipaddress.ip_address(client).is_loopback
+    except ValueError:
+        is_local = False
+    if not is_local:
+        return JSONResponse(status_code=403, content={"detail": "IntelliVest MVP is local-only; authentication is not configured"})
+    return await call_next(request)
 
 app.include_router(users.router)
 app.include_router(cashflow.router)
