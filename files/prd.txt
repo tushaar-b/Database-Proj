@@ -1,0 +1,87 @@
+PRODUCT REQUIREMENTS SUMMARY — IntelliVest
+=============================================
+
+1. VISION
+---------
+A closed-loop financial platform that ties affordability-based investment
+recommendations to live, in-database portfolio risk analytics, replacing
+slow external risk computation with in-engine PostgreSQL SQL analytics.
+
+2. CORE PROBLEMS ADDRESSED
+---------------------------
+- Budget Decoupling: recommendations ignore real cash flow.
+- Static Risk: risk metrics don't feed back into recommendation limits.
+- ETL/Latency Bottlenecks: external Python risk computation is slow and can
+  cause write-skew during rebalancing.
+
+3. SYSTEM ARCHITECTURE
+------------------------
+- Application Gateway (FastAPI/Node middleware) containing the closed-loop
+  controller that links risk drift triggers to allocation cap refinements.
+- Advisory Database (PostgreSQL, 3NF, write-heavy/ACID):
+    USER_PROFILE, INCOME_STREAM, EXPENSE_ITEM, SURPLUS_SNAPSHOT,
+    RECOMMENDATION_LOG.
+- Portfolio Risk Database (PostgreSQL, 3NF, read-heavy/window SQL):
+    PORTFOLIO, SECURITY_MASTER, HOLDING, TRANSACTION_LEDGER,
+    DAILY_MARKET_QUOTE, REBALANCE_ALERT.
+
+4. KEY DATA MODELS (SUMMARY)
+------------------------------
+Advisory DB:
+- USER_PROFILE: identity + risk tolerance tier (CONSERVATIVE/MODERATE/
+  AGGRESSIVE).
+- INCOME_STREAM / EXPENSE_ITEM: granular income sources and expenses
+  (mandatory vs. discretionary, recurrence).
+- SURPLUS_SNAPSHOT: computed surplus and investable buffer per evaluation
+  date.
+- RECOMMENDATION_LOG: per-ticker recommendation with target allocation %,
+  amount, and status (PENDING/ACCEPTED/REJECTED). Indexed on
+  (user_id, status_state, generated_timestamp DESC).
+
+Portfolio Risk DB:
+- PORTFOLIO: valuation, cash balance, target HHI limit.
+- SECURITY_MASTER: ticker, sector, exchange, beta.
+- HOLDING: quantity + average buy price per portfolio/security (unique pair).
+- TRANSACTION_LEDGER: BUY/SELL/AUTO_REBALANCE events.
+- DAILY_MARKET_QUOTE: close/adjusted close/volume per security per day
+  (unique per security+date, indexed for temporal lookups).
+- REBALANCE_ALERT: breach records (VAR_95_BREACH, SECTOR_HHI_EXCEEDED,
+  VOLATILITY_SPIKE), with a partial index on unresolved alerts.
+
+5. FUNCTIONAL MODULES
+------------------------
+a) Income-Constrained Sizing Engine
+   - Computed Surplus = Total Gross Income − Total Mandatory Expenses
+   - Investable Buffer = Computed Surplus − Liquid Safety Reserve
+   - All recommendations are capped at the Investable Buffer, using whole
+     (round-lot) share quantities.
+
+b) In-Engine SQL Risk Analytics (all computed directly in PostgreSQL)
+   - 30-Day Rolling Volatility via STDDEV() window function.
+   - Parametric VaR (95%): 1.645 × portfolio σ × total portfolio value.
+   - Historical VaR: PERCENTILE_CONT(0.05) over a 252-day lookback.
+   - Sector Concentration (HHI): sum of squared sector weight shares,
+     cached in a materialized view (mv_daily_sector_concentration).
+
+c) Concurrency & ACID Safety
+   - All rebalancing transactions run under ISOLATION LEVEL SERIALIZABLE.
+   - Flow: read holdings/cash -> evaluate drift vs. HHI/VaR limits -> open
+     SERIALIZABLE transaction -> execute compensating buy/sell entries with
+     cash constraint checks -> emit feedback event to Advisory DB to update
+     allocation caps.
+
+6. NON-FUNCTIONAL REQUIREMENTS
+---------------------------------
+- Query latency ≤ 10ms for 30-day lookback analytical queries (via composite
+  B-Tree indexes).
+- Risk rollup latency ≤ 25ms for full multi-asset portfolio risk evaluation.
+- 0% write-skew anomalies under concurrent simulated trades.
+- Strict foreign key and uniqueness constraints enforced across both
+  databases.
+
+7. OUT OF SCOPE (implied, not explicitly stated in source PRD)
+------------------------------------------------------------------
+- Real brokerage execution/settlement integration.
+- Regulatory/compliance workflows (e.g. KYC beyond pan_hash storage).
+- Multi-currency or non-Nifty-50 market support (initial data scope is
+  Nifty 50 historical data only, per roadmap).

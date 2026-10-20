@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "intellivest"
+version = "0.1.0"
+description = "Database-centric closed-loop financial platform combining affordability profiling with real-time portfolio risk analytics"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "IntelliVest Team" }
+]
+dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.28.0",
+    "pydantic>=2.6.0",
+    "pydantic-settings>=2.2.0",
+    "SQLAlchemy>=2.0.28",
+    "psycopg2-binary>=2.9.9",
+    "asyncpg>=0.29.0",
+    "yfinance>=0.2.37",
+    "pandas>=2.2.1",
+    "numpy>=1.26.4",
+    "scipy>=1.12.0",
+    "python-dotenv>=1.0.1",
+    "requests>=2.31.0",
+    "httpx>=0.27.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.1.1",
+    "pytest-asyncio>=0.23.5",
+    "pytest-cov>=4.1.0",
+]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra -q"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]

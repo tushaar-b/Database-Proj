@@ -1,0 +1,52 @@
+IDEA SUMMARY — IntelliVest
+============================
+
+WHAT IT IS
+----------
+IntelliVest is a database-centric, closed-loop financial platform that connects
+a user's real-world cash flow (income and expenses) to live portfolio risk
+analytics. Instead of giving generic stock recommendations, it only recommends
+what the user can actually afford to invest, and it continuously watches their
+live portfolio for risk (volatility, Value-at-Risk, sector concentration) and
+automatically adjusts what it recommends next based on that risk.
+
+THE PROBLEM IT SOLVES
+----------------------
+1. Budget Decoupling — Most advisory tools suggest trades without knowing the
+   user's real income/expenses, so recommendations can be unaffordable.
+2. Static, One-Way Risk Reporting — Portfolio risk metrics (VaR, Sharpe, HHI)
+   are usually just reports; they don't feed back into future recommendations.
+3. Slow, Fragile Risk Computation — Computing rolling risk metrics in external
+   Python/ETL layers is slow and can cause data inconsistency (write-skew)
+   during multi-asset rebalancing.
+
+THE CORE IDEA
+-------------
+- Track a user's income, expenses, and computed "investable surplus."
+- Only recommend equity allocations within that surplus (affordability-first).
+- Run all portfolio risk math (rolling volatility, VaR, HHI/sector
+  concentration) directly inside PostgreSQL using window functions and
+  materialized views — no slow external ETL layer.
+- Close the loop: when risk breaches a threshold (e.g. VaR spike, sector
+  over-concentration), automatically tighten or adjust the next round of
+  recommendations.
+- Use strict SERIALIZABLE transaction isolation for all rebalancing logic so
+  concurrent trades never corrupt cash balances or holdings.
+
+ARCHITECTURE AT A GLANCE
+-------------------------
+- Two separate 3NF PostgreSQL databases:
+    1. Advisory Database — user profile, income, expenses, surplus snapshots,
+       recommendation log.
+    2. Portfolio Risk Database — portfolios, securities, holdings,
+       transactions, market quotes, rebalance alerts.
+- An Application Gateway (FastAPI/Node) sits between them and runs the
+  closed-loop controller (risk drift triggers -> recommendation cap updates).
+- A React dashboard for the end user to log cash flow, view risk meters, and
+  handle alerts.
+
+WHO IT'S FOR
+------------
+Retail investors who want stock recommendations grounded in what they can
+actually afford, plus real-time visibility into how risky their portfolio
+currently is — without needing to understand the underlying math themselves.

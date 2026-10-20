@@ -1,0 +1,113 @@
+UI/UX REQUIREMENTS — IntelliVest
+===================================
+(Derived from PRD Milestone 5 — "React dashboard for cash flow logging, risk
+meters, and alert handling" — expanded into concrete screens/components since
+the source PRD does not specify UI detail.)
+
+1. OVERALL UX PRINCIPLES
+---------------------------
+- Financial clarity first: numbers (surplus, risk %, VaR) must always be
+  legible at a glance, never buried in dense tables alone.
+- Traffic-light risk language: use consistent color coding across the whole
+  app for risk state (e.g. green = within limits, amber = approaching
+  threshold, red = breached) — applied consistently to VaR, HHI, and
+  volatility indicators.
+- Affordability-first framing: any recommendation screen must visibly show
+  how it relates to the user's investable buffer, not just the stock/amount.
+- Responsive layout: dashboard must work on desktop (primary) and tablet;
+  mobile is a stretch goal, not a blocker.
+
+2. SCREENS / MODULES
+------------------------
+
+A. Onboarding / Profile Setup
+   - Collect full name, email, risk tolerance tier (CONSERVATIVE/MODERATE/
+     AGGRESSIVE) — presented as a simple 3-option selector, not a dropdown.
+   - Explain in plain language what "risk tolerance tier" changes about
+     their recommendations.
+
+B. Cash Flow Logging (Income & Expenses)
+   - Two-column or tabbed layout: Income Streams vs. Expense Items.
+   - Add/edit forms with: category, amount, frequency (monthly/yearly), and
+     for expenses, a mandatory-vs-discretionary toggle and recurrence
+     interval.
+   - Running summary card always visible: Total Income, Total Expenses,
+     Computed Surplus, Investable Buffer — updates live as items are
+     added/edited.
+   - Historical surplus trend (simple line chart from SURPLUS_SNAPSHOT over
+     time).
+
+C. Recommendations Screen
+   - List/table of RECOMMENDATION_LOG entries: ticker, target allocation %,
+     recommended amount, status (PENDING/ACCEPTED/REJECTED), timestamp.
+   - Each pending recommendation shows an Accept / Reject action.
+   - A persistent banner or side panel showing "Available to invest right
+     now" (investable buffer) so the user can sanity-check any
+     recommendation against it.
+   - Filter/sort by status and date (matches the idx_rec_user_status index
+     usage).
+
+D. Portfolio Overview
+   - Summary card: total valuation, cash balance, target HHI limit vs.
+     current HHI.
+   - Holdings table: ticker, company, sector, quantity, average buy price,
+     current value (computed from latest DAILY_MARKET_QUOTE), unrealized
+     gain/loss.
+   - Sector allocation donut/pie chart (feeds directly from
+     mv_daily_sector_concentration).
+
+E. Risk Meters (core differentiator screen)
+   - Three primary gauges/meters:
+       1. 30-Day Rolling Volatility
+       2. Value-at-Risk (95%, parametric and historical shown side by side)
+       3. Sector Concentration (HHI) vs. target_hhi_limit
+   - Each meter shows current value, the threshold/limit, and a visual
+     margin-to-breach indicator (e.g. a gauge needle or progress bar).
+   - Historical trend line for each metric (last 30/90/252 days toggle).
+
+F. Alert Center
+   - List of REBALANCE_ALERT records: breached_metric type (VaR/HHI/
+     Volatility), drift_magnitude_pct, created_at, resolved_flag.
+   - Unresolved alerts surfaced prominently (e.g. top banner or badge
+     count), matching the idx_active_alerts partial index intent.
+   - Clicking an alert deep-links to the relevant Risk Meter or Portfolio
+     view for context.
+   - Manual "mark resolved" action for advisory/testing purposes, in
+     addition to system auto-resolution when drift clears.
+
+G. Transaction Ledger / History
+   - Chronological list of TRANSACTION_LEDGER entries (BUY/SELL/
+     AUTO_REBALANCE) with units, execution price, timestamp.
+   - Visually distinguish AUTO_REBALANCE entries (system-generated) from
+     manual BUY/SELL, since these represent the closed-loop system acting
+     on the user's behalf.
+
+3. KEY INTERACTION FLOWS
+----------------------------
+1. New user → Onboarding → Log income/expenses → See surplus computed live
+   → View first recommendations capped to investable buffer.
+2. User accepts a recommendation → Transaction Ledger updates → Portfolio
+   Overview updates → Risk Meters recompute.
+3. Risk breach occurs (simulated or real) → Alert Center shows new alert →
+   Next recommendation batch reflects a tightened allocation cap (visibly
+   explained, e.g. "Reduced due to elevated sector concentration").
+
+4. VISUAL/DESIGN NOTES
+---------------------------
+- Use a data-dense but uncluttered dashboard layout (grid of cards, not a
+  single long scroll) since this is an analytics-heavy product.
+- Numeric precision matters: currency values to 2 decimals, percentages to
+  1-2 decimals, consistent with the NUMERIC(12,2) / NUMERIC(5,2) precision
+  used in the schema.
+- Avoid overstating certainty — VaR and volatility are statistical
+  estimates, so labels/tooltips should briefly clarify what the numbers
+  mean (e.g. "95% confidence — expected max daily loss").
+
+5. NOT SPECIFIED IN SOURCE PRD (flagged for stakeholder decision)
+-----------------------------------------------------------------------
+- Authentication/login screen design (PRD assumes user_id exists but does
+  not define auth UX).
+- Notification delivery (in-app only vs. email/push for alerts).
+- Multi-portfolio-per-user UI (schema allows portfolio_name, implying
+  multiple portfolios, but no UI flow is specified for switching between
+  them).

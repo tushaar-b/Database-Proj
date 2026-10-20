@@ -1,0 +1,265 @@
+PHASE-WISE PROMPTS FOR AI-BASED IDE — IntelliVest
+====================================================
+(Use these prompts in order, one per phase, in an AI coding agent such as
+Claude Code, Cursor, or Google Antigravity. Paste each prompt as-is, review
+the output, then move to the next. Each prompt assumes the previous phase's
+code already exists in the repo.)
+
+------------------------------------------------------------
+PHASE 0 PROMPT — Project Setup
+------------------------------------------------------------
+Set up a new project called IntelliVest with this folder structure:
+/db (SQL migrations), /etl (Python data ingestion), /backend (FastAPI app),
+/frontend (React app), /tests, /docs.
+
+Requirements:
+- Add a .env.example with placeholders for: ADVISORY_DB_URL, RISK_DB_URL,
+  MARKET_DATA_PROVIDER (default "yfinance"), and any API keys needed.
+- Add a README.md describing the project (use the IntelliVest idea summary:
+  a database-centric closed-loop financial platform combining affordability
+  profiling with real-time portfolio risk analytics run in PostgreSQL).
+- Set up Python dependency management (requirements.txt or pyproject.toml)
+  for backend + ETL, and a package.json for the frontend.
+- Add a docker-compose.yml that spins up two local PostgreSQL instances
+  (or two databases in one instance): advisory_db and risk_db.
+- Set up a basic test runner (pytest for backend/ETL, and a placeholder
+  test script for frontend).
+Do not implement any business logic yet — this phase is scaffolding only.
+
+------------------------------------------------------------
+PHASE 1 PROMPT — PostgreSQL Schemas & Migrations
+------------------------------------------------------------
+Using the /db folder, write SQL migration files (plain numbered .sql files,
+or Alembic if you set that up) for two separate PostgreSQL databases.
+
+Advisory Database — create these tables exactly:
+- USER_PROFILE(user_id PK UUID, full_name VARCHAR, email VARCHAR UNIQUE,
+  pan_hash VARCHAR, risk_tolerance_tier ENUM('CONSERVATIVE','MODERATE',
+  'AGGRESSIVE'), created_at TIMESTAMPTZ)
+- INCOME_STREAM(income_id PK UUID, user_id FK -> USER_PROFILE,
+  source_category VARCHAR, gross_amount NUMERIC(12,2),
+  frequency ENUM('MONTHLY','YEARLY'), last_updated TIMESTAMPTZ)
+- EXPENSE_ITEM(expense_id PK UUID, user_id FK -> USER_PROFILE,
+  category VARCHAR, amount NUMERIC(12,2), is_mandatory BOOLEAN,
+  recurrence_interval VARCHAR)
+- SURPLUS_SNAPSHOT(snapshot_id PK UUID, user_id FK -> USER_PROFILE,
+  total_income NUMERIC(12,2), total_expense NUMERIC(12,2),
+  computed_surplus NUMERIC(12,2), investable_buffer NUMERIC(12,2),
+  evaluated_date DATE)
+- RECOMMENDATION_LOG(rec_id PK UUID, user_id FK -> USER_PROFILE,
+  stock_ticker VARCHAR, target_allocation_pct NUMERIC(5,2),
+  recommended_amount NUMERIC(12,2),
+  status_state ENUM('PENDING','ACCEPTED','REJECTED'),
+  generated_timestamp TIMESTAMPTZ)
+  Add index: CREATE INDEX idx_rec_user_status ON RECOMMENDATION_LOG
+  (user_id, status_state, generated_timestamp DESC);
+
+Portfolio Risk Database — create these tables exactly:
+- PORTFOLIO(portfolio_id PK UUID, user_id UUID indexed, portfolio_name
+  VARCHAR, total_valuation NUMERIC(14,2), cash_balance NUMERIC(12,2),
+  target_hhi_limit NUMERIC(4,3))
+- SECURITY_MASTER(security_id PK UUID, ticker_symbol VARCHAR UNIQUE,
+  company_name VARCHAR, sector_name VARCHAR, exchange_code VARCHAR,
+  beta_index NUMERIC(4,2))
+- HOLDING(holding_id PK UUID, portfolio_id FK -> PORTFOLIO, security_id FK
+  -> SECURITY_MASTER, quantity INT, average_buy_price NUMERIC(10,2),
+  last_updated_at TIMESTAMPTZ, UNIQUE(portfolio_id, security_id))
+- TRANSACTION_LEDGER(tx_id PK UUID, portfolio_id FK -> PORTFOLIO,
+  security_id FK -> SECURITY_MASTER,
+  tx_type ENUM('BUY','SELL','AUTO_REBALANCE'), units INT,
+  execution_price NUMERIC(10,2), tx_timestamp TIMESTAMPTZ)
+- DAILY_MARKET_QUOTE(quote_id PK UUID, security_id FK -> SECURITY_MASTER,
+  trade_date DATE, close_price NUMERIC(10,2), adjusted_close NUMERIC(10,2),
+  volume BIGINT, UNIQUE(security_id, trade_date))
+  Add index: CREATE INDEX idx_quote_temporal ON DAILY_MARKET_QUOTE
+  (security_id, trade_date DESC);
+- REBALANCE_ALERT(alert_id PK UUID, portfolio_id FK -> PORTFOLIO,
+  drift_magnitude_pct NUMERIC(5,2),
+  breached_metric ENUM('VAR_95_BREACH','SECTOR_HHI_EXCEEDED',
+  'VOLATILITY_SPIKE'), resolved_flag BOOLEAN DEFAULT FALSE,
+  created_at TIMESTAMPTZ)
+  Add partial index: CREATE INDEX idx_active_alerts ON REBALANCE_ALERT
+  (portfolio_id) WHERE resolved_flag = FALSE;
+
+Also create a materialized view definition mv_daily_sector_concentration
+(can be an empty/placeholder definition for now — it will be populated with
+real logic in Phase 3). Write a short script to run all migrations against
+both databases and verify all tables/constraints/indexes exist. Add basic
+schema tests confirming the constraints are enforced (e.g. duplicate emails
+rejected, FK violations rejected).
+
+------------------------------------------------------------
+PHASE 2 PROMPT — Market Data Ingestion Pipeline
+------------------------------------------------------------
+In /etl, build a Python ETL script that:
+1. Uses the yfinance library to pull 5 years of historical daily OHLCV data
+   for the Nifty 50 constituent stocks (fetch the current constituent list;
+   if unavailable, use a hardcoded list of the 50 tickers with the .NS
+   suffix).
+2. Upserts each security into SECURITY_MASTER (ticker_symbol, company_name,
+   sector_name, exchange_code, beta_index — beta_index can be computed
+   later or defaulted to NULL/1.0 if unavailable from yfinance).
+3. Upserts each day's OHLCV row into DAILY_MARKET_QUOTE, respecting the
+   UNIQUE(security_id, trade_date) constraint (use ON CONFLICT DO UPDATE).
+4. Is idempotent and safely re-runnable (running it twice should not create
+   duplicates or error).
+5. Logs progress and any tickers that failed to fetch, without stopping the
+   whole run.
+Add a script /etl/run_daily_refresh.py intended to be run on a schedule
+(cron) that only pulls the latest day's data incrementally.
+Write a test that runs the ingestion against a small subset of tickers
+(e.g. 3 tickers, 30 days) and confirms rows land correctly, then benchmark
+a query against idx_quote_temporal to confirm sub-10ms lookup on that
+dataset (note: full 10ms target will be re-validated at higher volume in
+Phase 6).
+
+------------------------------------------------------------
+PHASE 3 PROMPT — In-Engine SQL Financial Analytics Validation
+------------------------------------------------------------
+In /db (or a new /analytics folder of SQL files) and /tests, implement and
+validate the following, all as PostgreSQL SQL (window functions / materialized
+views), operating on DAILY_MARKET_QUOTE and HOLDING/PORTFOLIO data:
+
+1. 30-Day Rolling Volatility per security:
+   STDDEV(daily_return) OVER (PARTITION BY security_id ORDER BY trade_date
+   ROWS BETWEEN 29 PRECEDING AND CURRENT ROW)
+   (daily_return should be computed as (close_price / LAG(close_price) - 1)
+   using a window function or a CTE).
+
+2. Parametric VaR (95%) per portfolio:
+   Daily VaR_95 = 1.645 * portfolio_sigma * total_portfolio_value
+   (portfolio_sigma should be derived from the weighted volatility of its
+   holdings).
+
+3. Historical VaR per portfolio:
+   PERCENTILE_CONT(0.05) WITHIN GROUP (ORDER BY daily_return) over a
+   252-day lookback window of portfolio-level returns.
+
+4. Sharpe Ratio per portfolio (mean daily return / stddev daily return,
+   annualized appropriately) — implement even though only briefly
+   mentioned in the PRD, since it's referenced as a tracked risk metric.
+
+5. Sector Concentration (HHI):
+   HHI = SUM((sector_valuation / total_portfolio_valuation)^2) per sector
+   per portfolio. Implement this as the materialized view
+   mv_daily_sector_concentration, with a documented REFRESH strategy
+   (e.g. REFRESH MATERIALIZED VIEW CONCURRENTLY, triggered after each
+   trading day's data load).
+
+Then, in /tests, write a Python script using NumPy/Pandas that recomputes
+the same four metrics independently from the same underlying data, and
+write automated tests asserting the SQL-computed values match the
+NumPy/Pandas-computed values within a small floating-point tolerance
+(e.g. 1e-6). Also add a timing test confirming the full multi-asset risk
+rollup for one portfolio completes in under 25ms on realistic data volume.
+
+------------------------------------------------------------
+PHASE 4 PROMPT — Application Gateway & Closed Feedback Loop
+------------------------------------------------------------
+In /backend, build a FastAPI application with the following routers,
+connecting to the Advisory DB and Risk DB as appropriate:
+
+1. /users — CRUD for USER_PROFILE (create user, update risk tolerance
+   tier).
+2. /cashflow — CRUD for INCOME_STREAM and EXPENSE_ITEM, plus an endpoint
+   POST /cashflow/evaluate that computes and stores a new SURPLUS_SNAPSHOT
+   using: Computed Surplus = Total Gross Income - Total Mandatory Expenses;
+   Investable Buffer = Computed Surplus - Liquid Safety Reserve (accept
+   liquid_safety_reserve as an input parameter or stored user setting).
+3. /recommendations — Implements the Income-Constrained Sizing Engine:
+   generates candidate equity allocations that sum to <= the user's current
+   investable_buffer, using whole (round-lot) share quantities based on
+   current DAILY_MARKET_QUOTE prices. Writes to RECOMMENDATION_LOG with
+   status PENDING. Includes PATCH endpoints to accept/reject a
+   recommendation.
+4. /portfolios — CRUD for PORTFOLIO and HOLDING, plus a GET endpoint that
+   returns current risk metrics (volatility, VaR, HHI) using the SQL
+   analytics built in Phase 3.
+5. /rebalance — Implements the SERIALIZABLE rebalance routine exactly as
+   follows:
+   a. Read current portfolio holdings and cash balance.
+   b. Evaluate drift vectors against HHI and VaR boundaries
+      (target_hhi_limit and a configurable VaR threshold).
+   c. Open a transaction with ISOLATION LEVEL SERIALIZABLE.
+   d. Execute compensating BUY/SELL entries into TRANSACTION_LEDGER and
+      update HOLDING, asserting the resulting cash_balance never goes
+      negative (roll back the transaction if it would).
+   e. On success, emit a feedback event (an internal call or message) to
+      the Advisory DB service to tighten/loosen future
+      target_allocation_pct caps in RECOMMENDATION_LOG generation logic.
+6. /alerts — Endpoints to list REBALANCE_ALERT records (with a filter for
+   resolved_flag = FALSE, using idx_active_alerts) and to mark an alert
+   resolved. Add a background job/listener that creates a new
+   REBALANCE_ALERT row whenever a risk metric breaches its threshold
+   during a /portfolios risk check.
+
+Add integration tests that specifically hammer the /rebalance endpoint with
+concurrent simulated requests against the same portfolio and assert 0%
+write-skew (no lost updates, no negative cash balances, no duplicate
+compensating trades). Document all endpoints with FastAPI's automatic
+OpenAPI/Swagger docs.
+
+------------------------------------------------------------
+PHASE 5 PROMPT — Dashboard UI & Final Integration
+------------------------------------------------------------
+In /frontend, build a React dashboard (using a component library of your
+choice, e.g. shadcn/ui or MUI, plus a charting library like Recharts) with
+these screens, calling the FastAPI backend from Phase 4:
+
+1. Onboarding screen: collect full_name, email, and risk_tolerance_tier
+   (as a 3-option selector with a short plain-language description of each
+   tier).
+2. Cash Flow screen: tabs for Income Streams and Expense Items with
+   add/edit forms; a persistent summary card showing Total Income, Total
+   Expenses, Computed Surplus, and Investable Buffer, updating live; a line
+   chart of historical SURPLUS_SNAPSHOT values.
+3. Recommendations screen: table of RECOMMENDATION_LOG entries with
+   Accept/Reject actions on PENDING rows, filterable by status, with a
+   persistent "Available to invest now" indicator showing the current
+   investable buffer.
+4. Portfolio Overview screen: summary card (total valuation, cash balance,
+   current HHI vs. target_hhi_limit), a holdings table with computed
+   current value and unrealized gain/loss, and a sector allocation pie
+   chart from mv_daily_sector_concentration.
+5. Risk Meters screen: three gauges/meters for 30-Day Rolling Volatility,
+   VaR 95% (parametric and historical shown together), and HHI vs. its
+   limit, each with a historical trend chart (toggle 30/90/252 day
+   windows) and a brief plain-language tooltip explaining what the metric
+   means.
+6. Alert Center screen: list of REBALANCE_ALERT records, unresolved ones
+   surfaced prominently (badge/banner), each linking through to the
+   relevant Risk Meter or Portfolio view, with a manual "mark resolved"
+   action.
+7. Transaction Ledger screen: chronological list of TRANSACTION_LEDGER
+   entries, visually distinguishing AUTO_REBALANCE (system-generated) from
+   manual BUY/SELL entries.
+
+Use consistent traffic-light color coding (green/amber/red) across all risk
+indicators app-wide. Ensure the layout is a card-based grid dashboard
+(desktop-first, tablet-responsive). Wire up an end-to-end flow: create a
+user, log cash flow, view a generated recommendation, accept it, see the
+portfolio and risk meters update, and see an alert appear if a threshold is
+breached. Write at least one end-to-end test (e.g. Playwright or Cypress)
+covering this full flow.
+
+------------------------------------------------------------
+PHASE 6 PROMPT — Hardening & Polish
+------------------------------------------------------------
+Perform a hardening pass across the whole IntelliVest codebase:
+1. Security: review and add input validation on all FastAPI endpoints, add
+   basic authentication (e.g. JWT-based) if not already present, ensure no
+   secrets are hardcoded, and confirm pan_hash is never returned in plain
+   form via any API response.
+2. Observability: add structured logging across backend and ETL, and basic
+   request/error metrics (e.g. request count, latency histograms) on the
+   FastAPI app.
+3. Documentation: write/update README.md, generate a schema diagram (e.g.
+   via dbdiagram.io export or a Mermaid ER diagram) for both databases, and
+   document all environment variables and setup steps needed to run the
+   whole stack locally via docker-compose.
+4. Performance re-verification: re-run the Phase 2 and Phase 3 latency
+   tests against a realistic full 5-year, 50-security dataset and confirm
+   the ≤10ms query latency and ≤25ms risk rollup latency targets are still
+   met; if not, propose and implement index or query optimizations.
+Provide a final summary report of what was hardened and any remaining known
+gaps or risks.

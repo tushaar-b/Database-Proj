@@ -1,0 +1,109 @@
+IMPLEMENTATION PHASE PLAN — IntelliVest
+==========================================
+(Based on the 5-milestone roadmap in the PRD, expanded into actionable phases)
+
+PHASE 0 — Project Setup
+-------------------------
+- Initialize repo structure: /db, /etl, /backend, /frontend, /tests, /docs.
+- Set up two local PostgreSQL instances (or two schemas): advisory_db and
+  risk_db.
+- Set up environment config (.env) for DB connection strings, API keys
+  (market data provider), and secrets.
+- Set up basic CI (lint + test runner) if applicable.
+
+PHASE 1 — PostgreSQL Schemas & Initial Migrations
+----------------------------------------------------
+Goal: Stand up both 3NF databases exactly as specified.
+- Advisory DB: create USER_PROFILE, INCOME_STREAM, EXPENSE_ITEM,
+  SURPLUS_SNAPSHOT, RECOMMENDATION_LOG tables with all PK/FK/ENUM/UNIQUE
+  constraints.
+- Risk DB: create PORTFOLIO, SECURITY_MASTER, HOLDING, TRANSACTION_LEDGER,
+  DAILY_MARKET_QUOTE, REBALANCE_ALERT tables with all constraints.
+- Add all specified indexes:
+    idx_rec_user_status, idx_quote_temporal, idx_active_alerts (partial).
+- Create materialized view mv_daily_sector_concentration (empty/definition
+  stage; populated once quote + holding data exists).
+- Write migration scripts (e.g. using Alembic, Flyway, or raw SQL migration
+  files) so schema stands up repeatably.
+- Deliverable: both databases created, verified with \dt / constraint checks,
+  migrations version-controlled.
+
+PHASE 2 — Market Data Ingestion Pipeline
+-------------------------------------------
+Goal: Populate DAILY_MARKET_QUOTE and SECURITY_MASTER with real data.
+- Build a Python ETL script using yfinance to pull 5 years of historical
+  OHLCV data for the Nifty 50 constituent list.
+- Populate SECURITY_MASTER (ticker, company, sector, exchange, beta).
+- Populate DAILY_MARKET_QUOTE, respecting the UNIQUE(security_id, trade_date)
+  constraint (upsert logic).
+- Schedule/document a repeatable daily refresh job (cron or scheduler stub).
+- Validate idx_quote_temporal lookup performance is under 10ms on realistic
+  data volume.
+- Deliverable: risk_db populated with real historical data; ingestion script
+  runnable on demand.
+
+PHASE 3 — In-Engine SQL Financial Analytics Validation
+-----------------------------------------------------------
+Goal: Prove all risk math can run natively in PostgreSQL, fast and correctly.
+- Implement SQL window-function queries for:
+    - 30-day rolling volatility (STDDEV OVER ROWS BETWEEN 29 PRECEDING).
+    - Parametric VaR 95% (1.645 × σ × portfolio value).
+    - Historical VaR (PERCENTILE_CONT(0.05) over 252-day window).
+    - Sharpe ratio calculation.
+    - HHI sector concentration, materialized in
+      mv_daily_sector_concentration with a refresh strategy.
+- Build a parallel NumPy/Pandas reference implementation for the same
+  metrics on the same dataset.
+- Write unit tests comparing SQL output vs. NumPy/Pandas output for 100%
+  numerical consistency (within float tolerance).
+- Benchmark and confirm risk rollup latency ≤ 25ms per portfolio.
+- Deliverable: tested, benchmarked SQL analytics layer with a passing
+  consistency test suite.
+
+PHASE 4 — Application Gateway & Closed Feedback Loop
+---------------------------------------------------------
+Goal: Build the API layer and the core business logic that ties both DBs
+together.
+- Build FastAPI (or Node) service with routers for:
+    - Income/expense CRUD and surplus evaluation (writes to Advisory DB).
+    - Recommendation generation (Income-Constrained Sizing Engine) —
+      capped at investable buffer, whole round lots.
+    - Portfolio/holding CRUD and risk metric retrieval (reads from Risk DB).
+    - Alert retrieval/resolution endpoints.
+- Implement the SERIALIZABLE rebalance execution routine exactly per the
+  5-step flow in the PRD:
+    1. Read holdings + cash balance.
+    2. Evaluate drift vs. HHI/VaR boundaries.
+    3. Open SERIALIZABLE transaction.
+    4. Execute compensating buy/sell ledger entries with cash constraint
+       checks.
+    5. Emit feedback event to Advisory DB to update allocation caps.
+- Implement drift listeners/triggers that watch risk metrics and create
+  REBALANCE_ALERT rows when thresholds are breached.
+- Load/concurrency test the SERIALIZABLE path to confirm 0% write-skew
+  under simulated concurrent trades.
+- Deliverable: working API with documented endpoints (OpenAPI/Swagger),
+  passing concurrency tests.
+
+PHASE 5 — Dashboard UI & Final Integration
+-----------------------------------------------
+Goal: Give the user a working interface over the whole system.
+- Build React dashboard with:
+    - Cash flow logging (income/expense entry, surplus display).
+    - Recommendation review/accept/reject screen.
+    - Portfolio holdings view.
+    - Risk meters (volatility, VaR, HHI) with visual thresholds.
+    - Alert center (active/resolved REBALANCE_ALERT records).
+- Wire dashboard to the FastAPI gateway end-to-end.
+- Full integration test: create a user, log income/expenses, generate a
+  recommendation, simulate a trade, trigger a risk breach, confirm an alert
+  appears and the next recommendation cap adjusts.
+- Deliverable: end-to-end working demo, deployment-ready build.
+
+PHASE 6 — Hardening & Polish (recommended addition, not in original PRD)
+------------------------------------------------------------------------------
+- Security review (auth, input validation, secrets handling).
+- Error handling and observability (structured logs, basic metrics).
+- Documentation pass (README, API docs, schema diagrams).
+- Performance re-verification against the stated NFRs (10ms/25ms latency
+  targets) under more realistic load.

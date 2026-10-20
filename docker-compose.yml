@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  # ----------------------------------------------------------------------------
+  # Advisory Database (User Profiles, Income/Expenses, Surplus, Recommendations)
+  # ----------------------------------------------------------------------------
+  advisory_db:
+    image: postgres:16-alpine
+    container_name: intellivest_advisory_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: advisory_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - advisory_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d advisory_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # ----------------------------------------------------------------------------
+  # Portfolio Risk Database (Portfolios, Holdings, Quotes, Risk Metrics, Alerts)
+  # ----------------------------------------------------------------------------
+  risk_db:
+    image: postgres:16-alpine
+    container_name: intellivest_risk_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: risk_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - risk_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d risk_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  advisory_pgdata:
+    driver: local
+  risk_pgdata:
+    driver: local
