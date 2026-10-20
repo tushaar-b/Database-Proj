@@ -10,10 +10,9 @@ psycopg2 = pytest.importorskip("psycopg2")
 
 @pytest.fixture
 def risk_connection():
-    url = os.getenv(
-        "RISK_DB_URL",
-        "postgresql://postgres:postgres@localhost:5433/risk_db",
-    )
+    url = os.getenv("RISK_DB_URL")
+    if not url:
+        pytest.skip("RISK_DB_URL is not configured")
     try:
         connection = psycopg2.connect(url, connect_timeout=2)
     except psycopg2.OperationalError as exc:

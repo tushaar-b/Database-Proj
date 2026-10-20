@@ -28,7 +28,9 @@ This module manages market data ingestion and synchronization for the Portfolio 
 ### 1. Run Full 5-Year Historical Ingestion
 ```bash
 # Ingest real 5-year Yahoo Finance history for all Nifty 50 stocks into risk_db.
-# Defaults to RISK_DB_URL or localhost:5433; no synthetic fallback is used.
+# Set RISK_DB_URL from the local .env before running; no embedded database
+# password fallback or synthetic market fallback is used by default.
+set -a; source .env; set +a
 python -m etl.pipeline
 
 # Synthetic fallback is available only when explicitly requested.
