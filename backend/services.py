@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 
 def risk_summary(conn, portfolio_id: str) -> dict[str, Any]:
     with conn.cursor(cursor_factory=RealDictCursor) as cur:
-        cur.execute("SELECT * FROM portfolio_risk_summary(%s)", (portfolio_id,))
+        cur.execute("SELECT * FROM portfolio_risk_summary_v2(%s)", (portfolio_id,))
         row = cur.fetchone()
     if row is None:
         raise HTTPException(status_code=404, detail="Portfolio not found")

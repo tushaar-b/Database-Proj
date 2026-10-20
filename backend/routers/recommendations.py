@@ -1,14 +1,16 @@
 from decimal import Decimal, ROUND_FLOOR
 from uuid import UUID, uuid4
 
-from fastapi import APIRouter, Depends, HTTPException, Query, status
+from fastapi import APIRouter, Depends, HTTPException, Query, Request, status
 from psycopg2.extras import RealDictCursor
 
 from backend.dependencies import advisory_connection, risk_connection
 from backend.services import require_feedback_delivery
 from backend.schemas import RecommendationDecision
+from backend.auth import require_authenticated, require_csrf
+from backend.ownership import enforce_ownership
 
-router = APIRouter(prefix="/recommendations", tags=["Recommendations"])
+router = APIRouter(prefix="/recommendations", tags=["Recommendations"], dependencies=[Depends(require_authenticated), Depends(require_csrf), Depends(enforce_ownership)])
 BASE_CAPACITY = {"CONSERVATIVE": Decimal("0.25"), "MODERATE": Decimal("0.50"), "AGGRESSIVE": Decimal("0.75")}
 
 

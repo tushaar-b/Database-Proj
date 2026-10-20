@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from backend.config import settings
 from backend.database import close_pools
-from backend.routers import alerts, cashflow, portfolios, recommendations, rebalance, users
+from backend.routers import alerts, auth, cashflow, portfolios, recommendations, rebalance, users
 from contextlib import asynccontextmanager
 import ipaddress
 import psycopg2
@@ -28,16 +28,17 @@ app = FastAPI(
 
 @app.middleware("http")
 async def local_only(request, call_next):
-    """Keep this unauthenticated MVP API bound to local clients only."""
+    """Keep the MVP gateway bound to loopback even after login is enabled."""
     client = request.client.host if request.client else ""
     try:
         is_local = ipaddress.ip_address(client).is_loopback
     except ValueError:
         is_local = False
     if not is_local:
-        return JSONResponse(status_code=403, content={"detail": "IntelliVest MVP is local-only; authentication is not configured"})
+        return JSONResponse(status_code=403, content={"detail": "IntelliVest is local-only and restricted to local clients"})
     return await call_next(request)
 
+app.include_router(auth.router)
 app.include_router(users.router)
 app.include_router(cashflow.router)
 app.include_router(recommendations.router)
@@ -55,7 +56,7 @@ async def database_error_handler(_request, exc: psycopg2.Error):
 origins = [origin.strip() for origin in settings.ALLOWED_ORIGINS.split(",") if origin.strip()]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins or ["*"],
+    allow_origins=origins or ["http://127.0.0.1:5173", "http://localhost:5173"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

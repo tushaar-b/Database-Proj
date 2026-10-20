@@ -11,8 +11,10 @@ from psycopg2.extras import RealDictCursor
 from backend.dependencies import advisory_connection, risk_connection
 from backend.schemas import RebalanceExecute
 from backend.services import evaluate_portfolio_risk, process_feedback_outbox
+from backend.auth import require_authenticated, require_csrf
+from backend.ownership import enforce_ownership
 
-router = APIRouter(prefix="/rebalance", tags=["Rebalance"])
+router = APIRouter(prefix="/rebalance", tags=["Rebalance"], dependencies=[Depends(require_authenticated), Depends(require_csrf), Depends(enforce_ownership)])
 
 
 @router.post("/{portfolio_id}/propose")

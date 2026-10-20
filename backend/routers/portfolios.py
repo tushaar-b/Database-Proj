@@ -1,13 +1,15 @@
 from uuid import UUID
 
-from fastapi import APIRouter, Depends, HTTPException, Query, status
+from fastapi import APIRouter, Depends, HTTPException, Query, Request, status
 from psycopg2.extras import RealDictCursor
 
 from backend.dependencies import advisory_connection, risk_connection
 from backend.schemas import HoldingInput, PortfolioCreate, PortfolioUpdate
 from backend.services import evaluate_portfolio_risk, require_feedback_delivery
+from backend.auth import require_authenticated, require_csrf
+from backend.ownership import enforce_ownership
 
-router = APIRouter(prefix="/portfolios", tags=["Portfolios"])
+router = APIRouter(prefix="/portfolios", tags=["Portfolios"], dependencies=[Depends(require_authenticated), Depends(require_csrf), Depends(enforce_ownership)])
 
 
 def _ensure_importable(conn, portfolio_id: str):
@@ -32,9 +34,12 @@ def _refresh_valuation(cur, portfolio_id: str):
 @router.post("", status_code=status.HTTP_201_CREATED)
 def create_portfolio(
     body: PortfolioCreate,
+    request: Request,
     conn=Depends(risk_connection),
     advisory=Depends(advisory_connection),
 ):
+    if str(body.user_id) != request.state.user_id:
+        raise HTTPException(status_code=404, detail="Record not found")
     with advisory.cursor() as cur:
         cur.execute("SELECT 1 FROM user_profile WHERE user_id=%s", (str(body.user_id),))
         if not cur.fetchone():

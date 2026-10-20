@@ -1,4 +1,7 @@
 const API_BASE = (import.meta.env?.VITE_API_BASE_URL || 'http://127.0.0.1:8000').replace(/\/$/, '');
+let csrfToken = '';
+
+export function setCsrfToken(token) { csrfToken = token || ''; }
 
 export class ApiError extends Error {
   constructor(message, status, detail) {
@@ -14,8 +17,10 @@ export async function request(path, options = {}) {
   try {
     response = await fetch(`${API_BASE}${path}`, {
       ...options,
+      credentials: 'include',
       headers: {
         ...(options.body ? { 'Content-Type': 'application/json' } : {}),
+        ...(!['GET', 'HEAD', 'OPTIONS'].includes((options.method || 'GET').toUpperCase()) && csrfToken ? { 'X-CSRF-Token': csrfToken } : {}),
         ...options.headers,
       },
     });
@@ -26,6 +31,7 @@ export async function request(path, options = {}) {
   const contentType = response.headers.get('content-type') || '';
   const payload = contentType.includes('application/json') ? await response.json() : await response.text();
   if (!response.ok) {
+    if (response.status === 401 && typeof window !== 'undefined') window.dispatchEvent(new Event('intellivest:session-expired'));
     const detail = payload?.detail ?? payload;
     const message = typeof detail === 'string' ? detail : JSON.stringify(detail);
     throw new ApiError(message || `Request failed (${response.status})`, response.status, detail);
@@ -37,7 +43,10 @@ const json = (method, body) => ({ method, body: JSON.stringify(body) });
 const id = (value) => encodeURIComponent(value);
 
 export const api = {
-  createUser: (body) => request('/users', json('POST', body)),
+  register: async (body) => { const result = await request('/auth/register', json('POST', body)); setCsrfToken(result.csrf_token); return result; },
+  login: async (body) => { const result = await request('/auth/login', json('POST', body)); setCsrfToken(result.csrf_token); return result; },
+  currentUser: async () => { const result = await request('/auth/me'); setCsrfToken(result.csrf_token); return result; },
+  logout: async () => { const result = await request('/auth/logout', { method: 'POST' }); setCsrfToken(''); return result; },
   getUser: (userId) => request(`/users/${id(userId)}`),
   updateUser: (userId, body) => request(`/users/${id(userId)}`, json('PATCH', body)),
   updateRiskTolerance: (userId, tier) => request(`/users/${id(userId)}/risk-tolerance`, json('PUT', { risk_tolerance_tier: tier })),

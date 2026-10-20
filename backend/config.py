@@ -5,7 +5,7 @@ from pydantic import Field
 
 class Settings(BaseSettings):
     APP_ENV: str = "development"
-    # The MVP has no login system; bind locally and reject non-loopback clients.
+    # Keep the authenticated MVP local-only until a deployment review is complete.
     APP_HOST: str = "127.0.0.1"
     APP_PORT: int = 8000
     ALLOWED_ORIGINS: str = "http://localhost:3000,http://localhost:5173,http://127.0.0.1:5173"

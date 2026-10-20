@@ -1,14 +1,16 @@
 from decimal import Decimal
 from uuid import UUID
 
-from fastapi import APIRouter, Depends, HTTPException, Response, status
+from fastapi import APIRouter, Depends, HTTPException, Request, Response, status
 from psycopg2.extras import RealDictCursor
 
 from backend.config import settings
 from backend.dependencies import advisory_connection
 from backend.schemas import CashflowEvaluate, ExpenseInput, IncomeInput
+from backend.auth import require_authenticated, require_csrf
+from backend.ownership import enforce_ownership
 
-router = APIRouter(prefix="/cashflow", tags=["Cashflow"])
+router = APIRouter(prefix="/cashflow", tags=["Cashflow"], dependencies=[Depends(require_authenticated), Depends(require_csrf), Depends(enforce_ownership)])
 
 
 @router.get("/{user_id}/income")

@@ -1,28 +1,16 @@
 from uuid import UUID
 
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, Request
 from psycopg2 import errors
 from psycopg2.extras import RealDictCursor
 
 from backend.dependencies import advisory_connection
-from backend.schemas import RiskToleranceUpdate, UserCreate, UserUpdate
+from backend.schemas import RiskToleranceUpdate, UserUpdate
+from backend.auth import require_authenticated, require_csrf
+from backend.ownership import enforce_ownership
 
-router = APIRouter(prefix="/users", tags=["Users"])
+router = APIRouter(prefix="/users", tags=["Users"], dependencies=[Depends(require_authenticated), Depends(require_csrf), Depends(enforce_ownership)])
 PUBLIC_COLUMNS = "user_id,full_name,email,risk_tolerance_tier,created_at"
-
-
-@router.post("", status_code=status.HTTP_201_CREATED)
-def create_user(body: UserCreate, conn=Depends(advisory_connection)):
-    try:
-        with conn:
-            with conn.cursor(cursor_factory=RealDictCursor) as cur:
-                cur.execute(
-                    f"INSERT INTO user_profile(full_name,email,pan_hash,risk_tolerance_tier) VALUES (%s,%s,%s,%s) RETURNING {PUBLIC_COLUMNS}",
-                    (body.full_name.strip(), body.email, body.pan_hash.lower(), body.risk_tolerance_tier.value),
-                )
-                return dict(cur.fetchone())
-    except errors.UniqueViolation:
-        raise HTTPException(status_code=409, detail="Email is already registered")
 
 
 @router.get("/{user_id}")

@@ -1,17 +1,21 @@
 from uuid import UUID
 
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query, Request
 from psycopg2.extras import RealDictCursor
 
 from backend.dependencies import advisory_connection, risk_connection
 from backend.services import evaluate_portfolio_risk, require_feedback_delivery, _persist_feedback_snapshot
+from backend.auth import require_authenticated, require_csrf
+from backend.ownership import enforce_ownership
 
-router = APIRouter(prefix="/alerts", tags=["Alerts"])
+router = APIRouter(prefix="/alerts", tags=["Alerts"], dependencies=[Depends(require_authenticated), Depends(require_csrf), Depends(enforce_ownership)])
 
 
-def _alert_rows(cur, portfolio_id=None, unresolved=False):
+def _alert_rows(cur, user_id, portfolio_id=None, unresolved=False):
     filters = []
     values = []
+    filters.append("portfolio_id IN (SELECT portfolio_id FROM portfolio WHERE user_id=%s)")
+    values.append(user_id)
     if portfolio_id is not None:
         filters.append("portfolio_id=%s")
         values.append(portfolio_id)
@@ -27,21 +31,22 @@ def _alert_rows(cur, portfolio_id=None, unresolved=False):
 
 @router.get("")
 def list_alerts(
+    request: Request,
     unresolved: bool = Query(default=False),
     portfolio_id: UUID | None = Query(default=None),
     conn=Depends(risk_connection),
 ):
     with conn.cursor(cursor_factory=RealDictCursor) as cur:
-        return _alert_rows(cur, str(portfolio_id) if portfolio_id else None, unresolved)
+        return _alert_rows(cur, request.state.user_id, str(portfolio_id) if portfolio_id else None, unresolved)
 
 
 @router.get("/portfolio/{portfolio_id}")
-def list_portfolio_alerts(portfolio_id: UUID, unresolved: bool = False, conn=Depends(risk_connection)):
+def list_portfolio_alerts(portfolio_id: UUID, request: Request, unresolved: bool = False, conn=Depends(risk_connection)):
     with conn.cursor(cursor_factory=RealDictCursor) as cur:
         cur.execute("SELECT 1 FROM portfolio WHERE portfolio_id=%s", (str(portfolio_id),))
         if not cur.fetchone():
             raise HTTPException(status_code=404, detail="Portfolio not found")
-        return _alert_rows(cur, str(portfolio_id), unresolved)
+        return _alert_rows(cur, request.state.user_id, str(portfolio_id), unresolved)
 
 
 @router.post("/evaluate/{portfolio_id}")

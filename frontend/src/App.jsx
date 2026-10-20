@@ -1,17 +1,13 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { Suspense, lazy, useCallback, useEffect, useMemo, useState } from 'react';
 import {
   Activity, ArrowDownRight, ArrowRight, ArrowUpRight, Bell, BriefcaseBusiness,
   Check, CircleHelp, CirclePlus, Gauge, LayoutDashboard, LoaderCircle,
   LogOut, Menu, RefreshCw, ShieldCheck, SlidersHorizontal, Sparkles, Wallet,
   X,
 } from 'lucide-react';
-import {
-  Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip,
-  XAxis, YAxis,
-} from 'recharts';
 import { api, ApiError } from './api.js';
 
-const USER_KEY = 'intellivest.userId';
+const HoldingsChart = lazy(() => import('./HoldingsChart.jsx'));
 const INR = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 2 });
 const NUM = new Intl.NumberFormat('en-IN', { maximumFractionDigits: 2 });
 const navItems = [
@@ -59,20 +55,21 @@ function LoadingState({ label = 'Loading your financial workspace…' }) {
   return <div className="loading-state"><LoaderCircle className="spin" size={22} />{label}</div>;
 }
 
-function ProfileSetup({ onCreated, onRestore, busy }) {
-  const [form, setForm] = useState({ full_name: '', email: '', pan_hash: '', risk_tolerance_tier: 'MODERATE' });
-  const [restoreId, setRestoreId] = useState('');
+function AuthPage({ onAuthenticated, initialMode = 'login' }) {
+  const [mode, setMode] = useState(initialMode);
+  const [form, setForm] = useState({ full_name: '', email: '', password: '', pan_hash: '', risk_tolerance_tier: 'MODERATE' });
+  const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const change = (key) => (event) => setForm((current) => ({ ...current, [key]: event.target.value }));
   async function submit(event) {
     event.preventDefault();
     setError('');
-    try { await onCreated(form); } catch (issue) { setError(errorMessage(issue)); }
-  }
-  async function restore(event) {
-    event.preventDefault();
-    setError('');
-    try { await onRestore(restoreId.trim()); } catch (issue) { setError(errorMessage(issue)); }
+    setBusy(true);
+    try {
+      const result = mode === 'register' ? await api.register(form) : await api.login({ email: form.email, password: form.password });
+      onAuthenticated(result.user);
+    } catch (issue) { setError(errorMessage(issue)); }
+    finally { setBusy(false); }
   }
   return <main className="setup-shell">
     <div className="setup-aside">
@@ -82,17 +79,19 @@ function ProfileSetup({ onCreated, onRestore, busy }) {
     </div>
     <section className="setup-content">
       <div className="setup-card">
-        <p className="eyebrow">Get started</p><h2>Create your financial profile</h2><p className="muted">This profile keeps your cash flow and portfolios together in this local workspace.</p>
+        <p className="eyebrow">Investor workspace</p><h2>{mode === 'register' ? 'Create your account' : 'Welcome back'}</h2><p className="muted">{mode === 'register' ? 'Create a private account for your cash flow and portfolio records.' : 'Sign in to view your private financial workspace.'}</p>
         {error && <div className="notice notice-error" role="alert">{error}</div>}
         <form className="form-stack" onSubmit={submit}>
-          <Field label="Full name"><input required maxLength="255" value={form.full_name} onChange={change('full_name')} placeholder="Your name" /></Field>
+          {mode === 'register' && <Field label="Full name"><input required maxLength="255" value={form.full_name} onChange={change('full_name')} placeholder="Your name" autoComplete="name" /></Field>}
           <Field label="Email address"><input required type="email" value={form.email} onChange={change('email')} placeholder="you@example.com" /></Field>
-          <Field label="PAN SHA-256 hash" hint="Enter a 64-character hexadecimal hash only. Never enter your raw PAN."><input required minLength="64" maxLength="64" pattern="[0-9a-fA-F]{64}" value={form.pan_hash} onChange={change('pan_hash')} placeholder="64 hexadecimal characters" /></Field>
-          <Field label="Risk preference"><select value={form.risk_tolerance_tier} onChange={change('risk_tolerance_tier')}><option value="CONSERVATIVE">Conservative</option><option value="MODERATE">Moderate</option><option value="AGGRESSIVE">Aggressive</option></select></Field>
-          <button className="button button-primary button-wide" disabled={busy}>{busy ? <LoaderCircle className="spin" size={17} /> : null}Create profile <ArrowRight size={16} /></button>
+          <Field label="Password" hint={mode === 'register' ? 'Use at least 12 characters.' : undefined}><input required type="password" minLength={mode === 'register' ? 12 : 1} maxLength="128" autoComplete={mode === 'register' ? 'new-password' : 'current-password'} value={form.password} onChange={change('password')} /></Field>
+          {mode === 'register' && <>
+            <Field label="PAN SHA-256 hash" hint="Enter a 64-character hexadecimal hash only. Never enter your raw PAN."><input required minLength="64" maxLength="64" pattern="[0-9a-fA-F]{64}" value={form.pan_hash} onChange={change('pan_hash')} placeholder="64 hexadecimal characters" /></Field>
+            <Field label="Risk preference"><select value={form.risk_tolerance_tier} onChange={change('risk_tolerance_tier')}><option value="CONSERVATIVE">Conservative</option><option value="MODERATE">Moderate</option><option value="AGGRESSIVE">Aggressive</option></select></Field>
+          </>}
+          <button className="button button-primary button-wide" disabled={busy}>{busy ? <LoaderCircle className="spin" size={17} /> : null}{mode === 'register' ? 'Create account' : 'Sign in'} <ArrowRight size={16} /></button>
         </form>
-        <div className="setup-divider"><span>or reconnect a profile</span></div>
-        <form className="restore-form" onSubmit={restore}><input aria-label="Existing user ID" required value={restoreId} onChange={(event) => setRestoreId(event.target.value)} placeholder="Paste an existing user ID" /><button className="button button-secondary" disabled={busy}>Continue</button></form>
+        <p className="auth-switch">{mode === 'register' ? 'Already registered?' : 'New to IntelliVest?'} <button className="text-button" type="button" onClick={() => { setMode(mode === 'register' ? 'login' : 'register'); setError(''); }}>{mode === 'register' ? 'Sign in' : 'Create an account'}</button></p>
       </div>
     </section>
   </main>;
@@ -107,8 +106,30 @@ function Brand({ compact = false }) {
 }
 
 function App() {
-  const [userId, setUserId] = useState(() => localStorage.getItem(USER_KEY) || '');
-  const [profile, setProfile] = useState(null);
+  const [authenticatedUser, setAuthenticatedUser] = useState(null);
+  const [authLoading, setAuthLoading] = useState(true);
+  const [sessionExpired, setSessionExpired] = useState(false);
+  useEffect(() => {
+    let mounted = true;
+    api.currentUser().then(({ user }) => { if (mounted) setAuthenticatedUser(user); }).catch(() => {}).finally(() => { if (mounted) setAuthLoading(false); });
+    const expired = () => setSessionExpired(true);
+    window.addEventListener('intellivest:session-expired', expired);
+    return () => { mounted = false; window.removeEventListener('intellivest:session-expired', expired); };
+  }, []);
+  async function signOut() {
+    try { await api.logout(); } finally { setAuthenticatedUser(null); setSessionExpired(false); }
+  }
+  if (authLoading && !authenticatedUser) return <div className="app-loading"><Brand /><LoadingState label="Checking your session…" /></div>;
+  if (!authenticatedUser) return <AuthPage onAuthenticated={(user) => { setAuthenticatedUser(user); setSessionExpired(false); }} />;
+  return <>
+    <InvestorWorkspace key={authenticatedUser.user_id} authenticatedUser={authenticatedUser} onLogout={signOut} />
+    {sessionExpired && <div className="session-expired-overlay"><AuthPage onAuthenticated={(user) => { setAuthenticatedUser(user); setSessionExpired(false); }} /></div>}
+  </>;
+}
+
+function InvestorWorkspace({ authenticatedUser, onLogout }) {
+  const userId = authenticatedUser.user_id;
+  const [profile, setProfile] = useState(authenticatedUser);
   const [summary, setSummary] = useState(null);
   const [income, setIncome] = useState([]);
   const [expenses, setExpenses] = useState([]);
@@ -121,7 +142,7 @@ function App() {
   const [risk, setRisk] = useState(null);
   const [alerts, setAlerts] = useState([]);
   const [page, setPage] = useState('overview');
-  const [loading, setLoading] = useState(Boolean(userId));
+  const [loading, setLoading] = useState(true);
   const [busy, setBusy] = useState(false);
   const [notice, setNotice] = useState(null);
   const [mobileNav, setMobileNav] = useState(false);
@@ -144,9 +165,7 @@ function App() {
       setNotice(null);
     } catch (error) {
       setNotice({ type: 'error', message: errorMessage(error) });
-      if (error instanceof ApiError && error.status === 404) {
-        localStorage.removeItem(USER_KEY); setUserId(''); setProfile(null);
-      }
+      if (error instanceof ApiError && error.status === 401) window.dispatchEvent(new Event('intellivest:session-expired'));
     } finally { setLoading(false); }
   }, [userId]);
 
@@ -169,19 +188,6 @@ function App() {
   useEffect(() => { if (portfolioId) loadPortfolio(portfolioId, page === 'risk' || page === 'overview'); else { setPortfolio(null); setHoldings([]); setRisk(null); } }, [page, portfolioId, loadPortfolio]);
   useEffect(() => { if ((page === 'alerts' || page === 'overview') && userId) loadAlerts(portfolioId); }, [page, portfolioId, userId, loadAlerts]);
 
-  async function createProfile(body) {
-    const created = await api.createUser(body);
-    localStorage.setItem(USER_KEY, created.user_id);
-    setProfile(created); setUserId(created.user_id); setPage('overview');
-  }
-  async function restoreProfile(id) {
-    const restored = await api.getUser(id);
-    localStorage.setItem(USER_KEY, restored.user_id);
-    setProfile(restored); setUserId(restored.user_id); setPage('overview');
-  }
-  function logout() {
-    localStorage.removeItem(USER_KEY); setUserId(''); setProfile(null); setSummary(null); setPortfolios([]); setPortfolioId(''); setRisk(null);
-  }
   async function perform(action, successMessage, refresh = loadWorkspace) {
     setBusy(true);
     try { const result = await action(); if (refresh) await refresh(); setNotice({ type: 'success', message: successMessage }); return result; }
@@ -189,7 +195,6 @@ function App() {
     finally { setBusy(false); }
   }
 
-  if (!userId) return <ProfileSetup onCreated={createProfile} onRestore={restoreProfile} busy={busy} />;
   if (loading && !profile) return <div className="app-loading"><Brand /><LoadingState /></div>;
 
   return <div className="app-shell">
@@ -201,7 +206,7 @@ function App() {
           <Icon size={18} strokeWidth={1.9} /><span>{label}</span>{id === 'alerts' && unresolvedAlerts.length > 0 && <span className="nav-count">{unresolvedAlerts.length}</span>}
         </button>)}
       </nav>
-      <div className="sidebar-bottom"><div className="local-status"><span className="status-dot" /><div><strong>Local workspace</strong><small>Data stays on this device</small></div></div><button className="profile-menu" onClick={logout}><span className="avatar">{profile?.full_name?.slice(0, 1)?.toUpperCase() || 'I'}</span><span className="profile-copy"><strong>{profile?.full_name || 'Investor'}</strong><small>{profile?.risk_tolerance_tier || 'Profile'}</small></span><LogOut size={16} /></button></div>
+      <div className="sidebar-bottom"><div className="local-status"><span className="status-dot" /><div><strong>Local workspace</strong><small>Data stays on this device</small></div></div><button className="profile-menu" onClick={onLogout}><span className="avatar">{profile?.full_name?.slice(0, 1)?.toUpperCase() || 'I'}</span><span className="profile-copy"><strong>{profile?.full_name || 'Investor'}</strong><small>{profile?.risk_tolerance_tier || 'Profile'}</small></span><LogOut size={16} /></button></div>
     </aside>
     {mobileNav && <button className="sidebar-scrim" aria-label="Close navigation" onClick={() => setMobileNav(false)} />}
     <div className="main-column">
@@ -479,26 +484,20 @@ function RiskPage({ portfolio, holdings, risk, portfolios, portfolioId, setPortf
       <section className="metric-grid three-up risk-metrics">
         <RiskMetric label="Value at Risk · 95%" value={money(risk.parametric_var_95)} helper="Estimated one-day loss threshold from portfolio volatility." badge="Parametric" tone="amber" />
         <RiskMetric label="Historical VaR · 95%" value={money(risk.historical_var_95)} helper="5th percentile portfolio loss across the available 252-return window." badge="Historical" tone="blue" />
-        <RiskMetric label="Conditional VaR" value="Not available" helper="The risk API does not currently return CVaR. This value is not estimated in the website." badge="API gap" tone="slate" />
+        <RiskMetric label="Conditional Value at Risk (CVaR)" value={money(risk.cvar_95)} helper={`CVaR estimates the average loss in the worst market outcomes beyond the VaR threshold. ${number((risk.cvar_confidence_level || 0.95) * 100, 0)}% confidence · ${number(risk.cvar_horizon_trading_days, 1)}-day horizon · ${number(risk.cvar_observations, 0)} / ${number(risk.cvar_window, 0)} observations · data through ${dateLabel(risk.cvar_data_timestamp)}.`} badge={`Historical · ${number((risk.cvar_confidence_level || 0.95) * 100, 0)}%`} tone="amber" />
         <RiskMetric label="Sharpe ratio" value={number(risk.sharpe_ratio, 3)} helper="Annualized return above the risk-free rate per unit of volatility." badge="Annualized" tone="green" />
         <RiskMetric label="30-observation volatility" value={percent(risk.volatility_30d)} helper="Standard deviation of daily portfolio returns over the latest 30 observations." badge="Daily returns" tone="violet" />
         <RiskMetric label="Sector concentration · HHI" value={number(risk.sector_hhi, 3)} helper={`Target limit: ${number(risk.target_hhi_limit, 3)}. Higher values indicate concentration.`} badge="Portfolio mix" tone={risk.sector_hhi > risk.target_hhi_limit ? 'red' : 'green'} />
       </section>
       {risk.calculation_status !== 'ok' && <div className="notice notice-info"><CircleHelp size={17} /><span>This portfolio does not yet have a complete history for every metric. Missing values remain blank until PostgreSQL has sufficient real observations.</span></div>}
       {risk.feedback_delivery && <section className="policy-panel feedback-panel"><span className="policy-icon"><ShieldCheck size={18} /></span><div><strong>Risk feedback status</strong><p>{risk.feedback_delivery.events_applied} event(s) applied · {risk.feedback_delivery.pending_events} pending · {risk.new_alerts?.length || 0} new alert(s) from this check. New recommendation requests use the updated policy.</p></div></section>}
-      {portfolio && holdings.length > 0 && <HoldingsChart holdings={holdings} />}
+      {portfolio && holdings.length > 0 && <Suspense fallback={<section className="panel"><LoadingState label="Loading portfolio chart…" /></section>}><HoldingsChart holdings={holdings} /></Suspense>}
     </>}
   </>;
 }
 
 function RiskMetric({ label, value, helper, badge, tone }) {
   return <article className={`risk-card risk-${tone}`}><div className="risk-card-top"><span className="eyebrow">{label}</span><span className="metric-badge">{badge}</span></div><strong>{value}</strong><p>{helper}</p></article>;
-}
-
-function HoldingsChart({ holdings }) {
-  const data = holdings.filter((item) => item.market_value != null).map((item) => ({ ticker: item.ticker_symbol, value: Number(item.market_value) }));
-  if (!data.length) return null;
-  return <section className="panel chart-panel"><div className="panel-heading"><div><p className="eyebrow">Current holdings</p><h2>Market value by security</h2></div><span className="chart-caption">Latest available quotes</span></div><div className="holdings-chart"><ResponsiveContainer width="100%" height="100%"><BarChart data={data} layout="vertical" margin={{ left: 10, right: 24, top: 4, bottom: 4 }}><CartesianGrid stroke="#E2E8F0" horizontal={false} /><XAxis type="number" tickFormatter={(value) => `₹${number(value, 0)}`} tick={{ fill: '#64748B', fontSize: 11 }} axisLine={false} tickLine={false} /><YAxis type="category" dataKey="ticker" width={66} tick={{ fill: '#334155', fontSize: 12, fontWeight: 600 }} axisLine={false} tickLine={false} /><Tooltip formatter={(value) => [money(value), 'Market value']} contentStyle={{ borderRadius: 10, border: '1px solid #E2E8F0', fontFamily: 'inherit' }} /><Bar dataKey="value" fill="#2563EB" radius={[0, 7, 7, 0]} barSize={22} /></BarChart></ResponsiveContainer></div></section>;
 }
 
 function AlertsPage({ alerts, portfolioId, portfolios, setPortfolioId, refresh, setNotice }) {

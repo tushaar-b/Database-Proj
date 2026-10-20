@@ -36,6 +36,8 @@ EXPECTED_ADVISORY_TABLES = [
     "recommendation_log",
     "recommendation_policy",
     "applied_feedback_events",
+    "auth_session",
+    "auth_login_attempt",
 ]
 
 EXPECTED_RISK_TABLES = [
@@ -92,7 +94,7 @@ def execute_sql_file(db_url: str, sql_file_path: Path) -> bool:
 def run_advisory_migrations(db_url: Optional[str] = None) -> bool:
     """Applies all sorted migration files for advisory_db."""
     target_url = db_url or ADVISORY_DB_URL
-    migration_files = sorted(ADVISORY_MIGRATIONS_DIR.glob("*.sql"))
+    migration_files = sorted(path for path in ADVISORY_MIGRATIONS_DIR.glob("*.sql") if not path.name.endswith("_rollback.sql"))
     if not migration_files:
         logger.warning(f"No migration files found in {ADVISORY_MIGRATIONS_DIR}")
         return True
@@ -108,7 +110,7 @@ def run_advisory_migrations(db_url: Optional[str] = None) -> bool:
 def run_risk_migrations(db_url: Optional[str] = None) -> bool:
     """Applies all sorted migration files for risk_db."""
     target_url = db_url or RISK_DB_URL
-    migration_files = sorted(RISK_MIGRATIONS_DIR.glob("*.sql"))
+    migration_files = sorted(path for path in RISK_MIGRATIONS_DIR.glob("*.sql") if not path.name.endswith("_rollback.sql"))
     if not migration_files:
         logger.warning(f"No migration files found in {RISK_MIGRATIONS_DIR}")
         return True
