@@ -1,6 +1,6 @@
 import { Suspense, lazy, useCallback, useEffect, useMemo, useState } from 'react';
 import {
-  Activity, ArrowDownRight, ArrowRight, ArrowUpRight, Bell, BriefcaseBusiness,
+  Activity, ArrowDownRight, ArrowLeft, ArrowRight, ArrowUpRight, Bell, BriefcaseBusiness,
   Check, CircleHelp, CirclePlus, Eye, EyeOff, Gauge, LayoutDashboard, LoaderCircle,
   LogOut, Menu, RefreshCw, ShieldCheck, SlidersHorizontal, Sparkles, Wallet,
   X,
