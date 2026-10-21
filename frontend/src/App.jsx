@@ -1,4 +1,4 @@
-import { Suspense, lazy, useCallback, useEffect, useMemo, useState } from 'react';
+import { forwardRef, Suspense, lazy, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   Activity, ArrowDownRight, ArrowLeft, ArrowRight, ArrowUpRight, Bell, BriefcaseBusiness,
   Check, CircleHelp, CirclePlus, Eye, EyeOff, Gauge, LayoutDashboard, LoaderCircle,
@@ -26,13 +26,14 @@ const percent = (value, digits = 2) => value === null || value === undefined ? '
 const dateLabel = (value) => value ? new Intl.DateTimeFormat('en-IN', { dateStyle: 'medium' }).format(new Date(value)) : '—';
 const errorMessage = (error) => error instanceof ApiError ? error.message : (error?.message || 'Something went wrong. Please try again.');
 
-function MetricCard({ label, value, helper, icon: Icon, tone = 'blue', trend }) {
-  return <article className={`metric-card tone-${tone}`}>
+const MetricCard = forwardRef(function MetricCard({ label, value, helper, icon: Icon, tone = 'blue', trend, onClick, ariaLabel }, ref) {
+  const interactive = typeof onClick === 'function';
+  return <article ref={ref} className={`metric-card tone-${tone}${interactive ? ' metric-card-interactive' : ''}`} onClick={onClick} onKeyDown={interactive ? (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); onClick(); } } : undefined} role={interactive ? 'button' : undefined} tabIndex={interactive ? 0 : undefined} aria-label={interactive ? ariaLabel || `${label}: ${value}` : undefined} aria-haspopup={interactive ? 'dialog' : undefined}>
     <div className="metric-heading"><span>{label}</span><span className="metric-icon"><Icon size={18} /></span></div>
     <strong className="metric-value">{value}</strong>
     <div className="metric-foot"><span>{helper}</span>{trend && <span className="metric-trend">{trend}</span>}</div>
   </article>;
-}
+});
 
 function PageHeading({ eyebrow, title, description, action }) {
   return <div className="page-heading">
@@ -175,7 +176,9 @@ function InvestorWorkspace({ authenticatedUser, onLogout }) {
   const [portfolio, setPortfolio] = useState(null);
   const [holdings, setHoldings] = useState([]);
   const [risk, setRisk] = useState(null);
+  const [riskStatus, setRiskStatus] = useState('pending');
   const [alerts, setAlerts] = useState([]);
+  const [alertsStatus, setAlertsStatus] = useState('pending');
   const [page, setPage] = useState('overview');
   const [loading, setLoading] = useState(true);
   const [busy, setBusy] = useState(false);
@@ -213,17 +216,19 @@ function InvestorWorkspace({ authenticatedUser, onLogout }) {
   useEffect(() => { if (userId) loadWorkspace(userId); }, [userId, loadWorkspace]);
 
   const loadPortfolio = useCallback(async (idToLoad = portfolioId, withRisk = false) => {
-    if (!idToLoad) { setPortfolio(null); setHoldings([]); setRisk(null); return; }
+    if (!idToLoad) { setPortfolio(null); setHoldings([]); setRisk(null); setRiskStatus('none'); return; }
+    if (withRisk) { setRisk(null); setRiskStatus('loading'); }
     try {
       const [portfolioResult, holdingResult] = await Promise.all([api.getPortfolio(idToLoad), api.getHoldings(idToLoad)]);
       setPortfolio(portfolioResult); setHoldings(holdingResult);
-      if (withRisk) setRisk(await api.getRisk(idToLoad));
-    } catch (error) { setNotice({ type: 'error', message: errorMessage(error) }); }
+      if (withRisk) { setRisk(await api.getRisk(idToLoad)); setRiskStatus('ready'); }
+    } catch (error) { if (withRisk) setRiskStatus('error'); setNotice({ type: 'error', message: errorMessage(error) }); }
   }, [portfolioId]);
 
   const loadAlerts = useCallback(async (idToLoad = portfolioId) => {
-    try { setAlerts(await api.getAlerts(idToLoad || undefined)); }
-    catch (error) { setNotice({ type: 'error', message: errorMessage(error) }); }
+    setAlertsStatus('pending');
+    try { setAlerts(await api.getAlerts(idToLoad || undefined)); setAlertsStatus('loaded'); }
+    catch (error) { setAlertsStatus('error'); setNotice({ type: 'error', message: errorMessage(error) }); }
   }, [portfolioId]);
 
   useEffect(() => { if (!onboardingResolved || onboardingStep !== 'dashboard') return; if (portfolioId) loadPortfolio(portfolioId, page === 'risk' || page === 'overview'); else { setPortfolio(null); setHoldings([]); setRisk(null); } }, [page, portfolioId, loadPortfolio, onboardingResolved, onboardingStep]);
@@ -250,7 +255,8 @@ function InvestorWorkspace({ authenticatedUser, onLogout }) {
     onDone={(data) => {
       setProfile(data.profile); setSummary(data.summary); setIncome(data.income); setExpenses(data.expenses);
       setPortfolios(data.portfolios); setPortfolioId(data.portfolioId); setPortfolio(data.portfolio);
-      setHoldings(data.holdings); setRisk(data.risk); setAlerts(data.alerts); setRecommendations(data.recommendations);
+      setHoldings(data.holdings); setRisk(data.risk); setRiskStatus(data.risk ? 'ready' : 'unavailable'); setAlerts(data.alerts); setRecommendations(data.recommendations);
+      setAlertsStatus('loaded');
       setGeneration(data.generation); setPage('overview'); setOnboardingStep('dashboard'); setNotice({ type: 'success', message: 'Your analysis is ready.' });
     }}
   />;
@@ -271,7 +277,7 @@ function InvestorWorkspace({ authenticatedUser, onLogout }) {
       <header className="topbar"><button className="mobile-menu icon-button" aria-label="Open navigation" onClick={() => setMobileNav(true)}><Menu size={20} /></button><div className="breadcrumb"><span>Workspace</span><span className="crumb-separator">/</span><strong>{currentPage.label}</strong></div><div className="topbar-actions"><span className="api-status"><span className="status-dot" />Connected to local API</span><button className="icon-button" aria-label="Refresh workspace" title="Refresh workspace" onClick={() => loadWorkspace()}><RefreshCw size={17} /></button></div></header>
       <main className="content-area"><Notice notice={notice} dismiss={() => setNotice(null)} />
         {loading && <LoadingState />}
-        {!loading && page === 'overview' && <Overview profile={profile} summary={summary} portfolio={portfolio} holdings={holdings} risk={risk} alerts={unresolvedAlerts} recommendations={recommendations} go={setPage} />}
+        {!loading && page === 'overview' && <Overview profile={profile} summary={summary} portfolio={portfolio} portfolioId={portfolioId} holdings={holdings} risk={risk} riskStatus={riskStatus} alerts={unresolvedAlerts} alertsStatus={alertsStatus} recommendations={recommendations} go={setPage} />}
         {!loading && page === 'cashflow' && <CashflowPage userId={userId} profile={profile} summary={summary} income={income} expenses={expenses} busy={busy} perform={perform} onProfile={setProfile} onSummary={setSummary} onIncome={setIncome} onExpenses={setExpenses} />}
         {!loading && page === 'recommendations' && <RecommendationsPage userId={userId} summary={summary} recommendations={recommendations} generation={generation} setGeneration={setGeneration} busy={busy} setBusy={setBusy} setRecommendations={setRecommendations} setNotice={setNotice} />}
         {!loading && page === 'portfolios' && <PortfoliosPage userId={userId} portfolios={portfolios} setPortfolios={setPortfolios} portfolioId={portfolioId} setPortfolioId={setPortfolioId} portfolio={portfolio} holdings={holdings} busy={busy} setBusy={setBusy} setNotice={setNotice} refresh={loadWorkspace} refreshPortfolio={loadPortfolio} />}
@@ -283,7 +289,10 @@ function InvestorWorkspace({ authenticatedUser, onLogout }) {
   </div>;
 }
 
-function Overview({ profile, summary, portfolio, holdings, risk, alerts, recommendations, go }) {
+function Overview({ profile, summary, portfolio, portfolioId, holdings, risk, riskStatus, alerts, alertsStatus, recommendations, go }) {
+  const [riskDrawerOpen, setRiskDrawerOpen] = useState(false);
+  const riskCardRef = useRef(null);
+  const closeRiskDrawer = useCallback(() => setRiskDrawerOpen(false), []);
   const pending = recommendations.filter((item) => item.status_state === 'PENDING').length;
   const invested = portfolio?.portfolio_valuation;
   const recent = recommendations.slice(0, 4);
@@ -293,7 +302,7 @@ function Overview({ profile, summary, portfolio, holdings, risk, alerts, recomme
       <MetricCard label="Investable surplus" value={money(summary?.investable_buffer)} helper="After your selected reserve" icon={Wallet} tone="green" />
       <MetricCard label="Portfolio value" value={money(portfolio?.portfolio_valuation)} helper={portfolio ? `${holdings.length} saved holding${holdings.length === 1 ? '' : 's'}` : 'No portfolio selected'} icon={BriefcaseBusiness} />
       <MetricCard label="Available cash" value={money(portfolio?.cash_balance)} helper="Cash recorded in portfolio" icon={ArrowUpRight} tone="violet" />
-      <MetricCard label="Portfolio risk" value={risk ? money(risk.parametric_var_95) : holdings.length ? 'Loading' : 'Not available'} helper={risk ? 'VaR · 95% confidence' : holdings.length ? 'Risk data is being checked' : 'Add holdings to calculate'} icon={Gauge} tone="amber" />
+      <MetricCard ref={riskCardRef} label="Portfolio risk" value={risk?.parametric_var_95 != null ? money(risk.parametric_var_95) : riskStatus === 'loading' ? 'Loading' : 'Not available'} helper="Understand your portfolio risk" icon={Gauge} tone="amber" onClick={() => setRiskDrawerOpen(true)} ariaLabel="Portfolio risk. Open your personalized risk explanation." />
     </section>
     <section className="dashboard-grid overview-grid">
       <article className="panel cash-summary-panel">
@@ -333,7 +342,130 @@ function Overview({ profile, summary, portfolio, holdings, risk, alerts, recomme
         {alerts.length ? <div className="alert-list compact-alerts">{alerts.slice(0, 3).map((alert) => <AlertRow key={alert.alert_id} alert={alert} />)}</div> : <EmptyState icon={ShieldCheck} title="All clear for now" copy="A portfolio risk check will surface VaR, volatility, or sector concentration breaches here." />}
       </article>
     </section>
+    <RiskExplanationDrawer open={riskDrawerOpen} returnFocusRef={riskCardRef} portfolio={portfolio} portfolioId={portfolioId} holdings={holdings} risk={risk} riskStatus={riskStatus} alerts={alerts} alertsStatus={alertsStatus} onClose={closeRiskDrawer} onDetailed={() => { setRiskDrawerOpen(false); go('risk'); }} />
   </>;
+}
+
+function RiskExplanationDrawer({ open, returnFocusRef, portfolio, portfolioId, holdings, risk, riskStatus, alerts, alertsStatus, onClose, onDetailed }) {
+  const drawerRef = useRef(null);
+  const closeRef = useRef(null);
+  const [mounted, setMounted] = useState(open);
+  const [visible, setVisible] = useState(false);
+  const vaRValue = risk?.parametric_var_95;
+  const hasVaR = vaRValue !== null && vaRValue !== undefined && Number.isFinite(Number(vaRValue));
+  const rawConfidence = risk?.var_confidence_level ?? risk?.parametric_var_confidence_level ?? (risk?.parametric_var_95 != null ? 0.95 : null);
+  const confidence = rawConfidence == null ? null : Number(rawConfidence) > 1 ? Number(rawConfidence) / 100 : Number(rawConfidence);
+  const confidencePercent = confidence == null || !Number.isFinite(confidence) ? null : confidence * 100;
+  const vaRHorizon = risk?.var_horizon_trading_days ?? risk?.parametric_var_horizon_trading_days ?? null;
+  const currentAlerts = (alerts || []).filter((alert) => !portfolioId || alert.portfolio_id === portfolioId);
+  const hhi = Number(risk?.sector_hhi);
+  const hhiLimit = Number(risk?.target_hhi_limit);
+  const hasHhi = risk?.sector_hhi != null && risk?.target_hhi_limit != null && Number.isFinite(hhi) && Number.isFinite(hhiLimit);
+  const hhiBreached = hasHhi && hhi > hhiLimit;
+  const valuedHoldings = (holdings || []).map((holding) => {
+    const value = holding.market_value == null ? null : Number(holding.market_value);
+    return { ...holding, _marketValue: Number.isFinite(value) ? value : null };
+  });
+  const investedValue = valuedHoldings.reduce((total, holding) => total + (holding._marketValue > 0 ? holding._marketValue : 0), 0);
+  const sectorTotals = new Map();
+  for (const holding of valuedHoldings) {
+    if (holding._marketValue > 0 && holding.sector_name) sectorTotals.set(holding.sector_name, (sectorTotals.get(holding.sector_name) || 0) + holding._marketValue);
+  }
+  const sectors = [...sectorTotals.entries()].map(([name, value]) => ({ name, value, weight: investedValue > 0 ? value / investedValue : null })).sort((a, b) => b.value - a.value);
+  const largestHolding = [...valuedHoldings].filter((holding) => holding._marketValue > 0).sort((a, b) => b._marketValue - a._marketValue)[0];
+  const largestWeight = largestHolding && investedValue > 0 ? largestHolding._marketValue / investedValue : null;
+  const riskDate = risk?.calculation_date ? String(risk.calculation_date).slice(0, 10) : null;
+  const quoteDate = portfolio?.calculation_date ? String(portfolio.calculation_date).slice(0, 10) : null;
+  const riskIsStale = Boolean(riskDate && quoteDate && riskDate < quoteDate);
+
+  useEffect(() => {
+    if (open) {
+      setMounted(true);
+      const frame = requestAnimationFrame(() => setVisible(true));
+      return () => cancelAnimationFrame(frame);
+    }
+    setVisible(false);
+    const timer = window.setTimeout(() => setMounted(false), 240);
+    return () => window.clearTimeout(timer);
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return undefined;
+    const previousFocus = document.activeElement;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    closeRef.current?.focus();
+    function onKeyDown(event) {
+      if (event.key === 'Escape') { event.preventDefault(); onClose(); return; }
+      if (event.key !== 'Tab') return;
+      const focusable = drawerRef.current?.querySelectorAll('button:not([disabled]), [href], [tabindex]:not([tabindex="-1"])');
+      if (!focusable?.length) { event.preventDefault(); drawerRef.current?.focus(); return; }
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    }
+    document.addEventListener('keydown', onKeyDown);
+    return () => { document.removeEventListener('keydown', onKeyDown); document.body.style.overflow = previousOverflow; (returnFocusRef?.current || previousFocus)?.focus?.(); };
+  }, [open, onClose, returnFocusRef]);
+
+  let summaryText;
+  if (!portfolioId || !portfolio) summaryText = 'Select a portfolio to see its current risk information.';
+  else if (!holdings.length) summaryText = 'This portfolio has no stock holdings yet, so there is no invested-holdings risk or concentration to summarize.';
+  else if (riskStatus === 'error') summaryText = 'The latest risk analysis could not be loaded. Try the detailed analytics page again later.';
+  else if (riskStatus === 'loading' || riskStatus === 'pending') summaryText = 'Risk analysis is loading; a summary will appear when the backend response is available.';
+  else if (hhiBreached) summaryText = 'Your portfolio currently exceeds its configured sector concentration limit.';
+  else if (currentAlerts.length > 0) summaryText = 'The latest available analysis contains one or more active risk limit breaches.';
+  else if (riskStatus === 'ready' && alertsStatus === 'loaded') summaryText = 'No active risk limit breaches were detected in the latest available analysis.';
+  else summaryText = 'The available data is not sufficient to summarize current risk limits.';
+
+  if (!mounted) return null;
+  return <div className={`risk-drawer-backdrop${visible ? ' is-visible' : ''}`} role="presentation" aria-hidden={!open} onMouseDown={(event) => { if (event.target === event.currentTarget && open) onClose(); }}>
+    <aside className={`risk-explanation-drawer${visible ? ' is-visible' : ''}`} ref={drawerRef} role={open ? 'dialog' : undefined} aria-modal={open ? 'true' : undefined} aria-labelledby="risk-drawer-title" tabIndex={-1} onMouseDown={(event) => event.stopPropagation()}>
+      <header className="risk-drawer-header"><div><p className="eyebrow">{portfolio?.portfolio_name || 'Portfolio overview'}</p><h2 id="risk-drawer-title">Understanding Your Portfolio Risk</h2></div><button ref={closeRef} type="button" className="icon-button risk-drawer-close" aria-label="Close risk explanation" onClick={onClose}><X size={18} /></button></header>
+      <div className="risk-drawer-content">
+        {!portfolioId ? <section className="risk-drawer-empty"><span className="drawer-section-icon"><BriefcaseBusiness size={19} /></span><h3>No portfolio selected</h3><p>Choose or create a portfolio to see its risk estimate, holdings, and applicable alerts.</p></section>
+          : !portfolio ? <section className="risk-drawer-empty"><LoadingState label="Loading portfolio details…" /></section>
+            : !holdings.length ? <section className="risk-drawer-empty"><span className="drawer-section-icon"><BriefcaseBusiness size={19} /></span><h3>No stock holdings yet</h3><p>This portfolio has {portfolio.cash_balance != null ? `${money(portfolio.cash_balance)} in recorded cash` : 'no recorded stock positions'}. Risk metrics that require holdings or return history are not available for an empty portfolio.</p>{risk?.calculation_status && risk.calculation_status !== 'ok' && <small>Backend status: {risk.calculation_status.replaceAll('_', ' ')}.</small>}</section>
+              : <>
+                <section className="risk-var-panel"><div className="risk-var-heading"><span className="drawer-section-icon"><Gauge size={19} /></span><div><p className="eyebrow">Current risk estimate</p><h3>Value at Risk{confidencePercent != null ? ` (${number(confidencePercent, 0)}% confidence)` : ''}</h3></div></div>
+                  {hasVaR ? <strong className="risk-var-value">{money(vaRValue)}</strong> : <div className="risk-data-unavailable">VaR is unavailable from the current backend response.</div>}
+                  {hasVaR && confidencePercent != null && <p>Based on the current model estimate, approximately {number(100 - confidencePercent, 1)}% of outcomes could have losses greater than this amount{vaRHorizon != null && Number.isFinite(Number(vaRHorizon)) ? ` over ${number(vaRHorizon, 0)} trading day${Number(vaRHorizon) === 1 ? '' : 's'}` : ''}. This describes the tail of the estimated loss distribution; it is not the probability of any loss or of earning a profit.</p>}
+                  {hasVaR && vaRHorizon == null && <small>The risk response does not provide a VaR time horizon, so none is stated here.</small>}
+                  <p className="risk-var-caveat">VaR is an estimate, not the maximum amount you can lose. Actual losses may be greater during unusual market conditions.</p>
+                  {risk?.calculation_status && risk.calculation_status !== 'ok' && <small className="risk-history-note">Historical data status: {risk.calculation_status.replaceAll('_', ' ')}. Some risk metrics may be unavailable until more observations are available.</small>}
+                </section>
+
+                {riskIsStale && <div className="risk-stale-note" role="status"><CircleHelp size={16} /><span>The risk estimate date ({dateLabel(risk.calculation_date)}) is older than the latest portfolio quote date ({dateLabel(portfolio.calculation_date)}).</span></div>}
+                {riskStatus === 'error' && <div className="risk-stale-note" role="status"><CircleHelp size={16} /><span>The latest risk request failed, so current VaR and related analytics are unavailable.</span></div>}
+                {riskStatus === 'loading' && <div className="risk-stale-note" role="status"><LoaderCircle className="spin" size={16} /><span>Loading the latest risk analysis…</span></div>}
+
+                <section className="risk-drawer-section"><div className="risk-drawer-section-heading"><div><p className="eyebrow">Why risk may be elevated</p><h3>Limits and portfolio mix</h3></div></div>
+                  {hasHhi ? <div className={`risk-hhi-reading ${hhiBreached ? 'is-breached' : ''}`}><div><span>Sector concentration (HHI)</span><strong>{number(hhi, 3)} <small>/ limit {number(hhiLimit, 3)}</small></strong></div><p>{hhiBreached ? 'The current HHI is above this portfolio’s configured limit.' : 'The current HHI is within this portfolio’s configured limit.'}</p></div> : <p className="risk-muted-copy">Sector concentration or its configured limit is not available from the current risk response.</p>}
+                  {sectors.length > 0 ? <div className="risk-sector-list"><h4>Sector weights from current holdings</h4>{sectors.map((sector) => <div className="risk-sector-row" key={sector.name}><span>{sector.name}</span><strong>{percent(sector.weight)}</strong><div className="risk-weight-track"><span style={{ width: `${Math.min(100, Math.max(0, sector.weight * 100))}%` }} /></div></div>)}</div> : <p className="risk-muted-copy">Sector weights are unavailable because current holding values or sector labels are missing.</p>}
+                  {risk?.volatility_30d != null && Number.isFinite(Number(risk.volatility_30d)) && <div className="risk-analytics-brief"><span>30-observation volatility</span><strong>{percent(risk.volatility_30d)}</strong></div>}
+                  {risk?.cvar_95 != null && Number.isFinite(Number(risk.cvar_95)) && <div className="risk-analytics-brief"><span>Conditional VaR{risk.cvar_confidence_level != null ? ` · ${number(Number(risk.cvar_confidence_level) * 100, 0)}%` : ''}{risk.cvar_horizon_trading_days != null ? ` · ${number(risk.cvar_horizon_trading_days, 0)} day${Number(risk.cvar_horizon_trading_days) === 1 ? '' : 's'}` : ''}</span><strong>{money(risk.cvar_95)}</strong></div>}
+                </section>
+
+                <section className="risk-drawer-section"><div className="risk-drawer-section-heading"><div><p className="eyebrow">Current positions</p><h3>Holdings breakdown</h3></div><span className="risk-invested-total">Invested value {money(investedValue || null)}</span></div>
+                  {valuedHoldings.length ? <div className="risk-holding-list">{valuedHoldings.map((holding) => {
+                    const weight = holding._marketValue != null && investedValue > 0 ? holding._marketValue / investedValue : null;
+                    const ticker = holding.ticker_symbol || holding.company_name || 'Security';
+                    return <div className="risk-holding-row" key={holding.holding_id || holding.security_id}><div className="risk-holding-label"><span><strong>{ticker}</strong>{holding.company_name && holding.company_name !== ticker && <small>{holding.company_name}</small>}</span><strong>{money(holding._marketValue)}</strong></div><div className="risk-holding-meta"><span>{holding.sector_name || 'Sector unavailable'}</span><span>{weight == null ? 'Weight unavailable' : `${percent(weight)} of invested value`}</span></div><div className="risk-weight-track"><span style={{ width: `${weight == null ? 0 : Math.min(100, Math.max(0, weight * 100))}%` }} /></div></div>;
+                  })}</div> : <p className="risk-muted-copy">No holdings were returned for this portfolio.</p>}
+                  {largestHolding && largestWeight != null && <p className="risk-context-note">Largest current position: {largestHolding.ticker_symbol || largestHolding.company_name} at {percent(largestWeight)} of valued stock holdings. The backend does not configure a per-stock concentration breach threshold, so this is context only.</p>}
+                </section>
+
+                <section className="risk-drawer-section"><div className="risk-drawer-section-heading"><div><p className="eyebrow">Backend risk alerts</p><h3>Active risk limits</h3></div></div>
+                  {alertsStatus === 'pending' ? <p className="risk-muted-copy">Loading current alerts…</p> : alertsStatus === 'error' ? <p className="risk-muted-copy">Active alerts could not be loaded. No conclusion about alert status is available.</p> : currentAlerts.length ? <div className="risk-drawer-alerts">{currentAlerts.map((alert) => <article className="risk-drawer-alert" key={alert.alert_id}><span className="risk-alert-dot" /><div><strong>{alertLabel(alert.breached_metric)}</strong><p>{alertDescription(alert.breached_metric)}</p><small>{number(alert.drift_magnitude_pct)}% beyond the configured threshold · {dateLabel(alert.created_at)}</small></div></article>)}</div> : <p className="risk-no-alerts"><ShieldCheck size={16} />No active backend alerts for this portfolio.</p>}
+                </section>
+
+                <section className="risk-summary-box"><p className="eyebrow">Your risk summary</p><p>{summaryText}</p></section>
+              </>}
+      </div>
+      <footer className="risk-drawer-footer"><button type="button" className="button button-primary button-wide" disabled={!portfolioId} onClick={onDetailed}>View Detailed Risk Analytics <ArrowRight size={16} /></button></footer>
+    </aside>
+  </div>;
 }
 
 function SummaryLine({ label, value, negative = false, strong = false }) {
