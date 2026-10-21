@@ -1,11 +1,12 @@
 import { Suspense, lazy, useCallback, useEffect, useMemo, useState } from 'react';
 import {
   Activity, ArrowDownRight, ArrowRight, ArrowUpRight, Bell, BriefcaseBusiness,
-  Check, CircleHelp, CirclePlus, Gauge, LayoutDashboard, LoaderCircle,
+  Check, CircleHelp, CirclePlus, Eye, EyeOff, Gauge, LayoutDashboard, LoaderCircle,
   LogOut, Menu, RefreshCw, ShieldCheck, SlidersHorizontal, Sparkles, Wallet,
   X,
 } from 'lucide-react';
 import { api, ApiError } from './api.js';
+import GuidedOnboarding from './GuidedOnboarding.jsx';
 
 const HoldingsChart = lazy(() => import('./HoldingsChart.jsx'));
 const INR = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 2 });
@@ -55,44 +56,72 @@ function LoadingState({ label = 'Loading your financial workspace…' }) {
   return <div className="loading-state"><LoaderCircle className="spin" size={22} />{label}</div>;
 }
 
-function AuthPage({ onAuthenticated, initialMode = 'login' }) {
-  const [mode, setMode] = useState(initialMode);
-  const [form, setForm] = useState({ full_name: '', email: '', password: '', risk_tolerance_tier: 'MODERATE' });
+function AuthPage({ onAuthenticated }) {
+  const [mode, setMode] = useState('login');
+  const [registrationStep, setRegistrationStep] = useState('account');
+  const [form, setForm] = useState({ full_name: '', email: '', password: '', confirm_password: '' });
+  const [visible, setVisible] = useState({ password: false, confirm: false });
   const [busy, setBusy] = useState(false);
-  const [error, setError] = useState('');
+  const [errors, setErrors] = useState({});
   const change = (key) => (event) => setForm((current) => ({ ...current, [key]: event.target.value }));
+  const register = mode === 'register';
+  function switchMode(next) { setMode(next); setRegistrationStep('account'); setErrors({}); }
   async function submit(event) {
-    event.preventDefault();
-    setError('');
+    event.preventDefault(); setErrors({});
+    if (register && registrationStep === 'account') {
+      const next = {};
+      if (!form.full_name.trim()) next.full_name = 'Enter your full name.';
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) next.email = 'Enter a valid email address.';
+      setErrors(next);
+      if (!Object.keys(next).length) setRegistrationStep('password');
+      return;
+    }
+    const next = {};
+    if (!form.email.trim()) next.email = 'Enter your email address.';
+    if (!form.password) next.password = 'Enter your password.';
+    if (register && form.password.length < 12) next.password = 'Use at least 12 characters.';
+    if (register && form.password !== form.confirm_password) next.confirm_password = 'Passwords do not match.';
+    if (Object.keys(next).length) { setErrors(next); return; }
     setBusy(true);
     try {
-      const result = mode === 'register' ? await api.register(form) : await api.login({ email: form.email, password: form.password });
+      const result = register
+        ? await api.register({ full_name: form.full_name.trim(), email: form.email.trim(), password: form.password })
+        : await api.login({ email: form.email.trim(), password: form.password });
       onAuthenticated(result.user);
-    } catch (issue) { setError(errorMessage(issue)); }
+    } catch (issue) { setErrors({ form: errorMessage(issue) }); }
     finally { setBusy(false); }
   }
-  return <main className="setup-shell">
-    <div className="setup-aside">
-      <Brand compact />
-      <div className="setup-message"><span className="setup-mark"><Activity size={23} /></span><p className="eyebrow">A clearer view of your money</p><h1>Invest with your real life in mind.</h1><p>Connect your monthly cash flow to affordable recommendations and portfolio risk analytics.</p><div className="setup-proof"><ShieldCheck size={17} /><span>Your account keeps your financial workspace connected.</span></div></div>
-      <p className="local-only"><span /> Local workspace · API access is restricted to this device</p>
-    </div>
-    <section className="setup-content">
-      <div className="setup-card">
-        <p className="eyebrow">Investor workspace</p><h2>{mode === 'register' ? 'Create your account' : 'Welcome back'}</h2><p className="muted">{mode === 'register' ? 'Create a private account for your cash flow and portfolio records.' : 'Sign in to view your private financial workspace.'}</p>
-        {error && <div className="notice notice-error" role="alert">{error}</div>}
-        <form className="form-stack" onSubmit={submit}>
-          {mode === 'register' && <Field label="Full name"><input required maxLength="255" value={form.full_name} onChange={change('full_name')} placeholder="Your name" autoComplete="name" /></Field>}
-          <Field label="Email address"><input required type="email" value={form.email} onChange={change('email')} placeholder="you@example.com" /></Field>
-          <Field label="Password" hint={mode === 'register' ? 'Use at least 12 characters.' : undefined}><input required type="password" minLength={mode === 'register' ? 12 : 1} maxLength="128" autoComplete={mode === 'register' ? 'new-password' : 'current-password'} value={form.password} onChange={change('password')} /></Field>
-          {mode === 'register' && <>
-            <Field label="Risk preference"><select value={form.risk_tolerance_tier} onChange={change('risk_tolerance_tier')}><option value="CONSERVATIVE">Conservative</option><option value="MODERATE">Moderate</option><option value="AGGRESSIVE">Aggressive</option></select></Field>
+  const title = register ? (registrationStep === 'account' ? 'Let’s get to know you.' : 'Secure your account.') : 'Welcome back.';
+  const description = register ? (registrationStep === 'account' ? 'We’ll start with a few details to set up your IntelliVest account.' : 'Choose a strong password to keep your financial workspace private.') : 'Sign in to continue to your personal financial workspace.';
+  return <main className="auth-shell">
+    <header className="auth-top"><Brand compact /><span className="local-only"><i />Private, local IntelliVest workspace</span></header>
+    <section className="auth-content">
+      <div className="auth-card">
+        {register && <div className="auth-progress"><span className={registrationStep === 'account' ? 'active' : 'complete'} /><span className={registrationStep === 'password' ? 'active' : ''} /><small>{registrationStep === 'account' ? 'Step 1 of 2' : 'Step 2 of 2'} · Account setup</small></div>}
+        <div className="auth-welcome-mark"><Activity size={22} /></div><p className="eyebrow">{register ? 'Create your IntelliVest account' : 'Investor workspace'}</p><h1>{title}</h1><p className="auth-description">{description}</p>
+        {errors.form && <div className="wizard-error" role="alert">{errors.form}</div>}
+        <form className="auth-form" onSubmit={submit} noValidate>
+          {register && registrationStep === 'account' && <>
+            <Field label="Full name"><input autoFocus autoComplete="name" maxLength="255" value={form.full_name} onChange={change('full_name')} aria-invalid={Boolean(errors.full_name)} placeholder="Your full name" />{errors.full_name && <small className="field-error">{errors.full_name}</small>}</Field>
+            <Field label="Email address"><input type="email" autoComplete="email" maxLength="255" value={form.email} onChange={change('email')} aria-invalid={Boolean(errors.email)} placeholder="you@example.com" />{errors.email && <small className="field-error">{errors.email}</small>}</Field>
+            <button className="button button-primary button-wide auth-primary" type="submit">Continue <ArrowRight size={16} /></button>
           </>}
-          <button className="button button-primary button-wide" disabled={busy}>{busy ? <LoaderCircle className="spin" size={17} /> : null}{mode === 'register' ? 'Create account' : 'Sign in'} <ArrowRight size={16} /></button>
+          {register && registrationStep === 'password' && <>
+            <Field label="Create password" hint="At least 12 characters. Use a password you do not use elsewhere."><span className="password-control"><input autoFocus type={visible.password ? 'text' : 'password'} autoComplete="new-password" minLength="12" maxLength="128" value={form.password} onChange={change('password')} aria-invalid={Boolean(errors.password)} /> <button type="button" onClick={() => setVisible((v) => ({ ...v, password: !v.password }))} aria-label={visible.password ? 'Hide password' : 'Show password'}>{visible.password ? <EyeOff size={17} /> : <Eye size={17} />}</button></span>{errors.password && <small className="field-error">{errors.password}</small>}</Field>
+            <Field label="Confirm password"><span className="password-control"><input type={visible.confirm ? 'text' : 'password'} autoComplete="new-password" maxLength="128" value={form.confirm_password} onChange={change('confirm_password')} aria-invalid={Boolean(errors.confirm_password)} /> <button type="button" onClick={() => setVisible((v) => ({ ...v, confirm: !v.confirm }))} aria-label={visible.confirm ? 'Hide confirmation' : 'Show confirmation'}>{visible.confirm ? <EyeOff size={17} /> : <Eye size={17} />}</button></span>{errors.confirm_password && <small className="field-error">{errors.confirm_password}</small>}</Field>
+            <div className="password-requirement"><ShieldCheck size={16} /><span>Use 12 or more characters and confirm that both entries match.</span></div>
+            <div className="auth-button-row"><button type="button" className="button button-secondary" onClick={() => { setRegistrationStep('account'); setErrors({}); }}><ArrowLeft size={16} />Back</button><button className="button button-primary" type="submit" disabled={busy}>{busy ? <LoaderCircle className="spin" size={17} /> : null}Create account <ArrowRight size={16} /></button></div>
+          </>}
+          {!register && <>
+            <Field label="Email address"><input autoFocus type="email" autoComplete="email" value={form.email} onChange={change('email')} aria-invalid={Boolean(errors.email)} placeholder="you@example.com" />{errors.email && <small className="field-error">{errors.email}</small>}</Field>
+            <Field label="Password"><span className="password-control"><input type={visible.password ? 'text' : 'password'} autoComplete="current-password" value={form.password} onChange={change('password')} aria-invalid={Boolean(errors.password)} /> <button type="button" onClick={() => setVisible((v) => ({ ...v, password: !v.password }))} aria-label={visible.password ? 'Hide password' : 'Show password'}>{visible.password ? <EyeOff size={17} /> : <Eye size={17} />}</button></span>{errors.password && <small className="field-error">{errors.password}</small>}</Field>
+            <button className="button button-primary button-wide auth-primary" type="submit" disabled={busy}>{busy ? <LoaderCircle className="spin" size={17} /> : null}Sign in <ArrowRight size={16} /></button>
+          </>}
         </form>
-        <p className="auth-switch">{mode === 'register' ? 'Already registered?' : 'New to IntelliVest?'} <button className="text-button" type="button" onClick={() => { setMode(mode === 'register' ? 'login' : 'register'); setError(''); }}>{mode === 'register' ? 'Sign in' : 'Create an account'}</button></p>
+        <div className="auth-switch">{register ? 'Already have an account?' : 'New to IntelliVest?'} <button type="button" className="text-button" onClick={() => switchMode(register ? 'login' : 'register')}>{register ? 'Sign in' : 'Create an account'}</button></div>
       </div>
     </section>
+    <footer className="auth-footer">IntelliVest provides financial analysis and recommendations. It does not execute trades.</footer>
   </main>;
 }
 
@@ -126,6 +155,13 @@ function App() {
   </>;
 }
 
+function nextOnboardingStep(income, summary, portfolios) {
+  if (!income.length) return 'income';
+  if (!summary?.has_evaluation) return 'expenses';
+  if (!portfolios.length) return 'portfolio';
+  return 'dashboard';
+}
+
 function InvestorWorkspace({ authenticatedUser, onLogout }) {
   const userId = authenticatedUser.user_id;
   const [profile, setProfile] = useState(authenticatedUser);
@@ -145,6 +181,8 @@ function InvestorWorkspace({ authenticatedUser, onLogout }) {
   const [busy, setBusy] = useState(false);
   const [notice, setNotice] = useState(null);
   const [mobileNav, setMobileNav] = useState(false);
+  const [onboardingStep, setOnboardingStep] = useState(null);
+  const [onboardingResolved, setOnboardingResolved] = useState(false);
 
   const currentPage = navItems.find((item) => item.id === page) || navItems[0];
   const selectedPortfolio = useMemo(() => portfolios.find((item) => item.portfolio_id === portfolioId) || null, [portfolios, portfolioId]);
@@ -154,19 +192,23 @@ function InvestorWorkspace({ authenticatedUser, onLogout }) {
     if (!idToLoad) return;
     setLoading(true);
     try {
-      const [userResult, summaryResult, incomeResult, expenseResult, recommendationResult, portfolioResult] = await Promise.all([
+      const [userResult, summaryResult, incomeResult, expenseResult, recommendationResult, portfolioResult, progressResult] = await Promise.all([
         api.getUser(idToLoad), api.getSummary(idToLoad), api.getIncome(idToLoad), api.getExpenses(idToLoad),
-        api.getRecommendations(idToLoad), api.getPortfolios(idToLoad),
+        api.getRecommendations(idToLoad), api.getPortfolios(idToLoad), api.getOnboardingProgress(idToLoad),
       ]);
       setProfile(userResult); setSummary(summaryResult); setIncome(incomeResult); setExpenses(expenseResult);
       setRecommendations(recommendationResult); setPortfolios(portfolioResult);
       setPortfolioId((previous) => portfolioResult.some((row) => row.portfolio_id === previous) ? previous : (portfolioResult[0]?.portfolio_id || ''));
+      if (!onboardingResolved) {
+        setOnboardingStep(progressResult?.step || nextOnboardingStep(incomeResult, summaryResult, portfolioResult));
+        setOnboardingResolved(true);
+      }
       setNotice(null);
     } catch (error) {
       setNotice({ type: 'error', message: errorMessage(error) });
       if (error instanceof ApiError && error.status === 401) window.dispatchEvent(new Event('intellivest:session-expired'));
     } finally { setLoading(false); }
-  }, [userId]);
+  }, [userId, onboardingResolved]);
 
   useEffect(() => { if (userId) loadWorkspace(userId); }, [userId, loadWorkspace]);
 
@@ -184,8 +226,8 @@ function InvestorWorkspace({ authenticatedUser, onLogout }) {
     catch (error) { setNotice({ type: 'error', message: errorMessage(error) }); }
   }, [portfolioId]);
 
-  useEffect(() => { if (portfolioId) loadPortfolio(portfolioId, page === 'risk' || page === 'overview'); else { setPortfolio(null); setHoldings([]); setRisk(null); } }, [page, portfolioId, loadPortfolio]);
-  useEffect(() => { if ((page === 'alerts' || page === 'overview') && userId) loadAlerts(portfolioId); }, [page, portfolioId, userId, loadAlerts]);
+  useEffect(() => { if (!onboardingResolved || onboardingStep !== 'dashboard') return; if (portfolioId) loadPortfolio(portfolioId, page === 'risk' || page === 'overview'); else { setPortfolio(null); setHoldings([]); setRisk(null); } }, [page, portfolioId, loadPortfolio, onboardingResolved, onboardingStep]);
+  useEffect(() => { if (onboardingResolved && onboardingStep === 'dashboard' && (page === 'alerts' || page === 'overview') && userId) loadAlerts(portfolioId); }, [page, portfolioId, userId, loadAlerts, onboardingResolved, onboardingStep]);
 
   async function perform(action, successMessage, refresh = loadWorkspace) {
     setBusy(true);
@@ -194,7 +236,24 @@ function InvestorWorkspace({ authenticatedUser, onLogout }) {
     finally { setBusy(false); }
   }
 
-  if (loading && !profile) return <div className="app-loading"><Brand /><LoadingState /></div>;
+  if (loading && !onboardingResolved) return <div className="app-loading"><Brand /><LoadingState label="Loading your financial workspace…" /></div>;
+
+  if (onboardingResolved && onboardingStep !== 'dashboard') return <GuidedOnboarding
+    key={userId}
+    user={profile || authenticatedUser}
+    initialStep={onboardingStep}
+    initialIncome={income}
+    initialExpenses={expenses}
+    initialSummary={summary}
+    portfolios={portfolios}
+    onLogout={onLogout}
+    onDone={(data) => {
+      setProfile(data.profile); setSummary(data.summary); setIncome(data.income); setExpenses(data.expenses);
+      setPortfolios(data.portfolios); setPortfolioId(data.portfolioId); setPortfolio(data.portfolio);
+      setHoldings(data.holdings); setRisk(data.risk); setAlerts(data.alerts); setRecommendations(data.recommendations);
+      setGeneration(data.generation); setPage('overview'); setOnboardingStep('dashboard'); setNotice({ type: 'success', message: 'Your analysis is ready.' });
+    }}
+  />;
 
   return <div className="app-shell">
     <aside className={`sidebar ${mobileNav ? 'sidebar-open' : ''}`}>
@@ -230,12 +289,19 @@ function Overview({ profile, summary, portfolio, holdings, risk, alerts, recomme
   const recent = recommendations.slice(0, 4);
   return <>
     <PageHeading eyebrow="Your finances, in context" title={`Good to see you, ${profile?.full_name?.split(' ')[0] || 'investor'}`} description="A current view of your cash flow, portfolio, and risk." action={<button className="button button-secondary" onClick={() => go('cashflow')}><SlidersHorizontal size={16} />Update cash flow</button>} />
+    <section className="metric-grid four-up workspace-top-metrics" aria-label="Financial overview">
+      <MetricCard label="Investable surplus" value={money(summary?.investable_buffer)} helper="After your selected reserve" icon={Wallet} tone="green" />
+      <MetricCard label="Portfolio value" value={money(portfolio?.portfolio_valuation)} helper={portfolio ? `${holdings.length} saved holding${holdings.length === 1 ? '' : 's'}` : 'No portfolio selected'} icon={BriefcaseBusiness} />
+      <MetricCard label="Available cash" value={money(portfolio?.cash_balance)} helper="Cash recorded in portfolio" icon={ArrowUpRight} tone="violet" />
+      <MetricCard label="Portfolio risk" value={risk ? money(risk.parametric_var_95) : holdings.length ? 'Loading' : 'Not available'} helper={risk ? 'VaR · 95% confidence' : holdings.length ? 'Risk data is being checked' : 'Add holdings to calculate'} icon={Gauge} tone="amber" />
+    </section>
     <section className="dashboard-grid overview-grid">
       <article className="panel cash-summary-panel">
         <div className="panel-heading"><div><p className="eyebrow">Monthly cash flow</p><h2>What you can invest</h2></div><button className="text-button" onClick={() => go('cashflow')}>View cash flow <ArrowRight size={15} /></button></div>
         <div className="cash-flow-rows">
           <SummaryLine label="Monthly income" value={summary?.monthly_income} />
           <SummaryLine label="Mandatory expenses" value={summary?.monthly_mandatory_expenses} negative />
+          <SummaryLine label="Optional expenses · shown separately" value={summary?.monthly_discretionary_expenses} />
           <SummaryLine label="Computed surplus" value={summary?.computed_surplus} strong />
           <SummaryLine label="Safety reserve" value={summary?.liquid_safety_reserve} />
         </div>

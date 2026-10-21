@@ -29,6 +29,10 @@ class UserCreate(BaseModel):
         return value
 
 
+class OnboardingProgress(BaseModel):
+    step: Literal["income", "expenses", "safety", "evaluation", "portfolio", "analysis", "dashboard"]
+
+
 class UserUpdate(BaseModel):
     model_config = ConfigDict(extra="forbid")
     full_name: str | None = Field(default=None, min_length=1, max_length=255)

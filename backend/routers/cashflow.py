@@ -145,7 +145,7 @@ def get_summary(user_id: UUID, conn=Depends(advisory_connection)):
         cur.execute("SELECT liquid_safety_reserve FROM surplus_snapshot WHERE user_id=%s ORDER BY evaluated_at DESC,snapshot_id DESC LIMIT 1", (str(user_id),))
         row = cur.fetchone()
     reserve = row[0] if row and row[0] is not None else Decimal(str(settings.DEFAULT_LIQUID_SAFETY_RESERVE))
-    return {"user_id": str(user_id), **_summary(conn, str(user_id), reserve)}
+    return {"user_id": str(user_id), "has_evaluation": bool(row), **_summary(conn, str(user_id), reserve)}
 
 
 @router.post("/{user_id}/evaluate")

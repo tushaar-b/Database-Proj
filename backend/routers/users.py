@@ -5,12 +5,33 @@ from psycopg2 import errors
 from psycopg2.extras import RealDictCursor
 
 from backend.dependencies import advisory_connection
-from backend.schemas import RiskToleranceUpdate, UserUpdate
+from backend.schemas import OnboardingProgress, RiskToleranceUpdate, UserUpdate
 from backend.auth import require_authenticated, require_csrf
 from backend.ownership import enforce_ownership
 
 router = APIRouter(prefix="/users", tags=["Users"], dependencies=[Depends(require_authenticated), Depends(require_csrf), Depends(enforce_ownership)])
 PUBLIC_COLUMNS = "user_id,full_name,email,risk_tolerance_tier,created_at"
+
+
+@router.get("/{user_id}/onboarding")
+def get_onboarding_progress(user_id: UUID, conn=Depends(advisory_connection)):
+    with conn.cursor() as cur:
+        cur.execute("SELECT onboarding_step FROM user_profile WHERE user_id=%s", (str(user_id),))
+        row = cur.fetchone()
+    if not row:
+        raise HTTPException(status_code=404, detail="User not found")
+    return {"step": row[0]}
+
+
+@router.put("/{user_id}/onboarding")
+def update_onboarding_progress(user_id: UUID, body: OnboardingProgress, conn=Depends(advisory_connection)):
+    with conn:
+        with conn.cursor() as cur:
+            cur.execute("UPDATE user_profile SET onboarding_step=%s WHERE user_id=%s RETURNING onboarding_step", (body.step, str(user_id)))
+            row = cur.fetchone()
+    if not row:
+        raise HTTPException(status_code=404, detail="User not found")
+    return {"step": row[0]}
 
 
 @router.get("/{user_id}")

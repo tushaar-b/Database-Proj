@@ -73,6 +73,12 @@ def register(client, label, created_users):
 def test_password_hash_cookie_csrf_logout_and_expiry(live_databases, created_users):
     with TestClient(app, client=("127.0.0.1", 53401)) as client:
         user_id = register(client, "sessions", created_users)
+        progress = client.get(f"/users/{user_id}/onboarding")
+        assert progress.status_code == 200
+        assert progress.json()["step"] == "income"
+        updated_progress = client.put(f"/users/{user_id}/onboarding", json={"step": "expenses"})
+        assert updated_progress.status_code == 200
+        assert client.get(f"/users/{user_id}/onboarding").json()["step"] == "expenses"
         email = client.get(f"/users/{user_id}").json()["email"]
         duplicate = client.post("/auth/register", json={
             "full_name": "Another account", "email": email,
@@ -163,6 +169,7 @@ def test_cross_user_reads_and_mutations_are_rejected(live_databases, created_use
     with TestClient(app, client=("127.0.0.1", 53402)) as a, TestClient(app, client=("127.0.0.1", 53403)) as b:
         a_id = register(a, "owner", created_users)
         b_id = register(b, "other", created_users)
+        assert b.get(f"/users/{a_id}/onboarding").status_code == 404
         income = a.post(f"/cashflow/{a_id}/income", json={
             "source_category": "Salary", "gross_amount": "1000000", "frequency": "MONTHLY",
         }).json()
