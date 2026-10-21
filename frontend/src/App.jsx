@@ -57,7 +57,7 @@ function LoadingState({ label = 'Loading your financial workspace…' }) {
 
 function AuthPage({ onAuthenticated, initialMode = 'login' }) {
   const [mode, setMode] = useState(initialMode);
-  const [form, setForm] = useState({ full_name: '', email: '', password: '', pan_hash: '', risk_tolerance_tier: 'MODERATE' });
+  const [form, setForm] = useState({ full_name: '', email: '', password: '', risk_tolerance_tier: 'MODERATE' });
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const change = (key) => (event) => setForm((current) => ({ ...current, [key]: event.target.value }));
@@ -74,7 +74,7 @@ function AuthPage({ onAuthenticated, initialMode = 'login' }) {
   return <main className="setup-shell">
     <div className="setup-aside">
       <Brand compact />
-      <div className="setup-message"><span className="setup-mark"><Activity size={23} /></span><p className="eyebrow">A clearer view of your money</p><h1>Invest with your real life in mind.</h1><p>Connect your monthly cash flow to affordable recommendations and portfolio risk analytics.</p><div className="setup-proof"><ShieldCheck size={17} /><span>Your PAN hash is never shown in the application.</span></div></div>
+      <div className="setup-message"><span className="setup-mark"><Activity size={23} /></span><p className="eyebrow">A clearer view of your money</p><h1>Invest with your real life in mind.</h1><p>Connect your monthly cash flow to affordable recommendations and portfolio risk analytics.</p><div className="setup-proof"><ShieldCheck size={17} /><span>Your account keeps your financial workspace connected.</span></div></div>
       <p className="local-only"><span /> Local workspace · API access is restricted to this device</p>
     </div>
     <section className="setup-content">
@@ -86,7 +86,6 @@ function AuthPage({ onAuthenticated, initialMode = 'login' }) {
           <Field label="Email address"><input required type="email" value={form.email} onChange={change('email')} placeholder="you@example.com" /></Field>
           <Field label="Password" hint={mode === 'register' ? 'Use at least 12 characters.' : undefined}><input required type="password" minLength={mode === 'register' ? 12 : 1} maxLength="128" autoComplete={mode === 'register' ? 'new-password' : 'current-password'} value={form.password} onChange={change('password')} /></Field>
           {mode === 'register' && <>
-            <Field label="PAN SHA-256 hash" hint="Enter a 64-character hexadecimal hash only. Never enter your raw PAN."><input required minLength="64" maxLength="64" pattern="[0-9a-fA-F]{64}" value={form.pan_hash} onChange={change('pan_hash')} placeholder="64 hexadecimal characters" /></Field>
             <Field label="Risk preference"><select value={form.risk_tolerance_tier} onChange={change('risk_tolerance_tier')}><option value="CONSERVATIVE">Conservative</option><option value="MODERATE">Moderate</option><option value="AGGRESSIVE">Aggressive</option></select></Field>
           </>}
           <button className="button button-primary button-wide" disabled={busy}>{busy ? <LoaderCircle className="spin" size={17} /> : null}{mode === 'register' ? 'Create account' : 'Sign in'} <ArrowRight size={16} /></button>

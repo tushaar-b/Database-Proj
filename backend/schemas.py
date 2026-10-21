@@ -15,9 +15,9 @@ class RiskTolerance(str, Enum):
 
 
 class UserCreate(BaseModel):
+    model_config = ConfigDict(extra="forbid")
     full_name: str = Field(min_length=1, max_length=255)
     email: str = Field(min_length=3, max_length=255)
-    pan_hash: str = Field(pattern=r"^[0-9a-fA-F]{64}$")
     risk_tolerance_tier: RiskTolerance
 
     @field_validator("email")

@@ -23,13 +23,12 @@ END $$;
 
 -- ------------------------------------------------------------------------------
 -- Table: USER_PROFILE
--- Identity, credentials hash, risk profile tier
+-- Investor identity, credentials hash, risk profile tier
 -- ------------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS USER_PROFILE (
     user_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     full_name VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
-    pan_hash VARCHAR(64) NOT NULL,
     risk_tolerance_tier risk_tolerance_tier NOT NULL,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
 );

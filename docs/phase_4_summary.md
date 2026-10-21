@@ -3,7 +3,8 @@
 ## API surface
 
 - `GET /health`: real advisory and risk database connection checks; API docs at `/docs` and `/openapi.json`.
-- `/users`: create, retrieve, update profile, update risk tolerance. The API never returns `pan_hash`.
+- `/users`: retrieve, update profile, update risk tolerance. Profiles use the authenticated account UUID; PAN data is not collected or returned.
+- PAN hash removal preserves existing profile UUIDs and related records. Historical backups or replicas created before migration `005_remove_pan_hash.sql` may retain the old hash until they expire under the existing backup-retention policy.
 - `/cashflow`: create/update/delete income and expenses, monthly summary, and persisted surplus evaluation.
 - `/recommendations`: generate, list, accept, or reject a batch. Accepting records intent only and does not trade.
 - `/portfolios`: create/list, retrieve valuation/cash, list holdings, and evaluate risk through PostgreSQL `portfolio_risk_summary()`.

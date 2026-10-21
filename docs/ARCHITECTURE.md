@@ -10,7 +10,7 @@ IntelliVest is an affordability-driven, closed-loop financial analytics platform
 ### A. Advisory Database (`advisory_db`)
 - **Nature**: ACID write-heavy relational operational store.
 - **Key Tables**:
-  - `USER_PROFILE`: Identity, PAN hash, risk tolerance classification (`CONSERVATIVE`, `MODERATE`, `AGGRESSIVE`).
+  - `USER_PROFILE`: Investor UUID, name, email, password hash, and risk tolerance classification (`CONSERVATIVE`, `MODERATE`, `AGGRESSIVE`).
   - `INCOME_STREAM`: Incomes categorized by frequency (`MONTHLY`, `YEARLY`).
   - `EXPENSE_ITEM`: Granular expenses partitioned into mandatory vs. discretionary.
   - `SURPLUS_SNAPSHOT`: Computed Surplus and Investable Buffer logs.

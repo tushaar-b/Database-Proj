@@ -4,7 +4,7 @@ import secrets
 from argon2 import PasswordHasher
 from argon2.exceptions import InvalidHashError, VerificationError, VerifyMismatchError
 from fastapi import APIRouter, Depends, HTTPException, Request, Response, status
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 from psycopg2 import errors
 from psycopg2.extras import RealDictCursor
 
@@ -24,9 +24,9 @@ DUMMY_PASSWORD_HASH = password_hasher.hash(secrets.token_urlsafe(32))
 
 
 class Registration(BaseModel):
+    model_config = ConfigDict(extra="forbid")
     full_name: str = Field(min_length=1, max_length=255)
     email: str = Field(min_length=3, max_length=255)
-    pan_hash: str = Field(pattern=r"^[0-9a-fA-F]{64}$")
     risk_tolerance_tier: RiskTolerance = RiskTolerance.MODERATE
     password: str = Field(min_length=12, max_length=128)
 
@@ -93,10 +93,10 @@ def register(body: Registration, request: Request, response: Response, conn=Depe
         with conn:
             with conn.cursor(cursor_factory=RealDictCursor) as cur:
                 cur.execute(
-                    """INSERT INTO user_profile(full_name,email,pan_hash,risk_tolerance_tier,password_hash)
-                       VALUES (%s,%s,%s,%s,%s)
+                    """INSERT INTO user_profile(full_name,email,risk_tolerance_tier,password_hash)
+                       VALUES (%s,%s,%s,%s)
                        RETURNING user_id::text,full_name,email,risk_tolerance_tier::text""",
-                    (body.full_name, str(body.email).lower(), body.pan_hash.lower(), body.risk_tolerance_tier.value, password_hash),
+                    (body.full_name, str(body.email).lower(), body.risk_tolerance_tier.value, password_hash),
                 )
                 user = dict(cur.fetchone())
     except errors.UniqueViolation:

@@ -59,7 +59,6 @@ def register(client, label, created_users):
     response = client.post("/auth/register", json={
         "full_name": f"Phase 6 {label}",
         "email": f"phase6-{label}-{uuid4().hex}@example.test",
-        "pan_hash": uuid4().hex + uuid4().hex,
         "risk_tolerance_tier": "MODERATE",
         "password": "Correct-Horse-Battery-2026",
     })
@@ -76,16 +75,21 @@ def test_password_hash_cookie_csrf_logout_and_expiry(live_databases, created_use
         user_id = register(client, "sessions", created_users)
         email = client.get(f"/users/{user_id}").json()["email"]
         duplicate = client.post("/auth/register", json={
-            "full_name": "Another account", "email": email, "pan_hash": "d" * 64,
+            "full_name": "Another account", "email": email,
             "risk_tolerance_tier": "MODERATE", "password": "Correct-Horse-Battery-2026",
         })
         assert duplicate.status_code == 409
         assert email not in duplicate.text
         invalid_registration = client.post("/auth/register", json={
             "full_name": "Invalid account", "email": f"invalid-{uuid4().hex}@example.test",
-            "pan_hash": "e" * 64, "password": "short",
+            "password": "short",
         })
         assert invalid_registration.status_code == 422
+        pan_registration = client.post("/auth/register", json={
+            "full_name": "PAN field should be rejected", "email": f"pan-{uuid4().hex}@example.test",
+            "pan_hash": "a" * 64, "password": "Correct-Horse-Battery-2026",
+        })
+        assert pan_registration.status_code == 422
         cookie = next(cookie for cookie in client.cookies.jar if cookie.name == "intellivest_session")
         assert cookie.has_nonstandard_attr("HttpOnly")
         assert cookie.get_nonstandard_attr("SameSite") == "lax"

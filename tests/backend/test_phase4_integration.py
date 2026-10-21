@@ -39,7 +39,6 @@ def test_phase4_end_to_end_affordability_risk_feedback_and_rebalance(monkeypatch
             create = client.post("/auth/register", json={
                 "full_name": "Phase 4 disposable user",
                 "email": f"phase4-{uuid4().hex}@example.test",
-                "pan_hash": "a" * 64,
                 "risk_tolerance_tier": "MODERATE",
                 "password": "Phase4-integration-test-password",
             })
@@ -47,6 +46,14 @@ def test_phase4_end_to_end_affordability_risk_feedback_and_rebalance(monkeypatch
             client.headers.update({"X-CSRF-Token": create.json()["csrf_token"]})
             user_id = create.json()["user"]["user_id"]
             assert "pan_hash" not in create.json()
+            rejected_pan = client.post("/auth/register", json={
+                "full_name": "PAN field should be rejected",
+                "email": f"phase4-pan-{uuid4().hex}@example.test",
+                "pan_hash": "a" * 64,
+                "risk_tolerance_tier": "MODERATE",
+                "password": "Phase4-integration-test-password",
+            })
+            assert rejected_pan.status_code == 422
             assert client.get(f"/users/{user_id}").status_code == 200
             assert client.patch(f"/users/{user_id}", json={"full_name": "Phase 4 updated user"}).status_code == 200
             assert client.put(f"/users/{user_id}/risk-tolerance", json={"risk_tolerance_tier": "MODERATE"}).status_code == 200

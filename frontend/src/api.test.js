@@ -15,13 +15,14 @@ test('registration uses cookie sessions and keeps CSRF only in memory', async ()
     });
   };
 
-  const result = await api.register({ full_name: 'Asha', email: 'asha@example.com', password: 'long-enough-password', pan_hash: 'a'.repeat(64) });
+  const registration = { full_name: 'Asha', email: 'asha@example.com', password: 'long-enough-password', risk_tolerance_tier: 'MODERATE' };
+  const result = await api.register(registration);
   assert.equal(result.user.user_id, 'user-1');
   assert.equal(captured.url.endsWith('/auth/register'), true);
   assert.equal(captured.options.method, 'POST');
   assert.equal(captured.options.credentials, 'include');
   assert.equal(captured.options.headers['Content-Type'], 'application/json');
-  assert.deepEqual(JSON.parse(captured.options.body), { full_name: 'Asha', email: 'asha@example.com', password: 'long-enough-password', pan_hash: 'a'.repeat(64) });
+  assert.deepEqual(JSON.parse(captured.options.body), registration);
   globalThis.fetch = async (_url, options) => {
     assert.equal(options.headers['X-CSRF-Token'], 'csrf-1');
     return new Response(null, { status: 204 });

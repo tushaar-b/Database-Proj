@@ -45,6 +45,11 @@ class TestSQLMigrationFiles(unittest.TestCase):
         self.assertIn("income_frequency", self.advisory_sql)
         self.assertIn("recommendation_status", self.advisory_sql)
 
+    def test_pan_hash_removed_from_initial_and_upgrade_migrations(self):
+        upgrade_sql = (BASE_DIR / "db" / "migrations" / "advisory" / "005_remove_pan_hash.sql").read_text().lower()
+        self.assertNotIn("pan_hash", self.advisory_sql.lower())
+        self.assertRegex(upgrade_sql, r"alter\s+table\s+user_profile\s+drop\s+column\s+if\s+exists\s+pan_hash")
+
     def test_risk_migration_tables(self):
         """Assert Risk DB migration defines all 6 required tables."""
         tables = [
@@ -84,7 +89,6 @@ class TestAdvisoryConstraintEnforcement(unittest.TestCase):
                 user_id TEXT PRIMARY KEY,
                 full_name TEXT NOT NULL,
                 email TEXT UNIQUE NOT NULL,
-                pan_hash TEXT NOT NULL,
                 risk_tolerance_tier TEXT CHECK(risk_tolerance_tier IN ('CONSERVATIVE', 'MODERATE', 'AGGRESSIVE')),
                 created_at TEXT NOT NULL
             );
@@ -136,15 +140,15 @@ class TestAdvisoryConstraintEnforcement(unittest.TestCase):
     def test_duplicate_email_rejected(self):
         """Assert duplicate user emails violate UNIQUE constraint."""
         self.cur.execute("""
-            INSERT INTO USER_PROFILE (user_id, full_name, email, pan_hash, risk_tolerance_tier, created_at)
-            VALUES ('u1', 'Alice Sharma', 'alice@example.com', 'panhash1', 'MODERATE', '2026-01-01T00:00:00Z');
+            INSERT INTO USER_PROFILE (user_id, full_name, email, risk_tolerance_tier, created_at)
+            VALUES ('u1', 'Alice Sharma', 'alice@example.com', 'MODERATE', '2026-01-01T00:00:00Z');
         """)
         self.conn.commit()
 
         with self.assertRaises(sqlite3.IntegrityError):
             self.cur.execute("""
-                INSERT INTO USER_PROFILE (user_id, full_name, email, pan_hash, risk_tolerance_tier, created_at)
-                VALUES ('u2', 'Alice Fake', 'alice@example.com', 'panhash2', 'CONSERVATIVE', '2026-01-01T00:00:00Z');
+                INSERT INTO USER_PROFILE (user_id, full_name, email, risk_tolerance_tier, created_at)
+                VALUES ('u2', 'Alice Fake', 'alice@example.com', 'CONSERVATIVE', '2026-01-01T00:00:00Z');
             """)
 
     def test_foreign_key_violation_rejected(self):
@@ -158,8 +162,8 @@ class TestAdvisoryConstraintEnforcement(unittest.TestCase):
     def test_cascade_delete_on_user(self):
         """Assert deleting a user cascades to remove associated income streams and expenses."""
         self.cur.execute("""
-            INSERT INTO USER_PROFILE (user_id, full_name, email, pan_hash, risk_tolerance_tier, created_at)
-            VALUES ('u1', 'Bob Verma', 'bob@example.com', 'panhash1', 'AGGRESSIVE', '2026-01-01T00:00:00Z');
+            INSERT INTO USER_PROFILE (user_id, full_name, email, risk_tolerance_tier, created_at)
+            VALUES ('u1', 'Bob Verma', 'bob@example.com', 'AGGRESSIVE', '2026-01-01T00:00:00Z');
         """)
         self.cur.execute("""
             INSERT INTO INCOME_STREAM (income_id, user_id, source_category, gross_amount, frequency, last_updated)
