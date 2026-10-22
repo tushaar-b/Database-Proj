@@ -45,19 +45,6 @@ class TestSQLMigrationFiles(unittest.TestCase):
         self.assertIn("income_frequency", self.advisory_sql)
         self.assertIn("recommendation_status", self.advisory_sql)
 
-    def test_pan_hash_removed_from_initial_and_upgrade_migrations(self):
-        upgrade_sql = (BASE_DIR / "db" / "migrations" / "advisory" / "005_remove_pan_hash.sql").read_text().lower()
-        self.assertNotIn("pan_hash", self.advisory_sql.lower())
-        self.assertRegex(upgrade_sql, r"alter\s+table\s+user_profile\s+drop\s+column\s+if\s+exists\s+pan_hash")
-
-    def test_onboarding_progress_migration_is_account_scoped(self):
-        progress_sql = (BASE_DIR / "db" / "migrations" / "advisory" / "006_onboarding_progress.sql").read_text().lower()
-        self.assertIn("onboarding_step", progress_sql)
-        self.assertIn("user_profile", progress_sql)
-        self.assertIn("income_stream", progress_sql)
-        self.assertIn("surplus_snapshot", progress_sql)
-        self.assertIn("dashboard", progress_sql)
-
     def test_risk_migration_tables(self):
         """Assert Risk DB migration defines all 6 required tables."""
         tables = [

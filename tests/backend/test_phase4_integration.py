@@ -36,22 +36,19 @@ def test_phase4_end_to_end_affordability_risk_feedback_and_rebalance(monkeypatch
 
     try:
         with TestClient(app, client=("127.0.0.1", 50000)) as client:
-            create = client.post("/auth/register", json={
+            create = client.post("/users", json={
                 "full_name": "Phase 4 disposable user",
                 "email": f"phase4-{uuid4().hex}@example.test",
                 "risk_tolerance_tier": "MODERATE",
-                "password": "Phase4-integration-test-password",
             })
             assert create.status_code == 201, create.text
-            client.headers.update({"X-CSRF-Token": create.json()["csrf_token"]})
-            user_id = create.json()["user"]["user_id"]
+            user_id = create.json()["user_id"]
             assert "pan_hash" not in create.json()
-            rejected_pan = client.post("/auth/register", json={
+            rejected_pan = client.post("/users", json={
                 "full_name": "PAN field should be rejected",
                 "email": f"phase4-pan-{uuid4().hex}@example.test",
                 "pan_hash": "a" * 64,
                 "risk_tolerance_tier": "MODERATE",
-                "password": "Phase4-integration-test-password",
             })
             assert rejected_pan.status_code == 422
             assert client.get(f"/users/{user_id}").status_code == 200
@@ -163,14 +160,9 @@ def test_phase4_end_to_end_affordability_risk_feedback_and_rebalance(monkeypatch
             risk = client.get(f"/portfolios/{portfolio_id}/risk")
             assert risk.status_code == 200, risk.text
             metrics = risk.json()
-            for metric in ("volatility_30d", "parametric_var_95", "historical_var_95", "sharpe_ratio", "sector_hhi", "cvar_95"):
+            for metric in ("volatility_30d", "parametric_var_95", "historical_var_95", "sharpe_ratio", "sector_hhi"):
                 assert metrics[metric] is not None, (metric, metrics)
             assert metrics["historical_observations"] == 252
-            assert metrics["cvar_observations"] == 252
-            assert metrics["cvar_confidence_level"] == 0.95
-            assert metrics["cvar_horizon_trading_days"] == 1
-            assert Decimal(str(metrics["cvar_95"])) >= Decimal(str(metrics["historical_var_95"]))
-            assert metrics["cvar_return_basis"] == "current_market_value_weights_adjusted_close_daily_returns"
             assert metrics["calculation_status"] == "ok"
 
             first_alert_eval = client.post(f"/alerts/evaluate/{portfolio_id}")

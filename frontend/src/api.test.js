@@ -1,33 +1,26 @@
 import assert from 'node:assert/strict';
 import { afterEach, test } from 'node:test';
-import { ApiError, api, request, setCsrfToken } from './api.js';
+import { ApiError, api, request } from './api.js';
 
 const originalFetch = globalThis.fetch;
-afterEach(() => { globalThis.fetch = originalFetch; setCsrfToken(''); });
+afterEach(() => { globalThis.fetch = originalFetch; });
 
-test('registration uses cookie sessions and keeps CSRF only in memory', async () => {
+test('central API client sends JSON and returns real response bodies', async () => {
   let captured;
   globalThis.fetch = async (url, options) => {
     captured = { url, options };
-    return new Response(JSON.stringify({ user: { user_id: 'user-1' }, csrf_token: 'csrf-1' }), {
+    return new Response(JSON.stringify({ user_id: 'user-1', status: 'created' }), {
       status: 201,
       headers: { 'content-type': 'application/json' },
     });
   };
 
-  const registration = { full_name: 'Asha', email: 'asha@example.com', password: 'long-enough-password', risk_tolerance_tier: 'MODERATE' };
-  const result = await api.register(registration);
-  assert.equal(result.user.user_id, 'user-1');
-  assert.equal(captured.url.endsWith('/auth/register'), true);
+  const result = await api.createUser({ full_name: 'Asha', risk_tolerance_tier: 'MODERATE' });
+  assert.equal(result.user_id, 'user-1');
+  assert.equal(captured.url.endsWith('/users'), true);
   assert.equal(captured.options.method, 'POST');
-  assert.equal(captured.options.credentials, 'include');
   assert.equal(captured.options.headers['Content-Type'], 'application/json');
-  assert.deepEqual(JSON.parse(captured.options.body), registration);
-  globalThis.fetch = async (_url, options) => {
-    assert.equal(options.headers['X-CSRF-Token'], 'csrf-1');
-    return new Response(null, { status: 204 });
-  };
-  await api.logout();
+  assert.deepEqual(JSON.parse(captured.options.body), { full_name: 'Asha', risk_tolerance_tier: 'MODERATE' });
 });
 
 test('cash flow and portfolio readers use the configured API contracts', async () => {

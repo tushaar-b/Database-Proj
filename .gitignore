@@ -31,8 +31,6 @@ ENV/
 frontend/node_modules/
 frontend/dist/
 frontend/build/
-frontend/test-results/
-frontend/playwright-report/
 .npm
 npm-debug.log*
 yarn-debug.log*
@@ -54,3 +52,7 @@ postgres_data/
 .vscode/
 *.swp
 *.swo
+
+# Preserve repository exclusions
+frontend/test-results/
+frontend/playwright-report/

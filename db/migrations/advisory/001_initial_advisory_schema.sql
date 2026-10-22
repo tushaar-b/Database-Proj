@@ -23,7 +23,7 @@ END $$;
 
 -- ------------------------------------------------------------------------------
 -- Table: USER_PROFILE
--- Investor identity, credentials hash, risk profile tier
+-- Investor identity and risk profile tier
 -- ------------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS USER_PROFILE (
     user_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),

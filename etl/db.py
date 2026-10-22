@@ -35,9 +35,7 @@ def get_db_connection(db_url: Optional[str] = None):
     
     Supports PostgreSQL connection strings or sqlite3 connection fallback.
     """
-    url = db_url or os.getenv("RISK_DB_URL")
-    if not url:
-        raise ValueError("RISK_DB_URL must be set before connecting to PostgreSQL")
+    url = db_url or os.getenv("RISK_DB_URL", "postgresql://postgres:postgres@localhost:5433/risk_db")
     
     if url.startswith("sqlite"):
         import sqlite3

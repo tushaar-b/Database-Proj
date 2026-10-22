@@ -23,6 +23,9 @@ class Settings(BaseSettings):
     DEFAULT_TARGET_HHI_LIMIT: float = 0.25
     RISK_VAR_LIMIT_PERCENT: float = Field(default=0.10, gt=0)
     RISK_DAILY_VOLATILITY_LIMIT: float = Field(default=0.03, gt=0)
+    # A rejected batch can be reconsidered after this interval even if inputs
+    # have not changed. A changed input fingerprint permits earlier review.
+    RECOMMENDATION_RECONSIDER_DAYS: int = Field(default=30, ge=1, le=365)
 
     model_config = SettingsConfigDict(
         env_file=".env",

@@ -326,12 +326,12 @@ function AnalysisStep({ userId, preferredPortfolioId, summary, onBack, onDone })
         if (!alive) return;
         setCompleted((current) => [...current, 'risk']);
         let recommendations = await api.getRecommendations(userId);
-        const hasPending = recommendations.some((item) => item.status_state === 'PENDING');
         let generation = null;
-        if (Number(currentSummary?.investable_buffer || 0) > 0 && !hasPending) {
-          generation = await api.generateRecommendations(userId);
-          recommendations = await api.getRecommendations(userId);
-        }
+        // The backend reuses the same batch when inputs are unchanged, replaces
+        // stale pending advice when inputs changed, and records a zero-budget
+        // outcome when the updated surplus no longer supports a recommendation.
+        generation = await api.generateRecommendations(userId);
+        recommendations = await api.getRecommendations(userId);
         if (!alive) return;
         setCompleted((current) => [...current, 'recommendations']);
         setRunning(false);

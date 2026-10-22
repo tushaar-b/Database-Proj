@@ -1,0 +1,2 @@
+.search-bar { display: flex; align-items: center; gap: 8px; width: 215px; min-height: 42px; padding: 7px 10px 7px 14px; border-radius: var(--r-pill); cursor: text; }
+.search-bar__icon { flex-shrink: 0; color: var(--plum-500); }.search-bar input { width: 100%; min-width: 0; padding: 0; border: 0; color: var(--plum-900); background: transparent; font-size: 11px; }.search-bar input:focus-visible { outline-offset: 6px; border-radius: 3px; }.search-bar__shortcut { flex-shrink: 0; padding: 3px 6px; font: 10px var(--font-sans); }
