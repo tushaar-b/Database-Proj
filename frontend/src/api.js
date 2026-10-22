@@ -1,7 +1,16 @@
-const API_BASE = (import.meta.env?.VITE_API_BASE_URL || 'http://127.0.0.1:8000').replace(/\/$/, '');
-let csrfToken = '';
-
-export function setCsrfToken(token) { csrfToken = token || ''; }
+// The development proxy keeps API requests and the host-only session cookie on
+// the browser's origin. A custom direct API URL must use that same local hostname.
+const configuredBase = (import.meta.env?.VITE_API_BASE_URL || '/api').replace(/\/$/, '');
+function resolveApiBase(base) {
+  if (typeof window === 'undefined' || !/^https?:\/\//i.test(base)) return base;
+  const url = new URL(base);
+  const loopback = new Set(['localhost', '127.0.0.1', '[::1]']);
+  if (loopback.has(url.hostname) && loopback.has(window.location.hostname)) {
+    url.hostname = window.location.hostname;
+  }
+  return url.toString().replace(/\/$/, '');
+}
+const API_BASE = resolveApiBase(configuredBase);
 
 export class ApiError extends Error {
   constructor(message, status, detail) {
@@ -12,7 +21,43 @@ export class ApiError extends Error {
   }
 }
 
+// One controller owns identity, CSRF state, initialization and invalidation.
+// No DOM events, component-local copies, localStorage or duplicate auth screens.
+let csrfToken = '';
+let generation = 0;
+let snapshot = Object.freeze({ status: 'initializing', user: null, error: null, reason: null, generation, sessionKey: 0 });
+const listeners = new Set();
+let synchronization = null;
+let authOperation = null;
+let authOperationKind = null;
+function publish(next) {
+  snapshot = Object.freeze({ ...snapshot, error: null, ...next, generation });
+  listeners.forEach((listener) => listener());
+}
+function anonymous(reason) {
+  generation += 1;
+  csrfToken = '';
+  publish({ status: 'anonymous', user: null, reason });
+}
+function staleResponse() {
+  return new ApiError('This request belongs to an earlier session. Please try again.', 0, { stale_session: true });
+}
+function acceptSession(result, expectedGeneration, newSession = false) {
+  if (generation !== expectedGeneration) throw staleResponse();
+  if (!result?.user?.user_id || !result.csrf_token) throw new ApiError('The API returned an incomplete session.', 502);
+  generation += 1;
+  csrfToken = result.csrf_token;
+  const sessionKey = newSession || !snapshot.user || snapshot.user.user_id !== result.user.user_id ? generation : snapshot.sessionKey;
+  publish({ status: 'authenticated', user: result.user, reason: null, sessionKey });
+  return result;
+}
+
 export async function request(path, options = {}) {
+  const requestGeneration = generation;
+  const wasAuthenticated = Boolean(snapshot.user);
+  const authEndpoint = ['/auth/login', '/auth/register', '/auth/logout', '/auth/me'].includes(path);
+  const requiresSession = !authEndpoint && !['/health', '/'].includes(path);
+  if (requiresSession && ['authenticating', 'signing-out'].includes(snapshot.status)) throw staleResponse();
   let response;
   try {
     response = await fetch(`${API_BASE}${path}`, {
@@ -29,24 +74,112 @@ export async function request(path, options = {}) {
   }
 
   const contentType = response.headers.get('content-type') || '';
-  const payload = contentType.includes('application/json') ? await response.json() : await response.text();
+  const payload = response.status === 204 ? null : contentType.includes('application/json') ? await response.json() : await response.text();
+  // Discard old successes as well as failures before a caller can use them.
+  if (requiresSession && requestGeneration !== generation) throw staleResponse();
   if (!response.ok) {
-    if (response.status === 401 && typeof window !== 'undefined') window.dispatchEvent(new Event('intellivest:session-expired'));
+    if (response.status === 401 && requiresSession && wasAuthenticated && requestGeneration === generation) anonymous('expired');
     const detail = payload?.detail ?? payload;
     const message = typeof detail === 'string' ? detail : JSON.stringify(detail);
     throw new ApiError(message || `Request failed (${response.status})`, response.status, detail);
   }
-  return response.status === 204 ? null : payload;
+  return payload;
 }
+
+function synchronizeSession() {
+  // Strict Mode's repeated effects share this promise. Login/logout supersede
+  // an in-flight check without allowing its eventual response to change state.
+  if (authOperation) return authOperation.then(() => {
+    if (!snapshot.user) throw new ApiError('Authentication required', 401);
+    return { user: snapshot.user, csrf_token: csrfToken };
+  });
+  if (synchronization) return synchronization;
+  const expectedGeneration = generation;
+  const hadSession = Boolean(snapshot.user);
+  const task = (async () => {
+    try { return acceptSession(await request('/auth/me', { cache: 'no-store' }), expectedGeneration); }
+    catch (error) {
+      if (generation === expectedGeneration) {
+        if (error.status === 401) anonymous(hadSession ? 'expired' : null);
+        else if (hadSession) publish({ error });
+        else publish({ status: 'error', user: null, error });
+      }
+      throw error;
+    }
+  })();
+  synchronization = task;
+  const cleanup = () => { if (synchronization === task) synchronization = null; };
+  task.then(cleanup, cleanup);
+  return task;
+}
+
+function authenticate(path, body) {
+  // Serializing cookie-changing operations also prevents a late Set-Cookie
+  // from an older login/logout from replacing a newer session in the browser.
+  if (authOperation) return Promise.reject(new ApiError('An authentication request is already in progress.', 409));
+  generation += 1;
+  const expectedGeneration = generation;
+  csrfToken = '';
+  synchronization = null;
+  publish({ status: 'authenticating', user: null, reason: null });
+  const task = (async () => {
+    try { return acceptSession(await request(path, json('POST', body)), expectedGeneration, true); }
+    catch (error) {
+      if (generation === expectedGeneration) publish({ status: 'anonymous', user: null });
+      throw error;
+    }
+  })();
+  authOperationKind = 'authenticate';
+  authOperation = task;
+  const cleanup = () => { if (authOperation === task) { authOperation = null; authOperationKind = null; } };
+  task.then(cleanup, cleanup);
+  return task;
+}
+
+function signOut() {
+  if (authOperation) return authOperationKind === 'logout' ? authOperation : Promise.reject(new ApiError('An authentication request is already in progress.', 409));
+  if (!snapshot.user) return Promise.resolve({ logged_out: true });
+  generation += 1;
+  const expectedGeneration = generation;
+  synchronization = null;
+  publish({ status: 'signing-out' });
+  const task = (async () => {
+    try {
+      const result = await request('/auth/logout', { method: 'POST' });
+      if (generation === expectedGeneration) anonymous('signed-out');
+      return result;
+    } catch (error) {
+      if (generation === expectedGeneration) {
+        if (error.status === 401) { anonymous('expired'); return { logged_out: true }; }
+        // A failed logout has not revoked the server cookie. Keep the session
+        // and token available, and display the failure rather than faking logout.
+        publish({ status: 'authenticated', error });
+      }
+      throw error;
+    }
+  })();
+  authOperationKind = 'logout';
+  authOperation = task;
+  const cleanup = () => { if (authOperation === task) { authOperation = null; authOperationKind = null; } };
+  task.then(cleanup, cleanup);
+  return task;
+}
+
+export const authSession = {
+  getSnapshot: () => snapshot,
+  subscribe: (listener) => { listeners.add(listener); return () => listeners.delete(listener); },
+  initialize: () => snapshot.status === 'initializing' || snapshot.status === 'error' ? synchronizeSession() : Promise.resolve(snapshot),
+  clearError: () => publish({ error: null }),
+};
 
 const json = (method, body) => ({ method, body: JSON.stringify(body) });
 const id = (value) => encodeURIComponent(value);
 
 export const api = {
-  register: async (body) => { const result = await request('/auth/register', json('POST', body)); setCsrfToken(result.csrf_token); return result; },
-  login: async (body) => { const result = await request('/auth/login', json('POST', body)); setCsrfToken(result.csrf_token); return result; },
-  currentUser: async () => { const result = await request('/auth/me'); setCsrfToken(result.csrf_token); return result; },
-  logout: async () => { const result = await request('/auth/logout', { method: 'POST' }); setCsrfToken(''); return result; },
+  register: (body) => authenticate('/auth/register', body),
+  login: (body) => authenticate('/auth/login', body),
+  currentUser: synchronizeSession,
+  logout: signOut,
   getUser: (userId) => request(`/users/${id(userId)}`),
   updateUser: (userId, body) => request(`/users/${id(userId)}`, json('PATCH', body)),
   updateRiskTolerance: (userId, tier) => request(`/users/${id(userId)}/risk-tolerance`, json('PUT', { risk_tolerance_tier: tier })),

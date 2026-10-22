@@ -2,9 +2,6 @@
 @layer investorFlow {
 .auth-switch { margin: 22px 0 0; text-align: center; color: var(--plum-500); font-size: .9rem; }
 .auth-switch .text-button { margin-left: 4px; }
-.session-expired-overlay { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 16px; background: var(--peach-backdrop); overflow: auto; }
-.session-expired-overlay .setup-shell { min-height: min(720px, 96vh); width: min(1040px, 100%); box-shadow: var(--clay-out-sm); border: 1px solid var(--peach-300); border-radius: var(--r-lg); overflow: hidden; }
-@media (max-width: 680px) { .session-expired-overlay { padding: 8px; } .session-expired-overlay .setup-shell { min-height: 0; } }
 
 /* Account entry and guided investor onboarding */
 .auth-shell, .wizard-shell { min-height: 100vh; background: var(--cream-100); color: var(--plum-900); }
@@ -295,8 +292,6 @@
 .risk-choice.selected .risk-choice-radio { color: var(--cream-50); border-color: var(--indigo); background: var(--indigo); }
 .security-results button { color: var(--plum-900); background: var(--cream-100); }.security-results button:hover { background: var(--lilac-100); }
 .wizard-actions { background: var(--cream-100); }.wizard-note, .evaluation-hero p { color: var(--plum-700); }
-.session-expired-overlay { background: var(--cream-glass-strong); }
-.session-expired-overlay .auth-shell { width: min(100%, 720px); min-height: min(800px, 96svh); padding-inline: 20px; border-radius: var(--r-xl); background: var(--grad-sky); overflow: auto; }
 .risk-drawer-backdrop { background: var(--peach-backdrop); z-index: 60; }
 .risk-explanation-drawer, .risk-drawer-header, .risk-drawer-footer { color: var(--plum-900); background: var(--cream-50); border-color: var(--peach-300); }
 .risk-explanation-drawer { box-shadow: var(--clay-out); }.risk-drawer-close { border-radius: 50%; }

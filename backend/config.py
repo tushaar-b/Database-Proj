@@ -8,7 +8,7 @@ class Settings(BaseSettings):
     # Keep the authenticated MVP local-only until a deployment review is complete.
     APP_HOST: str = "127.0.0.1"
     APP_PORT: int = 8000
-    ALLOWED_ORIGINS: str = "http://localhost:3000,http://localhost:5173,http://127.0.0.1:5173"
+    ALLOWED_ORIGINS: str = "http://127.0.0.1:5173,http://localhost:5173"
 
     # Databases
     ADVISORY_DB_URL: str

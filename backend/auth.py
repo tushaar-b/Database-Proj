@@ -4,7 +4,6 @@ from __future__ import annotations
 import hashlib
 import hmac
 import secrets
-from datetime import timedelta
 
 from fastapi import Depends, HTTPException, Request, status
 from psycopg2.extras import RealDictCursor
@@ -20,8 +19,20 @@ def digest(value: str) -> str:
     return hashlib.sha256(value.encode("utf-8")).hexdigest()
 
 
+def session_csrf_token(session_token: str) -> str:
+    """Stable, domain-separated CSRF proof derived from a high-entropy session.
+
+    The HttpOnly cookie remains secret; exposing this HMAC does not disclose it.
+    All tabs and concurrent /auth/me calls receive the same proof for a session.
+    """
+    return hmac.new(
+        session_token.encode("utf-8"), b"intellivest:csrf:v1", hashlib.sha256,
+    ).hexdigest()
+
+
 def issue_tokens() -> tuple[str, str]:
-    return secrets.token_urlsafe(32), secrets.token_urlsafe(32)
+    session_token = secrets.token_urlsafe(32)
+    return session_token, session_csrf_token(session_token)
 
 
 def set_session_cookie(response, request: Request, token: str) -> None:

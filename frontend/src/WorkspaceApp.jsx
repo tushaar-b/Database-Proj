@@ -1,11 +1,11 @@
-import { forwardRef, Suspense, lazy, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { forwardRef, Suspense, lazy, useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 import {
   Activity, ArrowDownRight, ArrowLeft, ArrowRight, ArrowUpRight, Bell, BriefcaseBusiness,
   Check, CircleHelp, CirclePlus, Eye, EyeOff, Gauge, LayoutDashboard, LoaderCircle,
   LogOut, Menu, RefreshCw, ShieldCheck, SlidersHorizontal, Sparkles, Wallet,
   X,
 } from 'lucide-react';
-import { api, ApiError, request } from './api.js';
+import { api, ApiError, authSession, request } from './api.js';
 import './index.css';
 import './GuidedOnboarding.css';
 import './WorkspaceEditorial.css';
@@ -60,7 +60,7 @@ function LoadingState({ label = 'Loading your financial workspace…' }) {
   return <div className="loading-state"><LoaderCircle className="spin" size={22} />{label}</div>;
 }
 
-function AuthPage({ onAuthenticated, initialMode = 'login' }) {
+function AuthPage({ initialMode = 'login', sessionExpired = false }) {
   const [mode, setMode] = useState(initialMode);
   const [registrationStep, setRegistrationStep] = useState('account');
   const [form, setForm] = useState({ full_name: '', email: '', password: '', confirm_password: '' });
@@ -88,10 +88,9 @@ function AuthPage({ onAuthenticated, initialMode = 'login' }) {
     if (Object.keys(next).length) { setErrors(next); return; }
     setBusy(true);
     try {
-      const result = register
-        ? await api.register({ full_name: form.full_name.trim(), email: form.email.trim(), password: form.password })
-        : await api.login({ email: form.email.trim(), password: form.password });
-      onAuthenticated(result.user);
+      await (register
+        ? api.register({ full_name: form.full_name.trim(), email: form.email.trim(), password: form.password })
+        : api.login({ email: form.email.trim(), password: form.password }));
     } catch (issue) { setErrors({ form: errorMessage(issue) }); }
     finally { setBusy(false); }
   }
@@ -103,6 +102,7 @@ function AuthPage({ onAuthenticated, initialMode = 'login' }) {
       <div className="auth-card">
         {register && <div className="auth-progress"><span className={registrationStep === 'account' ? 'active' : 'complete'} /><span className={registrationStep === 'password' ? 'active' : ''} /><small>{registrationStep === 'account' ? 'Step 1 of 2' : 'Step 2 of 2'} · Account setup</small></div>}
         <div className="auth-welcome-mark"><Activity size={22} /></div><p className="eyebrow">{register ? 'Create your IntelliVest account' : 'Investor workspace'}</p><h1>{title}</h1><p className="auth-description">{description}</p>
+        {sessionExpired && <p className="auth-description" role="status">Your session has ended. Sign in to continue.</p>}
         {errors.form && <div className="wizard-error" role="alert">{errors.form}</div>}
         <form className="auth-form" onSubmit={submit} noValidate>
           {register && registrationStep === 'account' && <>
@@ -138,25 +138,12 @@ function Brand({ compact = false }) {
 }
 
 function App({ initialMode = 'login' }) {
-  const [authenticatedUser, setAuthenticatedUser] = useState(null);
-  const [authLoading, setAuthLoading] = useState(true);
-  const [sessionExpired, setSessionExpired] = useState(false);
-  useEffect(() => {
-    let mounted = true;
-    api.currentUser().then(({ user }) => { if (mounted) setAuthenticatedUser(user); }).catch(() => {}).finally(() => { if (mounted) setAuthLoading(false); });
-    const expired = () => setSessionExpired(true);
-    window.addEventListener('intellivest:session-expired', expired);
-    return () => { mounted = false; window.removeEventListener('intellivest:session-expired', expired); };
-  }, []);
-  async function signOut() {
-    try { await api.logout(); } finally { setAuthenticatedUser(null); setSessionExpired(false); }
-  }
-  if (authLoading && !authenticatedUser) return <div className="app-loading"><Brand /><LoadingState label="Checking your session…" /></div>;
-  if (!authenticatedUser) return <AuthPage initialMode={initialMode} onAuthenticated={(user) => { setAuthenticatedUser(user); setSessionExpired(false); }} />;
-  return <>
-    <InvestorWorkspace key={authenticatedUser.user_id} authenticatedUser={authenticatedUser} onLogout={signOut} />
-    {sessionExpired && <div className="session-expired-overlay"><AuthPage onAuthenticated={(user) => { setAuthenticatedUser(user); setSessionExpired(false); }} /></div>}
-  </>;
+  const session = useSyncExternalStore(authSession.subscribe, authSession.getSnapshot);
+  useEffect(() => { authSession.initialize().catch(() => {}); }, []);
+  if (session.status === 'initializing') return <div className="app-loading"><Brand /><LoadingState label="Checking your session…" /></div>;
+  if (session.status === 'error') return <div className="app-loading"><Brand /><div role="alert"><p>{errorMessage(session.error)}</p><button className="button button-secondary" onClick={() => authSession.initialize().catch(() => {})}>Retry session check</button></div></div>;
+  if (!session.user) return <AuthPage initialMode={session.reason ? 'login' : initialMode} sessionExpired={session.reason === 'expired'} />;
+  return <InvestorWorkspace key={`${session.user.user_id}:${session.sessionKey}`} authenticatedUser={session.user} signingOut={session.status === 'signing-out'} authError={session.error} onLogout={() => api.logout().catch(() => {})} />;
 }
 
 function nextOnboardingStep(income, summary, portfolios) {
@@ -166,7 +153,7 @@ function nextOnboardingStep(income, summary, portfolios) {
   return 'dashboard';
 }
 
-function InvestorWorkspace({ authenticatedUser, onLogout }) {
+function InvestorWorkspace({ authenticatedUser, authError, signingOut, onLogout }) {
   const userId = authenticatedUser.user_id;
   const [profile, setProfile] = useState(authenticatedUser);
   const [summary, setSummary] = useState(null);
@@ -228,7 +215,6 @@ function InvestorWorkspace({ authenticatedUser, onLogout }) {
       setNotice(null);
     } catch (error) {
       setNotice({ type: 'error', message: errorMessage(error) });
-      if (error instanceof ApiError && error.status === 401) window.dispatchEvent(new Event('intellivest:session-expired'));
     } finally { setLoading(false); }
   }, [userId, onboardingResolved]);
 
@@ -269,12 +255,13 @@ function InvestorWorkspace({ authenticatedUser, onLogout }) {
   if (onboardingResolved && onboardingStep !== 'dashboard') return <GuidedOnboarding
     key={userId}
     user={profile || authenticatedUser}
+    authenticationError={authError ? errorMessage(authError) : null}
     initialStep={onboardingStep}
     initialIncome={income}
     initialExpenses={expenses}
     initialSummary={summary}
     portfolios={portfolios}
-    onLogout={onLogout}
+    onLogout={signingOut ? () => {} : onLogout}
     onDone={(data) => {
       setProfile(data.profile); setSummary(data.summary); setIncome(data.income); setExpenses(data.expenses);
       setPortfolios(data.portfolios); setPortfolioId(data.portfolioId); setPortfolio(data.portfolio);
@@ -284,7 +271,7 @@ function InvestorWorkspace({ authenticatedUser, onLogout }) {
     }}
   />;
 
-  return <div className={`app-shell intellivest-workspace${page === 'overview' ? ' workspace-overview' : ''}`}>
+  return <div className={`app-shell intellivest-workspace${page === 'overview' ? ' workspace-overview' : ''}`} aria-busy={signingOut}>
     <aside className={`sidebar ${mobileNav ? 'sidebar-open' : ''}`}>
       <Brand />
       <div className="workspace-label">WORKSPACE</div>
@@ -293,12 +280,12 @@ function InvestorWorkspace({ authenticatedUser, onLogout }) {
           <Icon size={18} strokeWidth={1.9} /><span>{label}</span>{id === 'alerts' && unresolvedAlerts.length > 0 && <span className="nav-count">{unresolvedAlerts.length}</span>}
         </button>)}
       </nav>
-      <div className="sidebar-bottom"><div className="local-status"><span className={`status-dot connection-${connection}`} /><div><strong>Local workspace</strong><small>{connectionLabel}</small></div></div><button className="profile-menu" onClick={onLogout} aria-label={`Sign out ${profile?.full_name || 'investor'}`} title="Sign out"><span className="avatar">{profile?.full_name?.slice(0, 1)?.toUpperCase() || 'I'}</span><span className="profile-copy"><strong>{profile?.full_name || 'Investor'}</strong><small>{profile?.risk_tolerance_tier || 'Profile'}</small></span><LogOut size={16} /></button></div>
+      <div className="sidebar-bottom"><div className="local-status"><span className={`status-dot connection-${connection}`} /><div><strong>Local workspace</strong><small>{connectionLabel}</small></div></div><button className="profile-menu" disabled={signingOut} onClick={onLogout} aria-label={`Sign out ${profile?.full_name || 'investor'}`} title="Sign out"><span className="avatar">{profile?.full_name?.slice(0, 1)?.toUpperCase() || 'I'}</span><span className="profile-copy"><strong>{profile?.full_name || 'Investor'}</strong><small>{profile?.risk_tolerance_tier || 'Profile'}</small></span><LogOut size={16} /></button></div>
     </aside>
     {mobileNav && <button className="sidebar-scrim" aria-label="Close navigation" onClick={() => setMobileNav(false)} />}
     <div className="main-column">
       <header className="topbar"><button className="mobile-menu icon-button" aria-label="Open navigation" onClick={() => setMobileNav(true)}><Menu size={20} /></button><div className="breadcrumb"><span>Workspace</span><span className="crumb-separator">/</span><strong>{currentPage.label}</strong></div><div className="topbar-actions"><span className="api-status" role="status"><span className={`status-dot connection-${connection}`} />{connectionLabel}</span><button className="icon-button" aria-label="Refresh workspace" title="Refresh workspace" onClick={() => { loadWorkspace(); checkConnection(); if (portfolioId) loadPortfolio(portfolioId, page === 'risk' || page === 'overview'); loadAlerts(); }}><RefreshCw size={17} /></button></div></header>
-      <main className="content-area"><Notice notice={notice} dismiss={() => setNotice(null)} />
+      <main className="content-area"><Notice notice={notice || (authError ? { type: 'error', message: errorMessage(authError) } : null)} dismiss={() => { setNotice(null); authSession.clearError(); }} />
         {loading && <LoadingState />}
         {!loading && page === 'overview' && <Overview portfolioLoading={portfolioLoading} userId={userId} busy={busy} setBusy={setBusy} setNotice={setNotice} setRecommendations={setRecommendations} portfolios={portfolios} setPortfolioId={(id) => { setPortfolio(null); setHoldings([]); setRisk(null); setRiskStatus('pending'); setPortfolioLoading(true); setPortfolioId(id); }} profile={profile} summary={summary} portfolio={portfolio} portfolioId={portfolioId} holdings={holdings} risk={risk} riskStatus={riskStatus} alerts={unresolvedAlerts} alertsStatus={alertsStatus} recommendations={recommendations} go={setPage} />}
         {!loading && page === 'cashflow' && <CashflowPage userId={userId} profile={profile} summary={summary} income={income} expenses={expenses} busy={busy} perform={perform} onProfile={setProfile} onSummary={setSummary} onIncome={setIncome} onExpenses={setExpenses} />}

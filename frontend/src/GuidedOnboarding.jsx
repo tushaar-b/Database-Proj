@@ -11,7 +11,7 @@ const expenseCategories = ['Housing or rent', 'Groceries and food', 'Electricity
 const money = (value) => value === null || value === undefined || value === '' ? '—' : new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 2 }).format(Number(value));
 const errorMessage = (error) => error instanceof ApiError ? error.message : (error?.message || 'Something went wrong. Please try again.');
 
-export default function GuidedOnboarding({ user, initialStep, initialIncome, initialExpenses, initialSummary, portfolios, onDone, onLogout }) {
+export default function GuidedOnboarding({ authenticationError, user, initialStep, initialIncome, initialExpenses, initialSummary, portfolios, onDone, onLogout }) {
   const [step, setStep] = useState(initialStep);
   const [incomes, setIncomes] = useState(() => initialIncome.length
     ? initialIncome.map((row) => ({ ...row, localId: row.income_id || crypto.randomUUID() }))
@@ -79,7 +79,7 @@ export default function GuidedOnboarding({ user, initialStep, initialIncome, ini
     </section>
     <section className="wizard-content" key={step}>
       <div className="wizard-heading"><span className="wizard-heading-mark"><Activity size={21} /></span><p className="eyebrow">Your financial workspace</p><h1>{title}</h1><p>{description}</p></div>
-      {error && <div className="wizard-error" role="alert">{error}</div>}
+      {(error || authenticationError) && <div className="wizard-error" role="alert">{error || authenticationError}</div>}
       {step === 'income' && <IncomeStep rows={incomes} setRows={setIncomes} busy={busy} onBack={onLogout} onContinue={(rows) => transact(async () => { await saveIncome(rows); return true; }, 'expenses')} />}
       {step === 'expenses' && <ExpenseStep rows={expenses} setRows={setExpenses} busy={busy} onBack={() => goTo('income')} onContinue={(rows) => transact(async () => { await saveExpenses(rows); return true; }, 'safety')} />}
       {step === 'safety' && <SafetyStep user={user} summary={summary} busy={busy} onBack={() => goTo('expenses')} onContinue={(reserve, tier) => transact(async () => {

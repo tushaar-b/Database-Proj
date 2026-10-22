@@ -10,7 +10,7 @@ from psycopg2.extras import RealDictCursor
 
 from backend.auth import (
     SESSION_COOKIE, SESSION_TTL_HOURS, clear_session_cookie, current_session,
-    digest, issue_tokens, rate_limit_key, require_csrf, set_session_cookie,
+    digest, issue_tokens, rate_limit_key, require_csrf, session_csrf_token, set_session_cookie,
 )
 from backend.dependencies import advisory_connection
 from backend.config import settings
@@ -73,6 +73,7 @@ def _validate_origin(request: Request) -> None:
 
 
 def _create_session(conn, user_id, request, response):
+    response.headers["Cache-Control"] = "no-store"
     raw_token, csrf_token = issue_tokens()
     with conn:
         with conn.cursor() as cur:
@@ -151,21 +152,30 @@ def login(body: Login, request: Request, response: Response, conn=Depends(adviso
 
 
 @router.get("/me")
-def me(request: Request, session=Depends(current_session), conn=Depends(advisory_connection)):
-    csrf = secrets.token_urlsafe(32)
-    with conn:
-        with conn.cursor() as cur:
-            cur.execute("UPDATE auth_session SET csrf_token_hash=%s WHERE token_hash=%s",
-                        (digest(csrf), digest(request.cookies.get(SESSION_COOKIE, ""))))
+def me(request: Request, response: Response, session=Depends(current_session), conn=Depends(advisory_connection)):
+    response.headers["Cache-Control"] = "no-store"
+    raw_token = request.cookies[SESSION_COOKIE]
+    csrf = session_csrf_token(raw_token)
+    csrf_hash = digest(csrf)
+    # Existing random-token sessions are upgraded lazily without deleting
+    # sessions, changing their expiry, or requiring a database migration.
+    # Concurrent requests compute the same token and cannot invalidate each other.
+    if session["csrf_token_hash"] != csrf_hash:
+        with conn:
+            with conn.cursor() as cur:
+                cur.execute(
+                    """UPDATE auth_session SET csrf_token_hash=%s
+                       WHERE token_hash=%s AND expires_at>now()""",
+                    (csrf_hash, digest(raw_token)),
+                )
+                if cur.rowcount != 1:
+                    raise HTTPException(status_code=401, detail="Session expired or invalid")
     return {"user": _public(session), "csrf_token": csrf}
 
 
 @router.post("/logout", dependencies=[Depends(require_csrf)])
 def logout(request: Request, response: Response, session=Depends(current_session), conn=Depends(advisory_connection)):
-    supplied = request.headers.get("x-csrf-token", "")
-    import hmac
-    if not supplied or not hmac.compare_digest(digest(supplied), session["csrf_token_hash"]):
-        raise HTTPException(status_code=403, detail="CSRF token is missing or invalid")
+    response.headers["Cache-Control"] = "no-store"
     token = request.cookies.get(SESSION_COOKIE, "")
     with conn:
         with conn.cursor() as cur:
