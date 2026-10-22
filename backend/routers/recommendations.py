@@ -4,9 +4,16 @@ from decimal import Decimal, ROUND_FLOOR
 import hashlib
 import json
 import math
-from uuid import UUID
+import logging
+import traceback
+from pathlib import Path
+from uuid import UUID, uuid4
 
-from fastapi import APIRouter, Depends, HTTPException, Query, status
+from fastapi import APIRouter, Depends, HTTPException, Query, Request, status
+from fastapi.exceptions import RequestValidationError
+from fastapi.responses import JSONResponse
+from fastapi.routing import APIRoute
+import psycopg2
 from psycopg2.extras import RealDictCursor
 
 from backend.auth import require_authenticated, require_csrf
@@ -16,7 +23,47 @@ from backend.ownership import enforce_ownership
 from backend.schemas import RecommendationDecision
 from backend.services import evaluate_portfolio_risk, require_feedback_delivery
 
-router = APIRouter(prefix="/recommendations", tags=["Recommendations"], dependencies=[Depends(require_authenticated), Depends(require_csrf), Depends(enforce_ownership)])
+logger = logging.getLogger(__name__)
+
+
+class RecommendationRoute(APIRoute):
+    """Return safe recommendation errors; log locations without SQL or secrets."""
+
+    def get_route_handler(self):
+        handler = super().get_route_handler()
+
+        async def handle(request: Request):
+            try:
+                return await handler(request)
+            except RequestValidationError:
+                raise
+            except Exception as exc:
+                if isinstance(exc, HTTPException) and exc.status_code < 500:
+                    raise
+                error_id = uuid4().hex
+                locations = [f"{Path(frame.filename).name}:{frame.lineno}:{frame.name}"
+                             for frame in traceback.extract_tb(exc.__traceback__)]
+                logger.error(
+                    "Recommendation failure id=%s method=%s route=%s exception=%s sqlstate=%s locations=%s",
+                    error_id, request.method, self.path, type(exc).__name__,
+                    getattr(exc, "pgcode", None), " -> ".join(locations),
+                )
+                feedback_pending = (isinstance(exc, HTTPException) and isinstance(exc.detail, dict)
+                                    and exc.detail.get("message") == "Risk feedback is queued for retry")
+                message = ("Risk feedback is still synchronizing. Retry shortly; saved recommendations remain available."
+                           if feedback_pending else
+                           "Recommendations could not be loaded or updated. Please retry; saved recommendations remain available.")
+                if isinstance(exc, HTTPException):
+                    code = exc.status_code
+                else:
+                    code = 503 if isinstance(exc, psycopg2.Error) else 500
+                return JSONResponse(status_code=code, content={"detail": message, "error_id": error_id},
+                                    headers=exc.headers if isinstance(exc, HTTPException) else None)
+
+        return handle
+
+
+router = APIRouter(route_class=RecommendationRoute, prefix="/recommendations", tags=["Recommendations"], dependencies=[Depends(require_authenticated), Depends(require_csrf), Depends(enforce_ownership)])
 BASE_CAPACITY = {"CONSERVATIVE": Decimal("0.25"), "MODERATE": Decimal("0.50"), "AGGRESSIVE": Decimal("0.75")}
 
 # Use the complement of the existing tier allocation capacity as the observed
@@ -27,6 +74,8 @@ MINIMUM_OBSERVATIONS = 120
 
 
 def _json_safe(value):
+    if isinstance(value, UUID):
+        return str(value)
     if isinstance(value, Decimal):
         return format(value, "f")
     if isinstance(value, (date, datetime)):
@@ -128,8 +177,8 @@ def _market_context(risk, user_id, blocked, tier):
             sector: (value / total_equity_value if total_equity_value else Decimal("0"))
             for sector, value in sector_values.items()
         }
-        cur.execute("SELECT MAX(trade_date) FROM daily_market_quote")
-        market_data_through = cur.fetchone()[0]
+        cur.execute("SELECT MAX(trade_date) AS market_data_through FROM daily_market_quote")
+        market_data_through = cur.fetchone()["market_data_through"]
         candidates = _historical_candidates(cur, blocked, held_ids)
 
     for candidate in candidates:
@@ -210,12 +259,18 @@ def generate_recommendations(
             budget = (buffer * BASE_CAPACITY[tier] * multiplier).quantize(Decimal("0.01"), rounding=ROUND_FLOOR)
 
             holdings, sector_weights, candidates, market_data_through = _market_context(risk, user_id_text, blocked, tier)
-            cur.execute(
-                "SELECT portfolio_id::text,breached_metric::text,drift_magnitude_pct FROM rebalance_alert "
-                "WHERE portfolio_id=ANY(%s::uuid[]) AND resolved_flag=FALSE ORDER BY portfolio_id,breached_metric",
-                (portfolio_ids,),
-            )
-            active_alerts = [dict(row) for row in cur.fetchall()] if portfolio_ids else []
+            active_alerts = []
+            if portfolio_ids:
+                with risk.cursor(cursor_factory=RealDictCursor) as risk_cur:
+                    risk_cur.execute(
+                        """SELECT a.portfolio_id::text,a.breached_metric::text,a.drift_magnitude_pct
+                           FROM rebalance_alert a JOIN portfolio p USING(portfolio_id)
+                           WHERE p.user_id=%s AND a.portfolio_id=ANY(%s::uuid[])
+                             AND a.resolved_flag=FALSE
+                           ORDER BY a.portfolio_id,a.breached_metric""",
+                        (user_id_text, portfolio_ids),
+                    )
+                    active_alerts = [dict(row) for row in risk_cur.fetchall()]
 
             fingerprint_data = {
                 "buffer": buffer,
@@ -250,17 +305,17 @@ def generate_recommendations(
             prior = cur.fetchone()
             if prior:
                 cur.execute(
-                    """SELECT COUNT(*) FROM recommendation_log
+                    """SELECT COUNT(*) AS pending_count FROM recommendation_log
                        WHERE user_id=%s AND batch_id=%s AND status_state='PENDING'""",
                     (user_id_text, prior["batch_id"]),
                 )
-                has_pending = cur.fetchone()[0] > 0
+                has_pending = cur.fetchone()["pending_count"] > 0
                 cur.execute(
-                    """SELECT created_at >= now() - (%s * interval '1 day')
+                    """SELECT created_at >= now() - (%s * interval '1 day') AS within_reconsideration
                        FROM recommendation_batch WHERE batch_id=%s""",
                     (settings.RECOMMENDATION_RECONSIDER_DAYS, prior["batch_id"]),
                 )
-                within_reconsideration = bool(cur.fetchone()[0])
+                within_reconsideration = bool(cur.fetchone()["within_reconsideration"])
                 if has_pending or within_reconsideration:
                     return {
                         "batch_id": prior["batch_id"], "available_buffer": prior["available_buffer"],
@@ -273,7 +328,7 @@ def generate_recommendations(
             # Legacy pending rows have no captured fingerprint. Keep them active
             # for a user decision instead of silently replacing them.
             cur.execute(
-                """SELECT DISTINCT r.batch_id::text FROM recommendation_log r
+                """SELECT DISTINCT r.batch_id::text AS batch_id FROM recommendation_log r
                    LEFT JOIN recommendation_batch b USING(batch_id)
                    WHERE r.user_id=%s AND r.status_state='PENDING'
                      AND (b.batch_id IS NULL OR b.input_fingerprint IS NULL)
@@ -282,9 +337,9 @@ def generate_recommendations(
             legacy_pending = cur.fetchone()
             if legacy_pending:
                 return {
-                    "batch_id": legacy_pending[0], "available_buffer": buffer, "allocation_budget": budget,
+                    "batch_id": legacy_pending["batch_id"], "available_buffer": buffer, "allocation_budget": budget,
                     "reason": "An earlier pending batch is retained for your decision; no duplicate batch was created.",
-                    "recommendations": _return_rows(cur, user_id_text, legacy_pending[0], pending_only=True),
+                    "recommendations": _return_rows(cur, user_id_text, legacy_pending["batch_id"], pending_only=True),
                     "reused": True, "freshness": "legacy_pending_batch",
                     "feedback_events_processed": delivery["events_applied"],
                 }

@@ -602,8 +602,9 @@ function RecommendationsPage({ userId, summary, recommendations, generation, set
     setGenerating(true); setNotice(null);
     try {
       const result = await api.generateRecommendations(userId);
+      const refreshed = await api.getRecommendations(userId);
+      setRecommendations(refreshed);
       setGeneration(result);
-      setRecommendations(await api.getRecommendations(userId));
       setNotice({ type: 'success', message: result.reused ? 'Your saved batch is still current; no duplicate advice was created.' : (result.recommendations?.length ? 'A new batch was prepared from your current financial and market inputs.' : (result.reason || 'No recommendations fit the current policy and budget.')) });
     } catch (error) { setNotice({ type: 'error', message: errorMessage(error) }); }
     finally { setGenerating(false); }

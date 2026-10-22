@@ -175,6 +175,19 @@ export const authSession = {
 const json = (method, body) => ({ method, body: JSON.stringify(body) });
 const id = (value) => encodeURIComponent(value);
 
+async function recommendationRequest(path, options, action) {
+  try { return await request(path, options); }
+  catch (error) {
+    if (error instanceof ApiError && error.status >= 500) {
+      const message = typeof error.detail === 'string' && error.detail.startsWith('Risk feedback is still synchronizing.')
+        ? 'Risk feedback is still synchronizing. Please retry shortly; your saved recommendations are retained.'
+        : `Recommendations could not be ${action}. Please retry; your saved recommendations are retained.`;
+      throw new ApiError(message, error.status);
+    }
+    throw error;
+  }
+}
+
 export const api = {
   register: (body) => authenticate('/auth/register', body),
   login: (body) => authenticate('/auth/login', body),
@@ -195,9 +208,9 @@ export const api = {
   addExpense: (userId, body) => request(`/cashflow/${id(userId)}/expenses`, json('POST', body)),
   updateExpense: (expenseId, body) => request(`/cashflow/expenses/${id(expenseId)}`, json('PUT', body)),
   deleteExpense: (expenseId) => request(`/cashflow/expenses/${id(expenseId)}`, { method: 'DELETE' }),
-  getRecommendations: (userId) => request(`/recommendations/${id(userId)}`),
-  generateRecommendations: (userId) => request(`/recommendations/${id(userId)}/generate`, { method: 'POST' }),
-  decideRecommendation: (userId, recommendationId, decision) => request(`/recommendations/${id(userId)}/${id(recommendationId)}/decision`, json('POST', { decision })),
+  getRecommendations: (userId) => recommendationRequest(`/recommendations/${id(userId)}`, undefined, 'loaded'),
+  generateRecommendations: (userId) => recommendationRequest(`/recommendations/${id(userId)}/generate`, { method: 'POST' }, 'updated'),
+  decideRecommendation: (userId, recommendationId, decision) => recommendationRequest(`/recommendations/${id(userId)}/${id(recommendationId)}/decision`, json('POST', { decision }), 'confirmed'),
   getPortfolios: (userId) => request(`/portfolios?user_id=${id(userId)}`),
   createPortfolio: (body) => request('/portfolios', json('POST', body)),
   getPortfolio: (portfolioId) => request(`/portfolios/${id(portfolioId)}`),
