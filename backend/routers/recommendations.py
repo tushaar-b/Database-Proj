@@ -22,6 +22,7 @@ from backend.dependencies import advisory_connection, risk_connection
 from backend.ownership import enforce_ownership
 from backend.schemas import RecommendationDecision
 from backend.services import evaluate_portfolio_risk, require_feedback_delivery
+from backend.market_data import get_latest_quotes, quote_change_requires_review
 
 logger = logging.getLogger(__name__)
 
@@ -94,7 +95,7 @@ def _historical_candidates(cur, blocked_sectors, held_security_ids):
                         COALESCE(adjusted_close,close_price)::double precision AS price,
                         LAG(COALESCE(adjusted_close,close_price)::double precision)
                             OVER (PARTITION BY security_id ORDER BY trade_date) AS previous_price
-                 FROM daily_market_quote
+                 FROM daily_market_quote WHERE trade_date<=CURRENT_DATE
              ), returns AS (
                  SELECT security_id,trade_date,price/NULLIF(previous_price,0)-1 AS daily_return
                  FROM prices WHERE previous_price>0
@@ -116,7 +117,7 @@ def _historical_candidates(cur, blocked_sectors, held_security_ids):
                  GROUP BY r.security_id
              ), latest AS (
                  SELECT DISTINCT ON (security_id) security_id,close_price,trade_date
-                 FROM daily_market_quote ORDER BY security_id,trade_date DESC
+                 FROM daily_market_quote WHERE trade_date<=CURRENT_DATE ORDER BY security_id,trade_date DESC
              )
              SELECT sm.security_id::text,sm.ticker_symbol,sm.company_name,sm.sector_name,
                     latest.close_price,latest.trade_date AS quote_date,
@@ -168,6 +169,11 @@ def _market_context(risk, user_id, blocked, tier):
         )
         holdings = [dict(row) for row in cur.fetchall()]
         held_ids = sorted({row["security_id"] for row in holdings})
+        quotes = get_latest_quotes(risk)
+        for row in holdings:
+            quote = quotes[row['security_id']]
+            row['close_price'] = quote['price']
+            row['trade_date'] = quote['price_date']
         sector_values: dict[str, Decimal] = {}
         for row in holdings:
             if row["close_price"] is not None:
@@ -182,6 +188,12 @@ def _market_context(risk, user_id, blocked, tier):
         candidates = _historical_candidates(cur, blocked, held_ids)
 
     for candidate in candidates:
+        quote = quotes[candidate['security_id']]
+        candidate['close_price'] = quote['price']
+        candidate['quote_date'] = quote['observed_at'] or quote['price_date']
+        candidate['quote_source'] = quote['source']
+        candidate['quote_status'] = quote['status']
+        candidate['listing_resolved'] = quote.get('error_kind') != 'missing_symbol'
         mean = float(candidate["mean_daily_return"])
         volatility = float(candidate["daily_volatility"])
         cvar = float(candidate["historical_cvar_95_loss"])
@@ -193,7 +205,7 @@ def _market_context(risk, user_id, blocked, tier):
         candidate["selection_score"] = mean - aversion * (volatility + cvar)
         candidate["sector_weight"] = sector_weights.get(candidate["sector_name"], Decimal("0"))
         candidate["size_weight"] = 1 / (volatility ** aversion)
-    return holdings, sector_weights, candidates, market_data_through
+    return holdings, sector_weights, [c for c in candidates if c['listing_resolved'] and c['close_price'] and c['close_price'] > 0], market_data_through
 
 
 def _select_candidates(candidates):
@@ -272,6 +284,21 @@ def generate_recommendations(
                     )
                     active_alerts = [dict(row) for row in risk_cur.fetchall()]
 
+            # Logarithmic price bands: each configured 2% band is stable across
+            # polling timestamps. Actual exact price is still used for sizing.
+            step = math.log1p(settings.RECOMMENDATION_PRICE_CHANGE_FRACTION)
+            def stable_candidate(row):
+                omitted = {'close_price', 'quote_date', 'quote_source', 'quote_status', 'sector_weight'}
+                return {**{k: v for k, v in row.items() if k not in omitted},
+                        'price_band': math.floor(math.log(float(row['close_price'])) / step),
+                        'quote_basis': 'provider_valid' if row['quote_status'] in ('latest_intraday_observation', 'last_market_close') else 'dated_or_unavailable',
+                        'sector_weight': round(float(row['sector_weight']), 2)}
+            preview_selected = _select_candidates(candidates) if buffer > 0 and budget > 0 else []
+            preview_weight = sum((Decimal(str(c['size_weight'])) for c in preview_selected), Decimal(0))
+            affordable_signature = {
+                c['security_id']: int(((budget * Decimal(str(c['size_weight'])) / preview_weight).quantize(Decimal('.01'), rounding=ROUND_FLOOR)) / Decimal(str(c['close_price'])))
+                for c in preview_selected
+            }
             fingerprint_data = {
                 "buffer": buffer,
                 "tier": tier,
@@ -286,10 +313,12 @@ def generate_recommendations(
                     "reconsider_days": settings.RECOMMENDATION_RECONSIDER_DAYS,
                 },
                 "portfolios": portfolio_ids,
-                "holdings": holdings,
-                "sector_weights": sector_weights,
+                "holdings": [{k: v for k, v in h.items() if k not in {"close_price", "trade_date"}} for h in holdings],
+                "sector_weights": {k: round(float(v), 2) for k, v in sector_weights.items()},
                 "market_data_through": market_data_through,
-                "candidate_history": candidates,
+                "candidate_history": [stable_candidate(c) for c in candidates],
+                "price_change_fraction": settings.RECOMMENDATION_PRICE_CHANGE_FRACTION,
+                "whole_share_affordability": affordable_signature,
             }
             fingerprint = hashlib.sha256(
                 json.dumps(_json_safe(fingerprint_data), sort_keys=True, separators=(",", ":")).encode("utf-8")
@@ -325,25 +354,8 @@ def generate_recommendations(
                         "feedback_events_processed": delivery["events_applied"],
                     }
 
-            # Legacy pending rows have no captured fingerprint. Keep them active
-            # for a user decision instead of silently replacing them.
-            cur.execute(
-                """SELECT DISTINCT r.batch_id::text AS batch_id FROM recommendation_log r
-                   LEFT JOIN recommendation_batch b USING(batch_id)
-                   WHERE r.user_id=%s AND r.status_state='PENDING'
-                     AND (b.batch_id IS NULL OR b.input_fingerprint IS NULL)
-                   LIMIT 1""", (user_id_text,),
-            )
-            legacy_pending = cur.fetchone()
-            if legacy_pending:
-                return {
-                    "batch_id": legacy_pending["batch_id"], "available_buffer": buffer, "allocation_budget": budget,
-                    "reason": "An earlier pending batch is retained for your decision; no duplicate batch was created.",
-                    "recommendations": _return_rows(cur, user_id_text, legacy_pending["batch_id"], pending_only=True),
-                    "reused": True, "freshness": "legacy_pending_batch",
-                    "feedback_events_processed": delivery["events_applied"],
-                }
-
+            # Legacy batches have no reproducible price snapshot. A user-requested
+            # generation may supersede them, preserving all recorded evidence.
             selected = _select_candidates(candidates) if buffer > 0 and budget > 0 else []
             if buffer <= 0:
                 reason = "No recommendation was created because your current investable surplus is zero."
@@ -372,6 +384,8 @@ def generate_recommendations(
                      AND r.status_state='PENDING' AND b.input_fingerprint IS DISTINCT FROM %s""",
                 (user_id_text, fingerprint),
             )
+
+            cur.execute("UPDATE recommendation_log SET status_state='SUPERSEDED' WHERE user_id=%s AND batch_id IS NULL AND status_state='PENDING'", (user_id_text,))
 
             last_decisions = {}
             cur.execute(
@@ -409,7 +423,7 @@ def generate_recommendations(
                     f"The sector is {sector_weight * 100:.1f}% of your currently invested value; its estimated share is {shares} whole share(s) "
                     f"at ₹{price:.2f}, costing ₹{amount:.2f} within the ₹{allocation_budget:.2f} portion of your ₹{budget:.2f} policy budget; "
                     f"the portion is weighted inversely to observed volatility and adjusted for your risk preference. "
-                    f"Latest quote: {candidate['quote_date']}; VaR and volatility breach limits were refreshed for your saved portfolios. "
+                    f"Price basis: {candidate['quote_source']} · {candidate['quote_status']} · {candidate['quote_date']}; VaR and volatility breach limits were refreshed for your saved portfolios. "
                     f"No separate candidate-level CVaR breach limit is configured; historical CVaR is used only in ranking."
                 )
                 prior_decision = last_decisions.get(candidate["ticker_symbol"])
@@ -453,6 +467,7 @@ def list_recommendations(
     user_id: UUID,
     status_filter: str | None = Query(default=None, alias="status"),
     conn=Depends(advisory_connection),
+    risk=Depends(risk_connection),
 ):
     supported = {"PENDING", "ACCEPTED", "REJECTED", "SUPERSEDED"}
     if status_filter and status_filter not in supported:
@@ -464,6 +479,7 @@ def list_recommendations(
         query = """SELECT r.rec_id::text,r.user_id::text,r.stock_ticker,r.target_allocation_pct,
                            r.recommended_amount,r.status_state::text,r.batch_id::text,r.shares,
                            r.explanation,r.generated_timestamp,b.created_at AS batch_created_at,
+                           b.allocation_budget AS saved_allocation_budget,b.available_buffer AS saved_available_buffer,
                            (r.batch_id=%s::uuid) AS is_latest_batch
                     FROM recommendation_log r LEFT JOIN recommendation_batch b USING(batch_id)
                     WHERE r.user_id=%s"""
@@ -473,7 +489,26 @@ def list_recommendations(
             values.append(status_filter)
         query += " ORDER BY b.created_at DESC NULLS LAST,r.generated_timestamp DESC,r.rec_id"
         cur.execute(query, values)
-        return [dict(row) for row in cur.fetchall()]
+        rows = [dict(row) for row in cur.fetchall()]
+    quotes = {q['ticker_symbol']: q for q in get_latest_quotes(risk).values()}
+    for row in rows:
+        q = quotes.get(row['stock_ticker'])
+        original = row['recommended_amount'] / row['shares'] if row['shares'] else None
+        row['original_price'] = original
+        row['affordable_shares_at_recorded_amount'] = int(row['recommended_amount'] / q['price']) if q and q['price'] else None
+        row['quote'] = q
+        row['latest_estimated_cost'] = q['price'] * row['shares'] if q and q['price'] and row['shares'] else None
+        row['requires_regeneration'] = bool(not q or q['stale'] or not original or not q['price']
+            or quote_change_requires_review(original, q['price'])
+            or (row['saved_allocation_budget'] is not None and row['latest_estimated_cost'] > row['saved_allocation_budget']))
+    totals = {}
+    for row in rows:
+        if row['status_state'] in ('PENDING', 'ACCEPTED') and row['batch_id']:
+            totals[row['batch_id']] = totals.get(row['batch_id'], Decimal(0)) + (row['latest_estimated_cost'] or Decimal(0))
+    for row in rows:
+        if row['saved_allocation_budget'] is not None and totals.get(row['batch_id'], Decimal(0)) > row['saved_allocation_budget']:
+            row['requires_regeneration'] = True
+    return rows
 
 
 @router.post("/{user_id}/{recommendation_id}/decision")
@@ -482,7 +517,29 @@ def decide_recommendation(
     recommendation_id: UUID,
     body: RecommendationDecision,
     conn=Depends(advisory_connection),
+    risk=Depends(risk_connection),
 ):
+    if body.decision == 'ACCEPTED':
+        with conn.cursor(cursor_factory=RealDictCursor) as cur:
+            cur.execute("SELECT r.stock_ticker,r.recommended_amount,r.shares,r.batch_id::text,b.allocation_budget,b.available_buffer FROM recommendation_log r LEFT JOIN recommendation_batch b USING(batch_id) WHERE r.rec_id=%s AND r.user_id=%s", (str(recommendation_id), str(user_id)))
+            saved = cur.fetchone()
+        if not saved:
+            raise HTTPException(404, 'Recommendation not found')
+        quotes = {q['ticker_symbol']: q for q in get_latest_quotes(risk).values()}
+        q = quotes.get(saved['stock_ticker'])
+        original = saved['recommended_amount'] / saved['shares'] if saved['shares'] else None
+        if not q or not q['price'] or not original or not q.get('fresh_enough_for_operation', False):
+            raise HTTPException(409, 'Acceptance needs a sufficiently recent yfinance observation or latest dated market close. The saved recommendation is retained; historical fallback cannot validate affordability.')
+        if quote_change_requires_review(original, q['price']):
+            raise HTTPException(409, 'The price changed materially. Check for updates before accepting; the original estimate is retained.')
+        with conn.cursor(cursor_factory=RealDictCursor) as cur:
+            cur.execute("SELECT stock_ticker,shares FROM recommendation_log WHERE user_id=%s AND batch_id=%s AND status_state IN ('PENDING','ACCEPTED')", (str(user_id), saved['batch_id']))
+            batch_rows = cur.fetchall()
+        costs = [quotes.get(r['stock_ticker'], {}).get('price') * r['shares']
+                 for r in batch_rows if quotes.get(r['stock_ticker'], {}).get('price') and quotes.get(r['stock_ticker'], {}).get('fresh_enough_for_operation') and r['shares']]
+        if (len(costs) != len(batch_rows) or saved['allocation_budget'] is None or saved['available_buffer'] is None
+                or sum(costs, Decimal(0)) > min(saved['allocation_budget'], saved['available_buffer'])):
+            raise HTTPException(409, 'The proposed batch no longer fits its saved whole-share budget. Check for updates; no recorded estimate was changed.')
     with conn:
         with conn.cursor(cursor_factory=RealDictCursor) as cur:
             cur.execute(

@@ -1,0 +1,39 @@
+.stock-intelligence { color:#272043; max-width:1440px; margin:auto; }
+.stock-intelligence h1 { font:500 clamp(28px,4vw,44px)/1.15 'Space Grotesk',sans-serif; margin:12px 0; letter-spacing:-1.2px; }
+.si-subtitle,.si-note { color:#766e82; font-size:13px; line-height:1.7; }
+.si-toolbar { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:24px; }
+.si-quote { display:flex; justify-content:space-between; align-items:center; gap:24px; padding:30px; background:#eee8fb; border:1px solid #e0d8ef; border-radius:14px; margin:24px 0 16px; }
+.si-quote>div>span { font-size:12px; text-transform:uppercase; letter-spacing:.08em; }
+.si-quote>div>strong { display:block; font:500 clamp(32px,4vw,48px)/1.3 'Space Grotesk',sans-serif; margin-top:8px; }
+.si-quote p { margin:6px 0; }
+.quote-label { display:flex; flex-direction:column; gap:4px; font-size:11px; line-height:1.5; color:#756d81; white-space:normal; min-width:110px; }
+.quote-label>strong { font-weight:600; color:#494077; }
+.quote-label.is-stale>strong { color:#9c5b37; }
+.valuation-notice { border:1px solid #eadbc5; border-radius:9px; padding:14px 18px; background:#fbf5e9; color:#72563e; font-size:12px; line-height:1.7; margin:16px 0; }
+.si-tabs { display:flex; overflow-x:auto; gap:8px; border-bottom:1px solid #e2dcea; margin:26px 0; padding-bottom:8px; }
+.si-tabs button { background:transparent; border:0; padding:12px 16px; border-radius:7px; font:500 12px Inter,sans-serif; color:#766b89; white-space:nowrap; cursor:pointer; }
+.si-tabs button[aria-current] { color:#5930b4; background:#eae2fa; }
+.si-range { display:flex; justify-content:space-between; align-items:center; gap:12px; margin:20px 0; font-size:12px; color:#756b86; }
+.si-range>div { display:flex; gap:4px; flex-wrap:wrap; }
+.si-range button { cursor:pointer; padding:8px 12px; border:1px solid #dfd6ec; background:#faf8f3; color:#473466; border-radius:6px; }
+.si-range button[aria-pressed=true] { background:#3b2c67; color:white; border-color:#3b2c67; }
+.si-panel { border:1px solid #e5dfeb; background:#fffdf7; border-radius:12px; padding:24px; margin:18px 0; min-width:0; }
+.si-panel h2 { font:500 20px 'Space Grotesk',sans-serif; margin:0 0 12px; }
+.si-panel p,.si-stat p { font-size:12px; line-height:1.8; color:#7c7387; }
+.si-chart { width:100%; height:310px; margin-top:20px; font:12px Inter,sans-serif; }
+.si-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin:20px 0; }
+.si-stat { background:#f4f0f9; border:1px solid #e7dfef; border-radius:10px; padding:22px; min-width:0; }
+.si-stat>span { font-size:12px; color:#71617e; }
+.si-stat>strong { display:block; margin:14px 0; font:500 28px 'Space Grotesk',sans-serif; }
+.stock-intelligence summary { font-size:11px; cursor:pointer; color:#633bad; line-height:1.8; }
+.si-chart-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.si-facts { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; padding:16px 0; }
+.si-facts dt { color:#85788b; font-size:11px; margin-bottom:7px; }
+.si-facts dd { margin:0; font-size:15px; color:#3d2d59; overflow-wrap:anywhere; }
+.si-explanation { white-space:pre-wrap; padding:20px; background:#f4f0f9; border-radius:8px; }
+.si-loading { opacity:.45; pointer-events:none; }
+@media(max-width:1000px) { .si-grid,.si-facts { grid-template-columns:repeat(2,minmax(0,1fr)); } .si-chart-grid { grid-template-columns:1fr; } }
+@media(max-width:600px) { .si-grid,.si-facts { grid-template-columns:1fr; } .si-quote,.si-range { flex-direction:column; align-items:flex-start; } .si-panel { padding:16px 8px; } .si-chart { height:260px; } .si-toolbar { flex-wrap:wrap; } }
+.si-range label { display:flex; flex-direction:column; gap:7px; }
+.si-range select { background:#fffdf7; border:1px solid #ded5e9; color:#4d3e67; border-radius:6px; padding:8px 12px; font-size:12px; }
+.stock-intelligence button:focus-visible,.stock-intelligence summary:focus-visible,.stock-intelligence select:focus-visible { outline:2px solid #7645d9; outline-offset:3px; }

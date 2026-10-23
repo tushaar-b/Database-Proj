@@ -20,7 +20,9 @@ def risk_summary(conn, portfolio_id: str) -> dict[str, Any]:
         row = cur.fetchone()
     if row is None:
         raise HTTPException(status_code=404, detail="Portfolio not found")
-    return dict(row)
+    return {**dict(row), 'valuation_basis': 'historical_daily_close',
+            'data_source': 'PostgreSQL daily_market_quote',
+            'data_warning': 'Historical risk valuation and estimation window; latest portfolio quotations are reported separately. Legacy historical provenance requires audit.'}
 
 
 def _feedback_snapshot(cur, user_id: str, evaluated_portfolio_id: str) -> tuple[dict, str, str | None, str | None]:

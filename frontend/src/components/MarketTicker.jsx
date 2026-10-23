@@ -1,48 +1,31 @@
-import { useEffect, useState } from 'react';
-import { ArrowDown, ArrowUp } from 'lucide-react';
+import { ArrowDown, ArrowUp, Minus } from 'lucide-react';
+import usePublicMarketData from '../hooks/usePublicMarketData.js';
 import './MarketTicker.css';
 
-// Replace this illustrative local feed with the approved market-data API or WebSocket later.
-const MOCK_MARKETS = [
-  { name: 'NIFTY 50', price: 24823.15, change: 0.42 },
-  { name: 'SENSEX', price: 81427.93, change: 0.36 },
-  { name: 'BANK NIFTY', price: 51492.8, change: -0.18 },
-  { name: 'NIFTY IT', price: 38652.4, change: 0.73 },
-  { name: 'NIFTY MIDCAP', price: 58721.65, change: 0.21 },
-  { name: 'NIFTY METAL', price: 9234.2, change: -0.31 },
-];
-const PRICE_FORMAT = new Intl.NumberFormat('en-IN', { maximumFractionDigits: 2 });
+const priceFormat = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 2 });
+const quoteDate = (value) => new Intl.DateTimeFormat('en-IN', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${value}T00:00:00Z`));
 
-function TickerItem({ item }) {
-  const isUp = item.change >= 0;
-  const Direction = isUp ? ArrowUp : ArrowDown;
-  return <div className="market-ticker__item">
-    <span className="market-ticker__name">{item.name}</span>
-    <strong className="market-ticker__price">{PRICE_FORMAT.format(item.price)}</strong>
-    <span className={`market-ticker__change market-ticker__change--${isUp ? 'up' : 'down'}`}><Direction size={12} strokeWidth={2.5} />{isUp ? '+' : ''}{item.change.toFixed(2)}%</span>
+function PriceCard({ quote }) {
+  const change = quote.change_percent == null ? null : Number(quote.change_percent);
+  const direction = change == null || change === 0 ? 'neutral' : change > 0 ? 'up' : 'down';
+  const Icon = direction === 'up' ? ArrowUp : direction === 'down' ? ArrowDown : Minus;
+  return <div className="market-ticker__item" title={quote.company_name}>
+    <span className="market-ticker__name">{quote.ticker}</span>
+    <strong className="market-ticker__price">{priceFormat.format(Number(quote.close_price))}</strong>
+    <span className={`market-ticker__change market-ticker__change--${direction}`} title={quote.previous_date ? `Compared with the stored close on ${quoteDate(quote.previous_date)}` : 'No previous closing price available'}><Icon size={12} aria-hidden="true" />{change == null ? 'No comparison' : `${change > 0 ? '+' : ''}${change.toFixed(2)}%`}</span>
+    <span className="market-ticker__date">Stored close · {quoteDate(quote.price_date)}</span>
   </div>;
 }
 
 export default function MarketTicker() {
-  const [markets, setMarkets] = useState(MOCK_MARKETS);
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setMarkets((current) => current.map((item) => {
-        const movement = (Math.random() - 0.5) * 0.0012;
-        return { ...item, price: Math.max(0, item.price * (1 + movement)), change: item.change + movement * 100 };
-      }));
-    }, 4000);
-    return () => window.clearInterval(timer);
-  }, []);
-
-  return <section className="market-ticker" id="markets" aria-label="Illustrative market index ticker">
-    <div className="market-ticker__mask">
-      <div className="market-ticker__track">
-        {[0, 1].map((copy) => <div className="market-ticker__group" key={copy} aria-hidden={copy === 1}>
-          {markets.map((item) => <TickerItem item={item} key={item.name} />)}
-        </div>)}
-      </div>
+  const { status, data, error, retry } = usePublicMarketData('/securities?limit=50');
+  const quotes = data?.securities?.slice(0, 6) || [];
+  return <section className="market-ticker price-ticker" aria-label="Illustrative research price ticker">
+    <div className="market-ticker__mask" tabIndex={0} role="region" aria-label="Scroll stored equity research prices" aria-busy={status === 'loading'}>
+      {status === 'loading' ? <div className="market-ticker__group" role="status">{Array.from({ length: 6 }, (_, index) => <div className="market-ticker__item price-ticker__placeholder" key={index} aria-hidden={index > 0}><span className="market-ticker__name">Loading research quotes…</span><strong>—</strong></div>)}</div>
+        : status === 'error' || !quotes.length ? <div className="price-ticker__unavailable" role="status"><span>{error || 'No stored equity quotes are available yet.'}</span><button type="button" className="clay-btn clay-btn--soft" onClick={retry}>Retry prices</button></div>
+          : <div className="market-ticker__track">{[0, 1].map((copy) => <div className="market-ticker__group" key={copy} aria-hidden={copy === 1}>{quotes.map((quote) => <PriceCard key={quote.ticker} quote={quote} />)}</div>)}</div>}
     </div>
-    <span className="market-ticker__note">Illustrative market data</span>
+    <span className="market-ticker__note">Illustrative research data · source unverified; may include synthetic quotes · not live prices. Changes compare consecutive stored, unadjusted closes.</span>
   </section>;
 }

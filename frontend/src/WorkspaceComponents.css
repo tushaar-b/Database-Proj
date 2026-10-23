@@ -1,0 +1,241 @@
+/* The approved Overview palette, available only inside authenticated surfaces.
+   Page rules exclude Overview; its composition and existing tokens remain intact. */
+:is(.intellivest-workspace, .workspace-overlay) {
+  --iv-canvas: #f8f5ef;
+  --iv-ink: #251b43;
+  --iv-purple: #493bdf;
+  --iv-coral: #ff7648;
+  --iv-lime: #c8ff80;
+  --iv-lavender: #e8e3fa;
+  --iv-surface: #fff9f2;
+  --iv-muted: #77708d;
+  --iv-border: #e8d9cf;
+  --iv-danger: #98412d;
+  --iv-warning: #84601e;
+  --iv-warning-surface: #fff1da;
+  --iv-success: #31583b;
+  --iv-success-surface: #e5efdc;
+  --iv-radius: 15px;
+  --iv-control-radius: 8px;
+  --iv-heading-font: 'Space Grotesk', sans-serif;
+  --iv-body-font: 'Inter', sans-serif;
+}
+
+.intellivest-workspace:not(.workspace-overview) {
+  --navy: var(--iv-ink);
+  --plum-900: var(--iv-ink);
+  --plum-700: var(--iv-ink);
+  --plum-500: var(--iv-muted);
+  --muted: var(--iv-muted);
+  --indigo: var(--iv-purple);
+  --blue: var(--iv-purple);
+  --peach-300: var(--iv-border);
+  --lilac-100: var(--iv-lavender);
+  --border: var(--iv-border);
+  --down-text: var(--iv-danger);
+  color: var(--iv-ink);
+  font-family: var(--iv-body-font);
+}
+.intellivest-workspace:not(.workspace-overview) > .main-column > .content-area { max-width: 1560px; min-width: 0; padding: 30px 30px 18px; }
+
+/* Shared page rhythm and editorial hierarchy. */
+.intellivest-workspace:where(:not(.workspace-overview)) .page-heading { align-items: center; gap: 24px; margin-bottom: 24px; }
+.intellivest-workspace:where(:not(.workspace-overview)) .page-heading > div:first-child { min-width: 0; }
+.intellivest-workspace:where(:not(.workspace-overview)) .page-heading h1 { margin: 0; color: var(--iv-ink); font-family: var(--iv-heading-font); font-size: clamp(29px, 2.7vw, 42px); font-weight: 600; line-height: 1.14; letter-spacing: -.055em; }
+.intellivest-workspace:where(:not(.workspace-overview)) .eyebrow { margin: 0 0 9px; color: var(--iv-muted); font-size: 10px; font-weight: 600; line-height: 1.5; letter-spacing: .12em; text-transform: uppercase; }
+.intellivest-workspace:where(:not(.workspace-overview)) .page-description { max-width: 650px; margin: 11px 0 0; color: var(--iv-muted); font-size: 12px; line-height: 1.65; }
+.intellivest-workspace:where(:not(.workspace-overview)) :is(.panel-heading, .section-heading) { align-items: center; gap: 16px; }
+.intellivest-workspace:where(:not(.workspace-overview)) :is(.panel-heading, .section-heading) h2 { margin: 0; color: var(--iv-ink); font-family: var(--iv-heading-font); font-size: 22px; font-weight: 500; line-height: 1.25; letter-spacing: -.04em; }
+.intellivest-workspace:where(:not(.workspace-overview)) .section-heading { margin-bottom: 18px; }
+.intellivest-workspace:where(:not(.workspace-overview)) :is(.panel, .metric-card, .risk-card, .alert-card) { min-width: 0; padding: 22px; border: 1px solid var(--iv-border); border-radius: var(--iv-radius); color: var(--iv-ink); background: var(--iv-surface); box-shadow: none; transition: none; }
+.intellivest-workspace:where(:not(.workspace-overview)) :is(.panel, .metric-card, .risk-card, .alert-card):hover { transform: none; box-shadow: none; }
+.intellivest-workspace:where(:not(.workspace-overview)) .metric-grid { gap: 14px; margin-bottom: 18px; align-items: stretch; }
+.intellivest-workspace:where(:not(.workspace-overview)) .metric-heading { color: var(--iv-muted); font-size: 10px; font-weight: 600; line-height: 1.5; letter-spacing: .08em; text-transform: uppercase; }
+.intellivest-workspace:where(:not(.workspace-overview)) .metric-value { margin: 20px 0 12px; color: var(--iv-ink); font-family: var(--iv-heading-font); font-size: clamp(26px, 2.6vw, 38px); font-weight: 600; line-height: 1.15; letter-spacing: -.055em; font-variant-numeric: tabular-nums; white-space: normal; overflow-wrap: anywhere; text-overflow: clip; }
+.intellivest-workspace:where(:not(.workspace-overview)) .metric-foot { color: var(--iv-muted); font-size: 11px; line-height: 1.6; }
+.intellivest-workspace:where(:not(.workspace-overview)) :is(.metric-icon, .empty-icon, .policy-icon, .banner-icon) { width: 34px; height: 34px; border: 1px solid #ded7ef; border-radius: 9px; color: var(--iv-purple); background: var(--iv-lavender); box-shadow: none; }
+.intellivest-workspace:where(:not(.workspace-overview)) .compact-metrics:not(.cashflow-metrics) > .metric-card:first-child { color: var(--iv-surface); border-color: var(--iv-ink); background: var(--iv-ink); }
+.intellivest-workspace:where(:not(.workspace-overview)) .compact-metrics:not(.cashflow-metrics) > .metric-card:first-child .metric-value { color: var(--iv-lime); }
+.intellivest-workspace:where(:not(.workspace-overview)) .compact-metrics:not(.cashflow-metrics) > .metric-card:first-child :is(.metric-heading, .metric-foot) { color: #d2c9e0; }
+.intellivest-workspace:where(:not(.workspace-overview)) .compact-metrics:not(.cashflow-metrics) > .metric-card:last-child { background: var(--iv-lavender); }
+
+/* Controls also apply to the existing risk drawer, without affecting Overview buttons. */
+:is(.intellivest-workspace:not(.workspace-overview), .intellivest-workspace .risk-explanation-drawer) .button { min-height: 38px; gap: 7px; padding: 10px 14px; border: 1px solid #d8c9bf; border-radius: var(--iv-control-radius); color: var(--iv-ink); background: var(--iv-surface); font: 600 11px/1.3 var(--iv-body-font); box-shadow: none; transition: background .15s ease, border-color .15s ease; }
+:is(.intellivest-workspace:not(.workspace-overview), .intellivest-workspace .risk-explanation-drawer) .button:hover:not(:disabled),
+:is(.intellivest-workspace:not(.workspace-overview), .intellivest-workspace .risk-explanation-drawer) .button:active:not(:disabled) { transform: none; color: var(--iv-ink); border-color: #c9b9c7; background: #eee8e0; box-shadow: none; }
+:is(.intellivest-workspace:not(.workspace-overview), .intellivest-workspace .risk-explanation-drawer) .button-primary { color: #fff; border-color: var(--iv-purple); background: var(--iv-purple); }
+:is(.intellivest-workspace:not(.workspace-overview), .intellivest-workspace .risk-explanation-drawer) .button-primary:hover:not(:disabled),
+:is(.intellivest-workspace:not(.workspace-overview), .intellivest-workspace .risk-explanation-drawer) .button-primary:active:not(:disabled) { color: #fff; border-color: #3b2dbf; background: #3b2dbf; }
+.intellivest-workspace:where(:not(.workspace-overview)) .button-plain { background: transparent; }
+.intellivest-workspace:where(:not(.workspace-overview)) .button-small { min-height: 32px; padding: 7px 10px; font-size: 11px; }
+.intellivest-workspace:where(:not(.workspace-overview)) .text-button { color: var(--iv-purple); font: 500 11px/1.4 var(--iv-body-font); box-shadow: none; }
+.intellivest-workspace:where(:not(.workspace-overview)) .danger-link { color: var(--iv-danger); }
+.intellivest-workspace:where(:not(.workspace-overview)) .icon-button,
+.intellivest-workspace .risk-drawer-close { width: 34px; height: 34px; border: 1px solid var(--iv-border); border-radius: var(--iv-control-radius); color: var(--iv-ink); background: var(--iv-surface); box-shadow: none; }
+.intellivest-workspace:where(:not(.workspace-overview)) .icon-button:hover,
+.intellivest-workspace .risk-drawer-close:hover { background: var(--iv-lavender); box-shadow: none; }
+.intellivest-workspace:where(:not(.workspace-overview)) .field { min-width: 0; gap: 8px; color: var(--iv-ink); font-size: 11px; font-weight: 500; }
+.intellivest-workspace:where(:not(.workspace-overview)) .field > span { color: var(--iv-ink); }
+.intellivest-workspace:where(:not(.workspace-overview)) .field small { color: var(--iv-muted); font-size: 11px; line-height: 1.6; }
+.intellivest-workspace:where(:not(.workspace-overview)) .field :is(input, select, textarea) { width: 100%; min-width: 0; min-height: 40px; padding: 10px 11px; border: 1px solid #d8cbd6; border-radius: 7px; color: var(--iv-ink); background: #fffdfa; font-family: var(--iv-body-font); font-size: 12px; line-height: 1.4; box-shadow: none; }
+.intellivest-workspace:where(:not(.workspace-overview)) .field select { appearance: auto; padding-right: 8px; }
+.intellivest-workspace:where(:not(.workspace-overview)) .field :is(input, select, textarea):hover { border-color: #b6a8c7; }
+.intellivest-workspace:where(:not(.workspace-overview)) .field input::placeholder { color: #80778d; }
+.intellivest-workspace:where(:not(.workspace-overview)) :is(button, input, select, textarea, [tabindex]):focus-visible,
+.intellivest-workspace .risk-explanation-drawer :focus-visible { outline: 2px solid var(--iv-purple); outline-offset: 3px; box-shadow: none; }
+
+/* Tables are one surface, with separators instead of floating row cards. */
+.intellivest-workspace:where(:not(.workspace-overview)) .table-panel { padding: 0; overflow: hidden; }
+.intellivest-workspace:where(:not(.workspace-overview)) .table-wrap { max-height: none; padding: 0; overflow-x: auto; }
+.intellivest-workspace:where(:not(.workspace-overview)) .table-wrap table { width: 100%; border-collapse: collapse; border-spacing: 0; color: var(--iv-ink); }
+.intellivest-workspace:where(:not(.workspace-overview)) .table-wrap th { padding: 14px; border-bottom: 1px solid var(--iv-border); color: #655b79; background: var(--iv-canvas); font-size: 10px; font-weight: 600; letter-spacing: .08em; line-height: 1.5; }
+.intellivest-workspace:where(:not(.workspace-overview)) .table-wrap tbody tr { background: transparent; box-shadow: none; }
+.intellivest-workspace:where(:not(.workspace-overview)) .table-wrap tbody tr:hover { background: #f0ebfa; }
+.intellivest-workspace:where(:not(.workspace-overview)) .table-wrap td { height: 64px; padding: 12px 14px; border-bottom: 1px solid var(--iv-border); border-radius: 0; color: var(--iv-ink); font-size: 12px; line-height: 1.5; vertical-align: middle; font-variant-numeric: tabular-nums; }
+.intellivest-workspace:where(:not(.workspace-overview)) .table-wrap tr:last-child td { border-bottom: 0; }
+.intellivest-workspace:where(:not(.workspace-overview)) .table-wrap td:first-child,
+.intellivest-workspace:where(:not(.workspace-overview)) .table-wrap td:last-child { border-radius: 0; }
+.intellivest-workspace:where(:not(.workspace-overview)) .numeric-cell { text-align: right; }
+.intellivest-workspace:where(:not(.workspace-overview)) .security-name { gap: 4px; }
+.intellivest-workspace:where(:not(.workspace-overview)) .security-name strong { color: var(--iv-ink); font-family: var(--iv-heading-font); font-size: 13px; font-weight: 600; }
+.intellivest-workspace:where(:not(.workspace-overview)) .security-name small { max-width: 220px; font-size: 10px; }
+.intellivest-workspace:where(:not(.workspace-overview)) .row-actions { display: table-cell; text-align: right; white-space: nowrap; }
+.intellivest-workspace:where(:not(.workspace-overview)) .row-actions .text-button { min-height: 30px; margin-left: 6px; padding: 6px 10px; border: 1px solid #d8cbd6; border-radius: 6px; background: transparent; text-decoration: none; }
+.intellivest-workspace:where(:not(.workspace-overview)) .row-actions .text-button:hover { background: var(--iv-lavender); }
+.intellivest-workspace:where(:not(.workspace-overview)) .row-actions .danger-link:hover { background: #fbe7dc; }
+.intellivest-workspace:where(:not(.workspace-overview)) :is(.status-pill, .metric-badge, .expense-tag) { padding: 5px 8px; border: 1px solid #dfd7e8; border-radius: 6px; color: #655b79; background: #eee9f5; font-size: 10px; font-weight: 600; line-height: 1.3; box-shadow: none; }
+.intellivest-workspace:where(:not(.workspace-overview)) :is(.status-open, .status-pending) { color: var(--iv-warning); border-color: #e7d6af; background: var(--iv-warning-surface); }
+.intellivest-workspace:where(:not(.workspace-overview)) :is(.status-accepted, .status-resolved) { color: var(--iv-success); border-color: #cde0bb; background: var(--iv-success-surface); }
+.intellivest-workspace:where(:not(.workspace-overview)) .status-rejected { color: var(--iv-danger); border-color: #efd3c6; background: #fce9e2; }
+
+/* Forms and informational surfaces reuse the same geometry. */
+.intellivest-workspace:where(:not(.workspace-overview)) :is(.entry-form, .policy-panel, .portfolio-toolbar, .recommendation-banner, .alert-explainer) { padding: 18px; border: 1px solid var(--iv-border); border-radius: var(--iv-radius); color: var(--iv-ink); background: var(--iv-surface); box-shadow: none; }
+.intellivest-workspace:where(:not(.workspace-overview)) .entry-form { gap: 16px; background: #f1edf9; }
+.intellivest-workspace:where(:not(.workspace-overview)) .policy-panel { gap: 13px; background: #f0ebfa; }
+.intellivest-workspace:where(:not(.workspace-overview)) .policy-panel strong { color: var(--iv-ink); font-size: 12px; font-weight: 600; }
+.intellivest-workspace:where(:not(.workspace-overview)) :is(.policy-panel p, .recommendation-banner p, .form-hint-wide, .disclaimer-line, .chart-caption) { color: var(--iv-muted); font-size: 11px; line-height: 1.65; }
+.intellivest-workspace:where(:not(.workspace-overview)) .recommendation-banner { gap: 16px; background: var(--iv-lavender); }
+.intellivest-workspace:where(:not(.workspace-overview)) .recommendation-banner > div:nth-child(2) strong { margin-top: 6px; color: var(--iv-ink); font-family: var(--iv-heading-font); font-size: 28px; font-weight: 600; line-height: 1.2; overflow-wrap: anywhere; }
+.intellivest-workspace:where(:not(.workspace-overview)) .portfolio-toolbar { align-items: center; }
+.intellivest-workspace:where(:not(.workspace-overview)) .toolbar-value strong { color: var(--iv-ink); font-family: var(--iv-heading-font); font-size: 25px; font-weight: 600; overflow-wrap: anywhere; }
+.intellivest-workspace:where(:not(.workspace-overview)) .portfolio-details { margin: 0 0 22px; }
+.intellivest-workspace:where(:not(.workspace-overview)) .portfolio-create { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, .8fr); }
+.intellivest-workspace:where(:not(.workspace-overview)) .portfolio-create .form-actions { grid-column: 1 / -1; justify-content: flex-end; }
+.intellivest-workspace:where(:not(.workspace-overview)) .holding-form { grid-template-columns: minmax(0, 1.4fr) minmax(0, .65fr) minmax(0, 1fr); }
+.intellivest-workspace:where(:not(.workspace-overview)) .holding-form .form-actions { grid-column: 1 / -1; }
+.intellivest-workspace:where(:not(.workspace-overview)) .edit-portfolio-form { grid-template-columns: minmax(0, 1fr) minmax(0, .7fr) auto; }
+
+/* Risk measurements keep their backend labels, horizons and confidence levels. */
+.intellivest-workspace:where(:not(.workspace-overview)) .risk-data-line { gap: 10px 20px; padding: 14px 0; margin: 0 0 18px; border-block: 1px solid var(--iv-border); color: var(--iv-muted); font-size: 11px; line-height: 1.5; }
+.intellivest-workspace:where(:not(.workspace-overview)) .risk-card { min-height: 195px; display: flex; flex-direction: column; }
+.intellivest-workspace:where(:not(.workspace-overview)) .risk-card-top { flex-wrap: wrap; align-items: flex-start; gap: 10px; }
+.intellivest-workspace:where(:not(.workspace-overview)) .risk-card .eyebrow { flex: 1 1 130px; max-width: none; margin: 0; font-size: 10px; }
+.intellivest-workspace:where(:not(.workspace-overview)) .risk-card .metric-badge { flex-shrink: 0; }
+.intellivest-workspace:where(:not(.workspace-overview)) .risk-card > strong { margin: 22px 0 15px; color: var(--iv-ink); font-family: var(--iv-heading-font); font-size: clamp(28px, 2.7vw, 40px); font-weight: 600; line-height: 1.15; letter-spacing: -.055em; overflow-wrap: anywhere; }
+.intellivest-workspace:where(:not(.workspace-overview)) .risk-card > p { margin: auto 0 0; color: #655b79; font-size: 12px; line-height: 1.7; }
+.intellivest-workspace:where(:not(.workspace-overview)) .risk-metrics > .risk-card:first-child { color: var(--iv-surface); border-color: var(--iv-ink); background: var(--iv-ink); }
+.intellivest-workspace:where(:not(.workspace-overview)) .risk-metrics > .risk-card:first-child > strong { color: var(--iv-lime); }
+.intellivest-workspace:where(:not(.workspace-overview)) .risk-metrics > .risk-card:first-child :is(.eyebrow, p) { color: #d2c9e0; }
+.intellivest-workspace:where(:not(.workspace-overview)) .risk-metrics > .risk-card:first-child .metric-badge { color: #ded8f0; border-color: #66557e; background: transparent; }
+.intellivest-workspace:where(:not(.workspace-overview)) .risk-metrics > .risk-card:nth-child(3) { background: var(--iv-lavender); }
+.intellivest-workspace:where(:not(.workspace-overview)) .risk-metrics .risk-red { border-color: #cf9b88; border-top: 3px solid var(--iv-danger); }
+.intellivest-workspace:where(:not(.workspace-overview)) .risk-metrics .risk-card:last-child { grid-column: auto; }
+.intellivest-workspace:where(:not(.workspace-overview)) .risk-status-dot { box-shadow: none; }
+.intellivest-workspace:where(:not(.workspace-overview)) .risk-status-dot.good { background: var(--iv-success); }
+.intellivest-workspace:where(:not(.workspace-overview)) .risk-status-dot.warn { background: var(--iv-warning); }
+.intellivest-workspace:where(:not(.workspace-overview)) .clay-tooltip { max-width: min(300px, 80vw); padding: 12px 14px; border: 1px solid var(--iv-border); border-radius: 9px; color: var(--iv-ink); background: var(--iv-surface); box-shadow: 0 3px 12px #251b4310; font: 11px/1.6 var(--iv-body-font); }
+.intellivest-workspace:where(:not(.workspace-overview)) .clay-tooltip p { margin: 6px 0 0; }
+
+/* A warning denotes an unresolved breach; no client-invented severity tiers. */
+.intellivest-workspace:where(:not(.workspace-overview)) .alert-summary-row { grid-template-columns: minmax(200px, .34fr) minmax(0, 1fr); gap: 14px; margin-bottom: 24px; }
+.intellivest-workspace:where(:not(.workspace-overview)) .alert-count-card { min-height: 118px; gap: 8px; padding: 20px; border: 1px solid var(--iv-border); border-radius: var(--iv-radius); color: var(--iv-ink); background: var(--iv-surface); box-shadow: none; }
+.intellivest-workspace:where(:not(.workspace-overview)) .alert-count-card[data-state='warning'] { border-color: #e7d6af; background: var(--iv-warning-surface); }
+.intellivest-workspace:where(:not(.workspace-overview)) .alert-count-card .eyebrow { margin: 0; color: var(--iv-warning); font-size: 10px; }
+.intellivest-workspace:where(:not(.workspace-overview)) .alert-count-card .alert-count-number { color: var(--iv-ink); font-family: var(--iv-heading-font); font-size: 40px; font-weight: 600; letter-spacing: -.05em; }
+.intellivest-workspace:where(:not(.workspace-overview)) .alert-count-card > span:last-child { color: #655b79; font-size: 11px; }
+.intellivest-workspace:where(:not(.workspace-overview)) .alert-count-card[data-state='clear'] .eyebrow { color: var(--iv-muted); }
+.intellivest-workspace:where(:not(.workspace-overview)) .alert-explainer { align-items: center; background: #f0ebfa; }
+.intellivest-workspace:where(:not(.workspace-overview)) .alert-explainer p { color: #655b79; font-size: 12px; line-height: 1.7; }
+.intellivest-workspace:where(:not(.workspace-overview)) .alert-page-list { gap: 12px; }
+.intellivest-workspace:where(:not(.workspace-overview)) .alert-card { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: start; gap: 16px; border-left: 3px solid #b98a39; }
+.intellivest-workspace:where(:not(.workspace-overview)) .alert-card.alert-resolved { border-left-color: #6c9560; background: var(--iv-surface); }
+.intellivest-workspace:where(:not(.workspace-overview)) .alert-symbol { width: 34px; height: 34px; border: 1px solid #e7d6af; border-radius: 9px; color: var(--iv-warning); background: var(--iv-warning-surface); box-shadow: none; }
+.intellivest-workspace:where(:not(.workspace-overview)) .alert-symbol.resolved { color: var(--iv-success); border-color: #cde0bb; background: var(--iv-success-surface); }
+.intellivest-workspace:where(:not(.workspace-overview)) .alert-title-row { justify-content: space-between; flex-wrap: wrap; gap: 8px 12px; }
+.intellivest-workspace:where(:not(.workspace-overview)) .alert-title-row h3 { color: var(--iv-ink); font: 600 17px/1.4 var(--iv-heading-font); letter-spacing: -.025em; }
+.intellivest-workspace:where(:not(.workspace-overview)) .alert-content > p { margin: 8px 0 12px; color: #655b79; font-size: 12px; line-height: 1.65; }
+.intellivest-workspace:where(:not(.workspace-overview)) .alert-meta { gap: 7px 18px; color: #655b79; font-size: 11px; line-height: 1.5; }
+
+/* Empty, loading and notification states are flat and compact. */
+.intellivest-workspace:where(:not(.workspace-overview)) .empty-state { min-height: 180px; padding: 24px 12px; }
+.intellivest-workspace:where(:not(.workspace-overview)) .empty-icon { width: 38px; height: 38px; margin-bottom: 12px; }
+.intellivest-workspace:where(:not(.workspace-overview)) .empty-state strong { color: var(--iv-ink); font-size: 14px; }
+.intellivest-workspace:where(:not(.workspace-overview)) .empty-state p { color: var(--iv-muted); font-size: 12px; line-height: 1.65; }
+.intellivest-workspace:where(:not(.workspace-overview)) .loading-state { margin: 0; padding: 24px; border: 1px solid var(--iv-border); border-radius: 12px; color: var(--iv-muted); background: var(--iv-surface); font-size: 12px; box-shadow: none; }
+.intellivest-workspace .notice { padding: 14px 16px; border: 1px solid #efd3c6; border-radius: 10px; color: var(--iv-danger); background: #fce9e2; font: 12px/1.6 var(--iv-body-font); box-shadow: none; }
+.intellivest-workspace .notice-success { color: var(--iv-success); border-color: #cde0bb; background: var(--iv-success-surface); }
+.intellivest-workspace .notice-info { color: var(--iv-ink); border-color: #dfd7e8; background: var(--iv-lavender); }
+.intellivest-workspace .notice .icon-button { width: 28px; height: 28px; flex-shrink: 0; border-radius: 6px; background: transparent; box-shadow: none; }
+.intellivest-workspace:where(:not(.workspace-overview)) .page-footer { color: var(--iv-muted); font: 10px/1.7 var(--iv-body-font); }
+
+/* Existing risk drawer: presentation only; all risk content and controls retained. */
+.intellivest-workspace .risk-drawer-backdrop { background: rgb(37 27 67 / 35%); }
+.intellivest-workspace .risk-explanation-drawer { --plum-900: var(--iv-ink); --plum-700: var(--iv-ink); --plum-500: var(--iv-muted); --indigo: var(--iv-purple); --peach-300: var(--iv-border); width: min(580px, 100vw); border-color: var(--iv-border); color: var(--iv-ink); background: var(--iv-surface); font-family: var(--iv-body-font); box-shadow: none; }
+.intellivest-workspace :is(.risk-drawer-header, .risk-drawer-footer) { padding-inline: 24px; border-color: var(--iv-border); color: var(--iv-ink); background: var(--iv-surface); }
+.intellivest-workspace .risk-drawer-header h2 { color: var(--iv-ink); font: 600 26px/1.2 var(--iv-heading-font); letter-spacing: -.04em; }
+.intellivest-workspace .risk-drawer-content { padding: 24px; }
+.intellivest-workspace .risk-explanation-drawer :is(.risk-var-panel, .risk-summary-box, .risk-analytics-brief, .risk-drawer-empty) { border: 1px solid var(--iv-border); border-radius: 14px; background: var(--iv-lavender); box-shadow: none; }
+.intellivest-workspace .risk-explanation-drawer .drawer-section-icon { border-color: var(--iv-border); border-radius: 9px; color: var(--iv-purple); background: var(--iv-surface); box-shadow: none; }
+.intellivest-workspace .risk-explanation-drawer .risk-weight-track { background: var(--iv-lavender); box-shadow: none; }
+.intellivest-workspace .risk-explanation-drawer .risk-weight-track > span { background: var(--iv-purple); }
+.intellivest-workspace .risk-explanation-drawer .risk-drawer-section { border-color: var(--iv-border); }
+.intellivest-workspace .risk-explanation-drawer :is(.risk-stale-note, .risk-drawer-alert, .risk-hhi-reading.is-breached) { border-color: #e7d6af; border-radius: 9px; color: var(--iv-warning); background: var(--iv-warning-surface); box-shadow: none; }
+.intellivest-workspace .risk-explanation-drawer .risk-hhi-reading:not(.is-breached) { color: var(--iv-success); background: var(--iv-success-surface); }
+
+/* Native holding editor: modal focus containment, Escape and backdrop dismissal. */
+.intellivest-workspace .workspace-modal { width: min(480px, calc(100% - 32px)); max-width: 100%; max-height: calc(100dvh - 32px); margin: auto; padding: 0; overflow: auto; border: 1px solid var(--iv-border); border-radius: var(--iv-radius); color: var(--iv-ink); background: var(--iv-surface); box-shadow: 0 8px 28px #251b4314; }
+.intellivest-workspace .workspace-modal::backdrop { background: rgb(37 27 67 / 35%); }
+.intellivest-workspace .workspace-modal .modal-card { width: 100%; max-height: none; padding: 24px; border: 0; border-radius: 0; color: var(--iv-ink); background: var(--iv-surface); box-shadow: none; }
+.intellivest-workspace .workspace-modal .modal-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; padding-bottom: 18px; border-bottom: 1px solid var(--iv-border); }
+.intellivest-workspace .workspace-modal h2 { margin: 0; color: var(--iv-ink); font: 600 24px/1.2 var(--iv-heading-font); letter-spacing: -.04em; }
+.intellivest-workspace .workspace-modal .modal-close { position: static; flex-shrink: 0; }
+
+@media (max-width: 1180px) {
+  .intellivest-workspace:not(.workspace-overview) > .main-column > .content-area { padding-inline: 22px; }
+  .intellivest-workspace:where(:not(.workspace-overview)) .page-heading { align-items: flex-start; flex-direction: column; gap: 18px; }
+  .intellivest-workspace:where(:not(.workspace-overview)) .metric-grid.three-up { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .intellivest-workspace:where(:not(.workspace-overview)) .edit-portfolio-form { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .intellivest-workspace:where(:not(.workspace-overview)) .edit-portfolio-form .form-actions { grid-column: 1 / -1; }
+}
+@media (max-width: 760px) {
+  .intellivest-workspace:where(:not(.workspace-overview)) .recommendation-banner { grid-template-columns: auto minmax(0, 1fr); }
+  .intellivest-workspace:where(:not(.workspace-overview)) .recommendation-banner :is(p, .text-button) { grid-column: 1 / -1; }
+  .intellivest-workspace:where(:not(.workspace-overview)) .alert-summary-row { grid-template-columns: 1fr; }
+  .intellivest-workspace:where(:not(.workspace-overview)) :is(.portfolio-create, .holding-form) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .intellivest-workspace:where(:not(.workspace-overview)) .alert-card { grid-template-columns: auto minmax(0, 1fr); }
+  .intellivest-workspace:where(:not(.workspace-overview)) .alert-card > .button { grid-column: 2; justify-self: start; margin: 0; }
+}
+@media (max-width: 600px) {
+  .intellivest-workspace:not(.workspace-overview) > .main-column > .content-area { padding: 25px 16px 18px; }
+  .intellivest-workspace:where(:not(.workspace-overview)) .page-heading h1 { font-size: 31px; }
+  .intellivest-workspace:where(:not(.workspace-overview)) .heading-action { width: 100%; min-width: 0; }
+  .intellivest-workspace:where(:not(.workspace-overview)) :is(.section-heading, .panel-heading, .panel-actions, .form-actions) { flex-wrap: wrap; }
+  .intellivest-workspace:where(:not(.workspace-overview)) .risk-toolbar { width: 100%; min-width: 0; flex-wrap: wrap; gap: 12px; }
+  .intellivest-workspace:where(:not(.workspace-overview)) .risk-toolbar .field { min-width: 0; flex: 1 1 100%; }
+  .intellivest-workspace:where(:not(.workspace-overview)) .metric-grid.three-up { grid-template-columns: minmax(0, 1fr); }
+  .intellivest-workspace:where(:not(.workspace-overview)) :is(.panel, .metric-card, .risk-card, .alert-card) { padding: 20px; }
+  .intellivest-workspace:where(:not(.workspace-overview)) :is(.portfolio-create, .holding-form, .edit-portfolio-form) { grid-template-columns: minmax(0, 1fr); }
+  .intellivest-workspace:where(:not(.workspace-overview)) .table-panel { padding: 0; }
+  .intellivest-workspace:where(:not(.workspace-overview)) .portfolio-toolbar { align-items: stretch; flex-direction: column; }
+  .intellivest-workspace:where(:not(.workspace-overview)) .portfolio-toolbar .field { width: 100%; }
+  .intellivest-workspace:where(:not(.workspace-overview)) .toolbar-value { text-align: left; }
+  .intellivest-workspace:where(:not(.workspace-overview)) .field :is(input, select, textarea) { font-size: 16px; }
+  .intellivest-workspace:where(:not(.workspace-overview)) .alert-title-row h3 { font-size: 16px; }
+  .intellivest-workspace:where(:not(.workspace-overview)) .page-footer { flex-direction: column; gap: 5px; }
+  .intellivest-workspace .risk-explanation-drawer { width: 100vw; }
+  .intellivest-workspace :is(.risk-drawer-header, .risk-drawer-content, .risk-drawer-footer) { padding-inline: 18px; }
+  .intellivest-workspace .risk-drawer-header h2 { font-size: 23px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .intellivest-workspace:where(:not(.workspace-overview)) .button { transition: none; }
+}

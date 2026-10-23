@@ -13,6 +13,7 @@ from backend.schemas import RebalanceExecute
 from backend.services import evaluate_portfolio_risk, process_feedback_outbox
 from backend.auth import require_authenticated, require_csrf
 from backend.ownership import enforce_ownership
+from backend.market_data import get_latest_quotes, price_holdings, valuation as market_valuation
 
 router = APIRouter(prefix="/rebalance", tags=["Rebalance"], dependencies=[Depends(require_authenticated), Depends(require_csrf), Depends(enforce_ownership)])
 
@@ -36,6 +37,8 @@ def propose_rebalance(
         holdings = [dict(row) for row in cur.fetchall()]
         cur.execute("SELECT sector_name FROM mv_daily_sector_concentration WHERE portfolio_id=%s ORDER BY sector_weight DESC LIMIT 1", (str(portfolio_id),))
         top_sector_row = cur.fetchone()
+    priced = price_holdings(risk, str(portfolio_id))
+    holdings = sorted([{**h, 'close_price': h['latest_price']} for h in priced if h['latest_price'] is not None and h['quantity'] > 0], key=lambda h: -h['market_value'])
     active_breaches = [row["metric"] for row in evaluation["new_alerts"]]
     with risk.cursor() as cur:
         cur.execute("SELECT breached_metric::text FROM rebalance_alert WHERE portfolio_id=%s AND resolved_flag=FALSE", (str(portfolio_id),))
@@ -49,7 +52,7 @@ def propose_rebalance(
         operations = [{
             "security_id": candidate["security_id"], "ticker_symbol": candidate["ticker_symbol"],
             "side": "SELL", "units": 1, "current_price": candidate["close_price"],
-            "estimated_proceeds": candidate["close_price"],
+            "estimated_proceeds": candidate["close_price"], "quote": candidate["quote"],
         }]
         reason = (
             f"Active risk breaches: {', '.join(active_breaches)}. Propose selling one share of the largest priced holding"
@@ -80,6 +83,7 @@ def _execute_once(conn, portfolio_id: str, body: RebalanceExecute, request_hash:
         cash = Decimal(portfolio["cash_balance"])
         touched = set()
         ledger_entries = []
+        quotes = get_latest_quotes(conn)
         for operation in body.operations:
             security_id = str(operation.security_id)
             if security_id in touched:
@@ -89,11 +93,10 @@ def _execute_once(conn, portfolio_id: str, body: RebalanceExecute, request_hash:
             security = cur.fetchone()
             if not security:
                 raise HTTPException(status_code=404, detail=f"Security {security_id} not found")
-            cur.execute("SELECT close_price FROM daily_market_quote WHERE security_id=%s ORDER BY trade_date DESC LIMIT 1", (security_id,))
-            quote = cur.fetchone()
-            if not quote:
-                raise HTTPException(status_code=409, detail=f"No current quote available for {security['ticker_symbol']}")
-            price = Decimal(quote["close_price"])
+            quote = quotes.get(security_id)
+            if not quote or not quote['price'] or not quote.get('fresh_enough_for_operation', False):
+                raise HTTPException(status_code=409, detail='A sufficiently recent yfinance observation or latest dated market close is required for simulated execution; dated fallback prices cannot execute.')
+            price = Decimal(quote['price'])
             cur.execute("SELECT holding_id::text,quantity,average_buy_price FROM holding WHERE portfolio_id=%s AND security_id=%s FOR UPDATE", (portfolio_id, security_id))
             holding = cur.fetchone()
             quantity = int(holding["quantity"]) if holding else 0
@@ -123,9 +126,9 @@ def _execute_once(conn, portfolio_id: str, body: RebalanceExecute, request_hash:
                         (portfolio_id, security_id, tx_type, delta, price))
             tx_id = cur.fetchone()["tx_id"]
             ledger_entries.append({"tx_id": tx_id, "ticker_symbol": security["ticker_symbol"], "side": operation.side, "units": delta, "price": price})
-        cur.execute("""WITH latest AS (SELECT DISTINCT ON (security_id) security_id,close_price FROM daily_market_quote ORDER BY security_id,trade_date DESC)
-                       SELECT %s + COALESCE(SUM(h.quantity*latest.close_price),0) AS portfolio_valuation FROM holding h JOIN latest USING(security_id) WHERE h.portfolio_id=%s""", (cash, portfolio_id))
-        valuation = cur.fetchone()["portfolio_valuation"]
+        valuation = market_valuation(conn, portfolio_id, cash)['portfolio_valuation']
+        if valuation is None:
+            raise HTTPException(409, 'Portfolio valuation is incomplete; simulated execution was not committed.')
         cur.execute("UPDATE portfolio SET total_valuation=%s WHERE portfolio_id=%s", (valuation, portfolio_id))
         result = {
             "portfolio_id": portfolio_id, "idempotency_key": str(body.idempotency_key),

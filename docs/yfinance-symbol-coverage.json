@@ -1,0 +1,499 @@
+{
+  "retrieved_at": "2026-10-23T07:50:54.405679+00:00",
+  "source": "yfinance",
+  "symbols": [
+    {
+      "symbol": "ADANIENT.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Adani Enterprises Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:51+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "ADANIPORTS.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Adani Ports and Special Economic Zone Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:50+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "APOLLOHOSP.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Apollo Hospitals Enterprise Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:46+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "ASIANPAINT.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Asian Paints Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:52+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "AXISBANK.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Axis Bank Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:51+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "BAJAJ-AUTO.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Bajaj Auto Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:49+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "BAJAJFINSV.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Bajaj Finserv Ltd.",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:48+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 19
+    },
+    {
+      "symbol": "BAJFINANCE.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Bajaj Finance Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:48+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "BEL.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Bharat Electronics Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:48+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "BHARTIARTL.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Bharti Airtel Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:49+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "BPCL.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Bharat Petroleum Corporation Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:48+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "BRITANNIA.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Britannia Industries Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:42+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 19
+    },
+    {
+      "symbol": "CIPLA.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Cipla Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:48+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "COALINDIA.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Coal India Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:50+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "DIVISLAB.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Divi's Laboratories Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:49+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 19
+    },
+    {
+      "symbol": "DRREDDY.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Dr. Reddy's Laboratories Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:49+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "EICHERMOT.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Eicher Motors Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:48+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "GRASIM.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Grasim Industries Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:49+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 19
+    },
+    {
+      "symbol": "HCLTECH.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "HCL Technologies Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:49+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "HDFCBANK.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "HDFC Bank Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:52+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "HEROMOTOCO.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Hero MotoCorp Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:51+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "HINDALCO.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Hindalco Industries Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:48+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 19
+    },
+    {
+      "symbol": "HINDUNILVR.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Hindustan Unilever Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:49+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "ICICIBANK.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "ICICI Bank Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:52+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "INDUSINDBK.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "IndusInd Bank Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:50+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 19
+    },
+    {
+      "symbol": "INFY.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Infosys Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:52+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "ITC.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "ITC Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:49+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "JSWSTEEL.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "JSW Steel Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:50+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "KOTAKBANK.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Kotak Mahindra Bank Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:48+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "LT.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Larsen & Toubro Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:48+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "M&M.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Mahindra & Mahindra Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:48+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "MARUTI.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Maruti Suzuki India Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:51+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 19
+    },
+    {
+      "symbol": "NESTLEIND.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Nestl\u00e9 India Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:43+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "NTPC.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "NTPC Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:48+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "ONGC.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Oil and Natural Gas Corporation Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:48+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "POWERGRID.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Power Grid Corporation of India Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:48+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "RELIANCE.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Reliance Industries Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:51+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "SBILIFE.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "SBI Life Insurance Company Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:50+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 19
+    },
+    {
+      "symbol": "SBIN.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "State Bank of India",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:48+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "SHRIRAMFIN.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Shriram Finance Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:50+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "SUNPHARMA.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Sun Pharmaceutical Industries Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:49+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "TATACONSUM.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Tata Consumer Products Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:49+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 19
+    },
+    {
+      "symbol": "TATASTEEL.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Tata Steel Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:52+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "TCS.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Tata Consultancy Services Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:53+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 19
+    },
+    {
+      "symbol": "TECHM.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Tech Mahindra Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:48+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "TITAN.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Titan Company Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:48+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "TRENT.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Trent Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:48+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    },
+    {
+      "symbol": "ULTRACEMCO.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "UltraTech Cement Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:48+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 19
+    },
+    {
+      "symbol": "WIPRO.NS",
+      "validated": true,
+      "currency": "INR",
+      "company_name": "Wipro Limited",
+      "price_date": "2026-10-23",
+      "observed_at": "2026-10-23 13:20:53+05:30",
+      "status": "latest_intraday_observation",
+      "completed_daily_observations": 20
+    }
+  ],
+  "unresolved": {
+    "TATAMOTORS": "Legacy listing requires corporate-action reconciliation; no successor assigned."
+  }
+}

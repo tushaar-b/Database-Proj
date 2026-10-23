@@ -8,6 +8,7 @@ from backend.schemas import HoldingInput, PortfolioCreate, PortfolioUpdate
 from backend.services import evaluate_portfolio_risk, require_feedback_delivery
 from backend.auth import require_authenticated, require_csrf
 from backend.ownership import enforce_ownership
+from backend.market_data import get_latest_quotes, price_holdings, valuation
 
 router = APIRouter(prefix="/portfolios", tags=["Portfolios"], dependencies=[Depends(require_authenticated), Depends(require_csrf), Depends(enforce_ownership)])
 
@@ -21,14 +22,13 @@ def _ensure_importable(conn, portfolio_id: str):
 
 
 def _refresh_valuation(cur, portfolio_id: str):
-    cur.execute("""WITH latest AS (
-                     SELECT DISTINCT ON (security_id) security_id,close_price
-                     FROM daily_market_quote ORDER BY security_id,trade_date DESC
-                   )
-                   UPDATE portfolio p SET total_valuation=p.cash_balance+COALESCE((
-                       SELECT SUM(h.quantity*latest.close_price) FROM holding h JOIN latest USING(security_id)
-                       WHERE h.portfolio_id=p.portfolio_id),0)
-                   WHERE p.portfolio_id=%s""", (portfolio_id,))
+    cur.execute("SELECT cash_balance FROM portfolio WHERE portfolio_id=%s", (portfolio_id,))
+    row = cur.fetchone()
+    cash = row['cash_balance'] if isinstance(row, dict) else row[0]
+    result = valuation(cur.connection, portfolio_id, cash)
+    if result['portfolio_valuation'] is not None:
+        cur.execute("UPDATE portfolio SET total_valuation=%s WHERE portfolio_id=%s", (result['portfolio_valuation'], portfolio_id))
+
 
 
 @router.post("", status_code=status.HTTP_201_CREATED)
@@ -68,31 +68,24 @@ def list_securities(q: str | None = Query(default=None, max_length=50), conn=Dep
         cur.execute("""SELECT sm.security_id::text,sm.ticker_symbol,sm.company_name,sm.sector_name,
                               quote.close_price AS latest_price,quote.trade_date AS price_date
                        FROM security_master sm
-                       JOIN LATERAL (SELECT close_price,trade_date FROM daily_market_quote d
+                       LEFT JOIN LATERAL (SELECT close_price,trade_date FROM daily_market_quote d
                                      WHERE d.security_id=sm.security_id ORDER BY trade_date DESC LIMIT 1) quote ON TRUE
                        WHERE sm.ticker_symbol ILIKE %s OR sm.company_name ILIKE %s
                        ORDER BY sm.ticker_symbol LIMIT 100""", (search, search))
-        return [dict(row) for row in cur.fetchall()]
+        rows = [dict(row) for row in cur.fetchall()]
+    quotes = get_latest_quotes(conn, [r['security_id'] for r in rows])
+    return [{**r, 'latest_price': quotes[r['security_id']]['price'], 'price_date': quotes[r['security_id']]['price_date'],
+             'quote': quotes[r['security_id']]} for r in rows]
 
 
 @router.get("/{portfolio_id}")
 def get_portfolio(portfolio_id: UUID, conn=Depends(risk_connection)):
     with conn.cursor(cursor_factory=RealDictCursor) as cur:
-        cur.execute("""WITH latest AS (
-                         SELECT DISTINCT ON (security_id) security_id,close_price,trade_date
-                         FROM daily_market_quote ORDER BY security_id,trade_date DESC
-                       )
-                       SELECT p.portfolio_id::text,p.user_id::text,p.portfolio_name,p.cash_balance,p.target_hhi_limit,
-                              p.cash_balance+COALESCE(SUM(h.quantity*latest.close_price),0) AS portfolio_valuation,
-                              MAX(latest.trade_date) AS calculation_date
-                       FROM portfolio p LEFT JOIN holding h USING(portfolio_id)
-                       LEFT JOIN latest ON latest.security_id=h.security_id
-                       WHERE p.portfolio_id=%s
-                       GROUP BY p.portfolio_id""", (str(portfolio_id),))
+        cur.execute("SELECT portfolio_id::text,user_id::text,portfolio_name,cash_balance,target_hhi_limit FROM portfolio WHERE portfolio_id=%s", (str(portfolio_id),))
         row = cur.fetchone()
     if not row:
         raise HTTPException(status_code=404, detail="Portfolio not found")
-    return dict(row)
+    return {**dict(row), **valuation(conn, str(portfolio_id), row['cash_balance'])}
 
 
 @router.get("/{portfolio_id}/holdings")
@@ -101,17 +94,7 @@ def list_holdings(portfolio_id: UUID, conn=Depends(risk_connection)):
         cur.execute("SELECT 1 FROM portfolio WHERE portfolio_id=%s", (str(portfolio_id),))
         if not cur.fetchone():
             raise HTTPException(status_code=404, detail="Portfolio not found")
-        cur.execute("""WITH latest AS (
-                         SELECT DISTINCT ON (security_id) security_id,close_price,trade_date
-                         FROM daily_market_quote ORDER BY security_id,trade_date DESC
-                       )
-                       SELECT h.holding_id::text,h.security_id::text,sm.ticker_symbol,sm.company_name,sm.sector_name,
-                              h.quantity,h.average_buy_price,latest.close_price AS latest_price,
-                              h.quantity*latest.close_price AS market_value,latest.trade_date AS price_date
-                       FROM holding h JOIN security_master sm USING(security_id)
-                       LEFT JOIN latest USING(security_id) WHERE h.portfolio_id=%s
-                       ORDER BY sm.ticker_symbol""", (str(portfolio_id),))
-        return [dict(row) for row in cur.fetchall()]
+    return price_holdings(conn, str(portfolio_id))
 
 
 @router.patch("/{portfolio_id}")

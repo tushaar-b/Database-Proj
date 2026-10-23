@@ -29,7 +29,7 @@ def run_daily_refresh(
     days: int = 5,
     symbols: Optional[List[str]] = None,
     refresh_mv: bool = True,
-    fallback_offline: bool = True,
+    fallback_offline: bool = False,
     conn = None
 ) -> Dict[str, Any]:
     """Runs incremental daily refresh for Nifty 50 constituents."""
@@ -122,7 +122,7 @@ def main():
         days=args.days,
         symbols=args.symbols,
         refresh_mv=not args.skip_mv,
-        fallback_offline=not args.no_fallback,
+        fallback_offline=False,
     )
 
     if result["status"] != "success" and result["errors"]:

@@ -1,6 +1,7 @@
 """Configuration loader for IntelliVest Backend Application Gateway."""
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from pydantic import Field
+from typing import Literal
 
 
 class Settings(BaseSettings):
@@ -15,7 +16,17 @@ class Settings(BaseSettings):
     RISK_DB_URL: str
 
     # Market Data
-    MARKET_DATA_PROVIDER: str = "yfinance"
+    MARKET_DATA_PROVIDER: Literal["yfinance"] = "yfinance"
+
+    # Yahoo Finance research data, shared across authenticated consumers.
+    MARKET_QUOTE_REFRESH_SECONDS: int = Field(default=300, ge=60, le=3600)
+    MARKET_QUOTE_STALE_SECONDS: int = Field(default=1800, ge=60, le=7200)
+    MARKET_CLOSE_MAX_AGE_DAYS: int = Field(default=7, ge=1, le=10)
+    MARKET_HISTORY_CACHE_SECONDS: int = Field(default=3600, ge=300, le=86400)
+    MARKET_PROVIDER_BACKOFF_SECONDS: int = Field(default=300, ge=60, le=3600)
+    YFINANCE_TIMEOUT_SECONDS: int = Field(default=8, ge=2, le=30)
+    RECOMMENDATION_PRICE_CHANGE_FRACTION: float = Field(default=0.02, gt=0, le=0.25)
+    STOCK_ANNUAL_RISK_FREE_RATE: float = Field(default=0.04, ge=0, le=1)
 
     # Defaults
     DEFAULT_LIQUID_SAFETY_RESERVE: float = 50000.00

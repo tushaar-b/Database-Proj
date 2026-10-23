@@ -1,0 +1,64 @@
+/* Scoped to shared recommendation presentation; public and other panels are untouched. */
+.intellivest-workspace .panel.rec-table-panel { padding: 0; border: 0; border-radius: 14px; background: var(--iv-surface); box-shadow: none; }
+.intellivest-workspace .recommendation-table { min-width: 0; color: var(--iv-ink); font-family: 'Inter', sans-serif; }
+.intellivest-workspace .recommendation-table .rec-table-scroll { width: 100%; overflow-x: auto; border: 1px solid var(--iv-border); border-radius: 14px; background: var(--iv-surface); }
+.intellivest-workspace .recommendation-table table { width: 100%; min-width: 880px; border-collapse: collapse; white-space: nowrap; text-align: left; }
+.intellivest-workspace .recommendation-table th { padding: 14px 14px; border-bottom: 1px solid var(--iv-border); color: #655b79; background: var(--iv-canvas); font-size: 10px; font-weight: 600; letter-spacing: .07em; line-height: 1.4; text-transform: uppercase; }
+.intellivest-workspace .recommendation-table td { height: 72px; padding: 12px 14px; border-bottom: 1px solid var(--iv-border); color: var(--iv-ink); background: transparent; font-size: 12px; line-height: 1.4; vertical-align: middle; font-variant-numeric: tabular-nums; }
+.intellivest-workspace .recommendation-table tr:last-child td { border-bottom: 0; }
+.intellivest-workspace .recommendation-table tbody tr { cursor: pointer; }
+.intellivest-workspace .recommendation-table tbody tr:hover,
+.intellivest-workspace .recommendation-table tbody tr:focus-within { background: #f0ebfa; }
+.intellivest-workspace .recommendation-table .rec-numeric { text-align: right; }
+.intellivest-workspace .recommendation-table .rec-security { display: grid; gap: 5px; }
+.intellivest-workspace .recommendation-table .rec-security strong { color: var(--iv-ink); font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600; }
+.intellivest-workspace .recommendation-table .rec-security small { color: #655b79; font-size: 10px; }
+.rec-status { display: inline-block; padding: 5px 8px; border: 1px solid #e7d6af; border-radius: 6px; color: #775c24; background: #f8edda; font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600; line-height: 1.3; white-space: nowrap; }
+.rec-status[data-status='ACCEPTED'] { color: #31583b; background: #e5efdc; border-color: #cde0bb; }
+.rec-status[data-status='REJECTED'] { color: #8a453a; background: #fce9e2; border-color: #efd3c6; }
+.rec-status[data-status='SUPERSEDED'] { color: #655b79; background: #eee9f5; border-color: #dfd7e8; }
+.intellivest-workspace .recommendation-table .rec-details-action { display: inline-flex; align-items: center; gap: 6px; padding: 8px 0; border: 0; color: var(--iv-purple); background: transparent; font-size: 11px; font-weight: 600; box-shadow: none; cursor: pointer; white-space: nowrap; }
+.intellivest-workspace .recommendation-table .rec-details-action:hover { text-decoration: underline; text-underline-offset: 4px; }
+.intellivest-workspace .recommendation-table .rec-decisions { display: flex; align-items: center; gap: 6px; }
+.intellivest-workspace .recommendation-table .rec-decision { min-height: 32px; padding: 7px 10px; border: 1px solid #d9cfc7; border-radius: 6px; color: #51475f; background: transparent; font-size: 11px; font-weight: 600; box-shadow: none; cursor: pointer; }
+.intellivest-workspace .recommendation-table .rec-accept { border-color: #cce0b9; color: #31583b; background: #e0efce; }
+.intellivest-workspace .recommendation-table .rec-accept:hover:not(:disabled) { background: #cfe6b5; }
+.intellivest-workspace .recommendation-table .rec-decline:hover:not(:disabled) { background: #fff2e9; }
+.intellivest-workspace .recommendation-table .rec-decision:disabled { opacity: .55; cursor: not-allowed; }
+.intellivest-workspace .recommendation-table .rec-recorded { color: #655b79; font-size: 11px; }
+
+.recommendation-details-dialog { position: fixed; inset: 0 0 0 auto; width: min(580px, 100%); max-width: 100%; height: 100dvh; max-height: 100dvh; margin: 0; padding: 0; overflow: hidden; border: 0; border-left: 1px solid var(--iv-border); border-radius: 0; color: var(--iv-ink); background: var(--iv-surface); font-family: 'Inter', sans-serif; transform: translateX(100%); transition: transform 220ms ease; }
+.recommendation-details-dialog[open] { display: flex; flex-direction: column; }
+.recommendation-details-dialog.is-visible { transform: translateX(0); }
+.recommendation-details-dialog::backdrop { background: rgb(37 27 67 / 35%); opacity: 0; transition: opacity 220ms ease; }
+.recommendation-details-dialog.is-visible::backdrop { opacity: 1; }
+.recommendation-details-dialog .rec-details-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-shrink: 0; padding: 26px 24px 22px; border-bottom: 1px solid var(--iv-border); }
+.recommendation-details-dialog .rec-eyebrow { margin: 0 0 10px; color: #665b7b; font-size: 10px; font-weight: 600; letter-spacing: .1em; line-height: 1.5; text-transform: uppercase; }
+.recommendation-details-dialog h2 { margin: 0; color: var(--iv-ink); font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 600; line-height: 1.2; letter-spacing: -.04em; }
+.recommendation-details-dialog .rec-details-security { margin: 12px 0 0; color: var(--iv-purple); font-size: 12px; line-height: 1.6; overflow-wrap: anywhere; }
+.recommendation-details-dialog .rec-close { display: grid; place-items: center; flex: 0 0 36px; width: 36px; height: 36px; padding: 0; border: 1px solid #dfd7e8; border-radius: 8px; color: var(--iv-ink); background: #eee9f5; cursor: pointer; box-shadow: none; }
+.recommendation-details-dialog .rec-close:hover { background: #e1d9f4; }
+.recommendation-details-dialog .rec-details-content { flex: 1; min-height: 0; padding: 24px; overflow-y: auto; overscroll-behavior: contain; }
+.recommendation-details-dialog .rec-details-section + .rec-details-section { margin-top: 26px; padding-top: 24px; border-top: 1px solid var(--iv-border); }
+.recommendation-details-dialog h3 { margin: 0 0 18px; color: var(--iv-ink); font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 600; }
+.recommendation-details-dialog .rec-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 18px; margin: 0; padding: 20px; border: 1px solid #dfd7ee; border-radius: 14px; background: #f0ebfa; }
+.recommendation-details-dialog .rec-summary dt { color: #665b7b; font-size: 11px; line-height: 1.5; }
+.recommendation-details-dialog .rec-summary dd { margin: 6px 0 0; color: var(--iv-ink); font-size: 15px; font-weight: 600; line-height: 1.5; overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
+.recommendation-details-dialog .rec-explanation { margin: 0; color: #51475f; font-size: 14px; line-height: 1.85; white-space: pre-wrap; overflow-wrap: anywhere; }
+.recommendation-details-dialog .rec-details-footer { flex-shrink: 0; padding: 17px 24px max(17px, env(safe-area-inset-bottom)); border-top: 1px solid var(--iv-border); color: #665b7b; background: var(--iv-canvas); font-size: 11px; line-height: 1.6; }
+.intellivest-workspace .recommendation-table :focus-visible,
+.recommendation-details-dialog :focus-visible { outline: 2px solid var(--iv-purple); outline-offset: -2px; box-shadow: none; }
+
+@media (max-width: 640px) {
+  .intellivest-workspace .recommendation-table table { min-width: 820px; }
+  .intellivest-workspace .recommendation-table th,
+  .intellivest-workspace .recommendation-table td { padding-inline: 11px; }
+  .recommendation-details-dialog .rec-details-header { padding: 22px 18px 18px; }
+  .recommendation-details-dialog .rec-details-content { padding: 20px 18px; }
+  .recommendation-details-dialog h2 { font-size: 23px; }
+  .recommendation-details-dialog .rec-summary { gap: 17px 12px; padding: 16px; }
+  .recommendation-details-dialog .rec-summary dd { font-size: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .recommendation-details-dialog, .recommendation-details-dialog::backdrop { transition: none; }
+}

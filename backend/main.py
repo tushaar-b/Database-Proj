@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from backend.config import settings
 from backend.database import close_pools
-from backend.routers import alerts, auth, cashflow, portfolios, recommendations, rebalance, users
+from backend.routers import alerts, auth, cashflow, intelligence, market, portfolios, recommendations, rebalance, users
 from contextlib import asynccontextmanager
 import ipaddress
 import psycopg2
@@ -39,6 +39,8 @@ async def local_only(request, call_next):
     return await call_next(request)
 
 app.include_router(auth.router)
+app.include_router(market.router)
+app.include_router(intelligence.router)
 app.include_router(users.router)
 app.include_router(cashflow.router)
 app.include_router(recommendations.router)

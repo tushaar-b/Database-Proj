@@ -12,6 +12,10 @@
 .intellivest-workspace > .sidebar .nav-link:hover { color: #251b43; background: #eee9e3; transform: none; }
 .intellivest-workspace > .sidebar .nav-link.active { color: #251b43; background: #e8e3fa; box-shadow: none; }
 .intellivest-workspace > .sidebar .nav-link.active svg { color: #493bdf; }
+.intellivest-workspace > .sidebar .sidebar-home { margin-bottom: 10px; color: #251b43; transition: background .16s ease, color .16s ease; }
+.intellivest-workspace > .sidebar .sidebar-home:hover:not(:disabled) { color: #493bdf; background: #e8e3fa; }
+.intellivest-workspace > .sidebar .sidebar-home:focus-visible { outline: 2px solid #493bdf; outline-offset: 2px; box-shadow: none; }
+@media (prefers-reduced-motion: reduce) { .intellivest-workspace > .sidebar .sidebar-home { transition: none; } }
 .intellivest-workspace > .sidebar .local-status { margin: 0 0 15px; padding: 13px 10px; background: none; border: 1px solid #e8d9cf; border-radius: 10px; box-shadow: none; }
 .intellivest-workspace > .sidebar .local-status strong { color: #251b43; font-size: 11px; }
 .intellivest-workspace > .sidebar .local-status small { color: #77708d; font-size: 10px; }

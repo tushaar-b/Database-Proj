@@ -1,0 +1,120 @@
+.tilted-feature-grid {
+  --tilted-camera: 1200px;
+  --tilted-card-width: 370px;
+  --tilted-side-x: 415px;
+  --tilted-side-z: -120px;
+  --tilted-side-angle: 32deg;
+  position: relative;
+  container: tilted-features / inline-size;
+  border-radius: var(--r-lg);
+}
+.tilted-feature-grid__viewport {
+  position: relative;
+  overflow: hidden;
+  touch-action: pan-y pinch-zoom;
+  /* Only the outer edges fade; centre content and controls stay unmasked. */
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 3%, black 97%, transparent);
+  mask-image: linear-gradient(90deg, transparent, black 3%, black 97%, transparent);
+}
+.tilted-feature-grid__stage {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  padding: 42px 0 48px;
+  perspective: var(--tilted-camera);
+  perspective-origin: 50% 45%;
+  transform-style: preserve-3d;
+}
+.tilted-feature-grid__card {
+  --tilted-surface: var(--card-lilac);
+  --tilted-glow: var(--lilac-glow);
+  position: relative;
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: var(--tilted-card-width);
+  min-width: 0;
+  min-height: 440px;
+  padding: 26px 28px 28px;
+  border: 1px solid var(--plum-border);
+  border-radius: var(--r-lg);
+  color: var(--plum-900);
+  background: var(--tilted-surface);
+  backface-visibility: hidden;
+  opacity: .86;
+  transition: transform 600ms var(--ease), opacity 600ms var(--ease), border-color 600ms var(--ease), visibility 600ms;
+  scroll-margin-top: 130px;
+}
+.tilted-feature-grid__card--mint { --tilted-surface: var(--card-mint); --tilted-glow: var(--mint-glow); }
+.tilted-feature-grid__card--coral { --tilted-surface: var(--card-coral); --tilted-glow: var(--coral-glow); }
+.tilted-feature-grid__card::before {
+  position: absolute;
+  z-index: -1;
+  inset: -1px;
+  border-radius: inherit;
+  pointer-events: none;
+  content: '';
+  opacity: 0;
+  box-shadow: 0 0 0 4px var(--tilted-glow), 0 16px 26px -20px var(--plum-700);
+  transition: opacity 600ms var(--ease);
+}
+.tilted-feature-grid__card--active { z-index: 2; transform: translate3d(0, 0, 24px) rotateY(0deg); border-color: var(--indigo); opacity: 1; }
+.tilted-feature-grid__card--active::before { opacity: 1; }
+.tilted-feature-grid__card--previous { transform: translate3d(calc(-1 * var(--tilted-side-x)), 8px, var(--tilted-side-z)) rotateY(calc(-1 * var(--tilted-side-angle))) scale(.95); }
+.tilted-feature-grid__card--next { transform: translate3d(var(--tilted-side-x), 8px, var(--tilted-side-z)) rotateY(var(--tilted-side-angle)) scale(.95); }
+.tilted-feature-grid__meta { display: flex; justify-content: space-between; align-items: center; gap: 12px; width: 100%; margin-bottom: 18px; color: var(--indigo); font-size: 11px; font-weight: 750; font-variant-numeric: tabular-nums; letter-spacing: .06em; }
+.tilted-feature-grid__meta > span > span { color: var(--plum-500); font-weight: 500; }
+.tilted-feature-grid__meta > span:last-child { color: var(--plum-700); text-transform: uppercase; font-size: 9px; letter-spacing: .13em; }
+.tilted-feature-grid__icon { display: grid; place-items: center; width: 48px; height: 48px; flex-shrink: 0; border: 1px solid var(--plum-border); border-radius: var(--r-sm); color: var(--indigo); background: var(--cream-highlight); }
+.tilted-feature-grid__graphic { display: block; width: 100%; height: 70px; flex-shrink: 0; margin: 12px 0 14px; color: var(--indigo); pointer-events: none; }
+.tilted-feature-grid__card h3 { margin: 0 0 13px; font-size: 26px; line-height: 1.2; }
+.tilted-feature-grid__card p { margin: 0 0 24px; color: var(--plum-700); font-size: 13px; line-height: 1.8; }
+.tilted-feature-grid__select { position: absolute; z-index: 1; inset: 0; width: 100%; padding: 0; border: 0; border-radius: inherit; background: transparent; }
+.tilted-feature-grid__card--active .tilted-feature-grid__select { visibility: hidden; pointer-events: none; }
+.tilted-feature-grid__cta { position: relative; z-index: 2; display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 44px; margin-top: auto; padding: 11px 18px; border: 1px solid var(--plum-border); border-radius: var(--r-pill); color: var(--indigo); background: var(--cream-50); font-size: 12px; font-weight: 700; text-decoration: none; transition: background 200ms var(--ease), border-color 200ms var(--ease); }
+.tilted-feature-grid__controls { display: flex; align-items: center; justify-content: center; gap: 18px; }
+.tilted-feature-grid__arrow { display: grid; place-items: center; flex: 0 0 46px; width: 46px; height: 46px; padding: 0; border: 1px solid var(--indigo); border-radius: 50%; color: var(--indigo); background: var(--cream-50); transition: background 200ms var(--ease); }
+.tilted-feature-grid__arrow svg { transition: transform 200ms var(--ease); }
+.tilted-feature-grid__pagination { display: flex; align-items: center; }
+.tilted-feature-grid__pagination button { display: grid; place-items: center; min-width: 32px; height: 44px; padding: 0 8px; border: 0; border-radius: var(--r-pill); background: transparent; }
+.tilted-feature-grid__pagination button > span { width: 7px; height: 7px; border-radius: var(--r-pill); background: var(--plum-border); transition: width 450ms var(--ease), background 450ms var(--ease); }
+.tilted-feature-grid__pagination [aria-current='true'] > span { width: 30px; background: var(--indigo); }
+.tilted-feature-grid:focus-visible,
+.tilted-feature-grid :is(button, a):focus-visible { outline: 3px solid var(--indigo); outline-offset: 4px; box-shadow: 0 0 0 3px var(--cream-50); }
+
+/* A single decorative cylinder loops behind the stationary interactive cards.
+   These empty slices carry no content, links, financial measurements or focus. */
+.tilted-feature-grid__decoration { position: absolute; inset: 0; overflow: hidden; pointer-events: none; perspective: var(--tilted-camera); opacity: .35; -webkit-mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent); mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent); }
+.tilted-feature-grid__cylinder { position: absolute; top: 36%; left: 50%; width: 0; height: 0; transform-style: preserve-3d; animation: tilted-feature-cylinder 64s linear infinite; }
+.tilted-feature-grid__cylinder > span { position: absolute; top: -125px; left: -32px; width: 64px; height: 250px; border: 1px solid var(--indigo-glow); border-radius: var(--r-md); background: linear-gradient(180deg, var(--mint-soft), var(--lilac-200), var(--coral-soft)); transform: rotateY(var(--slice-angle)) translateZ(clamp(280px, 42cqi, 500px)); backface-visibility: hidden; }
+@keyframes tilted-feature-cylinder { from { transform: rotateX(-8deg) rotateY(0deg); } to { transform: rotateX(-8deg) rotateY(360deg); } }
+.tilted-feature-grid:hover .tilted-feature-grid__cylinder,
+.tilted-feature-grid:focus-within .tilted-feature-grid__cylinder { animation-play-state: paused; }
+@media (hover: hover) {
+  .tilted-feature-grid__arrow:hover, .tilted-feature-grid__cta:hover { border-color: var(--indigo); background: var(--lilac-100); }
+  .tilted-feature-grid__arrow--previous:hover svg { transform: translateX(-2px); }
+  .tilted-feature-grid__arrow--next:hover svg { transform: translateX(2px); }
+  .tilted-feature-grid__card:has(.tilted-feature-grid__select:hover) { border-color: var(--indigo); }
+}
+@container tilted-features (min-width: 1050px) {
+  .tilted-feature-grid__arrow { position: absolute; top: calc(50% - 46px); z-index: 3; }
+  .tilted-feature-grid__arrow--previous { left: 3px; }
+  .tilted-feature-grid__arrow--next { right: 3px; }
+}
+@container tilted-features (max-width: 600px) {
+  .tilted-feature-grid__viewport { -webkit-mask-image: none; mask-image: none; }
+  .tilted-feature-grid__stage { padding: 24px 0 28px; }
+  .tilted-feature-grid__card { min-height: 435px; padding: 24px; }
+  .tilted-feature-grid__card h3 { font-size: 24px; }
+  .tilted-feature-grid__card--active { transform: translate3d(0, 0, 0); }
+  .tilted-feature-grid__card--previous, .tilted-feature-grid__card--next { visibility: hidden; opacity: 0; pointer-events: none; }
+  .tilted-feature-grid__decoration { opacity: .18; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tilted-feature-grid *, .tilted-feature-grid *::before { transition: none; }
+  .tilted-feature-grid__cylinder { animation: none; }
+  .tilted-feature-grid__arrow:hover svg { transform: none; }
+}

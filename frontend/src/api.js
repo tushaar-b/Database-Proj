@@ -189,6 +189,12 @@ async function recommendationRequest(path, options, action) {
 }
 
 export const api = {
+  getStockIntelligence: (ticker, options = {}) => {
+    const params = new URLSearchParams(Object.entries(options).filter(([, value]) => value));
+    return request(`/intelligence/stocks/${id(ticker)}?${params}`);
+  },
+  refreshPrices: () => request('/intelligence/refresh', { method: 'POST' }),
+  getMarketQuotes: () => request('/intelligence/quotes'),
   register: (body) => authenticate('/auth/register', body),
   login: (body) => authenticate('/auth/login', body),
   currentUser: synchronizeSession,

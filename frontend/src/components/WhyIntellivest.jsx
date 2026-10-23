@@ -1,21 +1,22 @@
-import { BookOpen, Sprout, Layers3, MapPin } from 'lucide-react';
+import { Wallet, ShieldCheck, LineChart, RefreshCw } from 'lucide-react';
 import useSectionReveal from '../hooks/useSectionReveal.js';
 import ClayBlob from './ClayBlob.jsx';
+import FeatureShowcase from './FeatureShowcase.jsx';
 import './WhyIntellivest.css';
 
 const reasons = [
-  { icon: BookOpen, title: 'Research that explains itself', copy: 'Bring the reasons behind an investing idea into focus.', tint: 'lilac' },
-  { icon: Sprout, title: 'Start a SIP in minutes', copy: 'Explore a regular investing habit with our illustrative SIP planner.', tint: 'mint' },
-  { icon: Layers3, title: 'F&O, clearly laid out', copy: 'Make sense of derivatives and the risks that come with them.', tint: 'coral' },
-  { icon: MapPin, title: 'Built for Indian markets', copy: 'Keep Indian market context at the heart of your research.', tint: 'sun' },
+  { id: 'investable-surplus', icon: Wallet, title: 'Invest within your means', copy: 'Understand how much money you can realistically invest after accounting for income, expenses and financial reserves.', tint: 'lilac' },
+  { id: 'portfolio-risk', icon: ShieldCheck, title: 'Understand your portfolio risk', copy: 'See what VaR, CVaR, volatility and sector concentration reveal about your existing investments.', tint: 'mint' },
+  { id: 'recommendations-with-context', icon: LineChart, title: 'Recommendations with context', copy: 'Explore stock suggestions that consider affordability, existing holdings and your comfort with risk.', tint: 'coral' },
+  { id: 'risk-alerts', icon: RefreshCw, title: 'Advice that adapts', copy: 'When your portfolio changes or risk limits are crossed, IntelliVest updates the constraints behind future recommendations.', tint: 'sun' },
 ];
 export default function WhyIntellivest() {
   const scope = useSectionReveal();
-  return <section className="why" id="features" ref={scope} aria-labelledby="why-title">
+  return <section className="why" id="why-intellivest" ref={scope} aria-labelledby="why-title">
     <ClayBlob tint="mint" className="why__blob" />
     <div className="why__inner">
-      <div className="why__heading" data-clay-reveal><span className="clay-badge">A little more perspective</span><h2 id="why-title">Why Intellivest</h2><p>A thoughtful place to explore what investing could look like for you.</p></div>
-      <div className="why__grid">{reasons.map(({ icon: Icon, title, copy, tint }) => <article className={`why__card clay-card clay-card--${tint}`} key={title} data-clay-reveal><span className="why__icon"><Icon size={23} aria-hidden="true" /></span><h3>{title}</h3><p>{copy}</p></article>)}</div>
+      <div className="why__heading" data-clay-reveal><span className="clay-badge">A little more perspective</span><h2 id="why-title">Why IntelliVest</h2><p>A clearer way to connect your financial situation with smarter stock investment decisions.</p></div>
+      <FeatureShowcase features={reasons} />
     </div>
   </section>;
 }

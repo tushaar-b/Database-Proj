@@ -89,7 +89,7 @@ def fetch_symbol_quotes(
     period: str = "5y",
     start: Optional[str] = None,
     end: Optional[str] = None,
-    fallback_offline: bool = True
+    fallback_offline: bool = False
 ) -> pd.DataFrame:
     """Fetches OHLCV time series data for a single symbol with error fallback."""
     clean_ticker = yfinance_symbol.replace(".NS", "")
@@ -176,7 +176,7 @@ def ingest_nifty_50_history(
     db_url: Optional[str] = None,
     period: str = "5y",
     tickers: Optional[List[str]] = None,
-    fallback_offline: bool = True,
+    fallback_offline: bool = False,
     conn = None
 ) -> Dict[str, Any]:
     """Orchestrates end-to-end ingestion of Nifty 50 historical market data.

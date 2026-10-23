@@ -2,3 +2,15 @@
 .market-ticker__mask { overflow: hidden; mask-image: linear-gradient(90deg, transparent, var(--cream-100) 5%, var(--cream-100) 95%, transparent); }.market-ticker__track { display: flex; width: max-content; animation: clay-market-scroll 45s linear infinite; }.market-ticker:hover .market-ticker__track { animation-play-state: paused; }.market-ticker__group { display: flex; flex-shrink: 0; gap: 18px; padding: 6px 9px 12px; }.market-ticker__item { display: grid; grid-template-columns: auto auto; align-items: center; gap: 6px 16px; min-width: 195px; padding: 13px 18px; border-radius: var(--r-md); background: var(--card-gradient); box-shadow: var(--clay-out-sm); }.market-ticker__name { grid-column: 1 / -1; color: var(--plum-500); font-size: 9px; font-weight: 800; letter-spacing: .07em; }.market-ticker__price { font-size: 14px; font-variant-numeric: tabular-nums; }.market-ticker__change { display: inline-flex; align-items: center; gap: 3px; padding: 4px 6px; border-radius: var(--r-pill); font-size: 10px; font-weight: 700; }.market-ticker__change--up { color: var(--up-text); background: var(--up-bg); }.market-ticker__change--down { color: var(--down-text); background: var(--down-bg); }.market-ticker__note { display: block; margin-top: 8px; color: var(--plum-500); font-size: 9px; text-align: center; }
 @keyframes clay-market-scroll { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .market-ticker__track { animation: none; }.market-ticker__mask { overflow-x: auto; }.market-ticker__group[aria-hidden='true'] { display: none; } }
+
+/* Restore the original price-card treatment independently of the workflow ribbon. */
+.price-ticker .market-ticker__mask { min-height: 122px; overflow-x: auto; }
+.price-ticker .market-ticker__item { min-height: 104px; align-content: center; }
+.price-ticker .market-ticker__date { grid-column: 1 / -1; color: var(--plum-500); font-size: 9px; }
+.price-ticker .market-ticker__change--neutral { color: var(--plum-500); background: var(--lilac-100); }
+.price-ticker .market-ticker__note { min-height: 34px; margin-inline: 18px; font-size: 10px; line-height: 1.7; }
+.price-ticker:focus-within .market-ticker__track { animation-play-state: paused; }
+.price-ticker__unavailable { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px; min-height: 122px; padding: 16px; color: var(--plum-500); font-size: 12px; text-align: center; }
+.price-ticker__unavailable .clay-btn { min-height: 36px; padding: 10px 14px; font-size: 11px; }
+.price-ticker__placeholder { color: var(--plum-500); }
+@media (max-width: 900px) { .price-ticker .market-ticker__track { animation: none; }.price-ticker .market-ticker__group[aria-hidden='true'] { display: none; }.price-ticker .market-ticker__mask { mask-image: none; } }
