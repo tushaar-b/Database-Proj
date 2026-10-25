@@ -1,0 +1,4 @@
+?? research/phase8/
+?? research/results/phase8-2026-10-24/
+
+No files staged or committed by Phase 8. Earlier unrelated changes preserved.

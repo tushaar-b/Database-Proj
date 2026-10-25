@@ -1,0 +1,1 @@
+Internal extraction was inspected and replaced with a nonpersonal summary in PAPER_REVIEW.md. Original PDFs unchanged.

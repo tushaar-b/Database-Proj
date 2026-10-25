@@ -1,0 +1,73 @@
+scenario,contrast,experiment,valid_paired_sessions,mean_annualized_arithmetic_return_difference,ci95_low,ci95_high,block_sessions,draws,seed,interval_status
+low_conservative,4 percent cash - zero cash; fixed trades,cash_interest,988,0.039174859091579,0.03916039291032234,0.039189143404559194,20,2000,20261024,conditional_descriptive_block_interval
+low_conservative,accumulated approved cash - original authorization,capital_authorization,988,0.13716530769593807,0.04092618241182051,0.23667238491292156,20,2000,20261024,conditional_descriptive_block_interval
+low_moderate,4 percent cash - zero cash; fixed trades,cash_interest,988,0.03904920962885135,0.03899233007219038,0.03910387342172756,20,2000,20261024,conditional_descriptive_block_interval
+low_moderate,accumulated approved cash - original authorization,capital_authorization,988,0.15626748696799145,0.036578033937904486,0.2797284397638726,20,2000,20261024,conditional_descriptive_block_interval
+low_aggressive,4 percent cash - zero cash; fixed trades,cash_interest,988,0.036177708041353375,0.035494598613526794,0.03681203085406133,20,2000,20261024,conditional_descriptive_block_interval
+low_aggressive,accumulated approved cash - original authorization,capital_authorization,988,0.1309157825724977,0.016312397271584355,0.24649669585489065,20,2000,20261024,conditional_descriptive_block_interval
+medium_conservative,4 percent cash - zero cash; fixed trades,cash_interest,988,0.03880219630752634,0.03873887674950015,0.03886578326823799,20,2000,20261024,conditional_descriptive_block_interval
+medium_conservative,accumulated approved cash - original authorization,capital_authorization,988,0.1157151785392175,0.02864738359736553,0.20326114267051412,20,2000,20261024,conditional_descriptive_block_interval
+medium_moderate,4 percent cash - zero cash; fixed trades,cash_interest,988,0.03572413964531508,0.03516455643754169,0.03623749940002215,20,2000,20261024,conditional_descriptive_block_interval
+medium_moderate,accumulated approved cash - original authorization,capital_authorization,988,0.10424911230060671,0.013685666091525422,0.19849771233017302,20,2000,20261024,conditional_descriptive_block_interval
+medium_aggressive,4 percent cash - zero cash; fixed trades,cash_interest,988,0.028784005339050633,0.0274129448233078,0.030046587443159297,20,2000,20261024,conditional_descriptive_block_interval
+medium_aggressive,accumulated approved cash - original authorization,capital_authorization,988,0.07385240997289541,-0.0028451558646195715,0.15445260477730907,20,2000,20261024,conditional_descriptive_block_interval
+high_conservative,4 percent cash - zero cash; fixed trades,cash_interest,988,0.03349211990247777,0.03274448833109327,0.034189011612477754,20,2000,20261024,conditional_descriptive_block_interval
+high_conservative,accumulated approved cash - original authorization,capital_authorization,988,0.0712292961092454,0.014261100197440589,0.13133362714486582,20,2000,20261024,conditional_descriptive_block_interval
+high_moderate,4 percent cash - zero cash; fixed trades,cash_interest,988,0.02628608700146787,0.024978686034520987,0.02762820904776106,20,2000,20261024,conditional_descriptive_block_interval
+high_moderate,accumulated approved cash - original authorization,capital_authorization,988,0.05172960577361317,-0.0015821877032825952,0.10882465043807305,20,2000,20261024,conditional_descriptive_block_interval
+high_aggressive,4 percent cash - zero cash; fixed trades,cash_interest,988,0.019722146198030803,0.018103576465719872,0.021442418473066865,20,2000,20261024,conditional_descriptive_block_interval
+high_aggressive,accumulated approved cash - original authorization,capital_authorization,988,0.02632917442893195,-0.011774459042747844,0.06350919977517774,20,2000,20261024,conditional_descriptive_block_interval
+high_aggressive,Full IntelliVest - Affordability Only,exposure_common_positive_opening_exposure,986,0.013883028333451468,-0.02259630183570178,0.05124483025855847,20,2000,20261024,conditional_descriptive_block_interval
+high_aggressive,Full IntelliVest - Affordability Only,exposure_same_date_same_exposure_bin,976,0.01255032115371633,-0.02435747279170559,0.05001080492702006,20,2000,20261024,conditional_descriptive_block_interval
+high_aggressive,Full IntelliVest - Risk Only,exposure_common_positive_opening_exposure,986,0.006585554921625524,-0.0016065386039017706,0.015657188224263385,20,2000,20261024,conditional_descriptive_block_interval
+high_aggressive,Full IntelliVest - Risk Only,exposure_same_date_same_exposure_bin,288,0.0030074413050768605,-0.0029659236794477915,0.008622597808337825,20,2000,20261024,conditional_descriptive_block_interval
+high_aggressive,Full IntelliVest - No Feedback,exposure_common_positive_opening_exposure,986,0.0,0.0,0.0,20,2000,20261024,conditional_descriptive_block_interval
+high_aggressive,Full IntelliVest - No Feedback,exposure_same_date_same_exposure_bin,986,0.0,0.0,0.0,20,2000,20261024,conditional_descriptive_block_interval
+high_conservative,Full IntelliVest - Affordability Only,exposure_common_positive_opening_exposure,986,-0.003356613265263078,-0.04512989694014994,0.037498943622882225,20,2000,20261024,conditional_descriptive_block_interval
+high_conservative,Full IntelliVest - Affordability Only,exposure_same_date_same_exposure_bin,986,-0.003356613265263078,-0.04512989694014994,0.037498943622882225,20,2000,20261024,conditional_descriptive_block_interval
+high_conservative,Full IntelliVest - Risk Only,exposure_common_positive_opening_exposure,986,-0.013176464465500873,-0.039486349395127955,0.012902058528768898,20,2000,20261024,conditional_descriptive_block_interval
+high_conservative,Full IntelliVest - Risk Only,exposure_same_date_same_exposure_bin,20,0.011852771372874576,,,20,2000,20261024,insufficient_fewer_than_60_pairs
+high_conservative,Full IntelliVest - No Feedback,exposure_common_positive_opening_exposure,986,0.0,0.0,0.0,20,2000,20261024,conditional_descriptive_block_interval
+high_conservative,Full IntelliVest - No Feedback,exposure_same_date_same_exposure_bin,986,0.0,0.0,0.0,20,2000,20261024,conditional_descriptive_block_interval
+high_moderate,Full IntelliVest - Affordability Only,exposure_common_positive_opening_exposure,986,-0.007917610298602957,-0.05152776642224087,0.03404097040507651,20,2000,20261024,conditional_descriptive_block_interval
+high_moderate,Full IntelliVest - Affordability Only,exposure_same_date_same_exposure_bin,954,-0.006859070525785715,-0.05176756602756551,0.03631778955490574,20,2000,20261024,conditional_descriptive_block_interval
+high_moderate,Full IntelliVest - Risk Only,exposure_common_positive_opening_exposure,986,-0.001736111403087854,-0.018305341863093186,0.014062656298575553,20,2000,20261024,conditional_descriptive_block_interval
+high_moderate,Full IntelliVest - Risk Only,exposure_same_date_same_exposure_bin,32,-0.002212662549651343,,,20,2000,20261024,insufficient_fewer_than_60_pairs
+high_moderate,Full IntelliVest - No Feedback,exposure_common_positive_opening_exposure,986,0.0,0.0,0.0,20,2000,20261024,conditional_descriptive_block_interval
+high_moderate,Full IntelliVest - No Feedback,exposure_same_date_same_exposure_bin,986,0.0,0.0,0.0,20,2000,20261024,conditional_descriptive_block_interval
+low_aggressive,Full IntelliVest - Affordability Only,exposure_common_positive_opening_exposure,986,0.025387821108278474,-0.04990978796472885,0.09608693837830408,20,2000,20261024,conditional_descriptive_block_interval
+low_aggressive,Full IntelliVest - Affordability Only,exposure_same_date_same_exposure_bin,783,0.016583562620124625,-0.07422268180184524,0.10100623394486839,20,2000,20261024,conditional_descriptive_block_interval
+low_aggressive,Full IntelliVest - Risk Only,exposure_common_positive_opening_exposure,986,0.07793033146029596,-0.006594406628019869,0.17239444609336643,20,2000,20261024,conditional_descriptive_block_interval
+low_aggressive,Full IntelliVest - Risk Only,exposure_same_date_same_exposure_bin,0,,,,20,2000,20261024,insufficient_fewer_than_60_pairs
+low_aggressive,Full IntelliVest - No Feedback,exposure_common_positive_opening_exposure,986,0.0,0.0,0.0,20,2000,20261024,conditional_descriptive_block_interval
+low_aggressive,Full IntelliVest - No Feedback,exposure_same_date_same_exposure_bin,986,0.0,0.0,0.0,20,2000,20261024,conditional_descriptive_block_interval
+low_conservative,Full IntelliVest - Affordability Only,exposure_common_positive_opening_exposure,906,-0.021380657897951568,-0.14544423539343404,0.0965188874133044,20,2000,20261024,conditional_descriptive_block_interval
+low_conservative,Full IntelliVest - Affordability Only,exposure_same_date_same_exposure_bin,906,-0.021380657897951568,-0.14544423539343404,0.0965188874133044,20,2000,20261024,conditional_descriptive_block_interval
+low_conservative,Full IntelliVest - Risk Only,exposure_common_positive_opening_exposure,906,-0.02458170022250682,-0.1883740911513584,0.15067456979921587,20,2000,20261024,conditional_descriptive_block_interval
+low_conservative,Full IntelliVest - Risk Only,exposure_same_date_same_exposure_bin,0,,,,20,2000,20261024,insufficient_fewer_than_60_pairs
+low_conservative,Full IntelliVest - No Feedback,exposure_common_positive_opening_exposure,906,0.0,0.0,0.0,20,2000,20261024,conditional_descriptive_block_interval
+low_conservative,Full IntelliVest - No Feedback,exposure_same_date_same_exposure_bin,906,0.0,0.0,0.0,20,2000,20261024,conditional_descriptive_block_interval
+low_moderate,Full IntelliVest - Affordability Only,exposure_common_positive_opening_exposure,906,-0.017011968028428047,-0.11527122213808247,0.07619864359180628,20,2000,20261024,conditional_descriptive_block_interval
+low_moderate,Full IntelliVest - Affordability Only,exposure_same_date_same_exposure_bin,906,-0.017011968028428047,-0.11527122213808247,0.07619864359180628,20,2000,20261024,conditional_descriptive_block_interval
+low_moderate,Full IntelliVest - Risk Only,exposure_common_positive_opening_exposure,906,-0.02391446969150125,-0.1894745293426184,0.14686074529409812,20,2000,20261024,conditional_descriptive_block_interval
+low_moderate,Full IntelliVest - Risk Only,exposure_same_date_same_exposure_bin,0,,,,20,2000,20261024,insufficient_fewer_than_60_pairs
+low_moderate,Full IntelliVest - No Feedback,exposure_common_positive_opening_exposure,906,0.0,0.0,0.0,20,2000,20261024,conditional_descriptive_block_interval
+low_moderate,Full IntelliVest - No Feedback,exposure_same_date_same_exposure_bin,906,0.0,0.0,0.0,20,2000,20261024,conditional_descriptive_block_interval
+medium_aggressive,Full IntelliVest - Affordability Only,exposure_common_positive_opening_exposure,986,0.008818589060439875,-0.03152426059081781,0.053142366345225664,20,2000,20261024,conditional_descriptive_block_interval
+medium_aggressive,Full IntelliVest - Affordability Only,exposure_same_date_same_exposure_bin,669,0.01394363326820764,-0.04018373705677182,0.0768523916290293,20,2000,20261024,conditional_descriptive_block_interval
+medium_aggressive,Full IntelliVest - Risk Only,exposure_common_positive_opening_exposure,986,0.02516103295136991,-0.004913552976815233,0.05628278357457901,20,2000,20261024,conditional_descriptive_block_interval
+medium_aggressive,Full IntelliVest - Risk Only,exposure_same_date_same_exposure_bin,0,,,,20,2000,20261024,insufficient_fewer_than_60_pairs
+medium_aggressive,Full IntelliVest - No Feedback,exposure_common_positive_opening_exposure,986,0.0,0.0,0.0,20,2000,20261024,conditional_descriptive_block_interval
+medium_aggressive,Full IntelliVest - No Feedback,exposure_same_date_same_exposure_bin,986,0.0,0.0,0.0,20,2000,20261024,conditional_descriptive_block_interval
+medium_conservative,Full IntelliVest - Affordability Only,exposure_common_positive_opening_exposure,986,-0.005766048856924572,-0.06031661853165246,0.043444440905039,20,2000,20261024,conditional_descriptive_block_interval
+medium_conservative,Full IntelliVest - Affordability Only,exposure_same_date_same_exposure_bin,986,-0.005766048856924572,-0.06031661853165246,0.043444440905039,20,2000,20261024,conditional_descriptive_block_interval
+medium_conservative,Full IntelliVest - Risk Only,exposure_common_positive_opening_exposure,986,0.009603426137387691,-0.07421193573963068,0.09968007367491995,20,2000,20261024,conditional_descriptive_block_interval
+medium_conservative,Full IntelliVest - Risk Only,exposure_same_date_same_exposure_bin,0,,,,20,2000,20261024,insufficient_fewer_than_60_pairs
+medium_conservative,Full IntelliVest - No Feedback,exposure_common_positive_opening_exposure,986,0.0,0.0,0.0,20,2000,20261024,conditional_descriptive_block_interval
+medium_conservative,Full IntelliVest - No Feedback,exposure_same_date_same_exposure_bin,986,0.0,0.0,0.0,20,2000,20261024,conditional_descriptive_block_interval
+medium_moderate,Full IntelliVest - Affordability Only,exposure_common_positive_opening_exposure,986,0.034223345547541764,-0.05714742204326691,0.12310192787124373,20,2000,20261024,conditional_descriptive_block_interval
+medium_moderate,Full IntelliVest - Affordability Only,exposure_same_date_same_exposure_bin,966,0.037326324081315546,-0.05535344338810209,0.12569406853519396,20,2000,20261024,conditional_descriptive_block_interval
+medium_moderate,Full IntelliVest - Risk Only,exposure_common_positive_opening_exposure,986,0.011154670463071248,-0.05841358273283558,0.08154912299540892,20,2000,20261024,conditional_descriptive_block_interval
+medium_moderate,Full IntelliVest - Risk Only,exposure_same_date_same_exposure_bin,0,,,,20,2000,20261024,insufficient_fewer_than_60_pairs
+medium_moderate,Full IntelliVest - No Feedback,exposure_common_positive_opening_exposure,986,0.0,0.0,0.0,20,2000,20261024,conditional_descriptive_block_interval
+medium_moderate,Full IntelliVest - No Feedback,exposure_same_date_same_exposure_bin,986,0.0,0.0,0.0,20,2000,20261024,conditional_descriptive_block_interval

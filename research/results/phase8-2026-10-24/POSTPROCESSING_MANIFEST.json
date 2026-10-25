@@ -1,0 +1,16 @@
+{
+  "financial_and_statistical_hashes_unchanged": {
+    "investor_level_results.csv": "6c04d95fd890393be4ee7e7b2cc1af3f979c6684fad23d162a618a784622da4b",
+    "policy_comparison.csv": "eb6ffd7eeca04a275e3623846e449884739f9913ba8a5f331e7267dd14a7acb1",
+    "risk_metrics.csv": "b6c5e0003752eb6a59fbad5c030a07710ba82737890d094cf2233caee20ce359",
+    "trade_history.csv": "74acfe2b5a2e6253f124b5dac02cc7f07f523e7fdd0e63d692addbfb1b4f5a2b",
+    "statistical_comparisons.csv": "f257aa5f12175436b228fb3d5ee7cc3831b9c1af6a003416e0a3c38c9e8b72d6",
+    "ablation_results.csv": "ae123886861094f9a9014e0521057418d5d7df5118adfb53991ce22b80b18d74"
+  },
+  "sources": {
+    "research/phase8/analysis/finalize.py": "104e456ac1393bafbbc889b44efa3a9d6156c6e3093d14c142ad1f84e2a58fa3",
+    "research/phase8/analysis/report.py": "84f46254a41d235d4a6a4f36d21693394785079fccdeacd51bec704673c757e2"
+  },
+  "previous_files_preserved": 489,
+  "changes": "Enriched decision diagnostics, overlapping constraint-presence labels and explicit targeted-stress interpretation. No policy parameters, trades, valuations or financial results changed."
+}

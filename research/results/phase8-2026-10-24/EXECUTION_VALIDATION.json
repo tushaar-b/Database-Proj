@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "runs": 249,
+  "previous_files_unchanged": 489,
+  "zero_household_new_draw_violations": true,
+  "zero_reserve_violations": true,
+  "zero_authority_violations": true,
+  "no_database_connections": true
+}

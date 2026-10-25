@@ -1,0 +1,330 @@
+{
+  "status": "passed",
+  "runs": 36,
+  "checks": [
+    {
+      "window": "primary_2022_2025",
+      "scenario": "low_conservative",
+      "tier": "CONSERVATIVE",
+      "surplus_group": "low",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "primary_2022_2025",
+      "scenario": "low_moderate",
+      "tier": "MODERATE",
+      "surplus_group": "low",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "primary_2022_2025",
+      "scenario": "low_aggressive",
+      "tier": "AGGRESSIVE",
+      "surplus_group": "low",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "primary_2022_2025",
+      "scenario": "medium_conservative",
+      "tier": "CONSERVATIVE",
+      "surplus_group": "medium",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "primary_2022_2025",
+      "scenario": "medium_moderate",
+      "tier": "MODERATE",
+      "surplus_group": "medium",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "primary_2022_2025",
+      "scenario": "medium_aggressive",
+      "tier": "AGGRESSIVE",
+      "surplus_group": "medium",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "primary_2022_2025",
+      "scenario": "high_conservative",
+      "tier": "CONSERVATIVE",
+      "surplus_group": "high",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "primary_2022_2025",
+      "scenario": "high_moderate",
+      "tier": "MODERATE",
+      "surplus_group": "high",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "primary_2022_2025",
+      "scenario": "high_aggressive",
+      "tier": "AGGRESSIVE",
+      "surplus_group": "high",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "early_2022_2023",
+      "scenario": "low_conservative",
+      "tier": "CONSERVATIVE",
+      "surplus_group": "low",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "early_2022_2023",
+      "scenario": "low_moderate",
+      "tier": "MODERATE",
+      "surplus_group": "low",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "early_2022_2023",
+      "scenario": "low_aggressive",
+      "tier": "AGGRESSIVE",
+      "surplus_group": "low",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "early_2022_2023",
+      "scenario": "medium_conservative",
+      "tier": "CONSERVATIVE",
+      "surplus_group": "medium",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "early_2022_2023",
+      "scenario": "medium_moderate",
+      "tier": "MODERATE",
+      "surplus_group": "medium",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "early_2022_2023",
+      "scenario": "medium_aggressive",
+      "tier": "AGGRESSIVE",
+      "surplus_group": "medium",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "early_2022_2023",
+      "scenario": "high_conservative",
+      "tier": "CONSERVATIVE",
+      "surplus_group": "high",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "early_2022_2023",
+      "scenario": "high_moderate",
+      "tier": "MODERATE",
+      "surplus_group": "high",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "early_2022_2023",
+      "scenario": "high_aggressive",
+      "tier": "AGGRESSIVE",
+      "surplus_group": "high",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "late_2024_2025",
+      "scenario": "low_conservative",
+      "tier": "CONSERVATIVE",
+      "surplus_group": "low",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "late_2024_2025",
+      "scenario": "low_moderate",
+      "tier": "MODERATE",
+      "surplus_group": "low",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "late_2024_2025",
+      "scenario": "low_aggressive",
+      "tier": "AGGRESSIVE",
+      "surplus_group": "low",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "late_2024_2025",
+      "scenario": "medium_conservative",
+      "tier": "CONSERVATIVE",
+      "surplus_group": "medium",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "late_2024_2025",
+      "scenario": "medium_moderate",
+      "tier": "MODERATE",
+      "surplus_group": "medium",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "late_2024_2025",
+      "scenario": "medium_aggressive",
+      "tier": "AGGRESSIVE",
+      "surplus_group": "medium",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "late_2024_2025",
+      "scenario": "high_conservative",
+      "tier": "CONSERVATIVE",
+      "surplus_group": "high",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "late_2024_2025",
+      "scenario": "high_moderate",
+      "tier": "MODERATE",
+      "surplus_group": "high",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "late_2024_2025",
+      "scenario": "high_aggressive",
+      "tier": "AGGRESSIVE",
+      "surplus_group": "high",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "ytd_2026",
+      "scenario": "low_conservative",
+      "tier": "CONSERVATIVE",
+      "surplus_group": "low",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "ytd_2026",
+      "scenario": "low_moderate",
+      "tier": "MODERATE",
+      "surplus_group": "low",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "ytd_2026",
+      "scenario": "low_aggressive",
+      "tier": "AGGRESSIVE",
+      "surplus_group": "low",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "ytd_2026",
+      "scenario": "medium_conservative",
+      "tier": "CONSERVATIVE",
+      "surplus_group": "medium",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "ytd_2026",
+      "scenario": "medium_moderate",
+      "tier": "MODERATE",
+      "surplus_group": "medium",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "ytd_2026",
+      "scenario": "medium_aggressive",
+      "tier": "AGGRESSIVE",
+      "surplus_group": "medium",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "ytd_2026",
+      "scenario": "high_conservative",
+      "tier": "CONSERVATIVE",
+      "surplus_group": "high",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "ytd_2026",
+      "scenario": "high_moderate",
+      "tier": "MODERATE",
+      "surplus_group": "high",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    },
+    {
+      "window": "ytd_2026",
+      "scenario": "high_aggressive",
+      "tier": "AGGRESSIVE",
+      "surplus_group": "high",
+      "policy": "V1",
+      "kind": "principal",
+      "status": "same_engine_matches_original"
+    }
+  ]
+}
