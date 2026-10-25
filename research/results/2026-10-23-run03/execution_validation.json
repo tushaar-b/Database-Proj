@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "identical_contributions": true,
+  "no_negative_cash": true,
+  "affordability_proposal_caps": true,
+  "feedback_mutations_full_only": true,
+  "principal_runs": 144,
+  "momentum_ablation_runs": 9,
+  "cost_sensitivity_runs": 24,
+  "feedback_stress_runs": 12,
+  "elapsed_seconds": 120.20179486274719
+}
