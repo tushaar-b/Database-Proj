@@ -1,0 +1,4 @@
+No commit created. Existing application changes were present before this task; only new diagnostic files/output were created.
+
+?? research/diagnostics/
+?? research/results/2026-10-24-diagnostics/

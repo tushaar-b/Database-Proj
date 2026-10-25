@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "count": 27,
+  "checks": [
+    "application/research feedback rule parity (False, False, False)",
+    "application/research feedback rule parity (False, False, True)",
+    "application/research feedback rule parity (False, True, False)",
+    "application/research feedback rule parity (False, True, True)",
+    "application/research feedback rule parity (True, False, False)",
+    "application/research feedback rule parity (True, False, True)",
+    "application/research feedback rule parity (True, True, False)",
+    "application/research feedback rule parity (True, True, True)",
+    "feedback sector restriction reaches eligibility",
+    "binding sector restriction can change final quantities",
+    "feedback capacity reaches actual budget",
+    "No Feedback suppresses dynamic policy",
+    "reserve is outside brokerage and not deducted twice",
+    "cash authorization waterfall reconciles",
+    "alternative authorization retains protected monthly transfer",
+    "Sharpe agrees with independent Decimal sample calculation",
+    "geometric annualization independent product",
+    "linear daily risk-free conversion",
+    "effective annual benchmark compounds to 4 percent",
+    "constant zero-return Sharpe explicitly undefined",
+    "small but nonconstant volatility is not clipped or hidden",
+    "cash-only interest compounds correctly",
+    "cash-only matched benchmark has constant differential returns",
+    "contributions do not create returns",
+    "zero-interest overlay reproduces original returns",
+    "equity sector weights hand HHI",
+    "HHI undefined sessions excluded from corrected denominator"
+  ]
+}

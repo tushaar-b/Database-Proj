@@ -1,0 +1,30 @@
+{
+  "primary_policy_updates": 55,
+  "primary_capacity_multiplier_changes": 0,
+  "primary_var_flagged_updates": 0,
+  "primary_volatility_flagged_updates": 0,
+  "primary_direct_changed_decisions": 0,
+  "primary_decisions": 432,
+  "full_sharpe_mean": -21.8010692382699,
+  "full_sharpe_median": -1.9343707982890992,
+  "full_sharpe_min": -132.19152744306203,
+  "full_sharpe_max": 0.6191303128415231,
+  "undefined_hhi_sessions": 169,
+  "all_full_sessions": 8892,
+  "full_mean_cash_fraction": 0.8562146837172135,
+  "full_mean_surplus_utilization": 0.0795609615804698,
+  "no_reserve_in_brokerage": true,
+  "example": {
+    "scenario": "low_conservative",
+    "date": "2022-06-01 00:00:00",
+    "budget": "1250.0",
+    "proposed_notional": "0.0",
+    "orders": "[]",
+    "blocked_sectors": "[\"Power\"]",
+    "selected_prices": {
+      "BAJAJ-AUTO": 3720.10009765625,
+      "CIPLA": 983.5499877929688,
+      "NESTLEIND": 17241.55029296875
+    }
+  }
+}

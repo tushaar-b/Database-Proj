@@ -1,0 +1,18 @@
+{
+  "original_feedback_updates": 55,
+  "original_updates_with_monthly_opportunity": 28,
+  "original_events_changing_recommendations": 0,
+  "original_monthly_candidate_eligibility_changes": 141,
+  "original_monthly_final_recommendation_changes": 0,
+  "original_full_mean_sharpe": -21.801069238269857,
+  "original_full_median_sharpe": -1.934370798289066,
+  "original_full_mean_cash": 0.8562146837172135,
+  "reserve_share_of_brokerage_cash": 0.0,
+  "original_full_mean_budget_fill": 0.14522820233269743,
+  "original_full_mean_unique_funding_deployed": 0.07392180280144665,
+  "zero_orders_despite_feasible_one_share": 218,
+  "full_undefined_hhi_sessions": 169,
+  "replay_count": 78,
+  "frozen_trade_accounting_models": 372,
+  "hypothesis_optimization": false
+}

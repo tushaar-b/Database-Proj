@@ -1,0 +1,21 @@
+{
+  "time_utc": "2026-10-23T19:06:41.418744+00:00",
+  "clarification": "Primary feedback comparison is active versus initial fixed policy. Persisting the previous restriction is a separate counterfactual; releases are not new effects against a baseline that never blocked it.",
+  "outside_household_balance": "unmodeled, hence NA; zero additional transfer remains explicit assumption",
+  "financial_and_statistical_output_sha256_unchanged": {
+    "CONTROLLED_REPLAY_SUMMARIES.csv": "56ff9ae812c3f3357aa5062038daf4abd64fa0b768f6f85cfc7700315402e55e",
+    "REPLAY_VALUATIONS.csv": "9f907bdd0b6a763444c8f1a8a4e3f1b00c4536320b3e0976c939cc5044a638cb",
+    "REPLAY_TRADES.csv": "4177269a31c08a747c69e383c30b7c0c497b8d5a83c1f7ad50e874a6b11b87b1",
+    "REPLAY_DECISIONS.csv": "469bebd18a7857ce2c0368972cf09e97d9cb09ef2d0e893bba90e8204853f14c",
+    "SHARPE_DIAGNOSTICS.csv": "c1f13df22d66321b6570fcd4c1efcbf534b60b99d4f9e0bd7b517caa8237fc38",
+    "CASH_RETURN_PATHS.csv": "dec56b6e902bd8539fb7e87469c1288e1dbefb20916df060402b6e9f0f40d79a",
+    "EXPOSURE_MATCHED_COMPARISONS.csv": "83a79e43bfbf81922dbba5ca47c979501391a9db243983b37c47ab41c4042298",
+    "UNCERTAINTY.csv": "0b1c19de9f96868fac2a3c94764d6d73b499fba2f2bb5b58db685f766d5152cb"
+  },
+  "source_sha256": {
+    "research/diagnostics/events.py": "99ed056cdc6b22d41427b2c60cfb701d04040748dbb0e13077b95210ee7553cd",
+    "research/diagnostics/report.py": "ede5c6dd268417b8b588e35e53dee46f5578963f4e7dd742da992cd55e138e7d",
+    "research/diagnostics/postprocess.py": "5b75a47179241290a191ab79d06a38ba43ae759542f0d82c5eb6932499ab1da2"
+  },
+  "original_inputs_unchanged": 80
+}

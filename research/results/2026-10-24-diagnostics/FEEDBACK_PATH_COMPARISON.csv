@@ -1,0 +1,1009 @@
+date,scenario,orders_full,orders_no,different_final_recommendation,variant
+2022-01-03,low_conservative,"[[""INFY"", 4], [""SUNPHARMA"", 8]]","[[""INFY"", 4], [""SUNPHARMA"", 8]]",False,accumulated_approved_cash_v1
+2022-02-01,low_conservative,"[[""LT"", 3], [""SBILIFE"", 6]]","[[""LT"", 3], [""SBILIFE"", 6]]",False,accumulated_approved_cash_v1
+2022-03-02,low_conservative,"[[""BAJAJ-AUTO"", 2], [""POWERGRID"", 28]]","[[""BAJAJ-AUTO"", 2], [""POWERGRID"", 28]]",False,accumulated_approved_cash_v1
+2022-04-01,low_conservative,"[[""BEL"", 24], [""BPCL"", 17]]","[[""BEL"", 24], [""BPCL"", 17]]",False,accumulated_approved_cash_v1
+2022-05-02,low_conservative,"[[""ADANIPORTS"", 5], [""JSWSTEEL"", 6]]","[[""ADANIPORTS"", 5], [""JSWSTEEL"", 6]]",False,accumulated_approved_cash_v1
+2022-06-01,low_conservative,"[[""ADANIENT"", 1]]","[[""ADANIENT"", 1]]",False,accumulated_approved_cash_v1
+2022-07-01,low_conservative,"[[""COALINDIA"", 25], [""ULTRACEMCO"", 1]]","[[""COALINDIA"", 25], [""ULTRACEMCO"", 1]]",False,accumulated_approved_cash_v1
+2022-08-01,low_conservative,"[[""NTPC"", 31], [""TCS"", 1]]","[[""NTPC"", 31], [""TCS"", 1]]",False,accumulated_approved_cash_v1
+2022-09-01,low_conservative,"[[""CIPLA"", 5], [""HINDALCO"", 9]]","[[""CIPLA"", 5], [""HINDALCO"", 9]]",False,accumulated_approved_cash_v1
+2022-10-03,low_conservative,"[[""EICHERMOT"", 1], [""ICICIBANK"", 5]]","[[""EICHERMOT"", 1], [""ICICIBANK"", 5]]",False,accumulated_approved_cash_v1
+2022-11-01,low_conservative,"[[""HCLTECH"", 4], [""M&M"", 3]]","[[""HCLTECH"", 4], [""M&M"", 3]]",False,accumulated_approved_cash_v1
+2022-12-01,low_conservative,"[[""ONGC"", 25], [""SBIN"", 7]]","[[""ONGC"", 25], [""SBIN"", 7]]",False,accumulated_approved_cash_v1
+2023-01-02,low_conservative,"[[""DRREDDY"", 1], [""TATASTEEL"", 26]]","[[""DRREDDY"", 1], [""TATASTEEL"", 26]]",False,accumulated_approved_cash_v1
+2023-02-01,low_conservative,"[[""KOTAKBANK"", 2], [""WIPRO"", 9]]","[[""KOTAKBANK"", 2], [""WIPRO"", 9]]",False,accumulated_approved_cash_v1
+2023-03-01,low_conservative,[],[],False,accumulated_approved_cash_v1
+2023-04-03,low_conservative,"[[""BRITANNIA"", 1], [""TECHM"", 3]]","[[""BRITANNIA"", 1], [""TECHM"", 3]]",False,accumulated_approved_cash_v1
+2023-05-02,low_conservative,[],[],False,accumulated_approved_cash_v1
+2023-06-01,low_conservative,[],[],False,accumulated_approved_cash_v1
+2023-07-03,low_conservative,[],[],False,accumulated_approved_cash_v1
+2023-08-01,low_conservative,"[[""AXISBANK"", 5]]","[[""AXISBANK"", 5]]",False,accumulated_approved_cash_v1
+2023-09-01,low_conservative,"[[""APOLLOHOSP"", 1]]","[[""APOLLOHOSP"", 1]]",False,accumulated_approved_cash_v1
+2023-10-03,low_conservative,"[[""INDUSINDBK"", 3]]","[[""INDUSINDBK"", 3]]",False,accumulated_approved_cash_v1
+2023-11-01,low_conservative,"[[""DIVISLAB"", 1]]","[[""DIVISLAB"", 1]]",False,accumulated_approved_cash_v1
+2023-12-01,low_conservative,[],[],False,accumulated_approved_cash_v1
+2024-01-01,low_conservative,[],[],False,accumulated_approved_cash_v1
+2024-02-01,low_conservative,"[[""MARUTI"", 1], [""TATACONSUM"", 8]]","[[""MARUTI"", 1], [""TATACONSUM"", 8]]",False,accumulated_approved_cash_v1
+2024-03-01,low_conservative,"[[""HEROMOTOCO"", 1], [""NESTLEIND"", 3]]","[[""HEROMOTOCO"", 1], [""NESTLEIND"", 3]]",False,accumulated_approved_cash_v1
+2024-04-01,low_conservative,"[[""TITAN"", 4]]","[[""TITAN"", 4]]",False,accumulated_approved_cash_v1
+2024-05-02,low_conservative,"[[""HINDUNILVR"", 5]]","[[""HINDUNILVR"", 5]]",False,accumulated_approved_cash_v1
+2024-06-03,low_conservative,"[[""ASIANPAINT"", 3]]","[[""ASIANPAINT"", 3]]",False,accumulated_approved_cash_v1
+2024-07-01,low_conservative,[],[],False,accumulated_approved_cash_v1
+2024-08-01,low_conservative,[],[],False,accumulated_approved_cash_v1
+2024-09-02,low_conservative,[],[],False,accumulated_approved_cash_v1
+2024-10-01,low_conservative,[],[],False,accumulated_approved_cash_v1
+2024-11-01,low_conservative,[],[],False,accumulated_approved_cash_v1
+2024-12-02,low_conservative,[],[],False,accumulated_approved_cash_v1
+2025-01-01,low_conservative,[],[],False,accumulated_approved_cash_v1
+2025-02-01,low_conservative,[],[],False,accumulated_approved_cash_v1
+2025-03-03,low_conservative,[],[],False,accumulated_approved_cash_v1
+2025-04-01,low_conservative,[],[],False,accumulated_approved_cash_v1
+2025-05-02,low_conservative,[],[],False,accumulated_approved_cash_v1
+2025-06-02,low_conservative,[],[],False,accumulated_approved_cash_v1
+2025-07-01,low_conservative,[],[],False,accumulated_approved_cash_v1
+2025-08-01,low_conservative,[],[],False,accumulated_approved_cash_v1
+2025-09-01,low_conservative,[],[],False,accumulated_approved_cash_v1
+2025-10-01,low_conservative,[],[],False,accumulated_approved_cash_v1
+2025-11-03,low_conservative,[],[],False,accumulated_approved_cash_v1
+2025-12-01,low_conservative,[],[],False,accumulated_approved_cash_v1
+2022-01-03,low_moderate,"[[""INFY"", 9], [""SUNPHARMA"", 18]]","[[""INFY"", 9], [""SUNPHARMA"", 18]]",False,accumulated_approved_cash_v1
+2022-02-01,low_moderate,"[[""LT"", 6], [""SBILIFE"", 10]]","[[""LT"", 6], [""SBILIFE"", 10]]",False,accumulated_approved_cash_v1
+2022-03-02,low_moderate,"[[""BAJAJ-AUTO"", 2], [""POWERGRID"", 41]]","[[""BAJAJ-AUTO"", 2], [""POWERGRID"", 41]]",False,accumulated_approved_cash_v1
+2022-04-01,low_moderate,"[[""BEL"", 31], [""BPCL"", 21]]","[[""BEL"", 31], [""BPCL"", 21]]",False,accumulated_approved_cash_v1
+2022-05-02,low_moderate,"[[""ADANIPORTS"", 6], [""JSWSTEEL"", 7]]","[[""ADANIPORTS"", 6], [""JSWSTEEL"", 7]]",False,accumulated_approved_cash_v1
+2022-06-01,low_moderate,"[[""ADANIENT"", 2], [""COALINDIA"", 26]]","[[""ADANIENT"", 2], [""COALINDIA"", 26]]",False,accumulated_approved_cash_v1
+2022-07-01,low_moderate,"[[""M&M"", 4], [""NTPC"", 32]]","[[""M&M"", 4], [""NTPC"", 32]]",False,accumulated_approved_cash_v1
+2022-08-01,low_moderate,"[[""HINDALCO"", 8]]","[[""HINDALCO"", 8]]",False,accumulated_approved_cash_v1
+2022-09-01,low_moderate,"[[""ONGC"", 28]]","[[""ONGC"", 28]]",False,accumulated_approved_cash_v1
+2022-10-03,low_moderate,"[[""EICHERMOT"", 1]]","[[""EICHERMOT"", 1]]",False,accumulated_approved_cash_v1
+2022-11-01,low_moderate,"[[""ICICIBANK"", 5]]","[[""ICICIBANK"", 5]]",False,accumulated_approved_cash_v1
+2022-12-01,low_moderate,"[[""TCS"", 1]]","[[""TCS"", 1]]",False,accumulated_approved_cash_v1
+2023-01-02,low_moderate,"[[""HEROMOTOCO"", 1]]","[[""HEROMOTOCO"", 1]]",False,accumulated_approved_cash_v1
+2023-02-01,low_moderate,"[[""TATASTEEL"", 41]]","[[""TATASTEEL"", 41]]",False,accumulated_approved_cash_v1
+2023-03-01,low_moderate,"[[""BRITANNIA"", 1], [""KOTAKBANK"", 3]]","[[""BRITANNIA"", 1], [""KOTAKBANK"", 3]]",False,accumulated_approved_cash_v1
+2023-04-03,low_moderate,"[[""HCLTECH"", 4]]","[[""HCLTECH"", 4]]",False,accumulated_approved_cash_v1
+2023-05-02,low_moderate,"[[""DRREDDY"", 1]]","[[""DRREDDY"", 1]]",False,accumulated_approved_cash_v1
+2023-06-01,low_moderate,"[[""WIPRO"", 13]]","[[""WIPRO"", 13]]",False,accumulated_approved_cash_v1
+2023-07-03,low_moderate,[],[],False,accumulated_approved_cash_v1
+2023-08-01,low_moderate,[],[],False,accumulated_approved_cash_v1
+2023-09-01,low_moderate,[],[],False,accumulated_approved_cash_v1
+2023-10-03,low_moderate,[],[],False,accumulated_approved_cash_v1
+2023-11-01,low_moderate,"[[""ULTRACEMCO"", 1]]","[[""ULTRACEMCO"", 1]]",False,accumulated_approved_cash_v1
+2023-12-01,low_moderate,"[[""AXISBANK"", 7]]","[[""AXISBANK"", 7]]",False,accumulated_approved_cash_v1
+2024-01-01,low_moderate,"[[""APOLLOHOSP"", 1], [""TITAN"", 2]]","[[""APOLLOHOSP"", 1], [""TITAN"", 2]]",False,accumulated_approved_cash_v1
+2024-02-01,low_moderate,"[[""TATACONSUM"", 6], [""TECHM"", 4]]","[[""TATACONSUM"", 6], [""TECHM"", 4]]",False,accumulated_approved_cash_v1
+2024-03-01,low_moderate,"[[""NESTLEIND"", 2], [""SBIN"", 7]]","[[""NESTLEIND"", 2], [""SBIN"", 7]]",False,accumulated_approved_cash_v1
+2024-04-01,low_moderate,"[[""HINDUNILVR"", 2], [""INDUSINDBK"", 2]]","[[""HINDUNILVR"", 2], [""INDUSINDBK"", 2]]",False,accumulated_approved_cash_v1
+2024-05-02,low_moderate,"[[""ASIANPAINT"", 1], [""DIVISLAB"", 1]]","[[""ASIANPAINT"", 1], [""DIVISLAB"", 1]]",False,accumulated_approved_cash_v1
+2024-06-03,low_moderate,"[[""CIPLA"", 4]]","[[""CIPLA"", 4]]",False,accumulated_approved_cash_v1
+2024-07-01,low_moderate,"[[""MARUTI"", 1]]","[[""MARUTI"", 1]]",False,accumulated_approved_cash_v1
+2024-08-01,low_moderate,[],[],False,accumulated_approved_cash_v1
+2024-09-02,low_moderate,[],[],False,accumulated_approved_cash_v1
+2024-10-01,low_moderate,[],[],False,accumulated_approved_cash_v1
+2024-11-01,low_moderate,[],[],False,accumulated_approved_cash_v1
+2024-12-02,low_moderate,[],[],False,accumulated_approved_cash_v1
+2025-01-01,low_moderate,[],[],False,accumulated_approved_cash_v1
+2025-02-01,low_moderate,[],[],False,accumulated_approved_cash_v1
+2025-03-03,low_moderate,[],[],False,accumulated_approved_cash_v1
+2025-04-01,low_moderate,[],[],False,accumulated_approved_cash_v1
+2025-05-02,low_moderate,[],[],False,accumulated_approved_cash_v1
+2025-06-02,low_moderate,[],[],False,accumulated_approved_cash_v1
+2025-07-01,low_moderate,[],[],False,accumulated_approved_cash_v1
+2025-08-01,low_moderate,[],[],False,accumulated_approved_cash_v1
+2025-09-01,low_moderate,[],[],False,accumulated_approved_cash_v1
+2025-10-01,low_moderate,[],[],False,accumulated_approved_cash_v1
+2025-11-03,low_moderate,[],[],False,accumulated_approved_cash_v1
+2025-12-01,low_moderate,[],[],False,accumulated_approved_cash_v1
+2022-01-03,low_aggressive,"[[""INFY"", 13], [""NESTLEIND"", 1], [""SUNPHARMA"", 29]]","[[""INFY"", 13], [""NESTLEIND"", 1], [""SUNPHARMA"", 29]]",False,accumulated_approved_cash_v1
+2022-02-01,low_aggressive,"[[""LT"", 5], [""NTPC"", 71], [""SBILIFE"", 8]]","[[""LT"", 5], [""NTPC"", 71], [""SBILIFE"", 8]]",False,accumulated_approved_cash_v1
+2022-03-02,low_aggressive,"[[""BAJAJ-AUTO"", 1], [""BEL"", 18], [""COALINDIA"", 21]]","[[""BAJAJ-AUTO"", 1], [""BEL"", 18], [""COALINDIA"", 21]]",False,accumulated_approved_cash_v1
+2022-04-01,low_aggressive,"[[""ADANIPORTS"", 3], [""EICHERMOT"", 1], [""JSWSTEEL"", 3]]","[[""ADANIPORTS"", 3], [""EICHERMOT"", 1], [""JSWSTEEL"", 3]]",False,accumulated_approved_cash_v1
+2022-05-02,low_aggressive,"[[""M&M"", 2], [""ONGC"", 13]]","[[""M&M"", 2], [""ONGC"", 13]]",False,accumulated_approved_cash_v1
+2022-06-01,low_aggressive,"[[""ADANIENT"", 1], [""BPCL"", 7]]","[[""ADANIENT"", 1], [""BPCL"", 7]]",False,accumulated_approved_cash_v1
+2022-07-01,low_aggressive,"[[""HINDALCO"", 7]]","[[""HINDALCO"", 7]]",False,accumulated_approved_cash_v1
+2022-08-01,low_aggressive,"[[""HEROMOTOCO"", 1], [""TATASTEEL"", 28]]","[[""HEROMOTOCO"", 1], [""TATASTEEL"", 28]]",False,accumulated_approved_cash_v1
+2022-09-01,low_aggressive,"[[""ICICIBANK"", 3], [""POWERGRID"", 14]]","[[""ICICIBANK"", 3], [""POWERGRID"", 14]]",False,accumulated_approved_cash_v1
+2022-10-03,low_aggressive,"[[""SBIN"", 5]]","[[""SBIN"", 5]]",False,accumulated_approved_cash_v1
+2022-11-01,low_aggressive,"[[""KOTAKBANK"", 1]]","[[""KOTAKBANK"", 1]]",False,accumulated_approved_cash_v1
+2022-12-01,low_aggressive,"[[""AXISBANK"", 5]]","[[""AXISBANK"", 5]]",False,accumulated_approved_cash_v1
+2023-01-02,low_aggressive,"[[""BRITANNIA"", 1]]","[[""BRITANNIA"", 1]]",False,accumulated_approved_cash_v1
+2023-02-01,low_aggressive,"[[""INDUSINDBK"", 4]]","[[""INDUSINDBK"", 4]]",False,accumulated_approved_cash_v1
+2023-03-01,low_aggressive,"[[""TCS"", 1]]","[[""TCS"", 1]]",False,accumulated_approved_cash_v1
+2023-04-03,low_aggressive,"[[""HCLTECH"", 5]]","[[""HCLTECH"", 5]]",False,accumulated_approved_cash_v1
+2023-05-02,low_aggressive,"[[""WIPRO"", 14]]","[[""WIPRO"", 14]]",False,accumulated_approved_cash_v1
+2023-06-01,low_aggressive,"[[""HINDUNILVR"", 2]]","[[""HINDUNILVR"", 2]]",False,accumulated_approved_cash_v1
+2023-07-03,low_aggressive,"[[""APOLLOHOSP"", 1]]","[[""APOLLOHOSP"", 1]]",False,accumulated_approved_cash_v1
+2023-08-01,low_aggressive,"[[""TITAN"", 1]]","[[""TITAN"", 1]]",False,accumulated_approved_cash_v1
+2023-09-01,low_aggressive,"[[""TECHM"", 4]]","[[""TECHM"", 4]]",False,accumulated_approved_cash_v1
+2023-10-03,low_aggressive,"[[""TATACONSUM"", 7]]","[[""TATACONSUM"", 7]]",False,accumulated_approved_cash_v1
+2023-11-01,low_aggressive,"[[""DRREDDY"", 1]]","[[""DRREDDY"", 1]]",False,accumulated_approved_cash_v1
+2023-12-01,low_aggressive,"[[""ASIANPAINT"", 1]]","[[""ASIANPAINT"", 1]]",False,accumulated_approved_cash_v1
+2024-01-01,low_aggressive,"[[""CIPLA"", 5]]","[[""CIPLA"", 5]]",False,accumulated_approved_cash_v1
+2024-02-01,low_aggressive,"[[""DIVISLAB"", 1]]","[[""DIVISLAB"", 1]]",False,accumulated_approved_cash_v1
+2024-03-01,low_aggressive,"[[""ULTRACEMCO"", 1]]","[[""ULTRACEMCO"", 1]]",False,accumulated_approved_cash_v1
+2024-04-01,low_aggressive,"[[""MARUTI"", 1]]","[[""MARUTI"", 1]]",False,accumulated_approved_cash_v1
+2024-05-02,low_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-06-03,low_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-07-01,low_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-08-01,low_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-09-02,low_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-10-01,low_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-11-01,low_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-12-02,low_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-01-01,low_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-02-01,low_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-03-03,low_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-04-01,low_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-05-02,low_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-06-02,low_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-07-01,low_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-08-01,low_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-09-01,low_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-10-01,low_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-11-03,low_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-12-01,low_aggressive,[],[],False,accumulated_approved_cash_v1
+2022-01-03,medium_conservative,"[[""INFY"", 5], [""SUNPHARMA"", 10]]","[[""INFY"", 5], [""SUNPHARMA"", 10]]",False,accumulated_approved_cash_v1
+2022-02-01,medium_conservative,"[[""LT"", 4], [""SBILIFE"", 7]]","[[""LT"", 4], [""SBILIFE"", 7]]",False,accumulated_approved_cash_v1
+2022-03-02,medium_conservative,"[[""BAJAJ-AUTO"", 3], [""POWERGRID"", 41]]","[[""BAJAJ-AUTO"", 3], [""POWERGRID"", 41]]",False,accumulated_approved_cash_v1
+2022-04-01,medium_conservative,"[[""BEL"", 38], [""BPCL"", 27]]","[[""BEL"", 38], [""BPCL"", 27]]",False,accumulated_approved_cash_v1
+2022-05-02,medium_conservative,"[[""ADANIPORTS"", 10], [""JSWSTEEL"", 11]]","[[""ADANIPORTS"", 10], [""JSWSTEEL"", 11]]",False,accumulated_approved_cash_v1
+2022-06-01,medium_conservative,"[[""ADANIENT"", 3], [""ULTRACEMCO"", 1]]","[[""ADANIENT"", 3], [""ULTRACEMCO"", 1]]",False,accumulated_approved_cash_v1
+2022-07-01,medium_conservative,"[[""ICICIBANK"", 14], [""TCS"", 3]]","[[""ICICIBANK"", 14], [""TCS"", 3]]",False,accumulated_approved_cash_v1
+2022-08-01,medium_conservative,"[[""COALINDIA"", 43], [""NTPC"", 72]]","[[""COALINDIA"", 43], [""NTPC"", 72]]",False,accumulated_approved_cash_v1
+2022-09-01,medium_conservative,"[[""CIPLA"", 11], [""EICHERMOT"", 2]]","[[""CIPLA"", 11], [""EICHERMOT"", 2]]",False,accumulated_approved_cash_v1
+2022-10-03,medium_conservative,"[[""HCLTECH"", 12], [""HINDALCO"", 22]]","[[""HCLTECH"", 12], [""HINDALCO"", 22]]",False,accumulated_approved_cash_v1
+2022-11-01,medium_conservative,"[[""M&M"", 8], [""ONGC"", 67]]","[[""M&M"", 8], [""ONGC"", 67]]",False,accumulated_approved_cash_v1
+2022-12-01,medium_conservative,"[[""DRREDDY"", 2], [""SBIN"", 17]]","[[""DRREDDY"", 2], [""SBIN"", 17]]",False,accumulated_approved_cash_v1
+2023-01-02,medium_conservative,"[[""HEROMOTOCO"", 3], [""WIPRO"", 28]]","[[""HEROMOTOCO"", 3], [""WIPRO"", 28]]",False,accumulated_approved_cash_v1
+2023-02-01,medium_conservative,"[[""KOTAKBANK"", 7], [""TATASTEEL"", 73]]","[[""KOTAKBANK"", 7], [""TATASTEEL"", 73]]",False,accumulated_approved_cash_v1
+2023-03-01,medium_conservative,"[[""APOLLOHOSP"", 2], [""MARUTI"", 1]]","[[""APOLLOHOSP"", 2], [""MARUTI"", 1]]",False,accumulated_approved_cash_v1
+2023-04-03,medium_conservative,"[[""BRITANNIA"", 3], [""DIVISLAB"", 3], [""TECHM"", 10]]","[[""BRITANNIA"", 3], [""DIVISLAB"", 3], [""TECHM"", 10]]",False,accumulated_approved_cash_v1
+2023-05-02,medium_conservative,"[[""AXISBANK"", 17]]","[[""AXISBANK"", 17]]",False,accumulated_approved_cash_v1
+2023-06-01,medium_conservative,"[[""INDUSINDBK"", 10]]","[[""INDUSINDBK"", 10]]",False,accumulated_approved_cash_v1
+2023-07-03,medium_conservative,"[[""NESTLEIND"", 1]]","[[""NESTLEIND"", 1]]",False,accumulated_approved_cash_v1
+2023-08-01,medium_conservative,"[[""TITAN"", 12]]","[[""TITAN"", 12]]",False,accumulated_approved_cash_v1
+2023-09-01,medium_conservative,"[[""HINDUNILVR"", 13]]","[[""HINDUNILVR"", 13]]",False,accumulated_approved_cash_v1
+2023-10-03,medium_conservative,"[[""TATACONSUM"", 34]]","[[""TATACONSUM"", 34]]",False,accumulated_approved_cash_v1
+2023-11-01,medium_conservative,"[[""ASIANPAINT"", 9]]","[[""ASIANPAINT"", 9]]",False,accumulated_approved_cash_v1
+2023-12-01,medium_conservative,[],[],False,accumulated_approved_cash_v1
+2024-01-01,medium_conservative,[],[],False,accumulated_approved_cash_v1
+2024-02-01,medium_conservative,[],[],False,accumulated_approved_cash_v1
+2024-03-01,medium_conservative,[],[],False,accumulated_approved_cash_v1
+2024-04-01,medium_conservative,[],[],False,accumulated_approved_cash_v1
+2024-05-02,medium_conservative,[],[],False,accumulated_approved_cash_v1
+2024-06-03,medium_conservative,[],[],False,accumulated_approved_cash_v1
+2024-07-01,medium_conservative,[],[],False,accumulated_approved_cash_v1
+2024-08-01,medium_conservative,[],[],False,accumulated_approved_cash_v1
+2024-09-02,medium_conservative,[],[],False,accumulated_approved_cash_v1
+2024-10-01,medium_conservative,[],[],False,accumulated_approved_cash_v1
+2024-11-01,medium_conservative,[],[],False,accumulated_approved_cash_v1
+2024-12-02,medium_conservative,[],[],False,accumulated_approved_cash_v1
+2025-01-01,medium_conservative,[],[],False,accumulated_approved_cash_v1
+2025-02-01,medium_conservative,[],[],False,accumulated_approved_cash_v1
+2025-03-03,medium_conservative,[],[],False,accumulated_approved_cash_v1
+2025-04-01,medium_conservative,[],[],False,accumulated_approved_cash_v1
+2025-05-02,medium_conservative,[],[],False,accumulated_approved_cash_v1
+2025-06-02,medium_conservative,[],[],False,accumulated_approved_cash_v1
+2025-07-01,medium_conservative,[],[],False,accumulated_approved_cash_v1
+2025-08-01,medium_conservative,[],[],False,accumulated_approved_cash_v1
+2025-09-01,medium_conservative,[],[],False,accumulated_approved_cash_v1
+2025-10-01,medium_conservative,[],[],False,accumulated_approved_cash_v1
+2025-11-03,medium_conservative,[],[],False,accumulated_approved_cash_v1
+2025-12-01,medium_conservative,[],[],False,accumulated_approved_cash_v1
+2022-01-03,medium_moderate,"[[""INFY"", 10], [""NESTLEIND"", 1], [""SUNPHARMA"", 21]]","[[""INFY"", 10], [""NESTLEIND"", 1], [""SUNPHARMA"", 21]]",False,accumulated_approved_cash_v1
+2022-02-01,medium_moderate,"[[""LT"", 6], [""NTPC"", 94], [""SBILIFE"", 11]]","[[""LT"", 6], [""NTPC"", 94], [""SBILIFE"", 11]]",False,accumulated_approved_cash_v1
+2022-03-02,medium_moderate,"[[""BAJAJ-AUTO"", 3], [""BEL"", 46], [""COALINDIA"", 54]]","[[""BAJAJ-AUTO"", 3], [""BEL"", 46], [""COALINDIA"", 54]]",False,accumulated_approved_cash_v1
+2022-04-01,medium_moderate,"[[""ADANIPORTS"", 10], [""BPCL"", 28], [""JSWSTEEL"", 11]]","[[""ADANIPORTS"", 10], [""BPCL"", 28], [""JSWSTEEL"", 11]]",False,accumulated_approved_cash_v1
+2022-05-02,medium_moderate,"[[""EICHERMOT"", 3], [""TATASTEEL"", 5], [""ULTRACEMCO"", 1]]","[[""EICHERMOT"", 3], [""TATASTEEL"", 5], [""ULTRACEMCO"", 1]]",False,accumulated_approved_cash_v1
+2022-06-01,medium_moderate,"[[""ADANIENT"", 3], [""ICICIBANK"", 11], [""POWERGRID"", 37]]","[[""ADANIENT"", 3], [""ICICIBANK"", 11], [""POWERGRID"", 37]]",False,accumulated_approved_cash_v1
+2022-07-01,medium_moderate,"[[""CIPLA"", 8], [""HINDALCO"", 18], [""TCS"", 2]]","[[""CIPLA"", 8], [""HINDALCO"", 18], [""TCS"", 2]]",False,accumulated_approved_cash_v1
+2022-08-01,medium_moderate,"[[""BRITANNIA"", 2], [""M&M"", 6], [""ONGC"", 47]]","[[""BRITANNIA"", 2], [""M&M"", 6], [""ONGC"", 47]]",False,accumulated_approved_cash_v1
+2022-09-01,medium_moderate,"[[""DRREDDY"", 1], [""HCLTECH"", 8], [""KOTAKBANK"", 3]]","[[""DRREDDY"", 1], [""HCLTECH"", 8], [""KOTAKBANK"", 3]]",False,accumulated_approved_cash_v1
+2022-10-03,medium_moderate,"[[""HINDUNILVR"", 3], [""SBIN"", 15], [""WIPRO"", 19]]","[[""HINDUNILVR"", 3], [""SBIN"", 15], [""WIPRO"", 19]]",False,accumulated_approved_cash_v1
+2022-11-01,medium_moderate,"[[""DIVISLAB"", 1], [""HEROMOTOCO"", 2], [""TITAN"", 2]]","[[""DIVISLAB"", 1], [""HEROMOTOCO"", 2], [""TITAN"", 2]]",False,accumulated_approved_cash_v1
+2022-12-01,medium_moderate,"[[""APOLLOHOSP"", 1], [""AXISBANK"", 9]]","[[""APOLLOHOSP"", 1], [""AXISBANK"", 9]]",False,accumulated_approved_cash_v1
+2023-01-02,medium_moderate,"[[""MARUTI"", 1], [""TATACONSUM"", 13], [""TECHM"", 9]]","[[""MARUTI"", 1], [""TATACONSUM"", 13], [""TECHM"", 9]]",False,accumulated_approved_cash_v1
+2023-02-01,medium_moderate,"[[""ASIANPAINT"", 5], [""INDUSINDBK"", 11]]","[[""ASIANPAINT"", 5], [""INDUSINDBK"", 11]]",False,accumulated_approved_cash_v1
+2023-03-01,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2023-04-03,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2023-05-02,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2023-06-01,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2023-07-03,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2023-08-01,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2023-09-01,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2023-10-03,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2023-11-01,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2023-12-01,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2024-01-01,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2024-02-01,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2024-03-01,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2024-04-01,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2024-05-02,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2024-06-03,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2024-07-01,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2024-08-01,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2024-09-02,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2024-10-01,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2024-11-01,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2024-12-02,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2025-01-01,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2025-02-01,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2025-03-03,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2025-04-01,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2025-05-02,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2025-06-02,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2025-07-01,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2025-08-01,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2025-09-01,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2025-10-01,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2025-11-03,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2025-12-01,medium_moderate,[],[],False,accumulated_approved_cash_v1
+2022-01-03,medium_aggressive,"[[""INFY"", 15], [""NESTLEIND"", 1], [""SUNPHARMA"", 33]]","[[""INFY"", 15], [""NESTLEIND"", 1], [""SUNPHARMA"", 33]]",False,accumulated_approved_cash_v1
+2022-02-01,medium_aggressive,"[[""LT"", 8], [""NTPC"", 110], [""SBILIFE"", 13]]","[[""LT"", 8], [""NTPC"", 110], [""SBILIFE"", 13]]",False,accumulated_approved_cash_v1
+2022-03-02,medium_aggressive,"[[""BAJAJ-AUTO"", 2], [""BEL"", 41], [""COALINDIA"", 48]]","[[""BAJAJ-AUTO"", 2], [""BEL"", 41], [""COALINDIA"", 48]]",False,accumulated_approved_cash_v1
+2022-04-01,medium_aggressive,"[[""ADANIPORTS"", 10], [""EICHERMOT"", 3], [""JSWSTEEL"", 10]]","[[""ADANIPORTS"", 10], [""EICHERMOT"", 3], [""JSWSTEEL"", 10]]",False,accumulated_approved_cash_v1
+2022-05-02,medium_aggressive,"[[""ADANIENT"", 2], [""ONGC"", 46], [""ULTRACEMCO"", 1]]","[[""ADANIENT"", 2], [""ONGC"", 46], [""ULTRACEMCO"", 1]]",False,accumulated_approved_cash_v1
+2022-06-01,medium_aggressive,"[[""HINDALCO"", 17], [""ICICIBANK"", 10], [""M&M"", 7]]","[[""HINDALCO"", 17], [""ICICIBANK"", 10], [""M&M"", 7]]",False,accumulated_approved_cash_v1
+2022-07-01,medium_aggressive,"[[""BPCL"", 24], [""POWERGRID"", 37], [""TATASTEEL"", 7]]","[[""BPCL"", 24], [""POWERGRID"", 37], [""TATASTEEL"", 7]]",False,accumulated_approved_cash_v1
+2022-08-01,medium_aggressive,"[[""BRITANNIA"", 1], [""KOTAKBANK"", 3], [""TCS"", 2]]","[[""BRITANNIA"", 1], [""KOTAKBANK"", 3], [""TCS"", 2]]",False,accumulated_approved_cash_v1
+2022-09-01,medium_aggressive,"[[""HCLTECH"", 9], [""HINDUNILVR"", 3]]","[[""HCLTECH"", 9], [""HINDUNILVR"", 3]]",False,accumulated_approved_cash_v1
+2022-10-03,medium_aggressive,"[[""MARUTI"", 1], [""SBIN"", 18], [""TITAN"", 3]]","[[""MARUTI"", 1], [""SBIN"", 18], [""TITAN"", 3]]",False,accumulated_approved_cash_v1
+2022-11-01,medium_aggressive,"[[""CIPLA"", 7], [""HEROMOTOCO"", 3], [""TECHM"", 7]]","[[""CIPLA"", 7], [""HEROMOTOCO"", 3], [""TECHM"", 7]]",False,accumulated_approved_cash_v1
+2022-12-01,medium_aggressive,"[[""AXISBANK"", 8], [""DRREDDY"", 1], [""TATACONSUM"", 9]]","[[""AXISBANK"", 8], [""DRREDDY"", 1], [""TATACONSUM"", 9]]",False,accumulated_approved_cash_v1
+2023-01-02,medium_aggressive,"[[""APOLLOHOSP"", 1], [""ASIANPAINT"", 2], [""WIPRO"", 20]]","[[""APOLLOHOSP"", 1], [""ASIANPAINT"", 2], [""WIPRO"", 20]]",False,accumulated_approved_cash_v1
+2023-02-01,medium_aggressive,"[[""DIVISLAB"", 3], [""INDUSINDBK"", 11]]","[[""DIVISLAB"", 3], [""INDUSINDBK"", 11]]",False,accumulated_approved_cash_v1
+2023-03-01,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2023-04-03,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2023-05-02,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2023-06-01,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2023-07-03,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2023-08-01,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2023-09-01,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2023-10-03,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2023-11-01,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2023-12-01,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-01-01,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-02-01,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-03-01,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-04-01,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-05-02,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-06-03,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-07-01,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-08-01,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-09-02,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-10-01,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-11-01,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-12-02,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-01-01,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-02-01,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-03-03,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-04-01,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-05-02,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-06-02,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-07-01,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-08-01,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-09-01,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-10-01,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-11-03,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-12-01,medium_aggressive,[],[],False,accumulated_approved_cash_v1
+2022-01-03,high_conservative,"[[""INFY"", 8], [""SUNPHARMA"", 16]]","[[""INFY"", 8], [""SUNPHARMA"", 16]]",False,accumulated_approved_cash_v1
+2022-02-01,high_conservative,"[[""LT"", 10], [""NESTLEIND"", 1], [""SBILIFE"", 17]]","[[""LT"", 10], [""NESTLEIND"", 1], [""SBILIFE"", 17]]",False,accumulated_approved_cash_v1
+2022-03-02,high_conservative,"[[""BAJAJ-AUTO"", 8], [""COALINDIA"", 119], [""POWERGRID"", 122]]","[[""BAJAJ-AUTO"", 8], [""COALINDIA"", 119], [""POWERGRID"", 122]]",False,accumulated_approved_cash_v1
+2022-04-01,high_conservative,"[[""ADANIPORTS"", 34], [""BEL"", 138], [""JSWSTEEL"", 37]]","[[""ADANIPORTS"", 34], [""BEL"", 138], [""JSWSTEEL"", 37]]",False,accumulated_approved_cash_v1
+2022-05-02,high_conservative,"[[""CIPLA"", 29], [""TCS"", 9], [""ULTRACEMCO"", 4]]","[[""CIPLA"", 29], [""TCS"", 9], [""ULTRACEMCO"", 4]]",False,accumulated_approved_cash_v1
+2022-06-01,high_conservative,"[[""ADANIENT"", 10], [""BRITANNIA"", 10], [""ICICIBANK"", 42]]","[[""ADANIENT"", 10], [""BRITANNIA"", 10], [""ICICIBANK"", 42]]",False,accumulated_approved_cash_v1
+2022-07-01,high_conservative,"[[""BPCL"", 102], [""M&M"", 28], [""NTPC"", 224]]","[[""BPCL"", 102], [""M&M"", 28], [""NTPC"", 224]]",False,accumulated_approved_cash_v1
+2022-08-01,high_conservative,"[[""DRREDDY"", 9], [""HCLTECH"", 36], [""HINDALCO"", 58]]","[[""DRREDDY"", 9], [""HCLTECH"", 36], [""HINDALCO"", 58]]",False,accumulated_approved_cash_v1
+2022-09-01,high_conservative,"[[""HINDUNILVR"", 14], [""KOTAKBANK"", 18], [""ONGC"", 190]]","[[""HINDUNILVR"", 14], [""KOTAKBANK"", 18], [""ONGC"", 190]]",False,accumulated_approved_cash_v1
+2022-10-03,high_conservative,"[[""EICHERMOT"", 9], [""TATASTEEL"", 284], [""WIPRO"", 94]]","[[""EICHERMOT"", 9], [""TATASTEEL"", 284], [""WIPRO"", 94]]",False,accumulated_approved_cash_v1
+2022-11-01,high_conservative,"[[""DIVISLAB"", 8], [""SBIN"", 60], [""TITAN"", 11]]","[[""DIVISLAB"", 8], [""SBIN"", 60], [""TITAN"", 11]]",False,accumulated_approved_cash_v1
+2022-12-01,high_conservative,"[[""APOLLOHOSP"", 6], [""HEROMOTOCO"", 12], [""TECHM"", 30]]","[[""APOLLOHOSP"", 6], [""HEROMOTOCO"", 12], [""TECHM"", 30]]",False,accumulated_approved_cash_v1
+2023-01-02,high_conservative,"[[""AXISBANK"", 35], [""MARUTI"", 4], [""TATACONSUM"", 46]]","[[""AXISBANK"", 35], [""MARUTI"", 4], [""TATACONSUM"", 46]]",False,accumulated_approved_cash_v1
+2023-02-01,high_conservative,"[[""ASIANPAINT"", 20], [""INDUSINDBK"", 43]]","[[""ASIANPAINT"", 20], [""INDUSINDBK"", 43]]",False,accumulated_approved_cash_v1
+2023-03-01,high_conservative,[],[],False,accumulated_approved_cash_v1
+2023-04-03,high_conservative,[],[],False,accumulated_approved_cash_v1
+2023-05-02,high_conservative,[],[],False,accumulated_approved_cash_v1
+2023-06-01,high_conservative,[],[],False,accumulated_approved_cash_v1
+2023-07-03,high_conservative,[],[],False,accumulated_approved_cash_v1
+2023-08-01,high_conservative,[],[],False,accumulated_approved_cash_v1
+2023-09-01,high_conservative,[],[],False,accumulated_approved_cash_v1
+2023-10-03,high_conservative,[],[],False,accumulated_approved_cash_v1
+2023-11-01,high_conservative,[],[],False,accumulated_approved_cash_v1
+2023-12-01,high_conservative,[],[],False,accumulated_approved_cash_v1
+2024-01-01,high_conservative,[],[],False,accumulated_approved_cash_v1
+2024-02-01,high_conservative,[],[],False,accumulated_approved_cash_v1
+2024-03-01,high_conservative,[],[],False,accumulated_approved_cash_v1
+2024-04-01,high_conservative,[],[],False,accumulated_approved_cash_v1
+2024-05-02,high_conservative,[],[],False,accumulated_approved_cash_v1
+2024-06-03,high_conservative,[],[],False,accumulated_approved_cash_v1
+2024-07-01,high_conservative,[],[],False,accumulated_approved_cash_v1
+2024-08-01,high_conservative,[],[],False,accumulated_approved_cash_v1
+2024-09-02,high_conservative,[],[],False,accumulated_approved_cash_v1
+2024-10-01,high_conservative,[],[],False,accumulated_approved_cash_v1
+2024-11-01,high_conservative,[],[],False,accumulated_approved_cash_v1
+2024-12-02,high_conservative,[],[],False,accumulated_approved_cash_v1
+2025-01-01,high_conservative,[],[],False,accumulated_approved_cash_v1
+2025-02-01,high_conservative,[],[],False,accumulated_approved_cash_v1
+2025-03-03,high_conservative,[],[],False,accumulated_approved_cash_v1
+2025-04-01,high_conservative,[],[],False,accumulated_approved_cash_v1
+2025-05-02,high_conservative,[],[],False,accumulated_approved_cash_v1
+2025-06-02,high_conservative,[],[],False,accumulated_approved_cash_v1
+2025-07-01,high_conservative,[],[],False,accumulated_approved_cash_v1
+2025-08-01,high_conservative,[],[],False,accumulated_approved_cash_v1
+2025-09-01,high_conservative,[],[],False,accumulated_approved_cash_v1
+2025-10-01,high_conservative,[],[],False,accumulated_approved_cash_v1
+2025-11-03,high_conservative,[],[],False,accumulated_approved_cash_v1
+2025-12-01,high_conservative,[],[],False,accumulated_approved_cash_v1
+2022-01-03,high_moderate,"[[""INFY"", 17], [""NESTLEIND"", 1], [""SUNPHARMA"", 35]]","[[""INFY"", 17], [""NESTLEIND"", 1], [""SUNPHARMA"", 35]]",False,accumulated_approved_cash_v1
+2022-02-01,high_moderate,"[[""LT"", 18], [""NTPC"", 247], [""SBILIFE"", 31]]","[[""LT"", 18], [""NTPC"", 247], [""SBILIFE"", 31]]",False,accumulated_approved_cash_v1
+2022-03-02,high_moderate,"[[""BAJAJ-AUTO"", 11], [""BEL"", 149], [""COALINDIA"", 177]]","[[""BAJAJ-AUTO"", 11], [""BEL"", 149], [""COALINDIA"", 177]]",False,accumulated_approved_cash_v1
+2022-04-01,high_moderate,"[[""ADANIPORTS"", 39], [""BRITANNIA"", 13], [""JSWSTEEL"", 42]]","[[""ADANIPORTS"", 39], [""BRITANNIA"", 13], [""JSWSTEEL"", 42]]",False,accumulated_approved_cash_v1
+2022-05-02,high_moderate,"[[""TATASTEEL"", 21], [""TCS"", 11], [""ULTRACEMCO"", 5]]","[[""TATASTEEL"", 21], [""TCS"", 11], [""ULTRACEMCO"", 5]]",False,accumulated_approved_cash_v1
+2022-06-01,high_moderate,"[[""BPCL"", 106], [""CIPLA"", 36], [""ICICIBANK"", 45]]","[[""BPCL"", 106], [""CIPLA"", 36], [""ICICIBANK"", 45]]",False,accumulated_approved_cash_v1
+2022-07-01,high_moderate,"[[""ADANIENT"", 13], [""M&M"", 32], [""POWERGRID"", 181]]","[[""ADANIENT"", 13], [""M&M"", 32], [""POWERGRID"", 181]]",False,accumulated_approved_cash_v1
+2022-08-01,high_moderate,"[[""DRREDDY"", 8], [""HCLTECH"", 35], [""HINDUNILVR"", 13]]","[[""DRREDDY"", 8], [""HCLTECH"", 35], [""HINDUNILVR"", 13]]",False,accumulated_approved_cash_v1
+2022-09-01,high_moderate,"[[""EICHERMOT"", 10], [""KOTAKBANK"", 19], [""ONGC"", 231]]","[[""EICHERMOT"", 10], [""KOTAKBANK"", 19], [""ONGC"", 231]]",False,accumulated_approved_cash_v1
+2022-10-03,high_moderate,"[[""HINDALCO"", 81], [""TITAN"", 13], [""WIPRO"", 97]]","[[""HINDALCO"", 81], [""TITAN"", 13], [""WIPRO"", 97]]",False,accumulated_approved_cash_v1
+2022-11-01,high_moderate,"[[""DIVISLAB"", 8], [""HEROMOTOCO"", 12], [""SBIN"", 61]]","[[""DIVISLAB"", 8], [""HEROMOTOCO"", 12], [""SBIN"", 61]]",False,accumulated_approved_cash_v1
+2022-12-01,high_moderate,"[[""APOLLOHOSP"", 7], [""TATACONSUM"", 46], [""TECHM"", 32]]","[[""APOLLOHOSP"", 7], [""TATACONSUM"", 46], [""TECHM"", 32]]",False,accumulated_approved_cash_v1
+2023-01-02,high_moderate,"[[""ASIANPAINT"", 11], [""AXISBANK"", 36], [""MARUTI"", 4]]","[[""ASIANPAINT"", 11], [""AXISBANK"", 36], [""MARUTI"", 4]]",False,accumulated_approved_cash_v1
+2023-02-01,high_moderate,"[[""INDUSINDBK"", 100]]","[[""INDUSINDBK"", 100]]",False,accumulated_approved_cash_v1
+2023-03-01,high_moderate,[],[],False,accumulated_approved_cash_v1
+2023-04-03,high_moderate,[],[],False,accumulated_approved_cash_v1
+2023-05-02,high_moderate,[],[],False,accumulated_approved_cash_v1
+2023-06-01,high_moderate,[],[],False,accumulated_approved_cash_v1
+2023-07-03,high_moderate,[],[],False,accumulated_approved_cash_v1
+2023-08-01,high_moderate,[],[],False,accumulated_approved_cash_v1
+2023-09-01,high_moderate,[],[],False,accumulated_approved_cash_v1
+2023-10-03,high_moderate,[],[],False,accumulated_approved_cash_v1
+2023-11-01,high_moderate,[],[],False,accumulated_approved_cash_v1
+2023-12-01,high_moderate,[],[],False,accumulated_approved_cash_v1
+2024-01-01,high_moderate,[],[],False,accumulated_approved_cash_v1
+2024-02-01,high_moderate,[],[],False,accumulated_approved_cash_v1
+2024-03-01,high_moderate,[],[],False,accumulated_approved_cash_v1
+2024-04-01,high_moderate,[],[],False,accumulated_approved_cash_v1
+2024-05-02,high_moderate,[],[],False,accumulated_approved_cash_v1
+2024-06-03,high_moderate,[],[],False,accumulated_approved_cash_v1
+2024-07-01,high_moderate,[],[],False,accumulated_approved_cash_v1
+2024-08-01,high_moderate,[],[],False,accumulated_approved_cash_v1
+2024-09-02,high_moderate,[],[],False,accumulated_approved_cash_v1
+2024-10-01,high_moderate,[],[],False,accumulated_approved_cash_v1
+2024-11-01,high_moderate,[],[],False,accumulated_approved_cash_v1
+2024-12-02,high_moderate,[],[],False,accumulated_approved_cash_v1
+2025-01-01,high_moderate,[],[],False,accumulated_approved_cash_v1
+2025-02-01,high_moderate,[],[],False,accumulated_approved_cash_v1
+2025-03-03,high_moderate,[],[],False,accumulated_approved_cash_v1
+2025-04-01,high_moderate,[],[],False,accumulated_approved_cash_v1
+2025-05-02,high_moderate,[],[],False,accumulated_approved_cash_v1
+2025-06-02,high_moderate,[],[],False,accumulated_approved_cash_v1
+2025-07-01,high_moderate,[],[],False,accumulated_approved_cash_v1
+2025-08-01,high_moderate,[],[],False,accumulated_approved_cash_v1
+2025-09-01,high_moderate,[],[],False,accumulated_approved_cash_v1
+2025-10-01,high_moderate,[],[],False,accumulated_approved_cash_v1
+2025-11-03,high_moderate,[],[],False,accumulated_approved_cash_v1
+2025-12-01,high_moderate,[],[],False,accumulated_approved_cash_v1
+2022-01-03,high_aggressive,"[[""INFY"", 26], [""NESTLEIND"", 2], [""SUNPHARMA"", 56]]","[[""INFY"", 26], [""NESTLEIND"", 2], [""SUNPHARMA"", 56]]",False,accumulated_approved_cash_v1
+2022-02-01,high_aggressive,"[[""LT"", 20], [""NTPC"", 284], [""SBILIFE"", 34]]","[[""LT"", 20], [""NTPC"", 284], [""SBILIFE"", 34]]",False,accumulated_approved_cash_v1
+2022-03-02,high_aggressive,"[[""BAJAJ-AUTO"", 11], [""BEL"", 159], [""COALINDIA"", 188]]","[[""BAJAJ-AUTO"", 11], [""BEL"", 159], [""COALINDIA"", 188]]",False,accumulated_approved_cash_v1
+2022-04-01,high_aggressive,"[[""ADANIPORTS"", 42], [""BPCL"", 98], [""JSWSTEEL"", 45]]","[[""ADANIPORTS"", 42], [""BPCL"", 98], [""JSWSTEEL"", 45]]",False,accumulated_approved_cash_v1
+2022-05-02,high_aggressive,"[[""ADANIENT"", 13], [""ICICIBANK"", 47], [""ULTRACEMCO"", 5]]","[[""ADANIENT"", 13], [""ICICIBANK"", 47], [""ULTRACEMCO"", 5]]",False,accumulated_approved_cash_v1
+2022-06-01,high_aggressive,"[[""BRITANNIA"", 10], [""EICHERMOT"", 11], [""TCS"", 10]]","[[""BRITANNIA"", 10], [""EICHERMOT"", 11], [""TCS"", 10]]",False,accumulated_approved_cash_v1
+2022-07-01,high_aggressive,"[[""CIPLA"", 39], [""HINDALCO"", 95], [""POWERGRID"", 176]]","[[""CIPLA"", 39], [""HINDALCO"", 95], [""POWERGRID"", 176]]",False,accumulated_approved_cash_v1
+2022-08-01,high_aggressive,"[[""HCLTECH"", 36], [""HINDUNILVR"", 13], [""ONGC"", 228]]","[[""HCLTECH"", 36], [""HINDUNILVR"", 13], [""ONGC"", 228]]",False,accumulated_approved_cash_v1
+2022-09-01,high_aggressive,"[[""DRREDDY"", 8], [""M&M"", 26], [""SBIN"", 66]]","[[""DRREDDY"", 8], [""M&M"", 26], [""SBIN"", 66]]",False,accumulated_approved_cash_v1
+2022-10-03,high_aggressive,"[[""MARUTI"", 4], [""TATASTEEL"", 333], [""WIPRO"", 91]]","[[""MARUTI"", 4], [""TATASTEEL"", 333], [""WIPRO"", 91]]",False,accumulated_approved_cash_v1
+2022-11-01,high_aggressive,"[[""APOLLOHOSP"", 7], [""KOTAKBANK"", 19], [""TITAN"", 13]]","[[""APOLLOHOSP"", 7], [""KOTAKBANK"", 19], [""TITAN"", 13]]",False,accumulated_approved_cash_v1
+2022-12-01,high_aggressive,"[[""HEROMOTOCO"", 12], [""TATACONSUM"", 45], [""TECHM"", 32]]","[[""HEROMOTOCO"", 12], [""TATACONSUM"", 45], [""TECHM"", 32]]",False,accumulated_approved_cash_v1
+2023-01-02,high_aggressive,"[[""ASIANPAINT"", 11], [""AXISBANK"", 37], [""DIVISLAB"", 10]]","[[""ASIANPAINT"", 11], [""AXISBANK"", 37], [""DIVISLAB"", 10]]",False,accumulated_approved_cash_v1
+2023-02-01,high_aggressive,"[[""INDUSINDBK"", 99]]","[[""INDUSINDBK"", 99]]",False,accumulated_approved_cash_v1
+2023-03-01,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2023-04-03,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2023-05-02,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2023-06-01,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2023-07-03,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2023-08-01,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2023-09-01,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2023-10-03,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2023-11-01,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2023-12-01,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-01-01,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-02-01,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-03-01,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-04-01,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-05-02,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-06-03,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-07-01,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-08-01,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-09-02,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-10-01,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-11-01,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2024-12-02,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-01-01,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-02-01,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-03-03,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-04-01,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-05-02,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-06-02,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-07-01,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-08-01,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-09-01,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-10-01,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-11-03,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2025-12-01,high_aggressive,[],[],False,accumulated_approved_cash_v1
+2022-01-03,low_conservative,[],[],False,original
+2022-02-01,low_conservative,[],[],False,original
+2022-03-02,low_conservative,[],[],False,original
+2022-04-01,low_conservative,[],[],False,original
+2022-05-02,low_conservative,"[[""POWERGRID"", 1]]","[[""POWERGRID"", 1]]",False,original
+2022-06-01,low_conservative,[],[],False,original
+2022-07-01,low_conservative,[],[],False,original
+2022-08-01,low_conservative,[],[],False,original
+2022-09-01,low_conservative,[],[],False,original
+2022-10-03,low_conservative,[],[],False,original
+2022-11-01,low_conservative,[],[],False,original
+2022-12-01,low_conservative,[],[],False,original
+2023-01-02,low_conservative,[],[],False,original
+2023-02-01,low_conservative,[],[],False,original
+2023-03-01,low_conservative,[],[],False,original
+2023-04-03,low_conservative,[],[],False,original
+2023-05-02,low_conservative,[],[],False,original
+2023-06-01,low_conservative,[],[],False,original
+2023-07-03,low_conservative,[],[],False,original
+2023-08-01,low_conservative,[],[],False,original
+2023-09-01,low_conservative,[],[],False,original
+2023-10-03,low_conservative,[],[],False,original
+2023-11-01,low_conservative,[],[],False,original
+2023-12-01,low_conservative,[],[],False,original
+2024-01-01,low_conservative,[],[],False,original
+2024-02-01,low_conservative,[],[],False,original
+2024-03-01,low_conservative,[],[],False,original
+2024-04-01,low_conservative,[],[],False,original
+2024-05-02,low_conservative,[],[],False,original
+2024-06-03,low_conservative,[],[],False,original
+2024-07-01,low_conservative,[],[],False,original
+2024-08-01,low_conservative,[],[],False,original
+2024-09-02,low_conservative,[],[],False,original
+2024-10-01,low_conservative,[],[],False,original
+2024-11-01,low_conservative,[],[],False,original
+2024-12-02,low_conservative,[],[],False,original
+2025-01-01,low_conservative,[],[],False,original
+2025-02-01,low_conservative,[],[],False,original
+2025-03-03,low_conservative,[],[],False,original
+2025-04-01,low_conservative,[],[],False,original
+2025-05-02,low_conservative,[],[],False,original
+2025-06-02,low_conservative,[],[],False,original
+2025-07-01,low_conservative,[],[],False,original
+2025-08-01,low_conservative,[],[],False,original
+2025-09-01,low_conservative,[],[],False,original
+2025-10-01,low_conservative,[],[],False,original
+2025-11-03,low_conservative,[],[],False,original
+2025-12-01,low_conservative,[],[],False,original
+2022-01-03,low_moderate,[],[],False,original
+2022-02-01,low_moderate,[],[],False,original
+2022-03-02,low_moderate,[],[],False,original
+2022-04-01,low_moderate,[],[],False,original
+2022-05-02,low_moderate,"[[""POWERGRID"", 3]]","[[""POWERGRID"", 3]]",False,original
+2022-06-01,low_moderate,[],[],False,original
+2022-07-01,low_moderate,[],[],False,original
+2022-08-01,low_moderate,[],[],False,original
+2022-09-01,low_moderate,[],[],False,original
+2022-10-03,low_moderate,[],[],False,original
+2022-11-01,low_moderate,[],[],False,original
+2022-12-01,low_moderate,[],[],False,original
+2023-01-02,low_moderate,[],[],False,original
+2023-02-01,low_moderate,[],[],False,original
+2023-03-01,low_moderate,[],[],False,original
+2023-04-03,low_moderate,[],[],False,original
+2023-05-02,low_moderate,[],[],False,original
+2023-06-01,low_moderate,[],[],False,original
+2023-07-03,low_moderate,[],[],False,original
+2023-08-01,low_moderate,[],[],False,original
+2023-09-01,low_moderate,[],[],False,original
+2023-10-03,low_moderate,[],[],False,original
+2023-11-01,low_moderate,[],[],False,original
+2023-12-01,low_moderate,[],[],False,original
+2024-01-01,low_moderate,[],[],False,original
+2024-02-01,low_moderate,[],[],False,original
+2024-03-01,low_moderate,[],[],False,original
+2024-04-01,low_moderate,[],[],False,original
+2024-05-02,low_moderate,[],[],False,original
+2024-06-03,low_moderate,[],[],False,original
+2024-07-01,low_moderate,[],[],False,original
+2024-08-01,low_moderate,[],[],False,original
+2024-09-02,low_moderate,[],[],False,original
+2024-10-01,low_moderate,[],[],False,original
+2024-11-01,low_moderate,[],[],False,original
+2024-12-02,low_moderate,[],[],False,original
+2025-01-01,low_moderate,[],[],False,original
+2025-02-01,low_moderate,[],[],False,original
+2025-03-03,low_moderate,[],[],False,original
+2025-04-01,low_moderate,[],[],False,original
+2025-05-02,low_moderate,[],[],False,original
+2025-06-02,low_moderate,[],[],False,original
+2025-07-01,low_moderate,[],[],False,original
+2025-08-01,low_moderate,[],[],False,original
+2025-09-01,low_moderate,[],[],False,original
+2025-10-01,low_moderate,[],[],False,original
+2025-11-03,low_moderate,[],[],False,original
+2025-12-01,low_moderate,[],[],False,original
+2022-01-03,low_aggressive,"[[""SUNPHARMA"", 1]]","[[""SUNPHARMA"", 1]]",False,original
+2022-02-01,low_aggressive,[],[],False,original
+2022-03-02,low_aggressive,"[[""POWERGRID"", 5]]","[[""POWERGRID"", 5]]",False,original
+2022-04-01,low_aggressive,[],[],False,original
+2022-05-02,low_aggressive,[],[],False,original
+2022-06-01,low_aggressive,[],[],False,original
+2022-07-01,low_aggressive,"[[""M&M"", 1], [""SBILIFE"", 1]]","[[""M&M"", 1], [""SBILIFE"", 1]]",False,original
+2022-08-01,low_aggressive,[],[],False,original
+2022-09-01,low_aggressive,"[[""BEL"", 3]]","[[""BEL"", 3]]",False,original
+2022-10-03,low_aggressive,"[[""HCLTECH"", 1]]","[[""HCLTECH"", 1]]",False,original
+2022-11-01,low_aggressive,"[[""COALINDIA"", 4]]","[[""COALINDIA"", 4]]",False,original
+2022-12-01,low_aggressive,[],[],False,original
+2023-01-02,low_aggressive,[],[],False,original
+2023-02-01,low_aggressive,"[[""JSWSTEEL"", 1]]","[[""JSWSTEEL"", 1]]",False,original
+2023-03-01,low_aggressive,"[[""ADANIPORTS"", 1]]","[[""ADANIPORTS"", 1]]",False,original
+2023-04-03,low_aggressive,"[[""TATASTEEL"", 11]]","[[""TATASTEEL"", 11]]",False,original
+2023-05-02,low_aggressive,"[[""BPCL"", 3]]","[[""BPCL"", 3]]",False,original
+2023-06-01,low_aggressive,[],[],False,original
+2023-07-03,low_aggressive,[],[],False,original
+2023-08-01,low_aggressive,[],[],False,original
+2023-09-01,low_aggressive,[],[],False,original
+2023-10-03,low_aggressive,[],[],False,original
+2023-11-01,low_aggressive,[],[],False,original
+2023-12-01,low_aggressive,[],[],False,original
+2024-01-01,low_aggressive,[],[],False,original
+2024-02-01,low_aggressive,"[[""TATACONSUM"", 1]]","[[""TATACONSUM"", 1]]",False,original
+2024-03-01,low_aggressive,"[[""ICICIBANK"", 1]]","[[""ICICIBANK"", 1]]",False,original
+2024-04-01,low_aggressive,[],[],False,original
+2024-05-02,low_aggressive,[],[],False,original
+2024-06-03,low_aggressive,[],[],False,original
+2024-07-01,low_aggressive,[],[],False,original
+2024-08-01,low_aggressive,[],[],False,original
+2024-09-02,low_aggressive,[],[],False,original
+2024-10-01,low_aggressive,[],[],False,original
+2024-11-01,low_aggressive,[],[],False,original
+2024-12-02,low_aggressive,[],[],False,original
+2025-01-01,low_aggressive,"[[""NTPC"", 3]]","[[""NTPC"", 3]]",False,original
+2025-02-01,low_aggressive,[],[],False,original
+2025-03-03,low_aggressive,[],[],False,original
+2025-04-01,low_aggressive,[],[],False,original
+2025-05-02,low_aggressive,[],[],False,original
+2025-06-02,low_aggressive,[],[],False,original
+2025-07-01,low_aggressive,[],[],False,original
+2025-08-01,low_aggressive,[],[],False,original
+2025-09-01,low_aggressive,"[[""NESTLEIND"", 1]]","[[""NESTLEIND"", 1]]",False,original
+2025-10-01,low_aggressive,"[[""DRREDDY"", 1]]","[[""DRREDDY"", 1]]",False,original
+2025-11-03,low_aggressive,[],[],False,original
+2025-12-01,low_aggressive,[],[],False,original
+2022-01-03,medium_conservative,"[[""SUNPHARMA"", 1]]","[[""SUNPHARMA"", 1]]",False,original
+2022-02-01,medium_conservative,"[[""SBILIFE"", 1]]","[[""SBILIFE"", 1]]",False,original
+2022-03-02,medium_conservative,[],[],False,original
+2022-04-01,medium_conservative,[],[],False,original
+2022-05-02,medium_conservative,"[[""POWERGRID"", 6]]","[[""POWERGRID"", 6]]",False,original
+2022-06-01,medium_conservative,[],[],False,original
+2022-07-01,medium_conservative,[],[],False,original
+2022-08-01,medium_conservative,[],[],False,original
+2022-09-01,medium_conservative,[],[],False,original
+2022-10-03,medium_conservative,[],[],False,original
+2022-11-01,medium_conservative,[],[],False,original
+2022-12-01,medium_conservative,[],[],False,original
+2023-01-02,medium_conservative,[],[],False,original
+2023-02-01,medium_conservative,[],[],False,original
+2023-03-01,medium_conservative,[],[],False,original
+2023-04-03,medium_conservative,[],[],False,original
+2023-05-02,medium_conservative,[],[],False,original
+2023-06-01,medium_conservative,[],[],False,original
+2023-07-03,medium_conservative,[],[],False,original
+2023-08-01,medium_conservative,[],[],False,original
+2023-09-01,medium_conservative,[],[],False,original
+2023-10-03,medium_conservative,[],[],False,original
+2023-11-01,medium_conservative,[],[],False,original
+2023-12-01,medium_conservative,[],[],False,original
+2024-01-01,medium_conservative,[],[],False,original
+2024-02-01,medium_conservative,"[[""TATACONSUM"", 1]]","[[""TATACONSUM"", 1]]",False,original
+2024-03-01,medium_conservative,[],[],False,original
+2024-04-01,medium_conservative,[],[],False,original
+2024-05-02,medium_conservative,[],[],False,original
+2024-06-03,medium_conservative,[],[],False,original
+2024-07-01,medium_conservative,[],[],False,original
+2024-08-01,medium_conservative,[],[],False,original
+2024-09-02,medium_conservative,[],[],False,original
+2024-10-01,medium_conservative,[],[],False,original
+2024-11-01,medium_conservative,[],[],False,original
+2024-12-02,medium_conservative,[],[],False,original
+2025-01-01,medium_conservative,[],[],False,original
+2025-02-01,medium_conservative,[],[],False,original
+2025-03-03,medium_conservative,"[[""JSWSTEEL"", 1]]","[[""JSWSTEEL"", 1]]",False,original
+2025-04-01,medium_conservative,[],[],False,original
+2025-05-02,medium_conservative,[],[],False,original
+2025-06-02,medium_conservative,[],[],False,original
+2025-07-01,medium_conservative,[],[],False,original
+2025-08-01,medium_conservative,[],[],False,original
+2025-09-01,medium_conservative,[],[],False,original
+2025-10-01,medium_conservative,"[[""COALINDIA"", 4]]","[[""COALINDIA"", 4]]",False,original
+2025-11-03,medium_conservative,[],[],False,original
+2025-12-01,medium_conservative,[],[],False,original
+2022-01-03,medium_moderate,"[[""INFY"", 1], [""SUNPHARMA"", 3]]","[[""INFY"", 1], [""SUNPHARMA"", 3]]",False,original
+2022-02-01,medium_moderate,"[[""LT"", 1], [""SBILIFE"", 2]]","[[""LT"", 1], [""SBILIFE"", 2]]",False,original
+2022-03-02,medium_moderate,"[[""POWERGRID"", 14]]","[[""POWERGRID"", 14]]",False,original
+2022-04-01,medium_moderate,"[[""BPCL"", 8]]","[[""BPCL"", 8]]",False,original
+2022-05-02,medium_moderate,"[[""BEL"", 11]]","[[""BEL"", 11]]",False,original
+2022-06-01,medium_moderate,"[[""ADANIENT"", 1]]","[[""ADANIENT"", 1]]",False,original
+2022-07-01,medium_moderate,"[[""ADANIPORTS"", 4]]","[[""ADANIPORTS"", 4]]",False,original
+2022-08-01,medium_moderate,[],[],False,original
+2022-09-01,medium_moderate,"[[""TCS"", 1]]","[[""TCS"", 1]]",False,original
+2022-10-03,medium_moderate,[],[],False,original
+2022-11-01,medium_moderate,[],[],False,original
+2022-12-01,medium_moderate,[],[],False,original
+2023-01-02,medium_moderate,[],[],False,original
+2023-02-01,medium_moderate,"[[""JSWSTEEL"", 3]]","[[""JSWSTEEL"", 3]]",False,original
+2023-03-01,medium_moderate,[],[],False,original
+2023-04-03,medium_moderate,[],[],False,original
+2023-05-02,medium_moderate,"[[""ICICIBANK"", 3]]","[[""ICICIBANK"", 3]]",False,original
+2023-06-01,medium_moderate,[],[],False,original
+2023-07-03,medium_moderate,[],[],False,original
+2023-08-01,medium_moderate,[],[],False,original
+2023-09-01,medium_moderate,[],[],False,original
+2023-10-03,medium_moderate,"[[""ONGC"", 16]]","[[""ONGC"", 16]]",False,original
+2023-11-01,medium_moderate,[],[],False,original
+2023-12-01,medium_moderate,[],[],False,original
+2024-01-01,medium_moderate,[],[],False,original
+2024-02-01,medium_moderate,"[[""TATACONSUM"", 2]]","[[""TATACONSUM"", 2]]",False,original
+2024-03-01,medium_moderate,"[[""NESTLEIND"", 1]]","[[""NESTLEIND"", 1]]",False,original
+2024-04-01,medium_moderate,[],[],False,original
+2024-05-02,medium_moderate,[],[],False,original
+2024-06-03,medium_moderate,[],[],False,original
+2024-07-01,medium_moderate,[],[],False,original
+2024-08-01,medium_moderate,[],[],False,original
+2024-09-02,medium_moderate,[],[],False,original
+2024-10-01,medium_moderate,[],[],False,original
+2024-11-01,medium_moderate,[],[],False,original
+2024-12-02,medium_moderate,"[[""HINDUNILVR"", 1]]","[[""HINDUNILVR"", 1]]",False,original
+2025-01-01,medium_moderate,"[[""TATASTEEL"", 22]]","[[""TATASTEEL"", 22]]",False,original
+2025-02-01,medium_moderate,"[[""NTPC"", 9]]","[[""NTPC"", 9]]",False,original
+2025-03-03,medium_moderate,"[[""CIPLA"", 2]]","[[""CIPLA"", 2]]",False,original
+2025-04-01,medium_moderate,"[[""TECHM"", 2]]","[[""TECHM"", 2]]",False,original
+2025-05-02,medium_moderate,[],[],False,original
+2025-06-02,medium_moderate,[],[],False,original
+2025-07-01,medium_moderate,[],[],False,original
+2025-08-01,medium_moderate,[],[],False,original
+2025-09-01,medium_moderate,[],[],False,original
+2025-10-01,medium_moderate,[],[],False,original
+2025-11-03,medium_moderate,"[[""WIPRO"", 13]]","[[""WIPRO"", 13]]",False,original
+2025-12-01,medium_moderate,"[[""ASIANPAINT"", 1]]","[[""ASIANPAINT"", 1]]",False,original
+2022-01-03,medium_aggressive,"[[""INFY"", 2], [""SUNPHARMA"", 5]]","[[""INFY"", 2], [""SUNPHARMA"", 5]]",False,original
+2022-02-01,medium_aggressive,"[[""LT"", 2], [""SBILIFE"", 4]]","[[""LT"", 2], [""SBILIFE"", 4]]",False,original
+2022-03-02,medium_aggressive,"[[""BAJAJ-AUTO"", 1], [""POWERGRID"", 22]]","[[""BAJAJ-AUTO"", 1], [""POWERGRID"", 22]]",False,original
+2022-04-01,medium_aggressive,"[[""BEL"", 22], [""COALINDIA"", 25]]","[[""BEL"", 22], [""COALINDIA"", 25]]",False,original
+2022-05-02,medium_aggressive,"[[""ADANIENT"", 1], [""ADANIPORTS"", 5]]","[[""ADANIENT"", 1], [""ADANIPORTS"", 5]]",False,original
+2022-06-01,medium_aggressive,"[[""HINDALCO"", 10], [""TCS"", 1]]","[[""HINDALCO"", 10], [""TCS"", 1]]",False,original
+2022-07-01,medium_aggressive,"[[""M&M"", 4]]","[[""M&M"", 4]]",False,original
+2022-08-01,medium_aggressive,"[[""CIPLA"", 4]]","[[""CIPLA"", 4]]",False,original
+2022-09-01,medium_aggressive,"[[""NTPC"", 29]]","[[""NTPC"", 29]]",False,original
+2022-10-03,medium_aggressive,"[[""ICICIBANK"", 5]]","[[""ICICIBANK"", 5]]",False,original
+2022-11-01,medium_aggressive,"[[""BPCL"", 15]]","[[""BPCL"", 15]]",False,original
+2022-12-01,medium_aggressive,"[[""HCLTECH"", 4]]","[[""HCLTECH"", 4]]",False,original
+2023-01-02,medium_aggressive,"[[""EICHERMOT"", 1]]","[[""EICHERMOT"", 1]]",False,original
+2023-02-01,medium_aggressive,"[[""BRITANNIA"", 1], [""JSWSTEEL"", 6]]","[[""BRITANNIA"", 1], [""JSWSTEEL"", 6]]",False,original
+2023-03-01,medium_aggressive,"[[""DRREDDY"", 1]]","[[""DRREDDY"", 1]]",False,original
+2023-04-03,medium_aggressive,"[[""KOTAKBANK"", 2]]","[[""KOTAKBANK"", 2]]",False,original
+2023-05-02,medium_aggressive,"[[""WIPRO"", 12]]","[[""WIPRO"", 12]]",False,original
+2023-06-01,medium_aggressive,"[[""TATASTEEL"", 44]]","[[""TATASTEEL"", 44]]",False,original
+2023-07-03,medium_aggressive,"[[""ONGC"", 28]]","[[""ONGC"", 28]]",False,original
+2023-08-01,medium_aggressive,"[[""AXISBANK"", 5]]","[[""AXISBANK"", 5]]",False,original
+2023-09-01,medium_aggressive,"[[""TITAN"", 1]]","[[""TITAN"", 1]]",False,original
+2023-10-03,medium_aggressive,[],[],False,original
+2023-11-01,medium_aggressive,[],[],False,original
+2023-12-01,medium_aggressive,[],[],False,original
+2024-01-01,medium_aggressive,[],[],False,original
+2024-02-01,medium_aggressive,"[[""TATACONSUM"", 4]]","[[""TATACONSUM"", 4]]",False,original
+2024-03-01,medium_aggressive,"[[""NESTLEIND"", 1]]","[[""NESTLEIND"", 1]]",False,original
+2024-04-01,medium_aggressive,"[[""ASIANPAINT"", 1], [""TECHM"", 3]]","[[""ASIANPAINT"", 1], [""TECHM"", 3]]",False,original
+2024-05-02,medium_aggressive,"[[""DIVISLAB"", 1], [""HINDUNILVR"", 2]]","[[""DIVISLAB"", 1], [""HINDUNILVR"", 2]]",False,original
+2024-06-03,medium_aggressive,"[[""SBIN"", 5]]","[[""SBIN"", 5]]",False,original
+2024-07-01,medium_aggressive,[],[],False,original
+2024-08-01,medium_aggressive,[],[],False,original
+2024-09-02,medium_aggressive,"[[""INDUSINDBK"", 3]]","[[""INDUSINDBK"", 3]]",False,original
+2024-10-01,medium_aggressive,[],[],False,original
+2024-11-01,medium_aggressive,[],[],False,original
+2024-12-02,medium_aggressive,[],[],False,original
+2025-01-01,medium_aggressive,[],[],False,original
+2025-02-01,medium_aggressive,[],[],False,original
+2025-03-03,medium_aggressive,[],[],False,original
+2025-04-01,medium_aggressive,[],[],False,original
+2025-05-02,medium_aggressive,[],[],False,original
+2025-06-02,medium_aggressive,[],[],False,original
+2025-07-01,medium_aggressive,[],[],False,original
+2025-08-01,medium_aggressive,[],[],False,original
+2025-09-01,medium_aggressive,[],[],False,original
+2025-10-01,medium_aggressive,[],[],False,original
+2025-11-03,medium_aggressive,[],[],False,original
+2025-12-01,medium_aggressive,[],[],False,original
+2022-01-03,high_conservative,"[[""INFY"", 4], [""SUNPHARMA"", 8]]","[[""INFY"", 4], [""SUNPHARMA"", 8]]",False,original
+2022-02-01,high_conservative,"[[""LT"", 3], [""SBILIFE"", 6]]","[[""LT"", 3], [""SBILIFE"", 6]]",False,original
+2022-03-02,high_conservative,"[[""BAJAJ-AUTO"", 2], [""POWERGRID"", 32]]","[[""BAJAJ-AUTO"", 2], [""POWERGRID"", 32]]",False,original
+2022-04-01,high_conservative,"[[""BEL"", 30], [""BPCL"", 21]]","[[""BEL"", 30], [""BPCL"", 21]]",False,original
+2022-05-02,high_conservative,"[[""ADANIPORTS"", 7], [""JSWSTEEL"", 9]]","[[""ADANIPORTS"", 7], [""JSWSTEEL"", 9]]",False,original
+2022-06-01,high_conservative,"[[""ADANIENT"", 2], [""ULTRACEMCO"", 1]]","[[""ADANIENT"", 2], [""ULTRACEMCO"", 1]]",False,original
+2022-07-01,high_conservative,"[[""ICICIBANK"", 10], [""TCS"", 2]]","[[""ICICIBANK"", 10], [""TCS"", 2]]",False,original
+2022-08-01,high_conservative,"[[""COALINDIA"", 30], [""NTPC"", 51]]","[[""COALINDIA"", 30], [""NTPC"", 51]]",False,original
+2022-09-01,high_conservative,"[[""CIPLA"", 8], [""EICHERMOT"", 2]]","[[""CIPLA"", 8], [""EICHERMOT"", 2]]",False,original
+2022-10-03,high_conservative,"[[""HCLTECH"", 9], [""HINDALCO"", 15]]","[[""HCLTECH"", 9], [""HINDALCO"", 15]]",False,original
+2022-11-01,high_conservative,"[[""M&M"", 5], [""ONGC"", 47]]","[[""M&M"", 5], [""ONGC"", 47]]",False,original
+2022-12-01,high_conservative,"[[""DRREDDY"", 1], [""SBIN"", 12]]","[[""DRREDDY"", 1], [""SBIN"", 12]]",False,original
+2023-01-02,high_conservative,"[[""APOLLOHOSP"", 1], [""HEROMOTOCO"", 2]]","[[""APOLLOHOSP"", 1], [""HEROMOTOCO"", 2]]",False,original
+2023-02-01,high_conservative,"[[""KOTAKBANK"", 4], [""TATASTEEL"", 50]]","[[""KOTAKBANK"", 4], [""TATASTEEL"", 50]]",False,original
+2023-03-01,high_conservative,"[[""DIVISLAB"", 2], [""WIPRO"", 21]]","[[""DIVISLAB"", 2], [""WIPRO"", 21]]",False,original
+2023-04-03,high_conservative,"[[""AXISBANK"", 9], [""BRITANNIA"", 1], [""MARUTI"", 1]]","[[""AXISBANK"", 9], [""BRITANNIA"", 1], [""MARUTI"", 1]]",False,original
+2023-05-02,high_conservative,"[[""INDUSINDBK"", 6], [""TECHM"", 7]]","[[""INDUSINDBK"", 6], [""TECHM"", 7]]",False,original
+2023-06-01,high_conservative,"[[""NESTLEIND"", 1]]","[[""NESTLEIND"", 1]]",False,original
+2023-07-03,high_conservative,"[[""TITAN"", 8]]","[[""TITAN"", 8]]",False,original
+2023-08-01,high_conservative,"[[""HINDUNILVR"", 9]]","[[""HINDUNILVR"", 9]]",False,original
+2023-09-01,high_conservative,"[[""TATACONSUM"", 29]]","[[""TATACONSUM"", 29]]",False,original
+2023-10-03,high_conservative,"[[""ASIANPAINT"", 7]]","[[""ASIANPAINT"", 7]]",False,original
+2023-11-01,high_conservative,[],[],False,original
+2023-12-01,high_conservative,[],[],False,original
+2024-01-01,high_conservative,[],[],False,original
+2024-02-01,high_conservative,[],[],False,original
+2024-03-01,high_conservative,[],[],False,original
+2024-04-01,high_conservative,[],[],False,original
+2024-05-02,high_conservative,[],[],False,original
+2024-06-03,high_conservative,[],[],False,original
+2024-07-01,high_conservative,[],[],False,original
+2024-08-01,high_conservative,[],[],False,original
+2024-09-02,high_conservative,[],[],False,original
+2024-10-01,high_conservative,[],[],False,original
+2024-11-01,high_conservative,[],[],False,original
+2024-12-02,high_conservative,[],[],False,original
+2025-01-01,high_conservative,[],[],False,original
+2025-02-01,high_conservative,[],[],False,original
+2025-03-03,high_conservative,[],[],False,original
+2025-04-01,high_conservative,[],[],False,original
+2025-05-02,high_conservative,[],[],False,original
+2025-06-02,high_conservative,[],[],False,original
+2025-07-01,high_conservative,[],[],False,original
+2025-08-01,high_conservative,[],[],False,original
+2025-09-01,high_conservative,[],[],False,original
+2025-10-01,high_conservative,[],[],False,original
+2025-11-03,high_conservative,[],[],False,original
+2025-12-01,high_conservative,[],[],False,original
+2022-01-03,high_moderate,"[[""INFY"", 8], [""SUNPHARMA"", 17]]","[[""INFY"", 8], [""SUNPHARMA"", 17]]",False,original
+2022-02-01,high_moderate,"[[""LT"", 7], [""SBILIFE"", 13]]","[[""LT"", 7], [""SBILIFE"", 13]]",False,original
+2022-03-02,high_moderate,"[[""BAJAJ-AUTO"", 4], [""NESTLEIND"", 1], [""POWERGRID"", 70]]","[[""BAJAJ-AUTO"", 4], [""NESTLEIND"", 1], [""POWERGRID"", 70]]",False,original
+2022-04-01,high_moderate,"[[""BEL"", 74], [""BPCL"", 50], [""JSWSTEEL"", 20]]","[[""BEL"", 74], [""BPCL"", 50], [""JSWSTEEL"", 20]]",False,original
+2022-05-02,high_moderate,"[[""ADANIPORTS"", 16], [""TCS"", 5], [""ULTRACEMCO"", 2]]","[[""ADANIPORTS"", 16], [""TCS"", 5], [""ULTRACEMCO"", 2]]",False,original
+2022-06-01,high_moderate,"[[""ADANIENT"", 6], [""CIPLA"", 18], [""EICHERMOT"", 6]]","[[""ADANIENT"", 6], [""CIPLA"", 18], [""EICHERMOT"", 6]]",False,original
+2022-07-01,high_moderate,"[[""COALINDIA"", 81], [""ICICIBANK"", 25], [""NTPC"", 122]]","[[""COALINDIA"", 81], [""ICICIBANK"", 25], [""NTPC"", 122]]",False,original
+2022-08-01,high_moderate,"[[""BRITANNIA"", 4], [""HCLTECH"", 18], [""HINDALCO"", 32]]","[[""BRITANNIA"", 4], [""HCLTECH"", 18], [""HINDALCO"", 32]]",False,original
+2022-09-01,high_moderate,"[[""DRREDDY"", 4], [""HINDUNILVR"", 6], [""ONGC"", 102]]","[[""DRREDDY"", 4], [""HINDUNILVR"", 6], [""ONGC"", 102]]",False,original
+2022-10-03,high_moderate,"[[""M&M"", 12], [""SBIN"", 32], [""WIPRO"", 42]]","[[""M&M"", 12], [""SBIN"", 32], [""WIPRO"", 42]]",False,original
+2022-11-01,high_moderate,"[[""HEROMOTOCO"", 6], [""TATASTEEL"", 147], [""TITAN"", 6]]","[[""HEROMOTOCO"", 6], [""TATASTEEL"", 147], [""TITAN"", 6]]",False,original
+2022-12-01,high_moderate,"[[""APOLLOHOSP"", 3], [""KOTAKBANK"", 9], [""MARUTI"", 1]]","[[""APOLLOHOSP"", 3], [""KOTAKBANK"", 9], [""MARUTI"", 1]]",False,original
+2023-01-02,high_moderate,"[[""DIVISLAB"", 4], [""TATACONSUM"", 22], [""TECHM"", 16]]","[[""DIVISLAB"", 4], [""TATACONSUM"", 22], [""TECHM"", 16]]",False,original
+2023-02-01,high_moderate,"[[""ASIANPAINT"", 9], [""AXISBANK"", 28]]","[[""ASIANPAINT"", 9], [""AXISBANK"", 28]]",False,original
+2023-03-01,high_moderate,"[[""INDUSINDBK"", 45]]","[[""INDUSINDBK"", 45]]",False,original
+2023-04-03,high_moderate,[],[],False,original
+2023-05-02,high_moderate,[],[],False,original
+2023-06-01,high_moderate,[],[],False,original
+2023-07-03,high_moderate,[],[],False,original
+2023-08-01,high_moderate,[],[],False,original
+2023-09-01,high_moderate,[],[],False,original
+2023-10-03,high_moderate,[],[],False,original
+2023-11-01,high_moderate,[],[],False,original
+2023-12-01,high_moderate,[],[],False,original
+2024-01-01,high_moderate,[],[],False,original
+2024-02-01,high_moderate,[],[],False,original
+2024-03-01,high_moderate,[],[],False,original
+2024-04-01,high_moderate,[],[],False,original
+2024-05-02,high_moderate,[],[],False,original
+2024-06-03,high_moderate,[],[],False,original
+2024-07-01,high_moderate,[],[],False,original
+2024-08-01,high_moderate,[],[],False,original
+2024-09-02,high_moderate,[],[],False,original
+2024-10-01,high_moderate,[],[],False,original
+2024-11-01,high_moderate,[],[],False,original
+2024-12-02,high_moderate,[],[],False,original
+2025-01-01,high_moderate,[],[],False,original
+2025-02-01,high_moderate,[],[],False,original
+2025-03-03,high_moderate,[],[],False,original
+2025-04-01,high_moderate,[],[],False,original
+2025-05-02,high_moderate,[],[],False,original
+2025-06-02,high_moderate,[],[],False,original
+2025-07-01,high_moderate,[],[],False,original
+2025-08-01,high_moderate,[],[],False,original
+2025-09-01,high_moderate,[],[],False,original
+2025-10-01,high_moderate,[],[],False,original
+2025-11-03,high_moderate,[],[],False,original
+2025-12-01,high_moderate,[],[],False,original
+2022-01-03,high_aggressive,"[[""INFY"", 13], [""NESTLEIND"", 1], [""SUNPHARMA"", 28]]","[[""INFY"", 13], [""NESTLEIND"", 1], [""SUNPHARMA"", 28]]",False,original
+2022-02-01,high_aggressive,"[[""LT"", 12], [""NTPC"", 173], [""SBILIFE"", 20]]","[[""LT"", 12], [""NTPC"", 173], [""SBILIFE"", 20]]",False,original
+2022-03-02,high_aggressive,"[[""BAJAJ-AUTO"", 7], [""BEL"", 111], [""COALINDIA"", 130]]","[[""BAJAJ-AUTO"", 7], [""BEL"", 111], [""COALINDIA"", 130]]",False,original
+2022-04-01,high_aggressive,"[[""ADANIPORTS"", 30], [""BRITANNIA"", 8], [""JSWSTEEL"", 32]]","[[""ADANIPORTS"", 30], [""BRITANNIA"", 8], [""JSWSTEEL"", 32]]",False,original
+2022-05-02,high_aggressive,"[[""ICICIBANK"", 32], [""TCS"", 7], [""ULTRACEMCO"", 3]]","[[""ICICIBANK"", 32], [""TCS"", 7], [""ULTRACEMCO"", 3]]",False,original
+2022-06-01,high_aggressive,"[[""ADANIENT"", 10], [""BPCL"", 79], [""CIPLA"", 26]]","[[""ADANIENT"", 10], [""BPCL"", 79], [""CIPLA"", 26]]",False,original
+2022-07-01,high_aggressive,"[[""HINDALCO"", 68], [""M&M"", 23], [""POWERGRID"", 126]]","[[""HINDALCO"", 68], [""M&M"", 23], [""POWERGRID"", 126]]",False,original
+2022-08-01,high_aggressive,"[[""DRREDDY"", 6], [""HCLTECH"", 25], [""HINDUNILVR"", 9]]","[[""DRREDDY"", 6], [""HCLTECH"", 25], [""HINDUNILVR"", 9]]",False,original
+2022-09-01,high_aggressive,"[[""EICHERMOT"", 7], [""ONGC"", 174], [""SBIN"", 48]]","[[""EICHERMOT"", 7], [""ONGC"", 174], [""SBIN"", 48]]",False,original
+2022-10-03,high_aggressive,"[[""KOTAKBANK"", 14], [""TITAN"", 9], [""WIPRO"", 64]]","[[""KOTAKBANK"", 14], [""TITAN"", 9], [""WIPRO"", 64]]",False,original
+2022-11-01,high_aggressive,"[[""APOLLOHOSP"", 5], [""HEROMOTOCO"", 9], [""TATASTEEL"", 238]]","[[""APOLLOHOSP"", 5], [""HEROMOTOCO"", 9], [""TATASTEEL"", 238]]",False,original
+2022-12-01,high_aggressive,"[[""MARUTI"", 2], [""TATACONSUM"", 31], [""TECHM"", 22]]","[[""MARUTI"", 2], [""TATACONSUM"", 31], [""TECHM"", 22]]",False,original
+2023-01-02,high_aggressive,"[[""ASIANPAINT"", 8], [""AXISBANK"", 26], [""DIVISLAB"", 7]]","[[""ASIANPAINT"", 8], [""AXISBANK"", 26], [""DIVISLAB"", 7]]",False,original
+2023-02-01,high_aggressive,"[[""INDUSINDBK"", 71]]","[[""INDUSINDBK"", 71]]",False,original
+2023-03-01,high_aggressive,[],[],False,original
+2023-04-03,high_aggressive,[],[],False,original
+2023-05-02,high_aggressive,[],[],False,original
+2023-06-01,high_aggressive,[],[],False,original
+2023-07-03,high_aggressive,[],[],False,original
+2023-08-01,high_aggressive,[],[],False,original
+2023-09-01,high_aggressive,[],[],False,original
+2023-10-03,high_aggressive,[],[],False,original
+2023-11-01,high_aggressive,[],[],False,original
+2023-12-01,high_aggressive,[],[],False,original
+2024-01-01,high_aggressive,[],[],False,original
+2024-02-01,high_aggressive,[],[],False,original
+2024-03-01,high_aggressive,[],[],False,original
+2024-04-01,high_aggressive,[],[],False,original
+2024-05-02,high_aggressive,[],[],False,original
+2024-06-03,high_aggressive,[],[],False,original
+2024-07-01,high_aggressive,[],[],False,original
+2024-08-01,high_aggressive,[],[],False,original
+2024-09-02,high_aggressive,[],[],False,original
+2024-10-01,high_aggressive,[],[],False,original
+2024-11-01,high_aggressive,[],[],False,original
+2024-12-02,high_aggressive,[],[],False,original
+2025-01-01,high_aggressive,[],[],False,original
+2025-02-01,high_aggressive,[],[],False,original
+2025-03-03,high_aggressive,[],[],False,original
+2025-04-01,high_aggressive,[],[],False,original
+2025-05-02,high_aggressive,[],[],False,original
+2025-06-02,high_aggressive,[],[],False,original
+2025-07-01,high_aggressive,[],[],False,original
+2025-08-01,high_aggressive,[],[],False,original
+2025-09-01,high_aggressive,[],[],False,original
+2025-10-01,high_aggressive,[],[],False,original
+2025-11-03,high_aggressive,[],[],False,original
+2025-12-01,high_aggressive,[],[],False,original
+2022-01-03,low_conservative,[],[],False,stress_original
+2022-02-01,low_conservative,[],[],False,stress_original
+2022-03-02,low_conservative,[],[],False,stress_original
+2022-04-01,low_conservative,[],[],False,stress_original
+2022-05-02,low_conservative,"[[""POWERGRID"", 1]]","[[""POWERGRID"", 1]]",False,stress_original
+2022-06-01,low_conservative,[],[],False,stress_original
+2022-07-01,low_conservative,[],[],False,stress_original
+2022-08-01,low_conservative,[],[],False,stress_original
+2022-09-01,low_conservative,[],[],False,stress_original
+2022-10-03,low_conservative,[],[],False,stress_original
+2022-11-01,low_conservative,[],[],False,stress_original
+2022-12-01,low_conservative,[],[],False,stress_original
+2023-01-02,low_conservative,[],[],False,stress_original
+2023-02-01,low_conservative,[],[],False,stress_original
+2023-03-01,low_conservative,[],[],False,stress_original
+2023-04-03,low_conservative,[],[],False,stress_original
+2023-05-02,low_conservative,[],[],False,stress_original
+2023-06-01,low_conservative,[],[],False,stress_original
+2023-07-03,low_conservative,[],[],False,stress_original
+2023-08-01,low_conservative,[],[],False,stress_original
+2023-09-01,low_conservative,[],[],False,stress_original
+2023-10-03,low_conservative,[],[],False,stress_original
+2023-11-01,low_conservative,[],[],False,stress_original
+2023-12-01,low_conservative,[],[],False,stress_original
+2024-01-01,low_conservative,[],[],False,stress_original
+2024-02-01,low_conservative,[],[],False,stress_original
+2024-03-01,low_conservative,[],[],False,stress_original
+2024-04-01,low_conservative,[],[],False,stress_original
+2024-05-02,low_conservative,[],[],False,stress_original
+2024-06-03,low_conservative,[],[],False,stress_original
+2024-07-01,low_conservative,[],[],False,stress_original
+2024-08-01,low_conservative,[],[],False,stress_original
+2024-09-02,low_conservative,[],[],False,stress_original
+2024-10-01,low_conservative,[],[],False,stress_original
+2024-11-01,low_conservative,[],[],False,stress_original
+2024-12-02,low_conservative,[],[],False,stress_original
+2025-01-01,low_conservative,[],[],False,stress_original
+2025-02-01,low_conservative,[],[],False,stress_original
+2025-03-03,low_conservative,[],[],False,stress_original
+2025-04-01,low_conservative,[],[],False,stress_original
+2025-05-02,low_conservative,[],[],False,stress_original
+2025-06-02,low_conservative,[],[],False,stress_original
+2025-07-01,low_conservative,[],[],False,stress_original
+2025-08-01,low_conservative,[],[],False,stress_original
+2025-09-01,low_conservative,[],[],False,stress_original
+2025-10-01,low_conservative,[],[],False,stress_original
+2025-11-03,low_conservative,[],[],False,stress_original
+2025-12-01,low_conservative,[],[],False,stress_original
+2022-01-03,medium_moderate,"[[""INFY"", 1], [""SUNPHARMA"", 3]]","[[""INFY"", 1], [""SUNPHARMA"", 3]]",False,stress_original
+2022-02-01,medium_moderate,"[[""LT"", 1], [""SBILIFE"", 2]]","[[""LT"", 1], [""SBILIFE"", 2]]",False,stress_original
+2022-03-02,medium_moderate,"[[""POWERGRID"", 14]]","[[""POWERGRID"", 14]]",False,stress_original
+2022-04-01,medium_moderate,"[[""BPCL"", 8]]","[[""BPCL"", 8]]",False,stress_original
+2022-05-02,medium_moderate,"[[""BEL"", 11]]","[[""BEL"", 11]]",False,stress_original
+2022-06-01,medium_moderate,"[[""ADANIPORTS"", 3]]","[[""ADANIPORTS"", 3]]",False,stress_original
+2022-07-01,medium_moderate,[],[],False,stress_original
+2022-08-01,medium_moderate,[],[],False,stress_original
+2022-09-01,medium_moderate,"[[""TCS"", 1]]","[[""TCS"", 1]]",False,stress_original
+2022-10-03,medium_moderate,[],[],False,stress_original
+2022-11-01,medium_moderate,[],[],False,stress_original
+2022-12-01,medium_moderate,[],[],False,stress_original
+2023-01-02,medium_moderate,[],[],False,stress_original
+2023-02-01,medium_moderate,[],[],False,stress_original
+2023-03-01,medium_moderate,[],[],False,stress_original
+2023-04-03,medium_moderate,[],[],False,stress_original
+2023-05-02,medium_moderate,"[[""ICICIBANK"", 3]]","[[""ICICIBANK"", 3]]",False,stress_original
+2023-06-01,medium_moderate,[],[],False,stress_original
+2023-07-03,medium_moderate,[],[],False,stress_original
+2023-08-01,medium_moderate,[],[],False,stress_original
+2023-09-01,medium_moderate,[],[],False,stress_original
+2023-10-03,medium_moderate,"[[""ONGC"", 16]]","[[""ONGC"", 16]]",False,stress_original
+2023-11-01,medium_moderate,[],[],False,stress_original
+2023-12-01,medium_moderate,[],[],False,stress_original
+2024-01-01,medium_moderate,[],[],False,stress_original
+2024-02-01,medium_moderate,"[[""TATACONSUM"", 2]]","[[""TATACONSUM"", 2]]",False,stress_original
+2024-03-01,medium_moderate,"[[""NESTLEIND"", 1]]","[[""NESTLEIND"", 1]]",False,stress_original
+2024-04-01,medium_moderate,[],[],False,stress_original
+2024-05-02,medium_moderate,[],[],False,stress_original
+2024-06-03,medium_moderate,[],[],False,stress_original
+2024-07-01,medium_moderate,[],[],False,stress_original
+2024-08-01,medium_moderate,[],[],False,stress_original
+2024-09-02,medium_moderate,[],[],False,stress_original
+2024-10-01,medium_moderate,[],[],False,stress_original
+2024-11-01,medium_moderate,[],[],False,stress_original
+2024-12-02,medium_moderate,"[[""HINDUNILVR"", 1]]","[[""HINDUNILVR"", 1]]",False,stress_original
+2025-01-01,medium_moderate,"[[""NTPC"", 8]]","[[""NTPC"", 8]]",False,stress_original
+2025-02-01,medium_moderate,[],[],False,stress_original
+2025-03-03,medium_moderate,"[[""CIPLA"", 2]]","[[""CIPLA"", 2]]",False,stress_original
+2025-04-01,medium_moderate,"[[""TECHM"", 2]]","[[""TECHM"", 2]]",False,stress_original
+2025-05-02,medium_moderate,[],[],False,stress_original
+2025-06-02,medium_moderate,[],[],False,stress_original
+2025-07-01,medium_moderate,[],[],False,stress_original
+2025-08-01,medium_moderate,[],[],False,stress_original
+2025-09-01,medium_moderate,[],[],False,stress_original
+2025-10-01,medium_moderate,[],[],False,stress_original
+2025-11-03,medium_moderate,"[[""WIPRO"", 13]]","[[""WIPRO"", 13]]",False,stress_original
+2025-12-01,medium_moderate,"[[""ASIANPAINT"", 1]]","[[""ASIANPAINT"", 1]]",False,stress_original
+2022-01-03,high_aggressive,"[[""INFY"", 13], [""NESTLEIND"", 1], [""SUNPHARMA"", 28]]","[[""INFY"", 13], [""NESTLEIND"", 1], [""SUNPHARMA"", 28]]",False,stress_original
+2022-02-01,high_aggressive,"[[""LT"", 12], [""NTPC"", 173], [""SBILIFE"", 20]]","[[""LT"", 12], [""NTPC"", 173], [""SBILIFE"", 20]]",False,stress_original
+2022-03-02,high_aggressive,"[[""BAJAJ-AUTO"", 7], [""BEL"", 111], [""COALINDIA"", 130]]","[[""BAJAJ-AUTO"", 7], [""BEL"", 111], [""COALINDIA"", 130]]",False,stress_original
+2022-04-01,high_aggressive,"[[""ADANIPORTS"", 29], [""BRITANNIA"", 8], [""ULTRACEMCO"", 3]]","[[""ADANIPORTS"", 29], [""BRITANNIA"", 8], [""ULTRACEMCO"", 3]]",False,stress_original
+2022-05-02,high_aggressive,"[[""ICICIBANK"", 33], [""ONGC"", 149], [""TCS"", 7]]","[[""ICICIBANK"", 33], [""ONGC"", 149], [""TCS"", 7]]",False,stress_original
+2022-06-01,high_aggressive,"[[""CIPLA"", 26], [""EICHERMOT"", 8], [""POWERGRID"", 108]]","[[""CIPLA"", 26], [""EICHERMOT"", 8], [""POWERGRID"", 108]]",False,stress_original
+2022-07-01,high_aggressive,"[[""BPCL"", 78], [""HCLTECH"", 25], [""SBIN"", 53]]","[[""BPCL"", 78], [""HCLTECH"", 25], [""SBIN"", 53]]",False,stress_original
+2022-08-01,high_aggressive,"[[""DRREDDY"", 6], [""HINDUNILVR"", 9], [""M&M"", 19]]","[[""DRREDDY"", 6], [""HINDUNILVR"", 9], [""M&M"", 19]]",False,stress_original
+2022-09-01,high_aggressive,"[[""DIVISLAB"", 6], [""TITAN"", 9], [""WIPRO"", 61]]","[[""DIVISLAB"", 6], [""TITAN"", 9], [""WIPRO"", 61]]",False,stress_original
+2022-10-03,high_aggressive,"[[""KOTAKBANK"", 14], [""MARUTI"", 2], [""TECHM"", 24]]","[[""KOTAKBANK"", 14], [""MARUTI"", 2], [""TECHM"", 24]]",False,stress_original
+2022-11-01,high_aggressive,"[[""APOLLOHOSP"", 5], [""ASIANPAINT"", 8], [""HEROMOTOCO"", 9]]","[[""APOLLOHOSP"", 5], [""ASIANPAINT"", 8], [""HEROMOTOCO"", 9]]",False,stress_original
+2022-12-01,high_aggressive,"[[""AXISBANK"", 27], [""JSWSTEEL"", 32], [""TATACONSUM"", 31]]","[[""AXISBANK"", 41], [""TATACONSUM"", 46]]",True,stress_original
+2023-01-02,high_aggressive,"[[""HINDALCO"", 75], [""INDUSINDBK"", 31]]","[[""INDUSINDBK"", 61]]",True,stress_original
+2023-02-01,high_aggressive,"[[""TATASTEEL"", 614]]",[],True,stress_original
+2023-03-01,high_aggressive,[],[],False,stress_original
+2023-04-03,high_aggressive,[],[],False,stress_original
+2023-05-02,high_aggressive,[],[],False,stress_original
+2023-06-01,high_aggressive,[],[],False,stress_original
+2023-07-03,high_aggressive,[],[],False,stress_original
+2023-08-01,high_aggressive,[],[],False,stress_original
+2023-09-01,high_aggressive,[],[],False,stress_original
+2023-10-03,high_aggressive,[],[],False,stress_original
+2023-11-01,high_aggressive,[],[],False,stress_original
+2023-12-01,high_aggressive,[],[],False,stress_original
+2024-01-01,high_aggressive,[],[],False,stress_original
+2024-02-01,high_aggressive,[],[],False,stress_original
+2024-03-01,high_aggressive,[],[],False,stress_original
+2024-04-01,high_aggressive,[],[],False,stress_original
+2024-05-02,high_aggressive,[],[],False,stress_original
+2024-06-03,high_aggressive,[],[],False,stress_original
+2024-07-01,high_aggressive,[],[],False,stress_original
+2024-08-01,high_aggressive,[],[],False,stress_original
+2024-09-02,high_aggressive,[],[],False,stress_original
+2024-10-01,high_aggressive,[],[],False,stress_original
+2024-11-01,high_aggressive,[],[],False,stress_original
+2024-12-02,high_aggressive,[],[],False,stress_original
+2025-01-01,high_aggressive,[],[],False,stress_original
+2025-02-01,high_aggressive,[],[],False,stress_original
+2025-03-03,high_aggressive,[],[],False,stress_original
+2025-04-01,high_aggressive,[],[],False,stress_original
+2025-05-02,high_aggressive,[],[],False,stress_original
+2025-06-02,high_aggressive,[],[],False,stress_original
+2025-07-01,high_aggressive,[],[],False,stress_original
+2025-08-01,high_aggressive,[],[],False,stress_original
+2025-09-01,high_aggressive,[],[],False,stress_original
+2025-10-01,high_aggressive,[],[],False,stress_original
+2025-11-03,high_aggressive,[],[],False,stress_original
+2025-12-01,high_aggressive,[],[],False,stress_original

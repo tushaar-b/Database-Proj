@@ -1,0 +1,90 @@
+{
+  "created_utc": "2026-10-23T18:54:57.099395+00:00",
+  "local_date": "2026-10-24",
+  "baseline": "research/results/2026-10-23-run03",
+  "dataset": "research/data/2026-10-23/research_quotes.csv",
+  "dataset_sha256": "5d1564c142b835cba08675c89e4277486eb10cf7639fa586a643502a598a0102",
+  "effective_settings": {
+    "STOCK_ANNUAL_RISK_FREE_RATE": 0.04,
+    "MOMENTUM_FLAT_RETURN_20": 0.01,
+    "MOMENTUM_FLAT_RETURN_60": 0.02,
+    "MOMENTUM_MA_TOLERANCE": 0.005,
+    "MOMENTUM_STRONG_DECLINE_20": 0.08,
+    "MOMENTUM_WEIGHT_20": 0.5,
+    "MOMENTUM_WEIGHT_60": 0.3,
+    "MOMENTUM_WEIGHT_MA50": 0.2,
+    "MOMENTUM_AGREEMENT_STRENGTH": 0.25,
+    "MOMENTUM_SEVERITY_CAP": 3.0,
+    "MOMENTUM_UNKNOWN_SEVERITY": 0.25,
+    "MOMENTUM_CONSERVATIVE_WEIGHT": 0.75,
+    "MOMENTUM_MODERATE_WEIGHT": 0.5,
+    "MOMENTUM_AGGRESSIVE_WEIGHT": 0.25,
+    "MOMENTUM_NEGATIVE_VOTES": 3,
+    "MOMENTUM_STRONG_VOTES": 4,
+    "MOMENTUM_POSITIVE_VOTES": 3,
+    "MOMENTUM_MAX_GAP_DAYS": 7,
+    "MOMENTUM_MAX_HISTORY_AGE_DAYS": 4,
+    "MOMENTUM_FINGERPRINT_RETURN_STEP": 0.005,
+    "DEFAULT_TARGET_HHI_LIMIT": 0.25,
+    "RISK_VAR_LIMIT_PERCENT": 0.1,
+    "RISK_DAILY_VOLATILITY_LIMIT": 0.03
+  },
+  "window": [
+    "2022-01-01",
+    "2025-12-31"
+  ],
+  "strategies": [
+    "Affordability Only",
+    "Risk Only",
+    "No Feedback",
+    "Full IntelliVest"
+  ],
+  "seed": 20261024,
+  "fee": 0.001,
+  "slippage": 0.0005,
+  "principal_reproductions": 36,
+  "concentrated_start_reproductions": 6,
+  "alternative_authorization_replays": 36,
+  "cash_return_assumptions": [
+    0.0,
+    0.04
+  ],
+  "cash_return_conversion": "effective annual geometric / 252 observed sessions",
+  "cash_return_timing": "opening cash including beginning-session contributions; earnings kept in unspent subledger; stock trades fixed",
+  "benchmark_conventions": [
+    "legacy_linear",
+    "effective_geometric"
+  ],
+  "alternative_policy": "accumulated_approved_cash_v1: apply unchanged tier/multiplier to approved brokerage cash, same monthly protected transfer, no selling or held-stock re-entry",
+  "exposure_bins": [
+    0,
+    0.05,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "matching": "same profile/date and positive opening exposure; optional same bin; descriptive, no forced allocation",
+  "bootstrap": {
+    "block": 20,
+    "draws": 2000,
+    "seed": 20261024,
+    "minimum_pairs_for_interval": 60
+  },
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2"
+  },
+  "diagnostic_code_sha256": {
+    "research/diagnostics/__init__.py": "433480e20a33bfc0ab79d01253ea8c257bb445aae07dcd196a8cfc72161392b9",
+    "research/diagnostics/events.py": "8d5418068ce25a36dfa767f94b18721ddeba67e17c1245da04360681bfc54b21",
+    "research/diagnostics/instrumentation.py": "bfeb18b8fab12bff6c841cb6686af1acbf800ef6573c54bebc505842fb5313af",
+    "research/diagnostics/metrics.py": "620eaa23f452354b5422e8b84a727ecd87f9d027ab897ec6040eb6d8be233ef6",
+    "research/diagnostics/replay.py": "7044e651d7135589b5b5bfa3dc6f5608f7a291279e25931ad66047f456121505",
+    "research/diagnostics/report.py": "144ca55ab5db60a3554ac03270aa44162ba2e872d805da094746dc81b3d649f7",
+    "research/diagnostics/runner.py": "6bbbbb27bccada3bedb09ff353ad084c8064ce324f84d4c78c8e93a93652b745",
+    "research/diagnostics/validation.py": "9de659ef2f609382a3ffb2a65c646766439021f96b8acb3ed5948dbee1d65335"
+  }
+}

@@ -1,0 +1,89 @@
+metric,breach_date,breach_index,first_modified_date,response_sessions,resolved_date,variant,window,scenario,strategy,tier,surplus_group
+hhi,2022-05-04,81,,,,original,primary_2022_2025,low_conservative,Affordability Only,CONSERVATIVE,low
+hhi,2022-01-04,1,,,2022-03-03 00:00:00,original,primary_2022_2025,low_conservative,Risk Only,CONSERVATIVE,low
+hhi,2022-05-04,81,,,,original,primary_2022_2025,low_conservative,No Feedback,CONSERVATIVE,low
+hhi,2022-05-04,81,,,,original,primary_2022_2025,low_conservative,Full IntelliVest,CONSERVATIVE,low
+hhi,2022-05-04,81,,,,original,primary_2022_2025,low_moderate,Affordability Only,MODERATE,low
+hhi,2022-01-04,1,,,2022-03-03 00:00:00,original,primary_2022_2025,low_moderate,Risk Only,MODERATE,low
+hhi,2022-05-04,81,,,,original,primary_2022_2025,low_moderate,No Feedback,MODERATE,low
+hhi,2022-05-04,81,,,,original,primary_2022_2025,low_moderate,Full IntelliVest,MODERATE,low
+hhi,2022-01-04,1,,,2023-08-02 00:00:00,original,primary_2022_2025,low_aggressive,Affordability Only,AGGRESSIVE,low
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,original,primary_2022_2025,low_aggressive,Risk Only,AGGRESSIVE,low
+hhi,2022-01-04,1,,,2022-09-02 00:00:00,original,primary_2022_2025,low_aggressive,No Feedback,AGGRESSIVE,low
+hhi,2022-01-04,1,,,2022-09-02 00:00:00,original,primary_2022_2025,low_aggressive,Full IntelliVest,AGGRESSIVE,low
+hhi,2022-01-04,1,,,2025-11-04 00:00:00,original,primary_2022_2025,medium_conservative,Affordability Only,CONSERVATIVE,medium
+hhi,2022-01-04,1,,,2022-03-03 00:00:00,original,primary_2022_2025,medium_conservative,Risk Only,CONSERVATIVE,medium
+hhi,2022-01-04,1,,,2025-03-04 00:00:00,original,primary_2022_2025,medium_conservative,No Feedback,CONSERVATIVE,medium
+hhi,2022-01-04,1,,,2025-03-04 00:00:00,original,primary_2022_2025,medium_conservative,Full IntelliVest,CONSERVATIVE,medium
+hhi,2022-01-04,1,,,2022-10-04 00:00:00,original,primary_2022_2025,medium_moderate,Affordability Only,MODERATE,medium
+hhi,2022-12-02,227,,,2024-02-02 00:00:00,original,primary_2022_2025,medium_moderate,Affordability Only,MODERATE,medium
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,original,primary_2022_2025,medium_moderate,Risk Only,MODERATE,medium
+hhi,2022-01-04,1,,,2022-03-03 00:00:00,original,primary_2022_2025,medium_moderate,No Feedback,MODERATE,medium
+hhi,2022-01-04,1,,,2022-03-03 00:00:00,original,primary_2022_2025,medium_moderate,Full IntelliVest,MODERATE,medium
+hhi,2022-01-04,1,,,2022-04-04 00:00:00,original,primary_2022_2025,medium_aggressive,Affordability Only,AGGRESSIVE,medium
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,original,primary_2022_2025,medium_aggressive,Risk Only,AGGRESSIVE,medium
+hhi,2022-01-04,1,,,2022-03-03 00:00:00,original,primary_2022_2025,medium_aggressive,No Feedback,AGGRESSIVE,medium
+hhi,2022-01-04,1,,,2022-03-03 00:00:00,original,primary_2022_2025,medium_aggressive,Full IntelliVest,AGGRESSIVE,medium
+hhi,2022-01-04,1,,,2022-04-04 00:00:00,original,primary_2022_2025,high_conservative,Affordability Only,CONSERVATIVE,high
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,original,primary_2022_2025,high_conservative,Risk Only,CONSERVATIVE,high
+hhi,2022-01-04,1,,,2022-03-03 00:00:00,original,primary_2022_2025,high_conservative,No Feedback,CONSERVATIVE,high
+hhi,2022-01-04,1,,,2022-03-03 00:00:00,original,primary_2022_2025,high_conservative,Full IntelliVest,CONSERVATIVE,high
+hhi,2022-01-04,1,,,2022-03-03 00:00:00,original,primary_2022_2025,high_moderate,Affordability Only,MODERATE,high
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,original,primary_2022_2025,high_moderate,Risk Only,MODERATE,high
+hhi,2022-01-04,1,,,2022-03-03 00:00:00,original,primary_2022_2025,high_moderate,No Feedback,MODERATE,high
+hhi,2022-01-04,1,,,2022-03-03 00:00:00,original,primary_2022_2025,high_moderate,Full IntelliVest,MODERATE,high
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,original,primary_2022_2025,high_aggressive,Affordability Only,AGGRESSIVE,high
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,original,primary_2022_2025,high_aggressive,Risk Only,AGGRESSIVE,high
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,original,primary_2022_2025,high_aggressive,No Feedback,AGGRESSIVE,high
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,original,primary_2022_2025,high_aggressive,Full IntelliVest,AGGRESSIVE,high
+hhi,2022-01-03,0,,,,stress_original,primary_2022_2025,low_conservative,No Feedback,CONSERVATIVE,low
+volatility,2023-02-01,269,,,2023-04-17 00:00:00,stress_original,primary_2022_2025,low_conservative,No Feedback,CONSERVATIVE,low
+var,2023-03-06,292,,,2023-03-10 00:00:00,stress_original,primary_2022_2025,low_conservative,No Feedback,CONSERVATIVE,low
+hhi,2022-01-03,0,,,,stress_original,primary_2022_2025,low_conservative,Full IntelliVest,CONSERVATIVE,low
+volatility,2023-02-01,269,,,2023-04-17 00:00:00,stress_original,primary_2022_2025,low_conservative,Full IntelliVest,CONSERVATIVE,low
+var,2023-03-06,292,,,2023-03-10 00:00:00,stress_original,primary_2022_2025,low_conservative,Full IntelliVest,CONSERVATIVE,low
+hhi,2022-01-03,0,,,,stress_original,primary_2022_2025,medium_moderate,No Feedback,MODERATE,medium
+hhi,2022-01-03,0,,,,stress_original,primary_2022_2025,medium_moderate,Full IntelliVest,MODERATE,medium
+hhi,2022-01-03,0,,,2022-02-02 00:00:00,stress_original,primary_2022_2025,high_aggressive,No Feedback,AGGRESSIVE,high
+hhi,2022-01-03,0,,,2022-02-02 00:00:00,stress_original,primary_2022_2025,high_aggressive,Full IntelliVest,AGGRESSIVE,high
+hhi,2022-01-04,1,,,2022-04-04 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,low_conservative,Affordability Only,CONSERVATIVE,low
+hhi,2022-01-04,1,,,2022-03-03 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,low_conservative,Risk Only,CONSERVATIVE,low
+hhi,2022-01-04,1,,,2022-03-03 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,low_conservative,No Feedback,CONSERVATIVE,low
+hhi,2022-01-04,1,,,2022-03-03 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,low_conservative,Full IntelliVest,CONSERVATIVE,low
+hhi,2022-01-04,1,,,2022-04-04 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,low_moderate,Affordability Only,MODERATE,low
+hhi,2022-01-04,1,,,2022-03-03 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,low_moderate,Risk Only,MODERATE,low
+hhi,2022-01-04,1,,,2022-03-03 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,low_moderate,No Feedback,MODERATE,low
+hhi,2022-01-04,1,,,2022-03-03 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,low_moderate,Full IntelliVest,MODERATE,low
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,low_aggressive,Affordability Only,AGGRESSIVE,low
+hhi,2022-03-04,42,,,2022-04-04 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,low_aggressive,Affordability Only,AGGRESSIVE,low
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,low_aggressive,Risk Only,AGGRESSIVE,low
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,low_aggressive,No Feedback,AGGRESSIVE,low
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,low_aggressive,Full IntelliVest,AGGRESSIVE,low
+hhi,2022-01-04,1,,,2022-04-04 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,medium_conservative,Affordability Only,CONSERVATIVE,medium
+hhi,2022-01-04,1,,,2022-03-03 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,medium_conservative,Risk Only,CONSERVATIVE,medium
+hhi,2022-01-04,1,,,2022-03-03 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,medium_conservative,No Feedback,CONSERVATIVE,medium
+hhi,2022-01-04,1,,,2022-03-03 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,medium_conservative,Full IntelliVest,CONSERVATIVE,medium
+hhi,2022-01-04,1,,,2022-03-03 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,medium_moderate,Affordability Only,MODERATE,medium
+hhi,2022-03-04,42,,,2022-03-07 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,medium_moderate,Affordability Only,MODERATE,medium
+hhi,2022-03-10,46,,,2022-03-11 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,medium_moderate,Affordability Only,MODERATE,medium
+hhi,2022-03-16,50,,,2022-03-17 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,medium_moderate,Affordability Only,MODERATE,medium
+hhi,2022-03-21,52,,,2022-03-22 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,medium_moderate,Affordability Only,MODERATE,medium
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,medium_moderate,Risk Only,MODERATE,medium
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,medium_moderate,No Feedback,MODERATE,medium
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,medium_moderate,Full IntelliVest,MODERATE,medium
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,medium_aggressive,Affordability Only,AGGRESSIVE,medium
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,medium_aggressive,Risk Only,AGGRESSIVE,medium
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,medium_aggressive,No Feedback,AGGRESSIVE,medium
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,medium_aggressive,Full IntelliVest,AGGRESSIVE,medium
+hhi,2022-01-04,1,,,2022-03-03 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,high_conservative,Affordability Only,CONSERVATIVE,high
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,high_conservative,Risk Only,CONSERVATIVE,high
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,high_conservative,No Feedback,CONSERVATIVE,high
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,high_conservative,Full IntelliVest,CONSERVATIVE,high
+hhi,2022-01-04,1,,,2022-03-03 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,high_moderate,Affordability Only,MODERATE,high
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,high_moderate,Risk Only,MODERATE,high
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,high_moderate,No Feedback,MODERATE,high
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,high_moderate,Full IntelliVest,MODERATE,high
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,high_aggressive,Affordability Only,AGGRESSIVE,high
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,high_aggressive,Risk Only,AGGRESSIVE,high
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,high_aggressive,No Feedback,AGGRESSIVE,high
+hhi,2022-01-04,1,,,2022-02-02 00:00:00,accumulated_approved_cash_v1,primary_2022_2025,high_aggressive,Full IntelliVest,AGGRESSIVE,high
