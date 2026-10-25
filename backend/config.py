@@ -28,6 +28,27 @@ class Settings(BaseSettings):
     RECOMMENDATION_PRICE_CHANGE_FRACTION: float = Field(default=0.02, gt=0, le=0.25)
     STOCK_ANNUAL_RISK_FREE_RATE: float = Field(default=0.04, ge=0, le=1)
 
+    # Research heuristics; all parameters are captured in new decision evidence.
+    MOMENTUM_FLAT_RETURN_20: float = Field(default=0.01, gt=0, le=0.1)
+    MOMENTUM_FLAT_RETURN_60: float = Field(default=0.02, gt=0, le=0.2)
+    MOMENTUM_MA_TOLERANCE: float = Field(default=0.005, ge=0, le=0.05)
+    MOMENTUM_STRONG_DECLINE_20: float = Field(default=0.08, gt=0.01, le=0.5)
+    MOMENTUM_WEIGHT_20: float = Field(default=0.5, gt=0, le=1)
+    MOMENTUM_WEIGHT_60: float = Field(default=0.3, gt=0, le=1)
+    MOMENTUM_WEIGHT_MA50: float = Field(default=0.2, gt=0, le=1)
+    MOMENTUM_AGREEMENT_STRENGTH: float = Field(default=0.25, ge=0, le=1)
+    MOMENTUM_SEVERITY_CAP: float = Field(default=3, gt=0, le=10)
+    MOMENTUM_UNKNOWN_SEVERITY: float = Field(default=0.25, gt=0, le=3)
+    MOMENTUM_CONSERVATIVE_WEIGHT: float = Field(default=0.75, ge=0, le=3)
+    MOMENTUM_MODERATE_WEIGHT: float = Field(default=0.50, ge=0, le=3)
+    MOMENTUM_AGGRESSIVE_WEIGHT: float = Field(default=0.25, ge=0, le=3)
+    MOMENTUM_NEGATIVE_VOTES: int = Field(default=3, ge=1, le=5)
+    MOMENTUM_STRONG_VOTES: int = Field(default=4, ge=1, le=5)
+    MOMENTUM_POSITIVE_VOTES: int = Field(default=3, ge=1, le=5)
+    MOMENTUM_MAX_GAP_DAYS: int = Field(default=7, ge=3, le=20)
+    MOMENTUM_MAX_HISTORY_AGE_DAYS: int = Field(default=4, ge=1, le=10)
+    MOMENTUM_FINGERPRINT_RETURN_STEP: float = Field(default=0.005, gt=0, le=0.05)
+
     # Defaults
     DEFAULT_LIQUID_SAFETY_RESERVE: float = 50000.00
     DEFAULT_VAR_CONFIDENCE_LEVEL: float = 0.95

@@ -1,0 +1,106 @@
+.cinematic-shiny-button {
+  --cinematic-indigo: #25243e;
+  --cinematic-muted-indigo: #34334f;
+  --cinematic-gold: #e8ba79;
+  --cinematic-sunset: #ffaf78;
+  --cinematic-ivory: #fff0d4;
+  --cinematic-text: #fff9f0;
+  position: relative;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 64px;
+  max-width: 100%;
+  padding: 0 38px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--cinematic-indigo);
+  color: var(--cinematic-text);
+  font-family: var(--font-sans, Inter, sans-serif);
+  font-size: clamp(16px, 1.35vw, 18px);
+  font-weight: 600;
+  letter-spacing: .025em;
+  line-height: 1.4;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 8px 28px #25243e32, 0 0 20px #ffaf781b;
+  transition: transform 240ms ease, box-shadow 300ms ease;
+}
+.cinematic-shiny-button::before {
+  content: '';
+  position: absolute;
+  z-index: -3;
+  /* A square rotating plane keeps the fine highlight continuous at pill ends. */
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  aspect-ratio: 1;
+  background: conic-gradient(from 0deg, #e8ba7929 0deg, #e8ba7940 50deg, #e8ba79 95deg, #fff0d4 113deg, #ffaf7899 128deg, #e8ba7920 155deg, #e8ba7920 235deg, #e8ba79a6 290deg, #fff0d4dd 307deg, #e8ba7929 335deg);
+  animation: cinematic-border-orbit 3.8s linear infinite;
+}
+.cinematic-shiny-button__surface {
+  position: absolute;
+  z-index: -2;
+  inset: 1.2px;
+  border-radius: inherit;
+  background: radial-gradient(ellipse at 50% 0%, #fff0d40c, transparent 70%), linear-gradient(160deg, var(--cinematic-muted-indigo), var(--cinematic-indigo) 65%);
+  box-shadow: inset 0 1px 0 #fff0d429, inset 0 -1px 0 #e8ba7914;
+}
+.cinematic-shiny-button__dots {
+  position: absolute;
+  z-index: -1;
+  inset: 2px;
+  border-radius: inherit;
+  pointer-events: none;
+  background-image: radial-gradient(#fff0d4 0.55px, transparent .8px);
+  background-size: 5px 5px;
+  opacity: .065;
+  mask-image: linear-gradient(90deg, transparent, #000 25%, #000 75%, transparent);
+}
+.cinematic-shiny-button__shimmer {
+  position: absolute;
+  z-index: 0;
+  inset: 1.2px;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: .45;
+  transition: opacity 300ms ease;
+}
+.cinematic-shiny-button__shimmer::after {
+  content: '';
+  position: absolute;
+  inset: -80% -50%;
+  background: linear-gradient(110deg, transparent 36%, #fff0d400 43%, #fff0d421 50%, #fff0d400 57%, transparent 64%);
+  transform: translateX(-60%);
+  animation: cinematic-metal-shimmer 5.7s ease-in-out infinite;
+}
+.cinematic-shiny-button__label { position: relative; z-index: 1; display: inline-flex; align-items: center; justify-content: center; gap: 14px; }
+.cinematic-shiny-button__arrow { flex: 0 0 auto; transition: transform 240ms ease; }
+.cinematic-shiny-button:focus-visible { outline: 2px solid var(--cinematic-ivory); outline-offset: 6px; box-shadow: 0 0 0 8px #25243e66, 0 0 28px #e8ba793b; }
+@media (hover: hover) {
+  .cinematic-shiny-button:hover:not(:disabled) { transform: translateY(-2px); animation: cinematic-warm-breathe 2.8s ease-in-out infinite; }
+  .cinematic-shiny-button:hover .cinematic-shiny-button__shimmer { opacity: .85; }
+  .cinematic-shiny-button:hover .cinematic-shiny-button__arrow { transform: translateX(3px); }
+}
+.cinematic-shiny-button:active:not(:disabled) { transform: translateY(0); }
+.cinematic-shiny-button:disabled { cursor: default; }
+@keyframes cinematic-border-orbit { to { transform: translate(-50%, -50%) rotate(360deg); } }
+@keyframes cinematic-metal-shimmer { 0%, 12% { transform: translateX(-60%); } 65%, 100% { transform: translateX(60%); } }
+@keyframes cinematic-warm-breathe { 0%, 100% { box-shadow: 0 10px 30px #25243e38, 0 0 25px #e8ba7929; } 50% { box-shadow: 0 11px 32px #25243e38, 0 0 32px #ffaf7838; } }
+@media (max-width: 600px) {
+  .cinematic-shiny-button { min-height: 58px; padding: 0 23px; font-size: 15px; letter-spacing: .01em; }
+  .cinematic-shiny-button__label { gap: 10px; }
+}
+@media (max-width: 360px) {
+  .cinematic-shiny-button { padding: 0 17px; font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cinematic-shiny-button, .cinematic-shiny-button::before, .cinematic-shiny-button__shimmer::after { animation: none !important; }
+  .cinematic-shiny-button, .cinematic-shiny-button__arrow, .cinematic-shiny-button__shimmer { transition: none; }
+  .cinematic-shiny-button__shimmer::after { transform: none; }
+}

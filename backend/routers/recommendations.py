@@ -4,6 +4,8 @@ from decimal import Decimal, ROUND_FLOOR
 import hashlib
 import json
 import math
+import platform
+from importlib.metadata import version
 import logging
 import traceback
 from pathlib import Path
@@ -22,7 +24,9 @@ from backend.dependencies import advisory_connection, risk_connection
 from backend.ownership import enforce_ownership
 from backend.schemas import RecommendationDecision
 from backend.services import evaluate_portfolio_risk, require_feedback_delivery
-from backend.market_data import get_latest_quotes, quote_change_requires_review
+from backend.market_data import get_latest_quotes, quote_change_requires_review, get_historical_prices_batch
+
+from backend.market_trends import METHOD_VERSION, momentum_policy, score_history, trend_explanation, ranking_evidence
 
 logger = logging.getLogger(__name__)
 
@@ -89,52 +93,10 @@ def _json_safe(value):
 
 
 def _historical_candidates(cur, blocked_sectors, held_security_ids):
-    cur.execute(
-        """WITH prices AS (
-                 SELECT security_id,trade_date,
-                        COALESCE(adjusted_close,close_price)::double precision AS price,
-                        LAG(COALESCE(adjusted_close,close_price)::double precision)
-                            OVER (PARTITION BY security_id ORDER BY trade_date) AS previous_price
-                 FROM daily_market_quote WHERE trade_date<=CURRENT_DATE
-             ), returns AS (
-                 SELECT security_id,trade_date,price/NULLIF(previous_price,0)-1 AS daily_return
-                 FROM prices WHERE previous_price>0
-             ), ranked AS (
-                 SELECT security_id,trade_date,daily_return,
-                        ROW_NUMBER() OVER (PARTITION BY security_id ORDER BY trade_date DESC) AS observation_rank
-                 FROM returns WHERE daily_return IS NOT NULL
-             ), stats AS (
-                 SELECT security_id,COUNT(*)::integer AS observations,
-                        AVG(daily_return) AS mean_daily_return,
-                        STDDEV_SAMP(daily_return) AS daily_volatility,
-                        PERCENTILE_CONT(0.05) WITHIN GROUP (ORDER BY daily_return) AS return_p05,
-                        MAX(trade_date) AS history_through
-                 FROM ranked WHERE observation_rank<=%s GROUP BY security_id
-             ), tails AS (
-                 SELECT r.security_id,GREATEST(0,-AVG(r.daily_return)) AS historical_cvar_95_loss
-                 FROM ranked r JOIN stats s USING(security_id)
-                 WHERE r.observation_rank<=%s AND r.daily_return<=s.return_p05
-                 GROUP BY r.security_id
-             ), latest AS (
-                 SELECT DISTINCT ON (security_id) security_id,close_price,trade_date
-                 FROM daily_market_quote WHERE trade_date<=CURRENT_DATE ORDER BY security_id,trade_date DESC
-             )
-             SELECT sm.security_id::text,sm.ticker_symbol,sm.company_name,sm.sector_name,
-                    latest.close_price,latest.trade_date AS quote_date,
-                    stats.observations,stats.mean_daily_return,stats.daily_volatility,
-                    tails.historical_cvar_95_loss,stats.history_through
-             FROM security_master sm
-             JOIN latest USING(security_id)
-             JOIN stats USING(security_id)
-             JOIN tails USING(security_id)
-             WHERE stats.observations >= %s
-               AND stats.daily_volatility IS NOT NULL AND stats.daily_volatility > 0
-               AND NOT (sm.sector_name=ANY(%s))
-               AND NOT (sm.security_id::text=ANY(%s))
-             ORDER BY sm.ticker_symbol""",
-        (OBSERVATION_WINDOW, OBSERVATION_WINDOW, MINIMUM_OBSERVATIONS,
-         list(blocked_sectors), list(held_security_ids)),
-    )
+    cur.execute("""SELECT security_id::text,ticker_symbol,company_name,sector_name
+                   FROM security_master WHERE NOT (sector_name=ANY(%s))
+                   AND NOT (security_id::text=ANY(%s)) ORDER BY ticker_symbol""",
+                (list(blocked_sectors), list(held_security_ids)))
     return [dict(row) for row in cur.fetchall()]
 
 
@@ -183,29 +145,36 @@ def _market_context(risk, user_id, blocked, tier):
             sector: (value / total_equity_value if total_equity_value else Decimal("0"))
             for sector, value in sector_values.items()
         }
-        cur.execute("SELECT MAX(trade_date) AS market_data_through FROM daily_market_quote")
+        cur.execute("SELECT MAX(trade_date) AS market_data_through FROM daily_market_quote WHERE trade_date<=CURRENT_DATE")
         market_data_through = cur.fetchone()["market_data_through"]
         candidates = _historical_candidates(cur, blocked, held_ids)
 
+    histories = get_historical_prices_batch(risk, [c['security_id'] for c in candidates], '1Y')
+    policy = momentum_policy()
+    evaluated = []
+    excluded = []
     for candidate in candidates:
         quote = quotes[candidate['security_id']]
+        if quote.get('error_kind') == 'missing_symbol' or not quote['price']:
+            excluded.append({'ticker': candidate['ticker_symbol'], 'reason': 'unresolved_listing_or_missing_price'})
+            continue
+        metrics = score_history(histories[candidate['security_id']], tier, aversion, policy)
+        if metrics is None:
+            series = histories[candidate['security_id']]
+            excluded.append({'ticker': candidate['ticker_symbol'], 'reason': 'insufficient_or_invalid_consistent_adjusted_history_120_returns_required',
+                             'history_source': series.get('source'), 'history_status': series.get('status')})
+            continue
+        candidate.update(metrics)
         candidate['close_price'] = quote['price']
         candidate['quote_date'] = quote['observed_at'] or quote['price_date']
         candidate['quote_source'] = quote['source']
         candidate['quote_status'] = quote['status']
-        candidate['listing_resolved'] = quote.get('error_kind') != 'missing_symbol'
-        mean = float(candidate["mean_daily_return"])
-        volatility = float(candidate["daily_volatility"])
-        cvar = float(candidate["historical_cvar_95_loss"])
-        # Daily historical return less a tier-weighted volatility and tail-loss
-        # penalty; it orders securities only and does not predict future return.
-        candidate["historical_return_annualized"] = mean * OBSERVATION_WINDOW
-        candidate["historical_volatility_annualized"] = volatility * math.sqrt(OBSERVATION_WINDOW)
-        candidate["historical_cvar_95_loss_daily"] = cvar
-        candidate["selection_score"] = mean - aversion * (volatility + cvar)
-        candidate["sector_weight"] = sector_weights.get(candidate["sector_name"], Decimal("0"))
-        candidate["size_weight"] = 1 / (volatility ** aversion)
-    return holdings, sector_weights, [c for c in candidates if c['listing_resolved'] and c['close_price'] and c['close_price'] > 0], market_data_through
+        candidate['listing_resolved'] = True
+        candidate['sector_weight'] = sector_weights.get(candidate['sector_name'], Decimal('0'))
+        candidate['size_weight'] = 1 / (candidate['daily_volatility'] ** aversion)
+        evaluated.append(candidate)
+    through = max((c['history_through'] for c in evaluated), default=market_data_through)
+    return holdings, sector_weights, evaluated, through, excluded
 
 
 def _select_candidates(candidates):
@@ -226,7 +195,7 @@ def _select_candidates(candidates):
 def _return_rows(cur, user_id, batch_id, pending_only=False):
     cur.execute(
         """SELECT rec_id::text,user_id::text,stock_ticker,target_allocation_pct,
-                  recommended_amount,status_state::text,batch_id::text,shares,explanation,
+                  recommended_amount,status_state::text,batch_id::text,shares,explanation,ranking_evidence,
                   generated_timestamp
            FROM recommendation_log WHERE user_id=%s AND batch_id IS NOT DISTINCT FROM %s::uuid
              AND (%s=FALSE OR status_state='PENDING')
@@ -270,7 +239,7 @@ def generate_recommendations(
             policy_reason = policy["reason"] if policy else "No active risk breach; normal allocation policy applies."
             budget = (buffer * BASE_CAPACITY[tier] * multiplier).quantize(Decimal("0.01"), rounding=ROUND_FLOOR)
 
-            holdings, sector_weights, candidates, market_data_through = _market_context(risk, user_id_text, blocked, tier)
+            holdings, sector_weights, candidates, market_data_through, data_exclusions = _market_context(risk, user_id_text, blocked, tier)
             active_alerts = []
             if portfolio_ids:
                 with risk.cursor(cursor_factory=RealDictCursor) as risk_cur:
@@ -288,8 +257,13 @@ def generate_recommendations(
             # polling timestamps. Actual exact price is still used for sizing.
             step = math.log1p(settings.RECOMMENDATION_PRICE_CHANGE_FRACTION)
             def stable_candidate(row):
-                omitted = {'close_price', 'quote_date', 'quote_source', 'quote_status', 'sector_weight'}
+                omitted = {'close_price', 'quote_date', 'quote_source', 'quote_status', 'sector_weight', 'history_fetched_at', 'trend', 'input_prices'}
                 return {**{k: v for k, v in row.items() if k not in omitted},
+                        'momentum_signature': {
+                            'status': row['trend']['status'], 'classification': row['trend']['classification'],
+                            'as_of': row['trend']['as_of'], 'relations': row['trend']['relations'],
+                            'return20_band': math.floor(row['trend']['return20'] / settings.MOMENTUM_FINGERPRINT_RETURN_STEP) if row['trend']['return20'] is not None else None,
+                            'return60_band': math.floor(row['trend']['return60'] / settings.MOMENTUM_FINGERPRINT_RETURN_STEP) if row['trend']['return60'] is not None else None},
                         'price_band': math.floor(math.log(float(row['close_price'])) / step),
                         'quote_basis': 'provider_valid' if row['quote_status'] in ('latest_intraday_observation', 'last_market_close') else 'dated_or_unavailable',
                         'sector_weight': round(float(row['sector_weight']), 2)}
@@ -300,6 +274,7 @@ def generate_recommendations(
                 for c in preview_selected
             }
             fingerprint_data = {
+                "methodology_version": METHOD_VERSION, "momentum_policy": momentum_policy(),
                 "buffer": buffer,
                 "tier": tier,
                 "capacity_multiplier": multiplier,
@@ -318,7 +293,7 @@ def generate_recommendations(
                 "market_data_through": market_data_through,
                 "candidate_history": [stable_candidate(c) for c in candidates],
                 "price_change_fraction": settings.RECOMMENDATION_PRICE_CHANGE_FRACTION,
-                "whole_share_affordability": affordable_signature,
+                "whole_share_affordability": affordable_signature, "data_exclusions": data_exclusions,
             }
             fingerprint = hashlib.sha256(
                 json.dumps(_json_safe(fingerprint_data), sort_keys=True, separators=(",", ":")).encode("utf-8")
@@ -364,14 +339,21 @@ def generate_recommendations(
             elif not selected:
                 reason = "No securities met the market-history, holdings, and active sector-policy requirements."
             else:
-                reason = "Candidates were screened against current holdings, active risk restrictions, and 252-session market history."
+                reason = "Candidates were screened against current holdings, active risk restrictions, up to 252 completed daily returns and recent market momentum; unavailable trend evidence receives an explicit uncertainty penalty."
 
             cur.execute(
                 """INSERT INTO recommendation_batch
-                   (user_id,input_fingerprint,available_buffer,allocation_budget,outcome_reason)
-                   VALUES (%s,%s,%s,%s,%s)
+                   (user_id,input_fingerprint,available_buffer,allocation_budget,outcome_reason,ranking_snapshot,created_at)
+                   VALUES (%s,%s,%s,%s,%s,%s::jsonb,clock_timestamp())
                    RETURNING batch_id::text,created_at""",
-                (user_id_text, fingerprint, buffer, budget, reason),
+                (user_id_text, fingerprint, buffer, budget, reason,
+                 json.dumps(_json_safe({'methodology_version': METHOD_VERSION, 'baseline_version': 'risk_only_252_v1',
+                     'decision_inputs': fingerprint_data, 'eligible_candidates': candidates, 'data_exclusions': data_exclusions,
+                     'selected_tickers': [c['ticker_symbol'] for c in selected],
+                     'policy': momentum_policy(), 'risk_tier': tier,
+                     'runtime_versions': {'python': platform.python_version(), 'numpy': version('numpy'), 'yfinance': version('yfinance')},
+                     'selection_order': 'sector_weight_ascending, adjusted_daily_score_descending, ticker_ascending; one security per sector, at most three',
+                     'historical_data_through': market_data_through}), allow_nan=False)),
             )
             batch = cur.fetchone()
             batch_id = batch["batch_id"]
@@ -426,6 +408,7 @@ def generate_recommendations(
                     f"Price basis: {candidate['quote_source']} · {candidate['quote_status']} · {candidate['quote_date']}; VaR and volatility breach limits were refreshed for your saved portfolios. "
                     f"No separate candidate-level CVaR breach limit is configured; historical CVaR is used only in ranking."
                 )
+                explanation += " " + trend_explanation(candidate)
                 prior_decision = last_decisions.get(candidate["ticker_symbol"])
                 if prior_decision and prior_decision["status_state"] == "REJECTED":
                     previous_fingerprint = prior_decision["input_fingerprint"]
@@ -439,14 +422,17 @@ def generate_recommendations(
                     explanation += " You previously accepted this as intent; it is not treated as owned unless it appears in your saved holdings."
                 cur.execute(
                     """INSERT INTO recommendation_log
-                       (user_id,stock_ticker,target_allocation_pct,recommended_amount,status_state,batch_id,shares,explanation)
-                       VALUES (%s,%s,%s,%s,'PENDING',%s,%s,%s)
+                       (user_id,stock_ticker,target_allocation_pct,recommended_amount,status_state,batch_id,shares,explanation,ranking_evidence,generated_timestamp)
+                       VALUES (%s,%s,%s,%s,'PENDING',%s,%s,%s,%s::jsonb,clock_timestamp())
                        RETURNING rec_id::text,stock_ticker,target_allocation_pct,recommended_amount,
-                                 status_state::text,batch_id::text,shares,explanation,generated_timestamp""",
-                    (user_id_text, candidate["ticker_symbol"], amount / buffer * 100, amount, batch_id, shares, explanation),
+                                 status_state::text,batch_id::text,shares,explanation,ranking_evidence,generated_timestamp""",
+                    (user_id_text, candidate["ticker_symbol"], amount / buffer * 100, amount, batch_id, shares, explanation, json.dumps(_json_safe({**ranking_evidence(candidate), "allocation_budget": allocation_budget, "quote_price": price}), allow_nan=False)),
                 )
                 inserted.append(dict(cur.fetchone()))
                 spent += amount
+
+            cur.execute("UPDATE recommendation_batch SET ranking_snapshot=ranking_snapshot || %s::jsonb WHERE batch_id=%s", (
+                json.dumps(_json_safe({'recorded_recommendations': inserted, 'total_recorded_cost': spent}), allow_nan=False), batch_id))
 
             if selected and not inserted:
                 reason = "Eligible securities were found, but none could be purchased as a whole share within the allocation budget."
@@ -455,7 +441,7 @@ def generate_recommendations(
                 "batch_id": batch_id, "available_buffer": buffer, "allocation_budget": budget,
                 "total_recommended_cost": spent, "policy_multiplier": multiplier,
                 "blocked_sectors": blocked, "reason": reason, "reused": False,
-                "freshness": "new_input_signature", "feedback_events_processed": delivery["events_applied"],
+                "freshness": "new_input_signature", "methodology_version": METHOD_VERSION, "feedback_events_processed": delivery["events_applied"],
                 "history_window_sessions": OBSERVATION_WINDOW,
                 "minimum_history_sessions": MINIMUM_OBSERVATIONS,
                 "risk_aversion": RISK_AVERSION[tier], "recommendations": inserted,
@@ -478,7 +464,7 @@ def list_recommendations(
         latest_batch_id = latest_batch["batch_id"] if latest_batch else None
         query = """SELECT r.rec_id::text,r.user_id::text,r.stock_ticker,r.target_allocation_pct,
                            r.recommended_amount,r.status_state::text,r.batch_id::text,r.shares,
-                           r.explanation,r.generated_timestamp,b.created_at AS batch_created_at,
+                           r.explanation,r.ranking_evidence,r.generated_timestamp,b.created_at AS batch_created_at,
                            b.allocation_budget AS saved_allocation_budget,b.available_buffer AS saved_available_buffer,
                            (r.batch_id=%s::uuid) AS is_latest_batch
                     FROM recommendation_log r LEFT JOIN recommendation_batch b USING(batch_id)
@@ -494,11 +480,12 @@ def list_recommendations(
     for row in rows:
         q = quotes.get(row['stock_ticker'])
         original = row['recommended_amount'] / row['shares'] if row['shares'] else None
+        row['methodology_update_required'] = not row.get('ranking_evidence') or row['ranking_evidence'].get('methodology_version') != METHOD_VERSION
         row['original_price'] = original
         row['affordable_shares_at_recorded_amount'] = int(row['recommended_amount'] / q['price']) if q and q['price'] else None
         row['quote'] = q
         row['latest_estimated_cost'] = q['price'] * row['shares'] if q and q['price'] and row['shares'] else None
-        row['requires_regeneration'] = bool(not q or q['stale'] or not original or not q['price']
+        row['requires_regeneration'] = bool(row['methodology_update_required'] or not q or q['stale'] or not original or not q['price']
             or quote_change_requires_review(original, q['price'])
             or (row['saved_allocation_budget'] is not None and row['latest_estimated_cost'] > row['saved_allocation_budget']))
     totals = {}
@@ -521,12 +508,22 @@ def decide_recommendation(
 ):
     if body.decision == 'ACCEPTED':
         with conn.cursor(cursor_factory=RealDictCursor) as cur:
-            cur.execute("SELECT r.stock_ticker,r.recommended_amount,r.shares,r.batch_id::text,b.allocation_budget,b.available_buffer FROM recommendation_log r LEFT JOIN recommendation_batch b USING(batch_id) WHERE r.rec_id=%s AND r.user_id=%s", (str(recommendation_id), str(user_id)))
+            cur.execute("SELECT r.stock_ticker,r.recommended_amount,r.shares,r.ranking_evidence,r.batch_id::text,b.allocation_budget,b.available_buffer FROM recommendation_log r LEFT JOIN recommendation_batch b USING(batch_id) WHERE r.rec_id=%s AND r.user_id=%s", (str(recommendation_id), str(user_id)))
             saved = cur.fetchone()
         if not saved:
             raise HTTPException(404, 'Recommendation not found')
+        if not saved['ranking_evidence'] or saved['ranking_evidence'].get('methodology_version') != METHOD_VERSION:
+            raise HTTPException(409, 'This saved recommendation predates the trend-aware methodology. Check for updates before accepting; its original evidence is preserved.')
         quotes = {q['ticker_symbol']: q for q in get_latest_quotes(risk).values()}
         q = quotes.get(saved['stock_ticker'])
+        evidence = saved['ranking_evidence']
+        if q and q.get('fresh_enough_for_operation'):
+            series = get_historical_prices_batch(risk, [q['security_id']], '1Y')[q['security_id']]
+            current = score_history(series, evidence['risk_tier'], float(evidence['risk_aversion']), momentum_policy())
+            if (not current or current['input_price_hash'] != evidence.get('input_price_hash')
+                    or current['trend']['status'] != evidence.get('trend', {}).get('status')
+                    or momentum_policy() != evidence.get('trend', {}).get('policy')):
+                raise HTTPException(409, 'Historical ranking or recent-trend evidence changed or cannot be revalidated. Check for updates; the saved decision evidence remains unchanged.')
         original = saved['recommended_amount'] / saved['shares'] if saved['shares'] else None
         if not q or not q['price'] or not original or not q.get('fresh_enough_for_operation', False):
             raise HTTPException(409, 'Acceptance needs a sufficiently recent yfinance observation or latest dated market close. The saved recommendation is retained; historical fallback cannot validate affordability.')
@@ -559,3 +556,13 @@ def decide_recommendation(
     if body.decision == "ACCEPTED":
         result["trade_execution"] = "not_executed; acceptance records user intent only"
     return result
+
+
+@router.get("/{user_id}/batches/{batch_id}/evidence")
+def batch_evidence(user_id: UUID, batch_id: UUID, conn=Depends(advisory_connection)):
+    with conn.cursor(cursor_factory=RealDictCursor) as cur:
+        cur.execute("SELECT batch_id::text,created_at,input_fingerprint,ranking_snapshot FROM recommendation_batch WHERE batch_id=%s AND user_id=%s", (str(batch_id), str(user_id)))
+        row = cur.fetchone()
+    if not row:
+        raise HTTPException(404, 'Recommendation batch not found')
+    return dict(row)

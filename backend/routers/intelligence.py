@@ -9,6 +9,7 @@ from backend.dependencies import risk_connection, advisory_connection
 from backend.ownership import enforce_ownership
 from backend.market_data import get_latest_quotes, provider_state, price_holdings, quote_change_requires_review
 from backend.stock_analytics import historical_analysis, json_native
+from backend.market_trends import METHOD_VERSION
 
 router = APIRouter(prefix='/intelligence', tags=['Stock Intelligence'],
                    dependencies=[Depends(require_authenticated), Depends(require_csrf), Depends(enforce_ownership)])
@@ -42,7 +43,7 @@ def stock(ticker: str, request: Request,
     if recommendation_id:
         with advisory.cursor(cursor_factory=RealDictCursor) as cur:
             cur.execute('''SELECT r.rec_id::text,r.stock_ticker,r.recommended_amount,r.shares,r.explanation,
-                           r.generated_timestamp,r.status_state::text,r.batch_id::text,b.created_at AS batch_created_at,
+                           r.ranking_evidence,r.generated_timestamp,r.status_state::text,r.batch_id::text,b.created_at AS batch_created_at,
                            b.allocation_budget,b.available_buffer FROM recommendation_log r
                            LEFT JOIN recommendation_batch b USING(batch_id)
                            WHERE r.rec_id=%s AND r.user_id=%s AND r.stock_ticker=%s''',
@@ -65,7 +66,7 @@ def stock(ticker: str, request: Request,
         recommendation.update(original_price=original,
                               latest_estimated_cost=price * recommendation['shares'] if price and recommendation['shares'] else None,
                               affordable_shares_at_recorded_amount=new_shares,
-                              requires_regeneration=bool(latest['stale'] or not original or not price or quote_change_requires_review(original, price) or (recommendation['allocation_budget'] is not None and price * recommendation['shares'] > recommendation['allocation_budget'])))
+                              requires_regeneration=bool(not recommendation.get('ranking_evidence') or recommendation['ranking_evidence'].get('methodology_version') != METHOD_VERSION or latest['stale'] or not original or not price or quote_change_requires_review(original, price) or (recommendation['allocation_budget'] is not None and price * recommendation['shares'] > recommendation['allocation_budget'])))
     impact = None
     if portfolio_id:
         rows = price_holdings(conn, str(portfolio_id))

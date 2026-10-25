@@ -1,5 +1,7 @@
 # IntelliVest Stock Intelligence — Yahoo Finance data
 
+The recommendation methodology has since been extended with recent momentum. See [the trend-aware method and investigation](RECOMMENDATION_TRENDS.md) for the current ranking, evidence migration and manual verification notes. The baseline recommendation discussion below describes the preceding release.
+
 The application uses **yfinance as its only external price/history source**. React communicates through authenticated FastAPI endpoints. PostgreSQL risk/advisory data, user sessions, CSRF, ownership, holdings, cash and ledger records are preserved. No new SQL migration is required.
 
 ## 1. Original NTPC HTTP 500 and fix
@@ -129,4 +131,4 @@ Removed the three exclusive files listed above. Other workspace files/features w
 
 Application testing remains manual. No Pytest, Vitest, Playwright, browser automation, automated regression/E2E suite, fake observations or production price inserts were used. Permitted checks consist of source parsing, frontend production compilation, read-only schema inspection and genuine provider data retrieval. These checks are not represented as proof that the authenticated NTPC page has been manually verified.
 
-Repository publication was authorized separately. Changes are published from an isolated checkout, preserving the destination history and excluding unrelated home-directory files. Commit title: `Restore Yahoo Finance market data`. See Git history for the final commit hash.
+No commit created; the Git root includes unrelated pre-existing changes. If committed after review, the requested title is `Restore Yahoo Finance market data`.

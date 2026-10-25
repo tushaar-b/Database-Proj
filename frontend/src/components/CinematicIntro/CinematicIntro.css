@@ -1,0 +1,56 @@
+.cinematic-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  width: 100%;
+  max-width: none;
+  height: 100vh;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  isolation: isolate;
+  color: #fff9f0;
+  background-color: #d6aa92;
+  background-position: 50% 50%;
+  background-size: cover;
+  opacity: 1;
+  transition: opacity var(--cinematic-fade-duration, 760ms) ease;
+  font-family: var(--font-sans, Inter, sans-serif);
+}
+.cinematic-intro::backdrop { background: transparent; }
+.cinematic-intro__video { position: absolute; z-index: -2; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
+.cinematic-intro__video--unavailable { opacity: 0; }
+.cinematic-intro__readability { position: absolute; z-index: -1; inset: 0; pointer-events: none; background: radial-gradient(ellipse 420px 100px at 50% 96%, #25243e16, transparent 100%), linear-gradient(180deg, #25243e0d, transparent 16%, transparent 80%, #25243e33); }
+.cinematic-intro__brand { position: absolute; top: max(30px, env(safe-area-inset-top)); left: max(34px, env(safe-area-inset-left)); margin: 0; font-family: inherit; font-size: 17px; font-weight: 650; letter-spacing: .04em; color: #25243e; text-shadow: 0 1px 10px #fff0d44d; }
+.cinematic-intro__centre { display: grid; place-items: end center; width: 100%; height: 100%; padding: 24px 24px max(12px, calc(env(safe-area-inset-bottom) + 8px)); box-sizing: border-box; }
+.cinematic-intro__cta { position: relative; max-width: 100%; opacity: 1; transform: translateY(0); transition: opacity 280ms ease, transform 280ms ease; }
+.cinematic-intro--starting .cinematic-intro__cta,
+.cinematic-intro--playing .cinematic-intro__cta,
+.cinematic-intro--finishing .cinematic-intro__cta { opacity: 0; transform: translateY(-4px); pointer-events: none; }
+.cinematic-intro__motion-note { position: absolute; bottom: calc(100% + 15px); left: 50%; width: min(350px, 85vw); transform: translateX(-50%); margin: 0; padding: 6px 10px; border-radius: 8px; background: #25243eb8; text-align: center; font-size: 12px; line-height: 1.6; }
+.cinematic-intro__status { position: absolute; bottom: max(94px, calc(env(safe-area-inset-bottom) + 70px)); left: 50%; transform: translateX(-50%); width: min(470px, calc(100% - 48px)); padding: 10px 16px; box-sizing: border-box; border-radius: 12px; background: #25243ebf; text-align: center; font-size: 12px; line-height: 1.7; color: #fff9f0; }
+.cinematic-intro__status:empty { display: none; }
+.cinematic-intro__status p { margin: 0; }
+.cinematic-intro__direct { margin-top: 12px; padding: 8px 16px; border: 1px solid #fff0d499; border-radius: 999px; color: #fff9f0; background: #25243ee8; font: 500 12px var(--font-sans, Inter, sans-serif); cursor: pointer; }
+.cinematic-intro__skip { position: absolute; bottom: max(28px, env(safe-area-inset-bottom)); right: max(34px, env(safe-area-inset-right)); display: inline-flex; align-items: center; gap: 10px; padding: 9px 14px; border: 1px solid #fff0d41a; border-radius: 999px; background: #25243eb3; color: #fff9f0; font-family: inherit; font-size: 12px; font-weight: 500; letter-spacing: .025em; text-shadow: 0 1px 10px #25243eaa; cursor: pointer; opacity: .85; transition: opacity 200ms ease; }
+.cinematic-intro__skip:hover { opacity: 1; }
+.cinematic-intro__skip:focus-visible, .cinematic-intro__direct:focus-visible { outline: 2px solid #fff0d4; outline-offset: 5px; border-radius: 5px; opacity: 1; }
+.cinematic-intro__loading-dot { display: inline-block; width: 5px; height: 5px; margin-right: 8px; border-radius: 50%; vertical-align: middle; background: #e8ba79; animation: cinematic-loading-pulse 1.4s ease-in-out infinite; }
+.cinematic-intro--finishing { opacity: 0; pointer-events: none; }
+.cinematic-intro__sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.cinematic-landing-entry { animation: cinematic-landing-reveal 760ms ease both; }
+@keyframes cinematic-landing-reveal { from { opacity: 0; } to { opacity: 1; } }
+@keyframes cinematic-loading-pulse { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
+@media (max-width: 768px) {
+  .cinematic-intro { background-position: 50% 50%; }
+  .cinematic-intro__brand { top: max(24px, env(safe-area-inset-top)); left: max(22px, env(safe-area-inset-left)); font-size: 16px; }
+  .cinematic-intro__skip { top: max(20px, env(safe-area-inset-top)); right: max(22px, env(safe-area-inset-right)); bottom: auto; }
+  .cinematic-intro__centre { padding: 18px 18px max(12px, calc(env(safe-area-inset-bottom) + 8px)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cinematic-intro, .cinematic-intro__cta, .cinematic-intro__skip { transition: none; }
+  .cinematic-landing-entry, .cinematic-intro__loading-dot { animation: none; }
+}

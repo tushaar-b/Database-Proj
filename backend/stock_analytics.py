@@ -3,6 +3,7 @@ from datetime import timedelta
 import math
 import numpy as np
 from backend.market_data import get_historical_prices
+from backend.market_trends import assess_momentum
 from decimal import Decimal, InvalidOperation
 import logging
 
@@ -24,7 +25,8 @@ def json_native(value):
 
 
 def historical_analysis(conn, security_id, window, history_source='adjusted'):
-    series = get_historical_prices(conn, security_id, window, history_source)
+    series = get_historical_prices(conn, security_id, 'ALL' if window == 'ALL' else '1Y', history_source)
+    momentum = assess_momentum(series)
     source = series['source']
     provenance = ('Yahoo Adj Close with auto_adjust=False, where present consistently across the selected window; Yahoo applies its own split/dividend adjustment conventions. No independent adjustment guarantee or total-return forecast. '
                   if source == 'yfinance' else 'Legacy database records lack per-row provenance; analyses are provisional. ')
@@ -42,9 +44,6 @@ def historical_analysis(conn, security_id, window, history_source='adjusted'):
         except (ValueError, TypeError, InvalidOperation, KeyError):
             continue
     rows = sorted({r['trade_date']: r for r in rows}.values(), key=lambda r: r['trade_date'])
-    if rows and window != 'ALL':
-        start = rows[-1]['trade_date'] - timedelta(days={'1M': 30, '3M': 90, '6M': 180, '1Y': 365}[window])
-        rows = [r for r in rows if r['trade_date'] >= start]
     # One consistent basis over the whole window; never coalesce row by row.
     adjusted = history_source != 'raw' and bool(rows) and all(r['adjusted_close'] and r['adjusted_close'] > 0 for r in rows)
     basis = ('yahoo_adjusted_close' if source == 'yfinance' else 'stored_adjusted_close') if adjusted else 'raw_close'
@@ -52,6 +51,15 @@ def historical_analysis(conn, security_id, window, history_source='adjusted'):
         provenance += ' Adjusted prices are incomplete: the entire selected window uses raw Close; no row-level mixing.'
     if not adjusted:
         provenance += ' Raw Close follows the source split conventions and can contain corporate-action effects; it is not a dividend-adjusted total-return series.'
+    context_prices = [float(r['adjusted_close'] if adjusted else r['close_price']) for r in rows]
+    moving_averages = {
+        r['trade_date']: {'ma20': sum(context_prices[i-19:i+1]) / 20 if i >= 19 else None,
+                         'ma50': sum(context_prices[i-49:i+1]) / 50 if i >= 49 else None}
+        for i, r in enumerate(rows)
+    }
+    if rows and window != 'ALL':
+        start = rows[-1]['trade_date'] - timedelta(days={'1M': 30, '3M': 90, '6M': 180, '1Y': 365}[window])
+        rows = [r for r in rows if r['trade_date'] >= start]
     prices = np.array([float(r['adjusted_close'] if adjusted else r['close_price']) for r in rows])
     returns = prices[1:] / prices[:-1] - 1 if len(prices) > 1 else np.array([])
     n = len(returns)
@@ -81,7 +89,7 @@ def historical_analysis(conn, security_id, window, history_source='adjusted'):
     stats['maximum_drawdown'] = float(min(drawdowns)) if len(drawdowns) else None
     points = []
     for i, row in enumerate(rows):
-        points.append({'date': row['trade_date'], 'price': float(prices[i]), 'drawdown': float(drawdowns[i]),
+        points.append({**moving_averages[row['trade_date']], 'date': row['trade_date'], 'price': float(prices[i]), 'drawdown': float(drawdowns[i]),
                        'daily_return': float(returns[i-1]) if i else None,
                        'rolling_volatility': float(np.std(returns[i-30:i], ddof=1)) * math.sqrt(252) if i >= 30 else None})
     histogram = []
@@ -92,7 +100,8 @@ def historical_analysis(conn, security_id, window, history_source='adjusted'):
                       'tail': bool(p05 is not None and edges[i] <= p05)} for i, count in enumerate(counts)]
     return json_native({'window': window, 'start': rows[0]['trade_date'] if rows else None,
             'end': rows[-1]['trade_date'] if rows else None, 'price_basis': basis,
-            'source': source, 'provenance': provenance, 'history_source': history_source,
+            'source': source, 'provenance': provenance, 'history_source': history_source, 'momentum': momentum,
+            'moving_average_basis': basis,
             'status': series['status'], 'issue': series.get('issue'),
             'data_status': 'Insufficient historical data' if n < 60 else 'available',
             'all_history_limit': '10 years maximum per Yahoo request; completed daily observations only',

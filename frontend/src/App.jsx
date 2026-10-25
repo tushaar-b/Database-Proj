@@ -23,9 +23,13 @@ export default function App() {
   const session = useSyncExternalStore(authSession.subscribe, authSession.getSnapshot);
   const [showWorkspace, setShowWorkspace] = useState(false);
   const [workspaceMode, setWorkspaceMode] = useState('login');
-  const openWorkspace = (mode) => { setWorkspaceMode(mode); setShowWorkspace(true); };
-  const openHome = () => { setShowWorkspace(false); window.scrollTo({ top: 0, behavior: 'instant' }); };
+  const [introCompleted, setIntroCompleted] = useState(false);
+  // Authenticated visitors and Back to Home never replay the entrance.
+  const introActive = !introCompleted && !session.user;
+  const openWorkspace = (mode) => { setIntroCompleted(true); setWorkspaceMode(mode); setShowWorkspace(true); };
+  const openHome = () => { setIntroCompleted(true); setShowWorkspace(false); window.scrollTo({ top: 0, behavior: 'instant' }); };
   useEffect(() => { authSession.initialize().catch(() => {}); }, []);
+  useEffect(() => { if (session.user) setIntroCompleted(true); }, [session.user]);
   useGSAP(() => {
     if (showWorkspace) return undefined;
     const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -39,12 +43,13 @@ export default function App() {
       preference.removeEventListener('change', syncPreference);
       destroySmoothScroll();
     };
-  }, { dependencies: [showWorkspace], revertOnUpdate: true });
+  }, { dependencies: [showWorkspace, introActive], revertOnUpdate: true });
   if (showWorkspace) return <Suspense fallback={<WorkspaceLoading />}><WorkspaceApp initialMode={workspaceMode} onHome={openHome} /></Suspense>;
 
-  return <div className="landing-app" id="top">
+  return <>
+    <div className="landing-app" id="top">
+    {introActive && <IntroScroll />}
     <Navbar authenticated={Boolean(session.user)} onLogin={() => openWorkspace('login')} />
-    <IntroScroll />
     <Hero onGetStarted={() => openWorkspace('register')} />
     <MarketTicker />
     <div className="clay-divider" aria-hidden="true" />
@@ -56,5 +61,6 @@ export default function App() {
     <div className="clay-divider" aria-hidden="true" />
     <FinalCta onGetStarted={() => openWorkspace('register')} />
     <Footer />
-  </div>;
+  </div>
+  </>;
 }

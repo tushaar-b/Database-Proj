@@ -53,6 +53,17 @@ postgres_data/
 *.swp
 *.swo
 
-# Preserve repository exclusions
-frontend/test-results/
-frontend/playwright-report/
+# Large research CSVs are stored losslessly as .gz; restore before replay.
+/research/results/2026-10-23-run01/decisions.csv
+/research/results/2026-10-23-run01/positions.csv
+/research/results/2026-10-23-run01/valuations.csv
+/research/results/2026-10-23-run02/decisions.csv
+/research/results/2026-10-23-run02/positions.csv
+/research/results/2026-10-23-run02/valuations.csv
+/research/results/2026-10-23-run03/decisions.csv
+/research/results/2026-10-23-run03/positions.csv
+/research/results/2026-10-23-run03/valuations.csv
+/research/results/2026-10-24-diagnostics/REPLAY_DECISIONS.csv
+/research/results/phase8-2026-10-24/risk_metrics.csv
+/research/results/phase9-2026-10-25/cash_authority_accounting.csv
+/research/results/phase9-2026-10-25/portfolio_valuations.csv

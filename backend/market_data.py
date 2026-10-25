@@ -137,7 +137,12 @@ def _fetch_daily(symbol, period):
     rows = _normalise_daily(frame)
     if not rows:
         raise ValueError('Yahoo returned no valid daily prices')
-    return rows, meta
+    metadata = {key: meta.get(key) for key in (
+        'symbol', 'currency', 'exchangeName', 'instrumentType', 'regularMarketTime',
+        'regularMarketPrice', 'currentTradingPeriod', 'longName')}
+    metadata['normalization_quality'] = {'duplicate_dates': bool(frame.index.has_duplicates),
+                                          'discarded_rows': max(0, len(frame) - len(rows))}
+    return rows, metadata
 
 
 def _completed_rows(rows, meta):
@@ -271,47 +276,108 @@ def get_latest_quotes(conn, security_ids=None):
         return result
 
 
-def get_historical_prices(conn, security_id, window, price_basis='adjusted'):
-    """Cache bounded genuine Yahoo daily history; never modify stored risk data."""
-    global _last_success, _provider_backoff
+def _history_due(cached, key):
+    if monotonic() >= _history_after.get(key, 0):
+        return True
+    if not cached:
+        return False
+    # Crossing the provider's completed-session boundary invalidates a cache
+    # fetched before that boundary, even inside its normal one-hour TTL.
+    boundary = cached.get('completion_boundary')
+    return bool(boundary and datetime.now(IST) >= boundary and cached['fetched_at'] < boundary)
+
+
+def _retrieve_history(security, window):
+    global _provider_backoff
+    symbol = yahoo_symbol(security)
+    if monotonic() < _provider_backoff:
+        return None
+    try:
+        period = {'1M': '3mo', '3M': '6mo', '6M': '1y', '1Y': '2y', 'ALL': '10y'}[window]
+        raw, meta = _fetch_daily(symbol, period)
+        rows = _completed_rows(raw, meta)
+        if not rows:
+            raise ValueError('No completed daily observations')
+        last_trade = _timestamp(meta.get('regularMarketTime'))
+        end = _session_time(meta, 'end')
+        quality = {**meta.get('normalization_quality', {}),
+                   'date_mismatch': bool(last_trade and last_trade.date() != raw[-1]['trade_date'])}
+        return {'rows': rows, 'source': 'yfinance', 'issue': None, 'status': 'available',
+                'fetched_at': datetime.now(IST), 'yahoo_symbol': symbol,
+                'provider_last_trade_date': last_trade.date() if last_trade else None,
+                'provider_daily_date': raw[-1]['trade_date'], 'quality': quality,
+                'completion_boundary': end + timedelta(minutes=15) if end and end.date() == datetime.now(IST).date() else None}
+    except Exception as exc:
+        _log_failure(symbol, 'daily history', exc)
+        if 'RateLimit' in type(exc).__name__ or type(exc).__name__ in ('DNSError', 'Timeout', 'ConnectTimeout', 'ReadTimeout', 'ConnectionError'):
+            _provider_backoff = max(_provider_backoff, monotonic() + settings.MARKET_PROVIDER_BACKOFF_SECONDS)
+        return None
+
+
+def get_historical_prices_batch(conn, security_ids, window='1Y', price_basis='adjusted'):
+    """One security query and bounded provider batching, without sharing a DB
+    connection across threads. The same cache backs analytics and ranking.
+    """
+    global _last_success
+    ids = sorted({str(s) for s in security_ids})
+    if not ids:
+        return {}
     with conn.cursor(cursor_factory=RealDictCursor) as cur:
-        cur.execute('SELECT ticker_symbol,exchange_code FROM security_master WHERE security_id=%s', (str(security_id),))
-        security = cur.fetchone()
-    symbol = yahoo_symbol(dict(security)) if security else None
-    key = (symbol, window)
+        cur.execute('SELECT security_id::text,ticker_symbol,exchange_code FROM security_master WHERE security_id=ANY(%s::uuid[]) ORDER BY ticker_symbol', (ids,))
+        securities = [dict(r) for r in cur.fetchall()]
+    result = {}
     with _lock:
-        cached = _history.get(key) if symbol else None
-        if symbol and monotonic() >= _history_after.get(key, 0) and monotonic() >= _provider_backoff:
-            _history_after[key] = monotonic() + settings.MARKET_HISTORY_CACHE_SECONDS
-            try:
-                # One extra month covers calendar-window boundaries. ALL is
-                # explicitly capped to ten years and never fetched per render.
-                period = {'1M': '3mo', '3M': '6mo', '6M': '1y', '1Y': '2y', 'ALL': '10y'}[window]
-                rows, meta = _fetch_daily(symbol, period)
-                rows = _completed_rows(rows, meta)
-                if not rows:
-                    raise ValueError('No completed daily observations')
-                cached = {'rows': rows, 'source': 'yfinance', 'issue': None, 'status': 'available',
-                          'fetched_at': datetime.now(IST), 'yahoo_symbol': symbol}
-                _history[key] = cached
-                _last_success = datetime.now(IST)
-            except Exception as exc:
-                _log_failure(symbol, 'daily history', exc)
-                if 'RateLimit' in type(exc).__name__ or type(exc).__name__ in ('DNSError', 'Timeout', 'ConnectTimeout', 'ReadTimeout', 'ConnectionError'):
-                    _provider_backoff = max(_provider_backoff, monotonic() + settings.MARKET_PROVIDER_BACKOFF_SECONDS)
-                _history_after[key] = monotonic() + settings.MARKET_PROVIDER_BACKOFF_SECONDS
-                if cached:
-                    cached = {**cached, 'status': 'cached_fallback', 'issue': 'Yahoo history temporarily unavailable; using genuine cached daily observations.'}
-                    _history[key] = cached
-        if cached:
-            return {**cached, 'requested_basis': price_basis}
-    with conn.cursor(cursor_factory=RealDictCursor) as cur:
-        cur.execute('''SELECT trade_date,close_price,adjusted_close FROM daily_market_quote WHERE security_id=%s
-                       AND close_price>0 AND trade_date<CURRENT_DATE ORDER BY trade_date''', (str(security_id),))
-        rows = [dict(r) for r in cur.fetchall()]
-    return {'rows': rows, 'source': 'PostgreSQL daily_market_quote', 'status': 'historical_fallback' if rows else 'unavailable',
-            'issue': 'Yahoo daily history is unavailable; legacy database provenance and adjustment accuracy require audit.' if symbol else 'Yahoo listing identity is unresolved; showing only dated legacy history.',
-            'requested_basis': price_basis, 'yahoo_symbol': symbol, 'fetched_at': None}
+        due = [s for s in securities if yahoo_symbol(s) and _history_due(_history.get((yahoo_symbol(s), window)), (yahoo_symbol(s), window))]
+        if due and monotonic() >= _provider_backoff:
+            for s in due:
+                _history_after[(yahoo_symbol(s), window)] = monotonic() + settings.MARKET_HISTORY_CACHE_SECONDS
+            with ThreadPoolExecutor(max_workers=4) as pool:
+                fetched = list(pool.map(lambda s: _retrieve_history(s, window), due))
+            for security, record in zip(due, fetched):
+                key = (yahoo_symbol(security), window)
+                if record:
+                    _history[key] = record
+                    _last_success = datetime.now(IST)
+                else:
+                    _history_after[key] = monotonic() + settings.MARKET_PROVIDER_BACKOFF_SECONDS
+                    if key in _history:
+                        _history[key] = {**_history[key], 'status': 'cached_fallback',
+                                         'completion_boundary': None,
+                                         'issue': 'Yahoo history temporarily unavailable; using dated cached daily observations.'}
+        for security in securities:
+            symbol = yahoo_symbol(security)
+            cached = _history.get((symbol, window)) if symbol else None
+            if cached:
+                # A stale cache remains descriptive history, never a fresh trend.
+                if (datetime.now(IST) - cached['fetched_at']).total_seconds() > settings.MARKET_HISTORY_CACHE_SECONDS:
+                    cached = {**cached, 'status': 'cached_fallback', 'issue': 'Cached daily history is older than its refresh interval.'}
+                result[security['security_id']] = {**cached, 'requested_basis': price_basis}
+    missing = [s['security_id'] for s in securities if s['security_id'] not in result]
+    if missing:
+        with conn.cursor(cursor_factory=RealDictCursor) as cur:
+            cur.execute('''SELECT security_id::text,trade_date,close_price,adjusted_close FROM daily_market_quote
+                           WHERE security_id=ANY(%s::uuid[]) AND close_price>0 AND trade_date<CURRENT_DATE
+                           ORDER BY security_id,trade_date''', (missing,))
+            fallback = {sid: [] for sid in missing}
+            for row in cur.fetchall():
+                record = dict(row)
+                fallback[record.pop('security_id')].append(record)
+        for security in securities:
+            sid = security['security_id']
+            if sid in result:
+                continue
+            rows = fallback[sid]
+            result[sid] = {'rows': rows, 'source': 'PostgreSQL daily_market_quote',
+                           'status': 'historical_fallback' if rows else 'unavailable',
+                           'issue': 'Yahoo daily history is unavailable; legacy provenance and adjustment accuracy require audit.',
+                           'requested_basis': price_basis, 'yahoo_symbol': yahoo_symbol(security), 'fetched_at': None,
+                           'quality': {}}
+    return result
+
+
+def get_historical_prices(conn, security_id, window, price_basis='adjusted'):
+    return get_historical_prices_batch(conn, [security_id], window, price_basis).get(str(security_id),
+        {'rows': [], 'source': 'unavailable', 'status': 'unavailable', 'issue': 'Security history unavailable.', 'fetched_at': None})
 
 
 def price_holdings(conn, portfolio_id):

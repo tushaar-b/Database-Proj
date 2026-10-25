@@ -1,0 +1,123 @@
+{
+  "format": "lossless gzip, deterministic timestamp",
+  "reason": "GitHub regular-Git file-size limits; restore original bytes before research verification/replays",
+  "artifacts": [
+    {
+      "path": "research/results/2026-10-23-run01/decisions.csv",
+      "sha256": "cdc7673308bba1865469a85619eea00ebb22794180c86c571cd2a7df77064869",
+      "bytes": 86736312,
+      "storage": "gzip",
+      "archive": "research/results/2026-10-23-run01/decisions.csv.gz",
+      "archive_sha256": "91158cca16f52aa9f96a83bea65d71318056e65b3026e99ff49306998a351199",
+      "archive_bytes": 18271323
+    },
+    {
+      "path": "research/results/2026-10-23-run01/positions.csv",
+      "sha256": "c35e3ee8c52bfe45e1109f51552af3ebcfbe2a253500034a202ae5faa1db09ce",
+      "bytes": 335329708,
+      "storage": "gzip",
+      "archive": "research/results/2026-10-23-run01/positions.csv.gz",
+      "archive_sha256": "bf1558b7909750fbc09447c8617f07d838321c94fa232b897a2199ebc51afbca",
+      "archive_bytes": 19342039
+    },
+    {
+      "path": "research/results/2026-10-23-run01/valuations.csv",
+      "sha256": "26aa1b329eeded7041fbacd26575607989fb93a92cac87c8b37ddfd25f8124b5",
+      "bytes": 45265161,
+      "storage": "gzip",
+      "archive": "research/results/2026-10-23-run01/valuations.csv.gz",
+      "archive_sha256": "9d036907463fe0f85291fdf518a6d2aa0a62e632b2427a06f70d15400825a84a",
+      "archive_bytes": 11639015
+    },
+    {
+      "path": "research/results/2026-10-23-run02/decisions.csv",
+      "sha256": "b44ce08263689647bb482860c631ee1cbb26e39f0779dcad869e87a017a53d41",
+      "bytes": 93630550,
+      "storage": "gzip",
+      "archive": "research/results/2026-10-23-run02/decisions.csv.gz",
+      "archive_sha256": "1b7f25e30e92c2a2f1e473ec9dd31566923c46c4e2e7f03b3a1d6be920a98a25",
+      "archive_bytes": 19720024
+    },
+    {
+      "path": "research/results/2026-10-23-run02/positions.csv",
+      "sha256": "5dd1a5cf7c75fa48496cf12a77c8a3fbf3892b70911d9549332d2e2218aaec42",
+      "bytes": 369784776,
+      "storage": "gzip",
+      "archive": "research/results/2026-10-23-run02/positions.csv.gz",
+      "archive_sha256": "eac75d64335bb4103188b8039f4febfe362f53da8e8f4b64e7252a34989d9d89",
+      "archive_bytes": 21207065
+    },
+    {
+      "path": "research/results/2026-10-23-run02/valuations.csv",
+      "sha256": "108b75d673bbdca9a75fbb6e6e24c3f6af3ee9cda0c555e74522a96712cbcbf5",
+      "bytes": 50528219,
+      "storage": "gzip",
+      "archive": "research/results/2026-10-23-run02/valuations.csv.gz",
+      "archive_sha256": "6e32962cad70bfec89065d5347ce98ea579408b6aa2ae5c7f10f464e3f1465de",
+      "archive_bytes": 12997992
+    },
+    {
+      "path": "research/results/2026-10-23-run03/decisions.csv",
+      "sha256": "64ebbfd219317d48e813f5c1c3c8f4f403215e5d70cdbb5b5c613ce13bb382b4",
+      "bytes": 93630632,
+      "storage": "gzip",
+      "archive": "research/results/2026-10-23-run03/decisions.csv.gz",
+      "archive_sha256": "51f0eb0be10687f298b58a2cd7a203466da71a5f36f1ce092185bbca59e54ff2",
+      "archive_bytes": 19720067
+    },
+    {
+      "path": "research/results/2026-10-23-run03/positions.csv",
+      "sha256": "baa9fbd48b5591e9c432546935982e6748836d256af835bfb37331a1d4427303",
+      "bytes": 369836634,
+      "storage": "gzip",
+      "archive": "research/results/2026-10-23-run03/positions.csv.gz",
+      "archive_sha256": "4456ff9256c2b7323eabf4db958f394d521ad0620038c89e8d2f592967ac5613",
+      "archive_bytes": 21191960
+    },
+    {
+      "path": "research/results/2026-10-23-run03/valuations.csv",
+      "sha256": "1e43a17dba31f219a2149fae3fd265ea28d37d69cfd7623e6c2412e630bdd58c",
+      "bytes": 50533598,
+      "storage": "gzip",
+      "archive": "research/results/2026-10-23-run03/valuations.csv.gz",
+      "archive_sha256": "1d2006e2f51e1409e14a535bcc63df120194c163af17689085a2441a6c42be95",
+      "archive_bytes": 12998965
+    },
+    {
+      "path": "research/results/2026-10-24-diagnostics/REPLAY_DECISIONS.csv",
+      "sha256": "469bebd18a7857ce2c0368972cf09e97d9cb09ef2d0e893bba90e8204853f14c",
+      "bytes": 58603741,
+      "storage": "gzip",
+      "archive": "research/results/2026-10-24-diagnostics/REPLAY_DECISIONS.csv.gz",
+      "archive_sha256": "7fbf9ff7ed16762140a670b31fd2606233f71467a69b00a296c2a38e8e8b2a5b",
+      "archive_bytes": 12389279
+    },
+    {
+      "path": "research/results/phase8-2026-10-24/risk_metrics.csv",
+      "sha256": "b6c5e0003752eb6a59fbad5c030a07710ba82737890d094cf2233caee20ce359",
+      "bytes": 73691586,
+      "storage": "gzip",
+      "archive": "research/results/phase8-2026-10-24/risk_metrics.csv.gz",
+      "archive_sha256": "73a89c97200b3eb04bff646e57f635a9ae4b6f802b1e39c389410f4367052df2",
+      "archive_bytes": 18949727
+    },
+    {
+      "path": "research/results/phase9-2026-10-25/cash_authority_accounting.csv",
+      "sha256": "f14a0171ac70c90a537f24e9173531713c68885bf511b24251a22201f583ec79",
+      "bytes": 59922941,
+      "storage": "gzip",
+      "archive": "research/results/phase9-2026-10-25/cash_authority_accounting.csv.gz",
+      "archive_sha256": "359ab3d413d94d7300938b18074c11a78f17db917836ef32288b510fd13989ee",
+      "archive_bytes": 8353708
+    },
+    {
+      "path": "research/results/phase9-2026-10-25/portfolio_valuations.csv",
+      "sha256": "eec433d2575b94cf3116dcef1fb42104eebc3cf9864c8ad964bd668861d5a234",
+      "bytes": 119248279,
+      "storage": "gzip",
+      "archive": "research/results/phase9-2026-10-25/portfolio_valuations.csv.gz",
+      "archive_sha256": "d6355ff19a150609a1a30d0bb7d2fd05466cb106c04510adb9e75c23c4c1523c",
+      "archive_bytes": 30534295
+    }
+  ]
+}

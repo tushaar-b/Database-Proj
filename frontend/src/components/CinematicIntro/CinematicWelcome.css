@@ -1,0 +1,4 @@
+.cinematic-intro__welcome { z-index: 2; opacity: 1; visibility: visible; }
+.cinematic-intro--welcome .cinematic-intro__cta { opacity: 0; pointer-events: none; }
+.cinematic-intro--welcome .cinematic-intro__brand, .cinematic-intro--finishing .cinematic-intro__brand { visibility: hidden; }
+.cinematic-intro .cinematic-intro__skip { z-index: 4; }

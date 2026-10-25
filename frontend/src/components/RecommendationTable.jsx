@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { ArrowRight, X } from 'lucide-react';
 import './RecommendationTable.css';
 import { QuoteLabel } from '../StockIntelligence.jsx';
+import RecentMarketTrend, { TrendBadge } from './RecentMarketTrend.jsx';
 
 const currency = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 2 });
 const decimal = new Intl.NumberFormat('en-IN', { maximumFractionDigits: 2 });
@@ -76,6 +77,7 @@ function RecommendationDetails({ item, onDismiss, returnFocusRef }) {
             string. Render it verbatim; do not infer metrics from prose. */}
         <p className="rec-explanation">{item.explanation || 'This saved recommendation has no selection explanation.'}</p>
       </section>
+      <RecentMarketTrend evidence={item.ranking_evidence} saved />
     </div>
     <footer className="rec-details-footer">Acceptance records investment intent only. It does not execute a brokerage trade.</footer>
   </dialog>, document.body);
@@ -102,7 +104,7 @@ export default function RecommendationTable({ items, busy, onDecide, allowDecisi
         }} onKeyDown={(event) => {
           if (event.target === event.currentTarget && (event.key === 'Enter' || event.key === ' ')) { event.preventDefault(); openDetails(item, event.currentTarget); }
         }}>
-          <td><div className="rec-security"><strong>{item.stock_ticker}</strong>{item.quote && <><small>Latest {money(item.quote.price)}</small><QuoteLabel quote={item.quote} /></>}{showBatch && <small>{item.batch_created_at ? `Batch ${date(item.batch_created_at)}` : 'Historical batch'}</small>}</div></td>
+          <td><div className="rec-security"><strong>{item.stock_ticker}</strong><TrendBadge evidence={item.ranking_evidence} />{item.quote && <><small>Latest {money(item.quote.price)}</small><QuoteLabel quote={item.quote} /></>}{showBatch && <small>{item.batch_created_at ? `Batch ${date(item.batch_created_at)}` : 'Historical batch'}</small>}</div></td>
           <td className="rec-numeric">{money(item.recommended_amount)}{item.original_price != null && <small style={{ display: 'block' }}>Recorded at {money(item.original_price)}</small>}{item.requires_regeneration && <small style={{ display: 'block' }}>Revalidation needed</small>}</td>
           <td className="rec-numeric">{allocation(item.target_allocation_pct)}</td>
           <td className="rec-numeric">{number(item.shares)}</td>
