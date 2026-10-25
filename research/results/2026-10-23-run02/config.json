@@ -1,0 +1,317 @@
+{
+  "created_utc": "2026-10-23T18:24:46.434636+00:00",
+  "git_head": "ad21a5240171cac28d2f6caafca3182cd08507ba",
+  "code_sha256": {
+    "research/risk_metrics.py": "b03e3290bcaf479a14e26415fc5caafc494585656bf3a08ee59b640f63483609",
+    "research/historical_replay.py": "a158a02b23805b260dff70ac675572880fa0c7a9ddf1e3fa22780c43a0d3256b",
+    "research/data_audit.py": "05ae9a1fb7dcf632297ba31499f469f1b61b831d9f9aeb9a9ba2fd72a052c2a3",
+    "research/strategies.py": "fbc0ec8af1cf177dd5df657db7640ea52157b435b3c02b8a655c50a75c6be88b",
+    "research/experiment_runner.py": "32ba65948a1971f334c692af99dc7e519eb9108f2474e83df92d8da1736be9c7",
+    "research/validate_dataset.py": "f61607d3eec90083c385db5d8e1d0881d1e4d3f6aada42655adbba4db76928aa",
+    "research/__init__.py": "e88df07941df3faa609ee5f1acafcab3e38976fec70326741249185ba7f0d73c",
+    "research/consistency_checks.py": "3d7691517fe90bcff58e04bcce4419ba66af8745cfa56ca5995ebd97ac302dde",
+    "research/generate_results.py": "810aa40c1a5a590e62b0eb1ebfaa18c4cd944a57db9b90647e7bdd67b12db195",
+    "research/statistical_analysis.py": "a24783aed4669c4372d7237ed5314cfe97203e6a3fb0c6b89aa0723c3ba4d38d",
+    "research/investor_scenarios.py": "86327e809129ed0002e3e0d6482432ca34ac9e76080598dc5a0fed8ddb3b3804",
+    "research/specification.md": "bef178d7eed0681b56da44a7253fc7e03a0cb706993f5dc6e237c1be06cbe18a",
+    "backend/market_trends.py": "4a4ba88666eee013634dcc55243f9f6df86c0d32731227ec5e8389ac93597c8d",
+    "backend/routers/recommendations.py": "fda91cd1283ec6e5d004ef333c78ccd3300cd5507d29c245168ac924f50b0792",
+    "backend/services.py": "51d04a907dbeed33763c9d7559420c4e919ab880952adae53483e489f064afcb",
+    "backend/config.py": "205d81d01945f6014216e807270ad18118e3390da3b65c61c123ab390800723a"
+  },
+  "dataset": {
+    "status": "exploratory_restricted_universe",
+    "securities": 40,
+    "observations": 57400,
+    "range": [
+      "2021-01-01",
+      "2026-10-22"
+    ],
+    "source_dataset_sha256": "dff4cd2d33ed5be783623472f210eb1d4a4f17a1db8f6bd66f442acac37e27dc",
+    "research_dataset_sha256": "5d1564c142b835cba08675c89e4277486eb10cf7639fa586a643502a598a0102",
+    "exclusions": {
+      "TATAMOTORS": "unreconciled demerger and renamed identity",
+      "ITC": "exchange sampled nominal-close disagreement",
+      "RELIANCE": "exchange sampled nominal-close disagreement",
+      "BHARTIARTL": "rights/partly paid security history not reconciled",
+      "HDFCBANK": "2023 merger identity/action reconciliation not independently established",
+      "SHRIRAMFIN": "2022 merger and earlier SRTRANSFIN symbol identity not reconciled",
+      "BAJAJFINSV": "exchange sampled nominal-close disagreement",
+      "BAJFINANCE": "exchange sampled nominal-close disagreement",
+      "GRASIM": "exchange sampled nominal-close disagreement",
+      "TRENT": "exchange sampled nominal-close disagreement"
+    },
+    "calendar_removed": [],
+    "calendar_removed_observations": 0,
+    "exchange_comparisons": 293,
+    "exchange_matches": 271,
+    "universe": [
+      "ADANIENT",
+      "ADANIPORTS",
+      "APOLLOHOSP",
+      "ASIANPAINT",
+      "AXISBANK",
+      "BAJAJ-AUTO",
+      "BEL",
+      "BPCL",
+      "BRITANNIA",
+      "CIPLA",
+      "COALINDIA",
+      "DIVISLAB",
+      "DRREDDY",
+      "EICHERMOT",
+      "HCLTECH",
+      "HEROMOTOCO",
+      "HINDALCO",
+      "HINDUNILVR",
+      "ICICIBANK",
+      "INDUSINDBK",
+      "INFY",
+      "JSWSTEEL",
+      "KOTAKBANK",
+      "LT",
+      "M&M",
+      "MARUTI",
+      "NESTLEIND",
+      "NTPC",
+      "ONGC",
+      "POWERGRID",
+      "SBILIFE",
+      "SBIN",
+      "SUNPHARMA",
+      "TATACONSUM",
+      "TATASTEEL",
+      "TCS",
+      "TECHM",
+      "TITAN",
+      "ULTRACEMCO",
+      "WIPRO"
+    ],
+    "listing_dates": "provider metadata firstTradeDate checked against first observation; exchange listing certificates unavailable; minimum 120 observed returns and contemporaneous bar required",
+    "adjustment_provenance": "Yahoo adjusted close plus explicit dividends/splits; nominal reconstruction sampled against NSE",
+    "publication_claims_supported": false
+  },
+  "windows": {
+    "primary_2022_2025": [
+      "2022-01-01",
+      "2025-12-31"
+    ],
+    "early_2022_2023": [
+      "2022-01-01",
+      "2023-12-31"
+    ],
+    "late_2024_2025": [
+      "2024-01-01",
+      "2025-12-31"
+    ],
+    "ytd_2026": [
+      "2026-01-01",
+      "2026-10-22"
+    ]
+  },
+  "scenarios": [
+    {
+      "name": "low_conservative",
+      "surplus_group": "low",
+      "tier": "CONSERVATIVE",
+      "income": 45000,
+      "mandatory": 30000,
+      "discretionary": 3000,
+      "reserve": 10000,
+      "initial_cash": 100000.0,
+      "monthly_buffer": 5000
+    },
+    {
+      "name": "low_moderate",
+      "surplus_group": "low",
+      "tier": "MODERATE",
+      "income": 45000,
+      "mandatory": 30000,
+      "discretionary": 3000,
+      "reserve": 10000,
+      "initial_cash": 100000.0,
+      "monthly_buffer": 5000
+    },
+    {
+      "name": "low_aggressive",
+      "surplus_group": "low",
+      "tier": "AGGRESSIVE",
+      "income": 45000,
+      "mandatory": 30000,
+      "discretionary": 3000,
+      "reserve": 10000,
+      "initial_cash": 100000.0,
+      "monthly_buffer": 5000
+    },
+    {
+      "name": "medium_conservative",
+      "surplus_group": "medium",
+      "tier": "CONSERVATIVE",
+      "income": 100000,
+      "mandatory": 50000,
+      "discretionary": 10000,
+      "reserve": 30000,
+      "initial_cash": 100000.0,
+      "monthly_buffer": 20000
+    },
+    {
+      "name": "medium_moderate",
+      "surplus_group": "medium",
+      "tier": "MODERATE",
+      "income": 100000,
+      "mandatory": 50000,
+      "discretionary": 10000,
+      "reserve": 30000,
+      "initial_cash": 100000.0,
+      "monthly_buffer": 20000
+    },
+    {
+      "name": "medium_aggressive",
+      "surplus_group": "medium",
+      "tier": "AGGRESSIVE",
+      "income": 100000,
+      "mandatory": 50000,
+      "discretionary": 10000,
+      "reserve": 30000,
+      "initial_cash": 100000.0,
+      "monthly_buffer": 20000
+    },
+    {
+      "name": "high_conservative",
+      "surplus_group": "high",
+      "tier": "CONSERVATIVE",
+      "income": 250000,
+      "mandatory": 90000,
+      "discretionary": 30000,
+      "reserve": 60000,
+      "initial_cash": 100000.0,
+      "monthly_buffer": 100000
+    },
+    {
+      "name": "high_moderate",
+      "surplus_group": "high",
+      "tier": "MODERATE",
+      "income": 250000,
+      "mandatory": 90000,
+      "discretionary": 30000,
+      "reserve": 60000,
+      "initial_cash": 100000.0,
+      "monthly_buffer": 100000
+    },
+    {
+      "name": "high_aggressive",
+      "surplus_group": "high",
+      "tier": "AGGRESSIVE",
+      "income": 250000,
+      "mandatory": 90000,
+      "discretionary": 30000,
+      "reserve": 60000,
+      "initial_cash": 100000.0,
+      "monthly_buffer": 100000
+    }
+  ],
+  "strategies": [
+    "Affordability Only",
+    "Risk Only",
+    "No Feedback",
+    "Full IntelliVest"
+  ],
+  "fee": 0.001,
+  "slippage": 0.0005,
+  "risk_free_rate": 0.04,
+  "risk_limits": {
+    "hhi": 0.25,
+    "var": 0.1,
+    "volatility": 0.03
+  },
+  "momentum_policy": {
+    "version": "risk_momentum_v1",
+    "baseline_version": "risk_only_252_v1",
+    "return_windows": [
+      20,
+      60
+    ],
+    "moving_average_windows": [
+      20,
+      50
+    ],
+    "flat_return_20": 0.01,
+    "flat_return_60": 0.02,
+    "ma_tolerance": 0.005,
+    "strong_decline_20": 0.08,
+    "negative_votes_required": 3,
+    "strong_votes_required": 4,
+    "positive_votes_required": 3,
+    "max_gap_days": 7,
+    "weights": [
+      0.5,
+      0.3,
+      0.2
+    ],
+    "agreement_strength": 0.25,
+    "severity_cap": 3.0,
+    "unknown_severity": 0.25,
+    "max_history_age_days": 4,
+    "fingerprint_return_step": 0.005,
+    "tier_weights": {
+      "CONSERVATIVE": 0.75,
+      "MODERATE": 0.5,
+      "AGGRESSIVE": 0.25
+    }
+  },
+  "seed": 20261023,
+  "bootstrap_block": 20,
+  "bootstrap_draws": 2000,
+  "lookbacks": {
+    "ranking_max_returns": 252,
+    "ranking_min_returns": 120,
+    "risk": 252,
+    "volatility": 30
+  },
+  "execution": "next observed session close",
+  "calendar": "actual common provider session dates, no interpolation",
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "yfinance": "1.7.0",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "pypdf": "6.21.2"
+  },
+  "interpretation": "exploratory restricted surviving universe; no population significance claims",
+  "feedback_stress": {
+    "selection": "largest pre-start 252-return sample volatility; 90% initial target equity, no future outcomes",
+    "initial_holdings": {
+      "ADANIENT": 52
+    },
+    "initial_wealth": 100000,
+    "prior_nominal_close": 1709.449951171875,
+    "interpretation": "mechanistic concentration/volatility stress, not an efficacy validation sample"
+  },
+  "effective_settings": {
+    "STOCK_ANNUAL_RISK_FREE_RATE": 0.04,
+    "MOMENTUM_FLAT_RETURN_20": 0.01,
+    "MOMENTUM_FLAT_RETURN_60": 0.02,
+    "MOMENTUM_MA_TOLERANCE": 0.005,
+    "MOMENTUM_STRONG_DECLINE_20": 0.08,
+    "MOMENTUM_WEIGHT_20": 0.5,
+    "MOMENTUM_WEIGHT_60": 0.3,
+    "MOMENTUM_WEIGHT_MA50": 0.2,
+    "MOMENTUM_AGREEMENT_STRENGTH": 0.25,
+    "MOMENTUM_SEVERITY_CAP": 3.0,
+    "MOMENTUM_UNKNOWN_SEVERITY": 0.25,
+    "MOMENTUM_CONSERVATIVE_WEIGHT": 0.75,
+    "MOMENTUM_MODERATE_WEIGHT": 0.5,
+    "MOMENTUM_AGGRESSIVE_WEIGHT": 0.25,
+    "MOMENTUM_NEGATIVE_VOTES": 3,
+    "MOMENTUM_STRONG_VOTES": 4,
+    "MOMENTUM_POSITIVE_VOTES": 3,
+    "MOMENTUM_MAX_GAP_DAYS": 7,
+    "MOMENTUM_MAX_HISTORY_AGE_DAYS": 4,
+    "MOMENTUM_FINGERPRINT_RETURN_STEP": 0.005,
+    "DEFAULT_TARGET_HHI_LIMIT": 0.25,
+    "RISK_VAR_LIMIT_PERCENT": 0.1,
+    "RISK_DAILY_VOLATILITY_LIMIT": 0.03
+  },
+  "source_snapshot": "source_snapshot/; working source hashes, not Git HEAD alone, identify executed code"
+}
