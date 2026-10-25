@@ -1,0 +1,10 @@
+metric,breach_date,breach_index,resolved_date,resolved,first_changed_recommendation,response_sessions,left_censored,window,scenario,tier,policy,regime,kind
+hhi,2024-02-02,763,2024-11-04,True,2024-04-01,38.0,False,late_2024_2025,high_aggressive,AGGRESSIVE,GREEDY_M,M,principal
+hhi,2024-12-19,979,2025-01-10,True,2025-01-01,8.0,False,late_2024_2025,high_aggressive,AGGRESSIVE,GREEDY_M,M,principal
+hhi,2025-01-14,996,2025-01-15,True,,,False,late_2024_2025,high_aggressive,AGGRESSIVE,GREEDY_M,M,principal
+hhi,2025-01-16,998,2025-01-21,True,,,False,late_2024_2025,high_aggressive,AGGRESSIVE,GREEDY_M,M,principal
+hhi,2025-02-28,1029,2025-05-19,True,2025-03-03,1.0,False,late_2024_2025,high_aggressive,AGGRESSIVE,GREEDY_M,M,principal
+hhi,2025-05-20,1080,2025-05-23,True,,,False,late_2024_2025,high_aggressive,AGGRESSIVE,GREEDY_M,M,principal
+hhi,2025-05-30,1088,2025-06-03,True,2025-06-02,1.0,False,late_2024_2025,high_aggressive,AGGRESSIVE,GREEDY_M,M,principal
+hhi,2025-07-08,1115,2025-07-09,True,,,False,late_2024_2025,high_aggressive,AGGRESSIVE,GREEDY_M,M,principal
+hhi,2025-07-11,1118,2025-08-08,True,2025-08-01,15.0,False,late_2024_2025,high_aggressive,AGGRESSIVE,GREEDY_M,M,principal

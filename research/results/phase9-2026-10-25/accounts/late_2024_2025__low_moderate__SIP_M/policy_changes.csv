@@ -1,0 +1,6 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions,window,scenario,tier,policy,regime,kind
+2024-01-02,"[1.0, [], false, false]","[1.0, [""Capital Goods""], false, false]",1.0,0.0006898701847170564,0.0004193739724723747,True,False,False,0,late_2024_2025,low_moderate,MODERATE,SIP_M,M,principal
+2024-04-02,"[1.0, [""Capital Goods""], false, false]","[1.0, [""Energy""], false, false]",0.5078282082733233,0.0018573805545429583,0.0011291067200869048,True,False,False,0,late_2024_2025,low_moderate,MODERATE,SIP_M,M,principal
+2024-05-30,"[1.0, [""Energy""], false, false]","[1.0, [""Capital Goods""], false, false]",0.34734494978275443,0.002010215847556,0.0012220157128,True,False,False,0,late_2024_2025,low_moderate,MODERATE,SIP_M,M,principal
+2024-06-04,"[1.0, [""Capital Goods""], false, false]","[1.0, [""Financial Services""], false, false]",0.3399870982633558,0.004283517303196673,0.0026039618864417465,True,False,False,0,late_2024_2025,low_moderate,MODERATE,SIP_M,M,principal
+2024-08-02,"[1.0, [""Financial Services""], false, false]","[1.0, [], false, false]",0.2318808856182867,0.0015586283518606624,0.0009474944388210714,False,False,False,0,late_2024_2025,low_moderate,MODERATE,SIP_M,M,principal

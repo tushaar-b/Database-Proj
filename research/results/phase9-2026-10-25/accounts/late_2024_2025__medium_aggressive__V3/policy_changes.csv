@@ -1,0 +1,3 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions,window,scenario,tier,policy,regime,kind
+2024-01-02,"[1.0, [], false, false]","[1.0, [""Automobile""], false, false]",0.3604881874180374,0.0015274024720569254,0.0009285121410680398,True,False,False,0,late_2024_2025,medium_aggressive,AGGRESSIVE,V3,M,principal
+2024-02-02,"[1.0, [""Automobile""], false, false]","[1.0, [], false, false]",0.21456644968484234,0.0028198540687244564,0.0017141970022641073,False,False,False,0,late_2024_2025,medium_aggressive,AGGRESSIVE,V3,M,principal

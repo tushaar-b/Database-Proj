@@ -1,0 +1,228 @@
+{
+  "seed": 20261024,
+  "block": 20,
+  "draws": 2000,
+  "windows": {
+    "primary_2022_2025": [
+      "2022-01-01",
+      "2025-12-31"
+    ],
+    "early_2022_2023": [
+      "2022-01-01",
+      "2023-12-31"
+    ],
+    "late_2024_2025": [
+      "2024-01-01",
+      "2025-12-31"
+    ],
+    "ytd_2026": [
+      "2026-01-01",
+      "2026-10-22"
+    ]
+  },
+  "policies": [
+    {
+      "name": "V1",
+      "carry": false,
+      "feasible": false,
+      "topups": false,
+      "guards": false,
+      "redirect": false,
+      "selling": false,
+      "momentum": true
+    },
+    {
+      "name": "V3",
+      "carry": false,
+      "feasible": true,
+      "topups": true,
+      "guards": true,
+      "redirect": false,
+      "selling": false,
+      "momentum": true
+    },
+    {
+      "name": "V4",
+      "carry": true,
+      "feasible": true,
+      "topups": true,
+      "guards": true,
+      "redirect": false,
+      "selling": false,
+      "momentum": true
+    },
+    {
+      "name": "GREEDY_M",
+      "carry": false,
+      "feasible": true,
+      "topups": true,
+      "guards": true,
+      "redirect": false,
+      "selling": false,
+      "momentum": true
+    },
+    {
+      "name": "GREEDY_C",
+      "carry": true,
+      "feasible": true,
+      "topups": true,
+      "guards": true,
+      "redirect": false,
+      "selling": false,
+      "momentum": true
+    },
+    {
+      "name": "EQUAL_M",
+      "carry": false,
+      "feasible": true,
+      "topups": true,
+      "guards": true,
+      "redirect": false,
+      "selling": false,
+      "momentum": true
+    },
+    {
+      "name": "EQUAL_C",
+      "carry": true,
+      "feasible": true,
+      "topups": true,
+      "guards": true,
+      "redirect": false,
+      "selling": false,
+      "momentum": true
+    },
+    {
+      "name": "SIP_M",
+      "carry": false,
+      "feasible": true,
+      "topups": true,
+      "guards": true,
+      "redirect": false,
+      "selling": false,
+      "momentum": true
+    },
+    {
+      "name": "SIP_C",
+      "carry": true,
+      "feasible": true,
+      "topups": true,
+      "guards": true,
+      "redirect": false,
+      "selling": false,
+      "momentum": true
+    },
+    {
+      "name": "MILP_M",
+      "carry": false,
+      "feasible": true,
+      "topups": true,
+      "guards": true,
+      "redirect": false,
+      "selling": false,
+      "momentum": true
+    },
+    {
+      "name": "MILP_C",
+      "carry": true,
+      "feasible": true,
+      "topups": true,
+      "guards": true,
+      "redirect": false,
+      "selling": false,
+      "momentum": true
+    },
+    {
+      "name": "NEUTRAL_M",
+      "carry": false,
+      "feasible": true,
+      "topups": true,
+      "guards": true,
+      "redirect": false,
+      "selling": false,
+      "momentum": true
+    },
+    {
+      "name": "NEUTRAL_C",
+      "carry": true,
+      "feasible": true,
+      "topups": true,
+      "guards": true,
+      "redirect": false,
+      "selling": false,
+      "momentum": true
+    },
+    {
+      "name": "RANK_GUARD_M",
+      "carry": false,
+      "feasible": false,
+      "topups": false,
+      "guards": true,
+      "redirect": false,
+      "selling": false,
+      "momentum": true
+    },
+    {
+      "name": "FEAS_NO_TOPUP_M",
+      "carry": false,
+      "feasible": true,
+      "topups": false,
+      "guards": true,
+      "redirect": false,
+      "selling": false,
+      "momentum": true
+    },
+    {
+      "name": "RANK_TOPUP_M",
+      "carry": false,
+      "feasible": false,
+      "topups": true,
+      "guards": true,
+      "redirect": false,
+      "selling": false,
+      "momentum": true
+    }
+  ],
+  "fees": 0.001,
+  "slippage": 0.0005,
+  "rf": 0.04,
+  "cash_yield": 0,
+  "source_hashes": {
+    "research/phase8/market.py": "e186bbebccf82bed7fe1fffe311220e9e7b9a25c927c0ba4a4ab0eee4c95eb7f",
+    "research/phase8/__init__.py": "1be4936467a51b631da4b7663ff2cf5c4840fa654afb2ad2a3cd562ac8403510",
+    "research/phase8/analysis/metrics.py": "0e7335775e70fa770d7d6deb601bfb8c08145fdf3dd5b3e0d1f851039983a098",
+    "research/phase8/analysis/finalize.py": "104e456ac1393bafbbc889b44efa3a9d6156c6e3093d14c142ad1f84e2a58fa3",
+    "research/phase8/analysis/report.py": "84f46254a41d235d4a6a4f36d21693394785079fccdeacd51bec704673c757e2",
+    "research/phase8/experiments/runner.py": "727e096fccd06e016e3e931b0473f0bc19971f54b62862f83dc68bfceb125c1f",
+    "research/phase8/experiments/validate.py": "b38a28b615e7cceac0ff6de9d38db861ca6b8623040f6ac29f92f7a8f1873b58",
+    "research/phase8/experiments/engine.py": "cd68bdb0adddbe36c715694eae8cce1e1f8b2d165c757db246107f72ff057c34",
+    "research/phase8/experiments/reproduce_v1.py": "52d0e447ba87d1bfadf49bc21290907764e2d33f2ac79d7ef946f1c5586b52af",
+    "research/phase8/experiments/verify.py": "623df6160a497cc7b5235c9aef767e91c1e851f65542fc31fcf0dd1bfe221edb",
+    "research/phase8/policies/construction.py": "2f917c340f1facacf813948e58ea7af0b2a40a5e4bc2d3b64c5bec4253c09781",
+    "research/phase8/policies/authority.py": "f498fe399178b8bce241f74b79ba147f48a50160ab50a06513f654c2b029e686"
+  },
+  "phase9_source_hashes": {
+    "research/phase9/allocators.py": "d176231e1d92ebe8ea28d0386bd85151580e58a632d83cc6aaa10e14604f7dcc",
+    "research/phase9/runner.py": "dd4484a25ffea6a454496ab5bf9740692c83a6d6bd75a07de26d60f1fb120b0b",
+    "research/phase9/audit.py": "1b09f46a931b88c40bbb12d8f27aee4fb111f65af12bfda24c125737c0e25d72",
+    "research/phase9/acquire.py": "0462aec7eb58b636d7c6314a5671a1e8bd76bb767269243a53e73096fc943cc6",
+    "research/phase9/reproduce.py": "19b297d52032a19d697d1fbd0f07a8c6674ccd0bf68c988d73921638c69a9d2c",
+    "research/phase9/acquire_extra.py": "928b6acd57ed0149b3aec6c627fde51cb11ec18197d1a641778add0395fb4674",
+    "research/phase9/freeze.py": "ec400ca6dbf02053b606f2eb09d912324a234f632a1bae1ccef457464426a444"
+  },
+  "dataset_sha256": "5d1564c142b835cba08675c89e4277486eb10cf7639fa586a643502a598a0102",
+  "hardware": {
+    "system": "Darwin",
+    "node": "Tushaars-MacBook-Air.local",
+    "release": "27.0.0",
+    "version": "Darwin Kernel Version 27.0.0: Tue Aug 11 21:02:57 PDT 2026; root:xnu-13432.1.9~1/RELEASE_ARM64_T8132",
+    "machine": "arm64",
+    "processor": "arm"
+  },
+  "processor": "arm",
+  "versions": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1"
+  },
+  "independent_validation": false
+}

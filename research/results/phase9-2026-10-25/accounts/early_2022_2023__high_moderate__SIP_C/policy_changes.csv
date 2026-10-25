@@ -1,0 +1,5 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions,window,scenario,tier,policy,regime,kind
+2022-01-04,"[1.0, [], false, false]","[1.0, [""Services""], false, false]",0.6821743295451972,0.008425373038489434,0.005121807318230659,True,False,False,0,early_2022_2023,high_moderate,MODERATE,SIP_C,C,principal
+2022-02-02,"[1.0, [""Services""], false, false]","[1.0, [""Healthcare""], false, false]",0.41115245062150274,0.00765369903150935,0.0046527045784251365,True,False,False,0,early_2022_2023,high_moderate,MODERATE,SIP_C,C,principal
+2022-03-03,"[1.0, [""Healthcare""], false, false]","[1.0, [""Metals & Mining""], false, false]",0.29759539703238796,0.014966701806933302,0.009098298970780122,True,False,False,0,early_2022_2023,high_moderate,MODERATE,SIP_C,C,principal
+2022-04-04,"[1.0, [""Metals & Mining""], false, false]","[1.0, [], false, false]",0.23379755614243491,0.013690318425005158,0.008322382021279731,False,False,False,0,early_2022_2023,high_moderate,MODERATE,SIP_C,C,principal

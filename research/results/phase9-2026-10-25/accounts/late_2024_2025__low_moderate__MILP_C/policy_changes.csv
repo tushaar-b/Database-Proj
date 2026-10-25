@@ -1,0 +1,11 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions,window,scenario,tier,policy,regime,kind
+2024-01-02,"[1.0, [], false, false]","[1.0, [""Healthcare""], false, false]",0.5034359106677417,0.00027333189819749997,0.00016615920863069907,True,False,False,0,late_2024_2025,low_moderate,MODERATE,MILP_C,C,principal
+2024-03-04,"[1.0, [""Healthcare""], false, false]","[1.0, [], false, false]",0.23450115802118157,0.0008282141275471034,0.0005034736337672361,False,False,False,0,late_2024_2025,low_moderate,MODERATE,MILP_C,C,principal
+2024-11-14,"[1.0, [], false, false]","[1.0, [""Financial Services""], false, false]",0.25033105580268644,0.002787856596898835,0.0016947456516102342,True,False,False,0,late_2024_2025,low_moderate,MODERATE,MILP_C,C,principal
+2024-11-27,"[1.0, [""Financial Services""], false, false]","[1.0, [], false, false]",0.24943858870600966,0.003094671816751516,0.0018812594630708305,False,False,False,0,late_2024_2025,low_moderate,MODERATE,MILP_C,C,principal
+2024-11-28,"[1.0, [], false, false]","[1.0, [""Financial Services""], false, false]",0.2501123613553787,0.00310685279206088,0.00188866431128321,True,False,False,0,late_2024_2025,low_moderate,MODERATE,MILP_C,C,principal
+2024-12-03,"[1.0, [""Financial Services""], false, false]","[1.0, [], false, false]",0.24986127027886082,0.0033169940484712914,0.0020164097559095995,False,False,False,0,late_2024_2025,low_moderate,MODERATE,MILP_C,C,principal
+2024-12-05,"[1.0, [], false, false]","[1.0, [""Healthcare""], false, false]",0.2502167450990264,0.0032659933312637808,0.001985406280403514,True,False,False,0,late_2024_2025,low_moderate,MODERATE,MILP_C,C,principal
+2024-12-06,"[1.0, [""Healthcare""], false, false]","[1.0, [], false, false]",0.24947453047257653,0.0031903496403263907,0.0019394222737546447,False,False,False,0,late_2024_2025,low_moderate,MODERATE,MILP_C,C,principal
+2024-12-10,"[1.0, [], false, false]","[1.0, [""Healthcare""], false, false]",0.2502984956597626,0.0031903231684193194,0.0019394061814099206,True,False,False,0,late_2024_2025,low_moderate,MODERATE,MILP_C,C,principal
+2025-01-02,"[1.0, [""Healthcare""], false, false]","[1.0, [], false, false]",0.2345230302705846,0.002482938649878047,0.0015093851974942534,False,False,False,0,late_2024_2025,low_moderate,MODERATE,MILP_C,C,principal

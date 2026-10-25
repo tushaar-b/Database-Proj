@@ -1,0 +1,7 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions,window,scenario,tier,policy,regime,kind
+2022-01-04,"[1.0, [], false, false]","[1.0, [""Consumer Goods""], false, false]",0.6828231146453079,0.0017396091719411879,0.001057513174432333,True,False,False,0,primary_2022_2025,high_conservative,CONSERVATIVE,V4,C,principal
+2022-02-02,"[1.0, [""Consumer Goods""], false, false]","[1.0, [], false, false]",0.2475981550803472,0.002114947119700636,0.001285682139635645,False,False,False,0,primary_2022_2025,high_conservative,CONSERVATIVE,V4,C,principal
+2022-02-24,"[1.0, [], false, false]","[1.0, [""Consumer Goods""], false, false]",0.2521608733572452,0.0029282467318112464,0.0017800891986694506,True,False,False,0,primary_2022_2025,high_conservative,CONSERVATIVE,V4,C,principal
+2022-02-28,"[1.0, [""Consumer Goods""], false, false]","[1.0, [], false, false]",0.24908927618297919,0.0029627571068784925,0.0018010681500781108,False,False,False,0,primary_2022_2025,high_conservative,CONSERVATIVE,V4,C,principal
+2022-03-02,"[1.0, [], false, false]","[1.0, [""Consumer Goods""], false, false]",0.2515223548799209,0.0022103556449173593,0.0013436812431108567,True,False,False,0,primary_2022_2025,high_conservative,CONSERVATIVE,V4,C,principal
+2022-03-03,"[1.0, [""Consumer Goods""], false, false]","[1.0, [], false, false]",0.14609715154014888,0.0039349060052220695,0.002392040124755057,False,False,False,0,primary_2022_2025,high_conservative,CONSERVATIVE,V4,C,principal

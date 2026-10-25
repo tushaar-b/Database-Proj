@@ -1,0 +1,3 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions,window,scenario,tier,policy,regime,kind
+2024-01-02,"[1.0, [], false, false]","[1.0, [""Consumer Goods""], false, false]",0.799813978209251,0.00018743219376539304,0.00011394054332242738,True,False,False,0,late_2024_2025,low_conservative,CONSERVATIVE,V3,M,principal
+2024-03-04,"[1.0, [""Consumer Goods""], false, false]","[1.0, [], false, false]",0.21902612675639893,0.000529330220291326,0.00032178128893089726,False,False,False,0,late_2024_2025,low_conservative,CONSERVATIVE,V3,M,principal

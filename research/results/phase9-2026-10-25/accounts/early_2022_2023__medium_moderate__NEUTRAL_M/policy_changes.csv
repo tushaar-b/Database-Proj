@@ -1,0 +1,3 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions,window,scenario,tier,policy,regime,kind
+2022-01-04,"[1.0, [], false, false]","[1.0, [""Healthcare""], false, false]",0.3910652731684686,0.002338392609175372,0.0014215152639363963,True,False,False,0,early_2022_2023,medium_moderate,MODERATE,NEUTRAL_M,M,principal
+2022-02-02,"[1.0, [""Healthcare""], false, false]","[1.0, [], false, false]",0.17818386390824428,0.0024499232864454708,0.0014893150677480066,False,False,False,0,early_2022_2023,medium_moderate,MODERATE,NEUTRAL_M,M,principal

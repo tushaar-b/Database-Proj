@@ -1,0 +1,18 @@
+policy,constraint_or_reason,decision_count,interpretation
+V1,existing_holding_restriction_present,415,overlapping verified constraint presence; not additive causal money attribution
+V1,no_order_due_to_construction_policy,218,overlapping verified constraint presence; not additive causal money attribution
+V1,sector_restriction_present,141,overlapping verified constraint presence; not additive causal money attribution
+V1,whole_share_or_portfolio_guard_residual,121,overlapping verified constraint presence; not additive causal money attribution
+V1,no_eligible_stock,93,overlapping verified constraint presence; not additive causal money attribution
+V2,existing_holding_restriction_present,420,overlapping verified constraint presence; not additive causal money attribution
+V2,whole_share_or_portfolio_guard_residual,203,overlapping verified constraint presence; not additive causal money attribution
+V2,no_eligible_stock,172,overlapping verified constraint presence; not additive causal money attribution
+V2,no_order_due_to_construction_policy,56,overlapping verified constraint presence; not additive causal money attribution
+V2,sector_restriction_present,24,overlapping verified constraint presence; not additive causal money attribution
+V2,no_cost_affordable_stock,1,overlapping verified constraint presence; not additive causal money attribution
+V3,whole_share_or_portfolio_guard_residual,432,overlapping verified constraint presence; not additive causal money attribution
+V3,sector_restriction_present,13,overlapping verified constraint presence; not additive causal money attribution
+V4,whole_share_or_portfolio_guard_residual,432,overlapping verified constraint presence; not additive causal money attribution
+V4,sector_restriction_present,12,overlapping verified constraint presence; not additive causal money attribution
+V5,whole_share_or_portfolio_guard_residual,432,overlapping verified constraint presence; not additive causal money attribution
+V5,sector_restriction_present,12,overlapping verified constraint presence; not additive causal money attribution

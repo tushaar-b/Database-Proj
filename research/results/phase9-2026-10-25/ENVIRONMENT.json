@@ -1,0 +1,18 @@
+{
+  "python": "3.14.3 (main, Feb  3 2026, 15:32:20) [Clang 17.0.0 (clang-1700.6.3.2)]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "processor": "arm",
+  "CPU_brand_and_RAM": "sysctl access denied in sandbox; model/RAM not independently recorded",
+  "versions": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "yfinance": "1.7.0"
+  },
+  "plotting_versions": {
+    "matplotlib": "3.11.2",
+    "xlrd": "2.0.2"
+  },
+  "hardware_timing_scope": "single local process; no CPU pinning, warm caches; controlled repeat samples retained"
+}

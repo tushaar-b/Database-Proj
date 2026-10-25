@@ -1,0 +1,5 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions,window,scenario,tier,policy,regime,kind
+2024-01-02,"[1.0, [], false, false]","[1.0, [""Consumer Goods""], false, false]",0.340397328388779,0.0010148344179943688,0.0006169206188415615,True,False,False,0,late_2024_2025,medium_moderate,MODERATE,V4,C,principal
+2024-02-02,"[1.0, [""Consumer Goods""], false, false]","[1.0, [], false, false]",0.24309381042275627,0.00213119840437725,0.0012955613400469604,False,False,False,0,late_2024_2025,medium_moderate,MODERATE,V4,C,principal
+2024-02-19,"[1.0, [], false, false]","[1.0, [""Automobile""], false, false]",0.25109416198312506,0.0019290870715630763,0.0011726973079410799,True,False,False,0,late_2024_2025,medium_moderate,MODERATE,V4,C,principal
+2024-02-20,"[1.0, [""Automobile""], false, false]","[1.0, [], false, false]",0.24743098450810155,0.0019738757767971526,0.0011999244843751687,False,False,False,0,late_2024_2025,medium_moderate,MODERATE,V4,C,principal

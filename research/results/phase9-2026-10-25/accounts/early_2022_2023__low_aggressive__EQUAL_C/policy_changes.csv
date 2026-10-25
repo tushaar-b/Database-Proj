@@ -1,0 +1,6 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions,window,scenario,tier,policy,regime,kind
+2022-01-04,"[1.0, [], false, false]","[1.0, [""Metals & Mining""], false, false]",0.30391229389183066,0.0009991057046051795,0.0006073590909453978,True,False,False,0,early_2022_2023,low_aggressive,AGGRESSIVE,EQUAL_C,C,principal
+2022-02-02,"[1.0, [""Metals & Mining""], false, false]","[1.0, [""Consumer Goods""], false, false]",0.2629854708359298,0.001297503416943086,0.0007887558765611464,True,False,False,0,early_2022_2023,low_aggressive,AGGRESSIVE,EQUAL_C,C,principal
+2022-03-03,"[1.0, [""Consumer Goods""], false, false]","[1.0, [], false, false]",0.20804495198317616,0.0026550341338199353,0.001614002512960447,False,False,False,0,early_2022_2023,low_aggressive,AGGRESSIVE,EQUAL_C,C,principal
+2022-05-26,"[1.0, [], false, false]","[1.0, [""Automobile""], false, false]",0.25045349575301024,0.0035996611453415154,0.0021882438573504652,True,False,False,0,early_2022_2023,low_aggressive,AGGRESSIVE,EQUAL_C,C,principal
+2022-05-30,"[1.0, [""Automobile""], false, false]","[1.0, [], false, false]",0.24785922523014328,0.003677121916414257,0.002235332471984351,False,False,False,0,early_2022_2023,low_aggressive,AGGRESSIVE,EQUAL_C,C,principal

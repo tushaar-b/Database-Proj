@@ -1,0 +1,11 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions,window,scenario,tier,policy,regime,kind
+2022-01-04,"[1.0, [], false, false]","[1.0, [""Services""], false, false]",0.8381575749888073,0.0008501965891615639,0.0005168368323170601,True,False,False,0,early_2022_2023,low_moderate,MODERATE,SIP_M,M,principal
+2022-02-02,"[1.0, [""Services""], false, false]","[1.0, [""Information Technology""], false, false]",0.45913827756669956,0.0011680768748635057,0.0007100771275765992,True,False,False,0,early_2022_2023,low_moderate,MODERATE,SIP_M,M,principal
+2022-04-01,"[1.0, [""Information Technology""], false, false]","[1.0, [""Services""], false, false]",0.2619036236678838,0.002001906419860574,0.0012169643889729934,True,False,False,0,early_2022_2023,low_moderate,MODERATE,SIP_M,M,principal
+2022-04-04,"[1.0, [""Services""], false, false]","[1.0, [], false, false]",0.24798590843492355,0.0025708319899173018,0.0015628157993418247,False,False,False,0,early_2022_2023,low_moderate,MODERATE,SIP_M,M,principal
+2022-04-07,"[1.0, [], false, false]","[1.0, [""Power""], false, false]",0.25019248713639414,0.0026739321681898435,0.0016254906797506647,True,False,False,0,early_2022_2023,low_moderate,MODERATE,SIP_M,M,principal
+2022-04-08,"[1.0, [""Power""], false, false]","[1.0, [], false, false]",0.24868602593808276,0.0027047181645079195,0.0016442055711294343,False,False,False,0,early_2022_2023,low_moderate,MODERATE,SIP_M,M,principal
+2022-04-18,"[1.0, [], false, false]","[1.0, [""Power""], false, false]",0.2523593295859169,0.0017334601557027205,0.0010537751706399517,True,False,False,0,early_2022_2023,low_moderate,MODERATE,SIP_M,M,principal
+2022-04-25,"[1.0, [""Power""], false, false]","[1.0, [], false, false]",0.24985223850307883,0.0018773478155831214,0.0011412448726949066,False,False,False,0,early_2022_2023,low_moderate,MODERATE,SIP_M,M,principal
+2022-04-28,"[1.0, [], false, false]","[1.0, [""Power""], false, false]",0.250130554799783,0.0020473214428475364,0.001244572305682393,True,False,False,0,early_2022_2023,low_moderate,MODERATE,SIP_M,M,principal
+2022-05-04,"[1.0, [""Power""], false, false]","[1.0, [], false, false]",0.23815540761697432,0.002568430310876524,0.0015613558120829935,False,False,False,0,early_2022_2023,low_moderate,MODERATE,SIP_M,M,principal

@@ -1,0 +1,7 @@
+date,decision_date,ticker,side,quantity,notional,fee,slippage_cost,realized_gain,new_position,topup,feedback_attributable,window,scenario,tier,policy,regime,kind
+2024-01-02,2024-01-01,SUNPHARMA,BUY,1,1296.8480511474609,1.296848051147461,0.6480999755859375,0.0,True,False,False,late_2024_2025,medium_conservative,CONSERVATIVE,V1,M,principal
+2024-02-02,2024-02-01,ICICIBANK,BUY,1,1024.512,1.0245119999999999,0.512,0.0,True,False,False,late_2024_2025,medium_conservative,CONSERVATIVE,V1,M,principal
+2024-02-02,2024-02-01,TATACONSUM,BUY,1,1163.331375,1.163331375,0.581375,0.0,True,False,False,late_2024_2025,medium_conservative,CONSERVATIVE,V1,M,principal
+2025-03-04,2025-03-03,JSWSTEEL,BUY,1,974.5870255737306,0.9745870255737306,0.4870499877929688,0.0,True,False,False,late_2024_2025,medium_conservative,CONSERVATIVE,V1,M,principal
+2025-08-04,2025-08-01,NTPC,BUY,4,1328.664,1.328664,0.664,0.0,True,False,False,late_2024_2025,medium_conservative,CONSERVATIVE,V1,M,principal
+2025-10-03,2025-10-01,COALINDIA,BUY,4,1534.1667244262694,1.5341667244262693,0.7667000122070312,0.0,True,False,False,late_2024_2025,medium_conservative,CONSERVATIVE,V1,M,principal

@@ -1,0 +1,4 @@
+date,decision_date,ticker,side,quantity,notional,fee,slippage_cost,realized_gain,new_position,topup,feedback_attributable,window,scenario,tier,policy,regime,kind
+2022-01-04,2022-01-03,SUNPHARMA,BUY,1,838.1188622131348,0.8381188622131348,0.41885000610351564,0.0,True,False,False,early_2022_2023,medium_conservative,CONSERVATIVE,V1,M,principal
+2022-02-02,2022-02-01,SBILIFE,BUY,1,1220.7100255737305,1.2207100255737304,0.6100499877929688,0.0,True,False,False,early_2022_2023,medium_conservative,CONSERVATIVE,V1,M,principal
+2022-05-04,2022-05-02,POWERGRID,BUY,6,1426.3127755737303,1.4263127755737304,0.7127999877929687,0.0,True,False,False,early_2022_2023,medium_conservative,CONSERVATIVE,V1,M,principal

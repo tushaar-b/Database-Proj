@@ -1,0 +1,9 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions,window,scenario,tier,policy,regime,kind
+2022-01-04,"[1.0, [], false, false]","[1.0, [""Services""], false, false]",1.0,0.004777871351040953,0.002904481064462585,True,False,False,0,early_2022_2023,medium_aggressive,AGGRESSIVE,SIP_M,M,principal
+2022-02-24,"[1.0, [""Services""], false, false]","[1.0, [""Healthcare""], false, false]",0.5000017325917465,0.006834730904173408,0.004154851613479275,True,False,False,0,early_2022_2023,medium_aggressive,AGGRESSIVE,SIP_M,M,principal
+2022-02-25,"[1.0, [""Healthcare""], false, false]","[1.0, [""Services""], false, false]",0.5000000045418779,0.008119297610167152,0.004935743228065138,True,False,False,0,early_2022_2023,medium_aggressive,AGGRESSIVE,SIP_M,M,principal
+2022-02-28,"[1.0, [""Services""], false, false]","[1.0, [""Healthcare""], false, false]",0.5000409341076002,0.008494769351039882,0.005163993526468014,True,False,False,0,early_2022_2023,medium_aggressive,AGGRESSIVE,SIP_M,M,principal
+2022-03-03,"[1.0, [""Healthcare""], false, false]","[1.0, [""Metals & Mining""], false, false]",0.3314780215145643,0.011331076899180264,0.006888192643878579,True,False,False,0,early_2022_2023,medium_aggressive,AGGRESSIVE,SIP_M,M,principal
+2022-05-04,"[1.0, [""Metals & Mining""], false, false]","[1.0, [], false, false]",0.24910763995131074,0.01035128265524521,0.006292573042702255,False,False,False,0,early_2022_2023,medium_aggressive,AGGRESSIVE,SIP_M,M,principal
+2022-05-06,"[1.0, [], false, false]","[1.0, [""Services""], false, false]",0.25036285465409625,0.010319246148177846,0.0062730979624181435,True,False,False,0,early_2022_2023,medium_aggressive,AGGRESSIVE,SIP_M,M,principal
+2022-05-09,"[1.0, [""Services""], false, false]","[1.0, [], false, false]",0.24897405911923867,0.010332659344475524,0.006281251881140136,False,False,False,0,early_2022_2023,medium_aggressive,AGGRESSIVE,SIP_M,M,principal

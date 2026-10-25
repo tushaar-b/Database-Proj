@@ -1,0 +1,6 @@
+metric,breach_date,breach_index,resolved_date,resolved,first_changed_recommendation,response_sessions,left_censored,window,scenario,tier,policy,regime,kind
+hhi,2024-01-02,742,2024-05-24,True,2024-02-01,20.0,False,late_2024_2025,low_moderate,MODERATE,MILP_M,M,principal
+hhi,2024-05-28,838,2024-05-29,True,,,False,late_2024_2025,low_moderate,MODERATE,MILP_M,M,principal
+hhi,2024-05-30,840,2024-06-03,True,,,False,late_2024_2025,low_moderate,MODERATE,MILP_M,M,principal
+hhi,2024-10-08,929,2024-10-10,True,,,False,late_2024_2025,low_moderate,MODERATE,MILP_M,M,principal
+hhi,2024-10-17,936,2024-11-04,True,,,False,late_2024_2025,low_moderate,MODERATE,MILP_M,M,principal

@@ -1,0 +1,6 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions,window,scenario,tier,policy,regime,kind
+2024-01-02,"[1.0, [], false, false]","[1.0, [""Capital Goods""], false, false]",1.0,0.0012073034648676833,0.0007339230789469199,True,False,False,0,late_2024_2025,medium_conservative,CONSERVATIVE,SIP_M,M,principal
+2024-03-04,"[1.0, [""Capital Goods""], false, false]","[1.0, [""Construction""], false, false]",0.4297617306208089,0.0022428623969144397,0.0013634421865741273,True,False,False,0,late_2024_2025,medium_conservative,CONSERVATIVE,SIP_M,M,principal
+2024-05-03,"[1.0, [""Construction""], false, false]","[1.0, [""Energy""], false, false]",0.27306073283584786,0.002245833394336059,0.0013652482640340784,True,False,False,0,late_2024_2025,medium_conservative,CONSERVATIVE,SIP_M,M,principal
+2024-05-30,"[1.0, [""Energy""], false, false]","[1.0, [""Capital Goods""], false, false]",0.27461050427343103,0.0031123929701146334,0.0018920322006775888,True,False,False,0,late_2024_2025,medium_conservative,CONSERVATIVE,SIP_M,M,principal
+2024-06-04,"[1.0, [""Capital Goods""], false, false]","[1.0, [], false, false]",0.21691664517409032,0.0059523876195465624,0.003618472717049582,False,False,False,0,late_2024_2025,medium_conservative,CONSERVATIVE,SIP_M,M,principal

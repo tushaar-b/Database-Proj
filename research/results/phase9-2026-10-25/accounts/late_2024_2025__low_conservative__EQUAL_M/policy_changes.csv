@@ -1,0 +1,7 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions,window,scenario,tier,policy,regime,kind
+2024-01-02,"[1.0, [], false, false]","[1.0, [""Services""], false, false]",1.0,0.00058064001457743,0.0003529726532385593,True,False,False,0,late_2024_2025,low_conservative,CONSERVATIVE,EQUAL_M,M,principal
+2024-03-05,"[1.0, [""Services""], false, false]","[1.0, [], false, false]",0.24966690183306173,0.0006914327448743601,0.0004203238570664803,False,False,False,0,late_2024_2025,low_conservative,CONSERVATIVE,EQUAL_M,M,principal
+2024-03-06,"[1.0, [], false, false]","[1.0, [""Services""], false, false]",0.25036421404205184,0.0006338456550443762,0.0003853165076257606,True,False,False,0,late_2024_2025,low_conservative,CONSERVATIVE,EQUAL_M,M,principal
+2024-03-07,"[1.0, [""Services""], false, false]","[1.0, [], false, false]",0.24955007398913764,0.0006300096516492746,0.00038298459066825205,False,False,False,0,late_2024_2025,low_conservative,CONSERVATIVE,EQUAL_M,M,principal
+2024-03-11,"[1.0, [], false, false]","[1.0, [""Services""], false, false]",0.2504541047219142,0.0006344282850084028,0.0003856706899747129,True,False,False,0,late_2024_2025,low_conservative,CONSERVATIVE,EQUAL_M,M,principal
+2024-04-02,"[1.0, [""Services""], false, false]","[1.0, [], false, false]",0.2086794908319124,0.0009764697655674256,0.0005935986416823256,False,False,False,0,late_2024_2025,low_conservative,CONSERVATIVE,EQUAL_M,M,principal

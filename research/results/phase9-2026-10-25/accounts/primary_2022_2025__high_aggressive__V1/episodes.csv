@@ -1,0 +1,2 @@
+metric,breach_date,breach_index,resolved_date,resolved,first_changed_recommendation,response_sessions,left_censored,window,scenario,tier,policy,regime,kind
+hhi,2022-01-04,249,2022-02-02,True,,,False,primary_2022_2025,high_aggressive,AGGRESSIVE,V1,M,principal
