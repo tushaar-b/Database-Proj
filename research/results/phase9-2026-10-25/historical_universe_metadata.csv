@@ -1,0 +1,41 @@
+ticker,sector,rows,first,last,duplicates,missing_prices,nonpositive_prices,unexplained_adjustment_factor_changes,split_events,dividend_events,provider_first_trade_date,exchange_listing_verified,historical_sector_verified
+ADANIENT,Metals & Mining,1435,2021-01-01,2026-10-22,0,0,0,0,0,6,2002-07-01,False,False
+ADANIPORTS,Services,1435,2021-01-01,2026-10-22,0,0,0,0,0,6,2007-11-27,False,False
+APOLLOHOSP,Healthcare,1435,2021-01-01,2026-10-22,0,0,0,0,0,10,2002-07-01,False,False
+ASIANPAINT,Consumer Goods,1435,2021-01-01,2026-10-22,0,0,0,0,0,11,2002-07-01,False,False
+AXISBANK,Financial Services,1435,2021-01-01,2026-10-22,0,0,0,0,0,5,1998-11-27,False,False
+BAJAJ-AUTO,Automobile,1435,2021-01-01,2026-10-22,0,0,0,0,0,6,2002-07-01,False,False
+BEL,Capital Goods,1435,2021-01-01,2026-10-22,0,0,0,0,1,16,2002-07-01,False,False
+BPCL,Energy,1435,2021-01-01,2026-10-22,0,0,0,0,1,13,1996-01-02,False,False
+BRITANNIA,Consumer Goods,1435,2021-01-01,2026-10-22,0,0,0,0,0,7,1996-01-02,False,False
+CIPLA,Healthcare,1435,2021-01-01,2026-10-22,0,0,0,0,0,6,1996-01-01,False,False
+COALINDIA,Energy,1435,2021-01-01,2026-10-22,0,0,0,0,0,19,2010-11-04,False,False
+DIVISLAB,Healthcare,1435,2021-01-01,2026-10-22,0,0,0,0,0,6,2003-03-12,False,False
+DRREDDY,Healthcare,1435,2021-01-01,2026-10-22,0,0,0,0,1,6,1996-01-01,False,False
+EICHERMOT,Automobile,1435,2021-01-01,2026-10-22,0,0,0,0,0,6,1996-01-01,False,False
+HCLTECH,Information Technology,1435,2021-01-01,2026-10-22,0,0,0,0,0,24,2002-08-12,False,False
+HEROMOTOCO,Automobile,1435,2021-01-01,2026-10-22,0,0,0,0,0,12,2002-07-01,False,False
+HINDALCO,Metals & Mining,1435,2021-01-01,2026-10-22,0,0,0,0,0,6,1996-01-01,False,False
+HINDUNILVR,Consumer Goods,1435,2021-01-01,2026-10-22,0,0,0,0,0,11,1996-01-01,False,False
+ICICIBANK,Financial Services,1435,2021-01-01,2026-10-22,0,0,0,0,0,6,2002-07-01,False,False
+INDUSINDBK,Financial Services,1435,2021-01-01,2026-10-22,0,0,0,0,0,5,2002-07-01,False,False
+INFY,Information Technology,1435,2021-01-01,2026-10-22,0,0,0,0,0,11,1996-01-01,False,False
+JSWSTEEL,Metals & Mining,1435,2021-01-01,2026-10-22,0,0,0,0,0,6,2003-05-08,False,False
+KOTAKBANK,Financial Services,1435,2021-01-01,2026-10-22,0,0,0,0,1,6,2001-07-02,False,False
+LT,Construction,1435,2021-01-01,2026-10-22,0,0,0,0,0,6,2002-07-01,False,False
+M&M,Automobile,1435,2021-01-01,2026-10-22,0,0,0,0,0,6,1996-01-01,False,False
+MARUTI,Automobile,1435,2021-01-01,2026-10-22,0,0,0,0,0,6,2003-07-09,False,False
+NESTLEIND,Consumer Goods,1435,2021-01-01,2026-10-22,0,0,0,0,2,12,2002-08-12,False,False
+NTPC,Power,1435,2021-01-01,2026-10-22,0,0,0,0,0,15,2004-11-05,False,False
+ONGC,Energy,1435,2021-01-01,2026-10-22,0,0,0,0,0,17,1996-01-01,False,False
+POWERGRID,Power,1435,2021-01-01,2026-10-22,0,0,0,0,2,17,2007-10-05,False,False
+SBILIFE,Financial Services,1435,2021-01-01,2026-10-22,0,0,0,0,0,6,2017-10-03,False,False
+SBIN,Financial Services,1435,2021-01-01,2026-10-22,0,0,0,0,0,6,1996-01-01,False,False
+SUNPHARMA,Healthcare,1435,2021-01-01,2026-10-22,0,0,0,0,0,12,1996-01-01,False,False
+TATACONSUM,Consumer Goods,1435,2021-01-01,2026-10-22,0,0,0,0,0,6,1996-01-01,False,False
+TATASTEEL,Metals & Mining,1435,2021-01-01,2026-10-22,0,0,0,0,1,6,1996-01-01,False,False
+TCS,Information Technology,1435,2021-01-01,2026-10-22,0,0,0,0,0,24,2002-08-12,False,False
+TECHM,Information Technology,1435,2021-01-01,2026-10-22,0,0,0,0,0,11,2006-08-28,False,False
+TITAN,Consumer Goods,1435,2021-01-01,2026-10-22,0,0,0,0,0,6,1996-01-01,False,False
+ULTRACEMCO,Construction,1435,2021-01-01,2026-10-22,0,0,0,0,0,6,2002-08-12,False,False
+WIPRO,Information Technology,1435,2021-01-01,2026-10-22,0,0,0,0,1,9,1996-01-01,False,False
