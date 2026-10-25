@@ -1,0 +1,4 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions
+2022-01-04,"[1.0, [], false, false]","[1.0, [""Services""], false, false]",0.41165123240950097,0.0003684076526159918,0.00022395601982735065,True,False,False,0
+2022-02-02,"[1.0, [""Services""], false, false]","[1.0, [""Financial Services""], false, false]",0.26121547492282293,0.0004404889372197854,0.0002677744299208422,True,False,False,0
+2022-03-03,"[1.0, [""Financial Services""], false, false]","[1.0, [], false, false]",0.19928737771391508,0.0008313613118388531,0.0005053868157075095,False,False,False,0

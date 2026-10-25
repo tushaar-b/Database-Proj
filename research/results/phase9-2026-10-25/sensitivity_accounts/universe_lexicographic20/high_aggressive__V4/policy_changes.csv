@@ -1,0 +1,3 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions
+2022-01-04,"[1.0, [], false, false]","[1.0, [""Consumer Goods""], false, false]",0.3339770543317117,0.005715097171858456,0.003474223204777177,True,False,False,0
+2022-02-02,"[1.0, [""Consumer Goods""], false, false]","[1.0, [], false, false]",0.1677205000501351,0.007826277369194256,0.004757615422002587,False,False,False,0

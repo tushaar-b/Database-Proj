@@ -1,0 +1,17 @@
+name,carry,feasible,topups,guards,redirect,selling,momentum
+V1,False,False,False,False,False,False,True
+V3,False,True,True,True,False,False,True
+V4,True,True,True,True,False,False,True
+GREEDY_M,False,True,True,True,False,False,True
+GREEDY_C,True,True,True,True,False,False,True
+EQUAL_M,False,True,True,True,False,False,True
+EQUAL_C,True,True,True,True,False,False,True
+SIP_M,False,True,True,True,False,False,True
+SIP_C,True,True,True,True,False,False,True
+MILP_M,False,True,True,True,False,False,True
+MILP_C,True,True,True,True,False,False,True
+NEUTRAL_M,False,True,True,True,False,False,True
+NEUTRAL_C,True,True,True,True,False,False,True
+RANK_GUARD_M,False,False,False,True,False,False,True
+FEAS_NO_TOPUP_M,False,True,False,True,False,False,True
+RANK_TOPUP_M,False,False,True,True,False,False,True

@@ -1,0 +1,34 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions
+2022-01-04,"[1.0, [], false, false]","[1.0, [""Healthcare""], false, false]",0.6262732932002122,0.00028180614538897273,0.00017131072668022658,True,False,False,0
+2022-04-04,"[1.0, [""Healthcare""], false, false]","[1.0, [""Consumer Goods""], false, false]",0.29294439816548634,0.0009617131134851438,0.0005846280325137652,True,False,False,0
+2022-06-02,"[1.0, [""Consumer Goods""], false, false]","[1.0, [], false, false]",0.22692556408284842,0.0013259010173978928,0.0008060188555610291,False,False,False,0
+2024-01-23,"[1.0, [], false, false]","[1.0, [""Financial Services""], false, false]",0.2513691251061441,0.002168585746337302,0.0013182892074998797,True,False,False,0
+2024-01-24,"[1.0, [""Financial Services""], false, false]","[1.0, [], false, false]",0.24578193619362937,0.0021732423838715233,0.0013211199901954549,False,False,False,0
+2024-03-13,"[1.0, [], false, false]","[1.0, [""Financial Services""], false, false]",0.25420518669961223,0.0029660204480764863,0.0018030519441194445,True,False,False,0
+2024-04-02,"[1.0, [""Financial Services""], false, false]","[1.0, [], false, false]",0.24626097995952034,0.0031272077801813535,0.0019010381642439837,False,False,False,0
+2024-04-29,"[1.0, [], false, false]","[1.0, [""Financial Services""], false, false]",0.2546542331524604,0.0032084915813791136,0.0019504508093490052,True,False,False,0
+2024-05-03,"[1.0, [""Financial Services""], false, false]","[1.0, [], false, false]",0.24852730281073065,0.0026880322455567923,0.001634062155353673,False,False,False,0
+2024-06-26,"[1.0, [], false, false]","[1.0, [""Financial Services""], false, false]",0.2513329950913365,0.007358147376096033,0.004473037918599412,True,False,False,0
+2024-06-28,"[1.0, [""Financial Services""], false, false]","[1.0, [], false, false]",0.24924689551086976,0.007310336712640108,0.004443973685495506,False,False,False,0
+2024-09-19,"[1.0, [], false, false]","[1.0, [""Financial Services""], false, false]",0.2518870338944711,0.0028942885575725975,0.0017594459316550744,True,False,False,0
+2024-09-27,"[1.0, [""Financial Services""], false, false]","[1.0, [], false, false]",0.24723367218835554,0.0028705553492690277,0.0017450184494036641,False,False,False,0
+2024-10-28,"[1.0, [], false, false]","[1.0, [""Financial Services""], false, false]",0.25045992351259716,0.0033764709232753103,0.0020525659108056597,True,False,False,0
+2024-10-31,"[1.0, [""Financial Services""], false, false]","[1.0, [], false, false]",0.2491222232933373,0.003710230203593443,0.0022554590903303604,False,False,False,0
+2025-01-07,"[1.0, [], false, false]","[1.0, [""Financial Services""], false, false]",0.25088435386313596,0.002546175817565828,0.001547827244720868,True,False,False,0
+2025-01-08,"[1.0, [""Financial Services""], false, false]","[1.0, [], false, false]",0.24946249265641127,0.002544145776849128,0.0015465931774158832,False,False,False,0
+2025-01-13,"[1.0, [], false, false]","[1.0, [""Financial Services""], false, false]",0.2500302434710807,0.002604480537683508,0.0015832708435766006,True,False,False,0
+2025-01-17,"[1.0, [""Financial Services""], false, false]","[1.0, [], false, false]",0.24798155851288534,0.002646177747419045,0.0016086186914401489,False,False,False,0
+2025-01-27,"[1.0, [], false, false]","[1.0, [""Financial Services""], false, false]",0.25311735559432536,0.0027495453576157057,0.0016714561444472376,True,False,False,0
+2025-01-31,"[1.0, [""Financial Services""], false, false]","[1.0, [], false, false]",0.24949764886444986,0.003369933230044744,0.0020485916292065313,False,False,False,0
+2025-02-01,"[1.0, [], false, false]","[1.0, [""Financial Services""], false, false]",0.25246266780415466,0.0032753539189938996,0.0019910966072911244,True,False,False,0
+2025-02-05,"[1.0, [""Financial Services""], false, false]","[1.0, [], false, false]",0.24983309700610515,0.0036286969692547804,0.0022058948141366447,False,False,False,0
+2025-02-06,"[1.0, [], false, false]","[1.0, [""Financial Services""], false, false]",0.25095160499883107,0.0035891960137645613,0.0021818820752368155,True,False,False,0
+2025-02-07,"[1.0, [""Financial Services""], false, false]","[1.0, [], false, false]",0.24975577026000037,0.0035634285001019464,0.0021662179331926727,False,False,False,0
+2025-02-10,"[1.0, [], false, false]","[1.0, [""Financial Services""], false, false]",0.25146394984751164,0.003533313261897099,0.002147910797505835,True,False,False,0
+2025-03-05,"[1.0, [""Financial Services""], false, false]","[1.0, [], false, false]",0.24902791954634848,0.0031869378762177537,0.001937348253019911,False,False,False,0
+2025-03-12,"[1.0, [], false, false]","[1.0, [""Financial Services""], false, false]",0.2501579014760015,0.003285452453640364,0.001997235534127881,True,False,False,0
+2025-05-21,"[1.0, [""Financial Services""], false, false]","[1.0, [], false, false]",0.2489939120258603,0.005056411073018884,0.0030738061234157348,False,False,False,0
+2025-07-21,"[1.0, [], false, false]","[1.0, [""Financial Services""], false, false]",0.2524245674300652,0.0022538040356865963,0.001370093638715256,True,False,False,0
+2025-08-13,"[1.0, [""Financial Services""], false, false]","[1.0, [], false, false]",0.24962637483200673,0.0021654360169523126,0.0013163744783904635,False,False,False,0
+2025-08-14,"[1.0, [], false, false]","[1.0, [""Financial Services""], false, false]",0.25071110739746166,0.0021579131973065865,0.0013118013357486847,True,False,False,0
+2025-08-29,"[1.0, [""Financial Services""], false, false]","[1.0, [], false, false]",0.24993188835228808,0.0023367866629568665,0.001420539004837001,False,False,False,0

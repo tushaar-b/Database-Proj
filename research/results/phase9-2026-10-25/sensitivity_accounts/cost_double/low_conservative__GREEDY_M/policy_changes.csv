@@ -1,0 +1,17 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions
+2022-01-04,"[1.0, [], false, false]","[1.0, [""Healthcare""], false, false]",0.5630349070410091,0.0002592662310642728,0.0001576086511029014,True,False,False,0
+2022-02-02,"[1.0, [""Healthcare""], false, false]","[1.0, [""Financial Services""], false, false]",0.3832367372613854,0.00034093924192246894,0.0002072578978252091,True,False,False,0
+2022-04-04,"[1.0, [""Financial Services""], false, false]","[1.0, [""Power""], false, false]",0.2737911945182141,0.0007260071606391355,0.00044134173899035593,True,False,False,0
+2022-05-04,"[1.0, [""Power""], false, false]","[1.0, [], false, false]",0.2078770956202366,0.000774595353347428,0.0004708786342537556,False,False,False,0
+2023-03-13,"[1.0, [], false, false]","[1.0, [""Power""], false, false]",0.25042626241614224,0.000960372292114296,0.0005838129435345264,True,False,False,0
+2023-03-21,"[1.0, [""Power""], false, false]","[1.0, [], false, false]",0.24903583892676268,0.000751549428236443,0.0004568689533352237,False,False,False,0
+2023-03-28,"[1.0, [], false, false]","[1.0, [""Power""], false, false]",0.2506922891419523,0.0007050352000498427,0.00042859282677801985,True,False,False,0
+2023-03-31,"[1.0, [""Power""], false, false]","[1.0, [], false, false]",0.24887580403620724,0.0007742454752547672,0.0004706659424041138,False,False,False,0
+2023-07-05,"[1.0, [], false, false]","[1.0, [""Power""], false, false]",0.25036283784790825,0.0008374469936409207,0.0005090863183227481,True,False,False,0
+2023-07-06,"[1.0, [""Power""], false, false]","[1.0, [], false, false]",0.24979841243240064,0.0009328347580339673,0.0005670728012364543,False,False,False,0
+2023-07-27,"[1.0, [], false, false]","[1.0, [""Power""], false, false]",0.25002154076676375,0.0011437173751987003,0.0006952689210934348,True,False,False,0
+2023-08-02,"[1.0, [""Power""], false, false]","[1.0, [], false, false]",0.24860236738123306,0.0014032355885833109,0.0008530307529381829,False,False,False,0
+2023-10-26,"[1.0, [], false, false]","[1.0, [""Power""], false, false]",0.2500228455783917,0.0015430421729795642,0.0009380195580422883,True,False,False,0
+2023-10-30,"[1.0, [""Power""], false, false]","[1.0, [], false, false]",0.24988300652491208,0.0015554713652707374,0.0009455752980369224,False,False,False,0
+2023-10-31,"[1.0, [], false, false]","[1.0, [""Power""], false, false]",0.25056643456653604,0.0015526308792880457,0.0009438485588377178,True,False,False,0
+2023-11-02,"[1.0, [""Power""], false, false]","[1.0, [], false, false]",0.2298212702839318,0.0015795919197445806,0.0009602382490848515,False,False,False,0

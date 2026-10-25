@@ -1,0 +1,6 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions
+2022-01-04,"[1.0, [], false, false]","[1.0, [""Information Technology""], false, false]",0.3432448415965778,0.0013834168543329515,0.0008409828901720071,True,False,False,0
+2022-01-06,"[1.0, [""Information Technology""], false, false]","[1.0, [""Consumer Goods""], false, false]",0.3427887577813706,0.0013385552764897852,0.0008137114142795047,True,False,False,0
+2022-01-12,"[1.0, [""Consumer Goods""], false, false]","[1.0, [""Information Technology""], false, false]",0.3433263034934891,0.001286343915619967,0.0007819719851793112,True,False,False,0
+2022-01-21,"[1.0, [""Information Technology""], false, false]","[1.0, [""Consumer Goods""], false, false]",0.34319114286362346,0.001153088988767887,0.0007009659506187763,True,False,False,0
+2022-02-02,"[1.0, [""Consumer Goods""], false, false]","[1.0, [], false, false]",0.1789765741524089,0.002200696772995561,0.0013378095884471494,False,False,False,0

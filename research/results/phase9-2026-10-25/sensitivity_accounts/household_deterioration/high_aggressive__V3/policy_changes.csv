@@ -1,0 +1,3 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions
+2022-01-04,"[1.0, [], false, false]","[1.0, [""Information Technology""], false, false]",0.34332749973119886,0.005987033824876069,0.0036395342400462423,True,False,False,0
+2022-02-02,"[1.0, [""Information Technology""], false, false]","[1.0, [], false, false]",0.1692781950152097,0.007985717321771392,0.004854539405332153,False,False,False,0

@@ -1,0 +1,8 @@
+metric,breach_date,breach_index,resolved_date,resolved,first_changed_recommendation,response_sessions,left_censored
+hhi,2022-02-02,269,2023-03-02,True,2022-03-02,19.0,False
+hhi,2023-03-03,539,2023-03-08,True,,,False
+hhi,2023-05-05,578,2023-05-08,True,,,False
+hhi,2023-05-11,582,2023-05-24,True,,,False
+hhi,2023-05-31,596,2023-06-01,True,,,False
+hhi,2023-06-07,601,2023-07-06,True,,,False
+hhi,2023-11-23,716,2024-08-02,True,2024-06-03,126.0,False

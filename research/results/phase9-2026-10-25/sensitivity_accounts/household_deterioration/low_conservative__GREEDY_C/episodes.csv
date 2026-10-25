@@ -1,0 +1,16 @@
+metric,breach_date,breach_index,resolved_date,resolved,first_changed_recommendation,response_sessions,left_censored
+hhi,2022-01-04,249,2022-08-02,True,2022-05-02,79.0,False
+hhi,2022-09-16,423,2022-10-04,True,,,False
+hhi,2023-03-13,544,2023-03-17,True,,,False
+hhi,2023-03-28,555,2023-03-31,True,,,False
+hhi,2024-02-05,764,2024-02-06,True,,,False
+hhi,2024-02-07,766,2024-02-16,True,,,False
+hhi,2024-02-19,774,2024-02-26,True,,,False
+hhi,2024-02-27,780,2024-03-01,True,,,False
+hhi,2024-03-13,790,2024-03-14,True,,,False
+hhi,2024-03-18,793,2024-03-21,True,,,False
+hhi,2024-03-22,797,2024-03-26,True,,,False
+hhi,2024-09-05,907,2024-10-03,True,,,False
+hhi,2024-12-20,980,2025-01-02,True,,,False
+hhi,2025-03-17,1039,2025-03-27,True,,,False
+hhi,2025-03-28,1048,2025-04-01,True,,,False

@@ -1,0 +1,36 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions
+2022-01-04,"[1.0, [], false, false]","[1.0, [""Information Technology""], false, false]",0.9226567951923457,0.001720376850889702,0.0010458217938539222,True,False,False,0
+2022-03-03,"[1.0, [""Information Technology""], false, false]","[1.0, [""Consumer Goods""], false, false]",0.36250429470647955,0.004199075158083454,0.002552629275430671,True,False,False,0
+2022-04-04,"[1.0, [""Consumer Goods""], false, false]","[1.0, [""Information Technology""], false, false]",0.32467212208709195,0.0037243360785745466,0.0022640340903188733,True,False,False,0
+2022-04-18,"[1.0, [""Information Technology""], false, false]","[1.0, [""Consumer Goods""], false, false]",0.31829954382016323,0.003570986240828861,0.0021708123044552347,True,False,False,0
+2022-05-04,"[1.0, [""Consumer Goods""], false, false]","[1.0, [""Healthcare""], false, false]",0.3042758970750846,0.004299651358495647,0.0026137698227937066,True,False,False,0
+2022-06-02,"[1.0, [""Healthcare""], false, false]","[1.0, [""Consumer Goods""], false, false]",0.2916085387996577,0.005810960168596525,0.00353249858273345,True,False,False,0
+2022-07-04,"[1.0, [""Consumer Goods""], false, false]","[1.0, [""Healthcare""], false, false]",0.291373951633044,0.004806514714933812,0.0029218934437287613,True,False,False,0
+2022-08-03,"[1.0, [""Healthcare""], false, false]","[1.0, [""Consumer Goods""], false, false]",0.275455988291823,0.004437237174102394,0.0026974086164756193,True,False,False,0
+2022-08-04,"[1.0, [""Consumer Goods""], false, false]","[1.0, [""Healthcare""], false, false]",0.2760092320063073,0.004507120407427627,0.0027398908251839676,True,False,False,0
+2022-08-22,"[1.0, [""Healthcare""], false, false]","[1.0, [""Consumer Goods""], false, false]",0.27341520638129874,0.004302147219021548,0.0026152870632349836,True,False,False,0
+2022-08-23,"[1.0, [""Consumer Goods""], false, false]","[1.0, [""Healthcare""], false, false]",0.27427924099360723,0.004201183484077703,0.0025539109325700324,True,False,False,0
+2022-08-24,"[1.0, [""Healthcare""], false, false]","[1.0, [""Consumer Goods""], false, false]",0.27365357343969043,0.0041254055915272755,0.0025078453443934806,True,False,False,0
+2022-09-02,"[1.0, [""Consumer Goods""], false, false]","[1.0, [""Healthcare""], false, false]",0.27601487202935315,0.004535953670383195,0.002757418644609845,True,False,False,0
+2022-10-04,"[1.0, [""Healthcare""], false, false]","[1.0, [""Consumer Goods""], false, false]",0.2787454513599542,0.004847057701562929,0.0029465396362084676,True,False,False,0
+2022-10-14,"[1.0, [""Consumer Goods""], false, false]","[1.0, [""Healthcare""], false, false]",0.2777210601040479,0.0047092222372251465,0.002862749080380028,True,False,False,0
+2022-11-02,"[1.0, [""Healthcare""], false, false]","[1.0, [""Consumer Goods""], false, false]",0.2550498801471015,0.004876160169157427,0.002964231105870776,True,False,False,0
+2023-01-03,"[1.0, [""Consumer Goods""], false, false]","[1.0, [""Healthcare""], false, false]",0.2620068336011777,0.0039493101660222005,0.0024007964535089363,True,False,False,0
+2023-02-02,"[1.0, [""Healthcare""], false, false]","[1.0, [""Consumer Goods""], false, false]",0.26486720388690244,0.0036373003330992253,0.0022111248225527205,True,False,False,0
+2023-03-06,"[1.0, [""Consumer Goods""], false, false]","[1.0, [""Healthcare""], false, false]",0.2608832446356603,0.0033337356566035536,0.002026587025290914,True,False,False,0
+2023-03-17,"[1.0, [""Healthcare""], false, false]","[1.0, [""Consumer Goods""], false, false]",0.26324449247176906,0.0033865544893256294,0.002058695738191872,True,False,False,0
+2023-03-20,"[1.0, [""Consumer Goods""], false, false]","[1.0, [""Healthcare""], false, false]",0.2635296139010723,0.0028406314381980665,0.0017268276220049038,True,False,False,0
+2023-04-05,"[1.0, [""Healthcare""], false, false]","[1.0, [""Consumer Goods""], false, false]",0.2522707107246978,0.0031999824374624366,0.0019452780774847638,True,False,False,0
+2023-05-03,"[1.0, [""Consumer Goods""], false, false]","[1.0, [], false, false]",0.2324317270144065,0.0034414152501429786,0.002092045744767768,False,False,False,0
+2024-02-05,"[1.0, [], false, false]","[1.0, [""Healthcare""], false, false]",0.2511695798580216,0.006885658564552503,0.004185810677539516,True,False,False,0
+2024-04-02,"[1.0, [""Healthcare""], false, false]","[1.0, [], false, false]",0.24779811453508538,0.007022813164983764,0.004269187334336635,False,False,False,0
+2024-09-06,"[1.0, [], false, false]","[1.0, [""Healthcare""], false, false]",0.25109056471681085,0.005388048655535036,0.0032754095170425754,True,False,False,0
+2024-09-17,"[1.0, [""Healthcare""], false, false]","[1.0, [], false, false]",0.24985947131504016,0.0050710131627345854,0.003082682773698836,False,False,False,0
+2024-09-27,"[1.0, [], false, false]","[1.0, [""Healthcare""], false, false]",0.2518896282870756,0.004842284599087712,0.002943638054156664,True,False,False,0
+2024-11-04,"[1.0, [""Healthcare""], false, false]","[1.0, [], false, false]",0.24749537290030132,0.0065729641118762476,0.00399572286436246,False,False,False,0
+2024-12-19,"[1.0, [], false, false]","[1.0, [""Healthcare""], false, false]",0.2511696744423331,0.007151496379262924,0.004347414212317887,True,False,False,0
+2025-01-03,"[1.0, [""Healthcare""], false, false]","[1.0, [], false, false]",0.24939891651982712,0.00585339878964986,0.0035582971365652645,False,False,False,0
+2025-01-06,"[1.0, [], false, false]","[1.0, [""Healthcare""], false, false]",0.2507711152825762,0.005340262496975996,0.00324636018053252,True,False,False,0
+2025-01-08,"[1.0, [""Healthcare""], false, false]","[1.0, [], false, false]",0.2499898441023305,0.005177128403133151,0.003147190518621976,False,False,False,0
+2025-01-22,"[1.0, [], false, false]","[1.0, [""Healthcare""], false, false]",0.2502281738505476,0.005918964250410697,0.0035981545595201803,True,False,False,0
+2025-01-27,"[1.0, [""Healthcare""], false, false]","[1.0, [], false, false]",0.2496390962054375,0.005989884910010596,0.003641267422498843,False,False,False,0
