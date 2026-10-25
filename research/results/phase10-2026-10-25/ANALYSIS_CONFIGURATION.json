@@ -1,0 +1,40 @@
+{
+  "monthly_block_months": 3,
+  "draws": 2000,
+  "seed": 20261025,
+  "synchronized_across_profiles": true,
+  "budget_bins_INR": [
+    0,
+    2500,
+    15000,
+    "infinity"
+  ],
+  "holding_bins": [
+    "0",
+    "1-9",
+    "10+"
+  ],
+  "concentration_bins": [
+    "empty",
+    "HHI<=.25",
+    "HHI>.25"
+  ],
+  "price_budget_ratio_bins": [
+    0,
+    0.1,
+    0.5,
+    "infinity"
+  ],
+  "eligible_count_bins": [
+    0,
+    20,
+    35,
+    "infinity"
+  ],
+  "case_rules": [
+    "largest V3-V1 same-state fill gain",
+    "largest V3 utility deficit among greedy-dominated states",
+    "first medium_moderate date"
+  ],
+  "status": "descriptive analysis design; no independent holdout or formal preregistration claim"
+}

@@ -1,0 +1,13 @@
+scenario,status
+No initial savings approval,passed
+Duplicate month approval rejected,passed
+Duplicate spending ID rejected,passed
+Authority overspending rejected,passed
+Eleven versus twelve month expiry boundary and lot bound,passed
+Reduced household capacity revokes all carry before fresh approval,passed
+FIFO spending crosses lots exactly once,passed
+Monthly-only expiry has no carry,passed
+Explicit authority revocation conservation primitive,passed
+Authority exceeding actual brokerage cash detected,passed
+Duplicate recycled grant rejected; sale authority outside primary policy,passed
+Exact full approval spend conserves zero remainder,passed

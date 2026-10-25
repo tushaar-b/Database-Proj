@@ -1,0 +1,146 @@
+{
+  "status": "passed",
+  "primary_accounts": 27,
+  "daily_ledger_parity": true,
+  "same_state_reproductions": 2160,
+  "states": 432,
+  "checks": [
+    {
+      "scenario": "low_conservative",
+      "policy": "V1",
+      "summary_and_daily_ledger": "passed"
+    },
+    {
+      "scenario": "low_conservative",
+      "policy": "V3",
+      "summary_and_daily_ledger": "passed"
+    },
+    {
+      "scenario": "low_conservative",
+      "policy": "V4",
+      "summary_and_daily_ledger": "passed"
+    },
+    {
+      "scenario": "low_moderate",
+      "policy": "V1",
+      "summary_and_daily_ledger": "passed"
+    },
+    {
+      "scenario": "low_moderate",
+      "policy": "V3",
+      "summary_and_daily_ledger": "passed"
+    },
+    {
+      "scenario": "low_moderate",
+      "policy": "V4",
+      "summary_and_daily_ledger": "passed"
+    },
+    {
+      "scenario": "low_aggressive",
+      "policy": "V1",
+      "summary_and_daily_ledger": "passed"
+    },
+    {
+      "scenario": "low_aggressive",
+      "policy": "V3",
+      "summary_and_daily_ledger": "passed"
+    },
+    {
+      "scenario": "low_aggressive",
+      "policy": "V4",
+      "summary_and_daily_ledger": "passed"
+    },
+    {
+      "scenario": "medium_conservative",
+      "policy": "V1",
+      "summary_and_daily_ledger": "passed"
+    },
+    {
+      "scenario": "medium_conservative",
+      "policy": "V3",
+      "summary_and_daily_ledger": "passed"
+    },
+    {
+      "scenario": "medium_conservative",
+      "policy": "V4",
+      "summary_and_daily_ledger": "passed"
+    },
+    {
+      "scenario": "medium_moderate",
+      "policy": "V1",
+      "summary_and_daily_ledger": "passed"
+    },
+    {
+      "scenario": "medium_moderate",
+      "policy": "V3",
+      "summary_and_daily_ledger": "passed"
+    },
+    {
+      "scenario": "medium_moderate",
+      "policy": "V4",
+      "summary_and_daily_ledger": "passed"
+    },
+    {
+      "scenario": "medium_aggressive",
+      "policy": "V1",
+      "summary_and_daily_ledger": "passed"
+    },
+    {
+      "scenario": "medium_aggressive",
+      "policy": "V3",
+      "summary_and_daily_ledger": "passed"
+    },
+    {
+      "scenario": "medium_aggressive",
+      "policy": "V4",
+      "summary_and_daily_ledger": "passed"
+    },
+    {
+      "scenario": "high_conservative",
+      "policy": "V1",
+      "summary_and_daily_ledger": "passed"
+    },
+    {
+      "scenario": "high_conservative",
+      "policy": "V3",
+      "summary_and_daily_ledger": "passed"
+    },
+    {
+      "scenario": "high_conservative",
+      "policy": "V4",
+      "summary_and_daily_ledger": "passed"
+    },
+    {
+      "scenario": "high_moderate",
+      "policy": "V1",
+      "summary_and_daily_ledger": "passed"
+    },
+    {
+      "scenario": "high_moderate",
+      "policy": "V3",
+      "summary_and_daily_ledger": "passed"
+    },
+    {
+      "scenario": "high_moderate",
+      "policy": "V4",
+      "summary_and_daily_ledger": "passed"
+    },
+    {
+      "scenario": "high_aggressive",
+      "policy": "V1",
+      "summary_and_daily_ledger": "passed"
+    },
+    {
+      "scenario": "high_aggressive",
+      "policy": "V3",
+      "summary_and_daily_ledger": "passed"
+    },
+    {
+      "scenario": "high_aggressive",
+      "policy": "V4",
+      "summary_and_daily_ledger": "passed"
+    }
+  ],
+  "dataset_sha256": "5d1564c142b835cba08675c89e4277486eb10cf7639fa586a643502a598a0102",
+  "protected_files": 5514
+}

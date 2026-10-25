@@ -1,0 +1,18 @@
+{
+  "python": "3.14.3 (main, Feb  3 2026, 15:32:20) [Clang 17.0.0 (clang-1700.6.3.2)]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "processor": "arm",
+  "logical_CPU_count": 10,
+  "CPU_model_RAM": "not accessible under sandbox; no unverified model specification",
+  "versions": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1"
+  },
+  "timing": "single process after historical grid; 1 warm-up +3 timed repeats; separate memory call; no network, CPU pinning or native RSS",
+  "cases": 69,
+  "timed_calls": 828,
+  "warm_up_calls": 276,
+  "memory_calls": 276
+}

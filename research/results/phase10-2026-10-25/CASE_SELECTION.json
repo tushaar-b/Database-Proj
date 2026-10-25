@@ -1,0 +1,8 @@
+{
+  "selection_rules": "largest positive same-state V3-V1 fill; largest utility deficit among greedy-dominated V3 states; first medium-moderate decision; all aggregate states retained",
+  "cases": {
+    "positive_extreme_vs_V1": "low_conservative|2025-06-02",
+    "negative_extreme_vs_greedy": "low_conservative|2024-06-03",
+    "prespecified_representative": "medium_moderate|2022-01-03"
+  }
+}

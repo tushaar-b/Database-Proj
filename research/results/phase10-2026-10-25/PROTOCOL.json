@@ -1,0 +1,98 @@
+{
+  "created_utc": "2026-10-25T06:44:55.341572+00:00",
+  "git_revision": "ad21a5240171cac28d2f6caafca3182cd08507ba",
+  "seed": 20261025,
+  "historical_states": 432,
+  "primary_set": "F3: max three purchased tickers and max one purchased ticker per sector; existing holdings unrestricted in count",
+  "wide_sensitivity": "Fwide: no new-basket cardinality or distinct-sector limit",
+  "position_cap": 0.2,
+  "sector_cap": 0.35,
+  "fee": 0.001,
+  "slippage": 0.0005,
+  "HHI_caps": [
+    null,
+    0.35,
+    0.25,
+    0.2,
+    0.15,
+    0.1
+  ],
+  "reference_objectives": [
+    "utility",
+    "budget"
+  ],
+  "wide_objectives": [
+    "utility",
+    "budget"
+  ],
+  "joint_preferences": {
+    "utility": [
+      1,
+      0,
+      0
+    ],
+    "moderate_utility": [
+      0.75,
+      0.25,
+      0
+    ],
+    "balanced_UD": [
+      0.5,
+      0.5,
+      0
+    ],
+    "moderate_diversification": [
+      0.25,
+      0.75,
+      0
+    ],
+    "diversification": [
+      0,
+      1,
+      0
+    ],
+    "budget": [
+      0,
+      0,
+      1
+    ],
+    "balanced_UDB": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ]
+  },
+  "objective_component_order": [
+    "U/B",
+    "1-HHI",
+    "inclusive_cost/B"
+  ],
+  "similar_HHI_tolerance": 0.01,
+  "similar_utility_tolerance": 0.02,
+  "dominance_tolerance": 1e-08,
+  "solver_seconds_historical": 1.5,
+  "solver_seconds_scalability": 0.5,
+  "max_outer_cuts": 100,
+  "solver_mip_gap": 0.0,
+  "bootstrap_block": 20,
+  "bootstrap_draws": 2000,
+  "bootstrap_seed": 20261024,
+  "synthetic_seeds": [
+    101,
+    202,
+    303
+  ],
+  "scalability_sizes": [
+    10,
+    20,
+    40,
+    80,
+    160
+  ],
+  "scalability_repetitions": 3,
+  "scalability_design": "one factor at a time around n40 budget10000 holdings5 sectors10 position.20 sector.35 dispersion1; budgets1000/100000 holdings0/20 sectors3/16 position.10/.30 sector.20/.50 dispersion.01/2; 3 seeds",
+  "memory": "separate tracemalloc Python-visible peak, not solver native RSS; matrix storage separately",
+  "classification": "exploratory; all historical periods exposed",
+  "normalization": "ordinal positive utility weighted nominal rupees / fee-inclusive batch budget; D=1-posttrade equity-only sector HHI; K=inclusive cost/B; no outcome-based scaling",
+  "matching": "all candidate comparisons paired by exact pretrade state, universe, cash, authority, costs and guard"
+}

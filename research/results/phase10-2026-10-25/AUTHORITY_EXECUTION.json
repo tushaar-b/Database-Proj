@@ -1,0 +1,9 @@
+{
+  "accounts": 24,
+  "primary_accounts": 18,
+  "shock_accounts": 6,
+  "transitions": 4319,
+  "lifecycle_checks": 12,
+  "passed": 12,
+  "failed": 0
+}
