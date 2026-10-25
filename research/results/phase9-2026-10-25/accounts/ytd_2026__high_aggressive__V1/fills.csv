@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""BRITANNIA"",4],[""MARUTI"",1],[""SBILIFE"",12]]","[[""BRITANNIA"",4],[""MARUTI"",1],[""SBILIFE"",12]]",,65805.3918797666,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V1,M,principal
+2026-02-03,2026-02-02,"[[""BPCL"",65],[""NTPC"",72],[""ULTRACEMCO"",2]]","[[""BPCL"",63],[""NTPC"",72],[""ULTRACEMCO"",2]]",,74634.77157644686,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V1,M,principal
+2026-03-04,2026-03-02,"[[""ADANIPORTS"",16],[""APOLLOHOSP"",3],[""BEL"",53]]","[[""ADANIPORTS"",16],[""APOLLOHOSP"",3],[""BEL"",53]]",,69735.93270590785,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V1,M,principal
+2026-04-02,2026-04-01,"[[""HEROMOTOCO"",4],[""JSWSTEEL"",21],[""TECHM"",17]]","[[""HEROMOTOCO"",4],[""JSWSTEEL"",21],[""TECHM"",17]]",,68621.61348632921,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V1,M,principal
+2026-05-05,2026-05-04,"[[""NESTLEIND"",17],[""ONGC"",84],[""SBIN"",23]]","[[""NESTLEIND"",17],[""ONGC"",84],[""SBIN"",23]]",,73966.92349866887,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V1,M,principal
+2026-06-02,2026-06-01,"[[""LT"",6],[""SUNPHARMA"",14],[""WIPRO"",120]]","[[""LT"",6],[""SUNPHARMA"",14],[""WIPRO"",120]]",,74356.2036377805,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V1,M,principal
+2026-07-02,2026-07-01,"[[""BAJAJ-AUTO"",2],[""POWERGRID"",90],[""TATASTEEL"",129]]","[[""BAJAJ-AUTO"",2],[""POWERGRID"",90],[""TATASTEEL"",129]]",,69966.25793943582,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V1,M,principal
+2026-08-04,2026-08-03,"[[""COALINDIA"",59],[""ICICIBANK"",17],[""TITAN"",4]]","[[""COALINDIA"",59],[""ICICIBANK"",17],[""TITAN"",4]]",,69210.29439828591,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V1,M,principal
+2026-09-02,2026-09-01,"[[""DIVISLAB"",2],[""HCLTECH"",18],[""HINDALCO"",24]]","[[""DIVISLAB"",2],[""HCLTECH"",18],[""HINDALCO"",24]]",,66739.79331330834,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V1,M,principal
+2026-10-05,2026-10-01,"[[""EICHERMOT"",3],[""KOTAKBANK"",61],[""TATACONSUM"",26]]","[[""EICHERMOT"",3],[""KOTAKBANK"",61],[""TATACONSUM"",26]]",,71344.89261899999,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V1,M,principal

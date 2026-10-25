@@ -1,0 +1,4 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions,window,scenario,tier,policy,regime,kind
+2026-01-02,"[1.0, [], false, false]","[1.0, [""Financial Services""], false, false]",1.0,0.0001244351465157734,7.564446596703549e-05,True,False,False,0,ytd_2026,medium_conservative,CONSERVATIVE,V1,M,principal
+2026-02-03,"[1.0, [""Financial Services""], false, false]","[1.0, [""Power""], false, false]",0.33821679840886476,0.0004626439114056251,0.0002812424993347265,True,False,False,0,ytd_2026,medium_conservative,CONSERVATIVE,V1,M,principal
+2026-04-02,"[1.0, [""Power""], false, false]","[1.0, [], false, false]",0.20261369737451299,0.0006815558022522511,0.00041431963662750827,False,False,False,0,ytd_2026,medium_conservative,CONSERVATIVE,V1,M,principal

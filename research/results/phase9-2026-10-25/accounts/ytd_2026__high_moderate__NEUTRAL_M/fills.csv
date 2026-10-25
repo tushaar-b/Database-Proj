@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""ADANIENT"",8],[""ADANIPORTS"",11],[""APOLLOHOSP"",2]]","[[""ADANIENT"",8],[""ADANIPORTS"",11],[""APOLLOHOSP"",2]]",,48955.24768216112,0.0,ytd_2026,high_moderate,MODERATE,NEUTRAL_M,M,principal
+2026-02-03,2026-02-02,"[[""ASIANPAINT"",10],[""AXISBANK"",12],[""BAJAJ-AUTO"",1]]","[[""ASIANPAINT"",10],[""AXISBANK"",12]]",,40595.221280383295,0.0,ytd_2026,high_moderate,MODERATE,NEUTRAL_M,M,principal
+2026-03-04,2026-03-02,"[[""BAJAJ-AUTO"",1],[""BEL"",52],[""BPCL"",44]]","[[""BAJAJ-AUTO"",1],[""BEL"",52],[""BPCL"",44]]",,48643.179784051375,0.0,ytd_2026,high_moderate,MODERATE,NEUTRAL_M,M,principal
+2026-04-02,2026-04-01,"[[""HCLTECH"",14],[""LT"",4],[""NTPC"",45]]","[[""HCLTECH"",14],[""LT"",4],[""NTPC"",44]]",,49982.68609153399,0.0,ytd_2026,high_moderate,MODERATE,NEUTRAL_M,M,principal
+2026-05-05,2026-05-04,"[[""AXISBANK"",13],[""BAJAJ-AUTO"",1],[""BPCL"",76]]","[[""AXISBANK"",13],[""BAJAJ-AUTO"",1],[""BPCL"",76]]",,49181.7860683319,0.0,ytd_2026,high_moderate,MODERATE,NEUTRAL_M,M,principal
+2026-06-02,2026-06-01,"[[""APOLLOHOSP"",2],[""LT"",4],[""NTPC"",46]]","[[""APOLLOHOSP"",2],[""LT"",4],[""NTPC"",46]]",,49156.64836910585,0.0,ytd_2026,high_moderate,MODERATE,NEUTRAL_M,M,principal
+2026-07-02,2026-07-01,"[[""ADANIPORTS"",9],[""BAJAJ-AUTO"",1],[""HCLTECH"",22]]","[[""ADANIPORTS"",8],[""BAJAJ-AUTO"",1],[""HCLTECH"",22]]",,48713.78459127355,0.0,ytd_2026,high_moderate,MODERATE,NEUTRAL_M,M,principal
+2026-08-04,2026-08-03,"[[""ADANIENT"",5],[""ASIANPAINT"",5],[""BEL"",52]]","[[""ADANIENT"",5],[""ASIANPAINT"",5],[""BEL"",52]]",,49557.24924149999,0.0,ytd_2026,high_moderate,MODERATE,NEUTRAL_M,M,principal
+2026-09-02,2026-09-01,"[[""ADANIPORTS"",10],[""AXISBANK"",13],[""NTPC"",52]]","[[""ADANIPORTS"",10],[""AXISBANK"",12],[""NTPC"",52]]",,49007.224971294425,0.0,ytd_2026,high_moderate,MODERATE,NEUTRAL_M,M,principal
+2026-10-05,2026-10-01,"[[""APOLLOHOSP"",2],[""BAJAJ-AUTO"",1],[""LT"",6]]","[[""APOLLOHOSP"",2],[""BAJAJ-AUTO"",1],[""LT"",6]]",,48566.76524699999,0.0,ytd_2026,high_moderate,MODERATE,NEUTRAL_M,M,principal

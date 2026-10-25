@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""BRITANNIA"",4],[""MARUTI"",1],[""SBILIFE"",16]]","[[""BRITANNIA"",4],[""MARUTI"",1],[""SBILIFE"",16]]",,74087.40002335545,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V3,M,principal
+2026-02-03,2026-02-02,"[[""BPCL"",65],[""NTPC"",74],[""ULTRACEMCO"",2]]","[[""BPCL"",62],[""NTPC"",74],[""ULTRACEMCO"",2]]",,74978.93718659581,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V3,M,principal
+2026-03-04,2026-03-02,"[[""ADANIPORTS"",16],[""APOLLOHOSP"",3],[""BEL"",61]]","[[""ADANIPORTS"",16],[""APOLLOHOSP"",3],[""BEL"",61]]",,73316.09674220924,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V3,M,principal
+2026-04-02,2026-04-01,"[[""HEROMOTOCO"",4],[""JSWSTEEL"",21],[""TECHM"",21]]","[[""HEROMOTOCO"",4],[""JSWSTEEL"",21],[""TECHM"",21]]",,74396.26536932921,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V3,M,principal
+2026-05-05,2026-05-04,"[[""APOLLOHOSP"",3],[""NESTLEIND"",17],[""ONGC"",91]]","[[""APOLLOHOSP"",3],[""NESTLEIND"",17],[""ONGC"",91]]",,74936.3254308553,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V3,M,principal
+2026-06-02,2026-06-01,"[[""BEL"",68],[""JSWSTEEL"",19],[""ULTRACEMCO"",2]]","[[""BEL"",68],[""JSWSTEEL"",18],[""ULTRACEMCO"",2]]",,73768.72542498687,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V3,M,principal
+2026-07-02,2026-07-01,"[[""ICICIBANK"",18],[""NTPC"",75],[""TECHM"",17]]","[[""ICICIBANK"",17],[""NTPC"",75],[""TECHM"",17]]",,74943.13452174864,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V3,M,principal
+2026-08-04,2026-08-03,"[[""ADANIPORTS"",15],[""BAJAJ-AUTO"",2],[""COALINDIA"",61]]","[[""ADANIPORTS"",15],[""BAJAJ-AUTO"",2],[""COALINDIA"",61]]",,74385.54792640223,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V3,M,principal
+2026-09-02,2026-09-01,"[[""NESTLEIND"",18],[""NTPC"",80],[""ULTRACEMCO"",2]]","[[""NESTLEIND"",18],[""NTPC"",80],[""ULTRACEMCO"",2]]",,74948.29141799998,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V3,M,principal
+2026-10-05,2026-10-01,"[[""BEL"",66],[""DIVISLAB"",2],[""JSWSTEEL"",25]]","[[""BEL"",66],[""DIVISLAB"",2],[""JSWSTEEL"",25]]",,74786.65086327125,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V3,M,principal

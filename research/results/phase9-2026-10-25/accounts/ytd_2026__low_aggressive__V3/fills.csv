@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""COALINDIA"",1],[""NESTLEIND"",1],[""SBILIFE"",1]]","[[""NESTLEIND"",1],[""SBILIFE"",1]]",,3352.1221768458245,0.0,ytd_2026,low_aggressive,AGGRESSIVE,V3,M,principal
+2026-02-03,2026-02-02,"[[""BEL"",2],[""BPCL"",3],[""NTPC"",5]]","[[""BEL"",1],[""BPCL"",3],[""NTPC"",5]]",,3357.0797387996518,0.0,ytd_2026,low_aggressive,AGGRESSIVE,V3,M,principal
+2026-03-04,2026-03-02,"[[""ADANIPORTS"",1],[""DRREDDY"",1],[""TATASTEEL"",4]]","[[""ADANIPORTS"",1],[""DRREDDY"",1],[""TATASTEEL"",4]]",,3517.790494693817,0.0,ytd_2026,low_aggressive,AGGRESSIVE,V3,M,principal
+2026-04-02,2026-04-01,"[[""BEL"",2],[""JSWSTEEL"",1],[""TECHM"",1]]","[[""BEL"",2],[""JSWSTEEL"",1],[""TECHM"",1]]",,3431.1407741267394,0.0,ytd_2026,low_aggressive,AGGRESSIVE,V3,M,principal
+2026-05-05,2026-05-04,"[[""M&M"",1],[""ONGC"",1],[""WIPRO"",1]]","[[""M&M"",1],[""ONGC"",1],[""WIPRO"",1]]",,3706.082705169204,0.0,ytd_2026,low_aggressive,AGGRESSIVE,V3,M,principal
+2026-06-02,2026-06-01,"[[""BEL"",2],[""COALINDIA"",2],[""SUNPHARMA"",1]]","[[""BEL"",2],[""COALINDIA"",2],[""SUNPHARMA"",1]]",,3555.2266494006954,0.0,ytd_2026,low_aggressive,AGGRESSIVE,V3,M,principal
+2026-07-02,2026-07-01,"[[""NESTLEIND"",1],[""NTPC"",2],[""TECHM"",1]]","[[""NESTLEIND"",1],[""NTPC"",2],[""TECHM"",1]]",,3589.3777919999993,0.0,ytd_2026,low_aggressive,AGGRESSIVE,V3,M,principal
+2026-08-04,2026-08-03,"[[""ADANIPORTS"",1],[""BEL"",1],[""ICICIBANK"",1]]","[[""ADANIPORTS"",1],[""BEL"",1],[""ICICIBANK"",1]]",,3558.130903047912,0.0,ytd_2026,low_aggressive,AGGRESSIVE,V3,M,principal
+2026-09-02,2026-09-01,"[[""COALINDIA"",3],[""JSWSTEEL"",1],[""NTPC"",3]]","[[""COALINDIA"",3],[""JSWSTEEL"",1],[""NTPC"",3]]",,3554.876118113021,0.0,ytd_2026,low_aggressive,AGGRESSIVE,V3,M,principal
+2026-10-05,2026-10-01,"[[""LT"",1]]",[],,0.0,0.0,ytd_2026,low_aggressive,AGGRESSIVE,V3,M,principal

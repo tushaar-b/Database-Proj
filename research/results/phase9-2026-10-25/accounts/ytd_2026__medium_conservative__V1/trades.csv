@@ -1,0 +1,7 @@
+date,decision_date,ticker,side,quantity,notional,fee,slippage_cost,realized_gain,new_position,topup,feedback_attributable,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,SBIN,BUY,1,999.4494872131347,0.9994494872131348,0.49947500610351564,0.0,True,False,False,ytd_2026,medium_conservative,CONSERVATIVE,V1,M,principal
+2026-02-03,2026-02-02,NESTLEIND,BUY,1,1308.654,1.308654,0.654,0.0,True,False,False,ytd_2026,medium_conservative,CONSERVATIVE,V1,M,principal
+2026-02-03,2026-02-02,NTPC,BUY,4,1434.9170511474608,1.434917051147461,0.7170999755859375,0.0,True,False,False,ytd_2026,medium_conservative,CONSERVATIVE,V1,M,principal
+2026-04-02,2026-04-01,BEL,BUY,3,1265.432418319702,1.265432418319702,0.6324000091552735,0.0,True,False,False,ytd_2026,medium_conservative,CONSERVATIVE,V1,M,principal
+2026-04-02,2026-04-01,COALINDIA,BUY,3,1348.724043319702,1.348724043319702,0.6740250091552734,0.0,True,False,False,ytd_2026,medium_conservative,CONSERVATIVE,V1,M,principal
+2026-06-02,2026-06-01,JSWSTEEL,BUY,1,1311.455448852539,1.311455448852539,0.6554000244140625,0.0,True,False,False,ytd_2026,medium_conservative,CONSERVATIVE,V1,M,principal

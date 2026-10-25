@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""BEL"",1],[""BPCL"",1],[""COALINDIA"",1]]","[[""BEL"",1],[""BPCL"",1],[""COALINDIA"",1]]",,1214.3193562499998,0.0,ytd_2026,low_conservative,CONSERVATIVE,EQUAL_M,M,principal
+2026-02-03,2026-02-02,"[[""DRREDDY"",1]]","[[""DRREDDY"",1]]",,1237.2537421506956,0.0,ytd_2026,low_conservative,CONSERVATIVE,EQUAL_M,M,principal
+2026-03-04,2026-03-02,"[[""HINDALCO"",1],[""ONGC"",1]]","[[""HINDALCO"",1],[""ONGC"",1]]",,1200.548724375,0.0,ytd_2026,low_conservative,CONSERVATIVE,EQUAL_M,M,principal
+2026-04-02,2026-04-01,"[[""AXISBANK"",1]]","[[""AXISBANK"",1]]",,1199.6974734006958,0.0,ytd_2026,low_conservative,CONSERVATIVE,EQUAL_M,M,principal
+2026-05-05,2026-05-04,"[[""HCLTECH"",1]]","[[""HCLTECH"",1]]",,1202.0008511986082,0.0,ytd_2026,low_conservative,CONSERVATIVE,EQUAL_M,M,principal
+2026-06-02,2026-06-01,"[[""ICICIBANK"",1]]","[[""ICICIBANK"",1]]",,1228.440488849304,0.0,ytd_2026,low_conservative,CONSERVATIVE,EQUAL_M,M,principal
+2026-07-02,2026-07-01,"[[""INFY"",1],[""TATASTEEL"",1]]","[[""INFY"",1],[""TATASTEEL"",1]]",,1230.4134919018934,0.0,ytd_2026,low_conservative,CONSERVATIVE,EQUAL_M,M,principal
+2026-08-04,2026-08-03,"[[""INDUSINDBK"",1],[""WIPRO"",1]]","[[""INDUSINDBK"",1],[""WIPRO"",1]]",,1214.1190592063367,0.0,ytd_2026,low_conservative,CONSERVATIVE,EQUAL_M,M,principal
+2026-09-02,2026-09-01,"[[""KOTAKBANK"",1],[""NTPC"",1],[""POWERGRID"",1],[""WIPRO"",1]]","[[""KOTAKBANK"",1],[""NTPC"",1],[""POWERGRID"",1],[""WIPRO"",1]]",,1199.1866678020476,0.0,ytd_2026,low_conservative,CONSERVATIVE,EQUAL_M,M,principal
+2026-10-05,2026-10-01,"[[""JSWSTEEL"",1]]","[[""JSWSTEEL"",1]]",,1237.1536165513912,0.0,ytd_2026,low_conservative,CONSERVATIVE,EQUAL_M,M,principal

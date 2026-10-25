@@ -1,0 +1,2 @@
+date,decision_date,ticker,side,quantity,notional,fee,slippage_cost,realized_gain,new_position,topup,feedback_attributable,window,scenario,tier,policy,regime,kind
+2022-05-04,2022-05-02,POWERGRID,BUY,3,713.1563877868651,0.7131563877868652,0.35639999389648436,0.0,True,False,False,primary_2022_2025,low_moderate,MODERATE,RANK_GUARD_M,M,principal

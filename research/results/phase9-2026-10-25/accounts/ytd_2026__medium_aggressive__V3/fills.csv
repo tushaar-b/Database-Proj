@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""BRITANNIA"",1],[""COALINDIA"",12],[""SBILIFE"",2]]","[[""BRITANNIA"",1],[""COALINDIA"",11],[""SBILIFE"",2]]",,14848.446450255018,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,V3,M,principal
+2026-02-03,2026-02-02,"[[""BEL"",1],[""NTPC"",5],[""ULTRACEMCO"",1]]","[[""BEL"",1],[""NTPC"",5],[""ULTRACEMCO"",1]]",,14843.939911948608,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,V3,M,principal
+2026-03-04,2026-03-02,"[[""ADANIPORTS"",1],[""APOLLOHOSP"",1],[""HEROMOTOCO"",1]]","[[""ADANIPORTS"",1],[""APOLLOHOSP"",1],[""HEROMOTOCO"",1]]",,14622.307924650693,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,V3,M,principal
+2026-04-02,2026-04-01,"[[""BEL"",11],[""JSWSTEEL"",4],[""TECHM"",4]]","[[""BEL"",11],[""JSWSTEEL"",4],[""TECHM"",4]]",,14991.260947244977,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,V3,M,principal
+2026-05-05,2026-05-04,"[[""ADANIPORTS"",3],[""NTPC"",13],[""SBIN"",4]]","[[""ADANIPORTS"",3],[""NTPC"",13],[""SBIN"",4]]",,14618.95289186302,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,V3,M,principal
+2026-06-02,2026-06-01,"[[""BAJAJ-AUTO"",1],[""BEL"",7],[""NESTLEIND"",1]]","[[""BAJAJ-AUTO"",1],[""BEL"",7],[""NESTLEIND"",1]]",,14556.459236212322,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,V3,M,principal
+2026-07-02,2026-07-01,"[[""COALINDIA"",13],[""JSWSTEEL"",4],[""TECHM"",3]]","[[""COALINDIA"",13],[""JSWSTEEL"",4],[""TECHM"",3]]",,14887.104895244976,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,V3,M,principal
+2026-08-04,2026-08-03,"[[""ADANIPORTS"",2],[""NESTLEIND"",3],[""NTPC"",19]]","[[""ADANIPORTS"",2],[""NESTLEIND"",3],[""NTPC"",19]]",,14524.511162431409,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,V3,M,principal
+2026-09-02,2026-09-01,"[[""APOLLOHOSP"",1],[""BEL"",4],[""ICICIBANK"",3]]","[[""APOLLOHOSP"",1],[""BEL"",4],[""ICICIBANK"",3]]",,14643.439560749997,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,V3,M,principal
+2026-10-05,2026-10-01,"[[""BEL"",15],[""JSWSTEEL"",4],[""NESTLEIND"",3]]","[[""BEL"",15],[""JSWSTEEL"",4],[""NESTLEIND"",3]]",,14627.165391568584,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,V3,M,principal

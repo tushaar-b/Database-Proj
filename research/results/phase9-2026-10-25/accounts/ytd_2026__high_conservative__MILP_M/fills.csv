@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""ICICIBANK"",1],[""MARUTI"",1],[""SBIN"",7]]","[[""ICICIBANK"",1],[""MARUTI"",1],[""SBIN"",6]]",,24345.57590235278,0.0,ytd_2026,high_conservative,CONSERVATIVE,MILP_M,M,principal
+2026-02-03,2026-02-02,"[[""ICICIBANK"",17],[""NTPC"",2],[""SBIN"",1],[""TATASTEEL"",1]]","[[""ICICIBANK"",17],[""NTPC"",2],[""TATASTEEL"",1]]",,24571.74379935543,0.0,ytd_2026,high_conservative,CONSERVATIVE,MILP_M,M,principal
+2026-03-04,2026-03-02,"[[""APOLLOHOSP"",3],[""NTPC"",4]]","[[""APOLLOHOSP"",3],[""NTPC"",4]]",,24497.903981698604,0.0,ytd_2026,high_conservative,CONSERVATIVE,MILP_M,M,principal
+2026-04-02,2026-04-01,"[[""NTPC"",66],[""POWERGRID"",3]]","[[""NTPC"",66],[""POWERGRID"",3]]",,24643.67206161456,0.0,ytd_2026,high_conservative,CONSERVATIVE,MILP_M,M,principal
+2026-05-05,2026-05-04,"[[""APOLLOHOSP"",2],[""ICICIBANK"",4],[""NESTLEIND"",3]]","[[""APOLLOHOSP"",2],[""ICICIBANK"",4],[""NESTLEIND"",2]]",,23540.069245808347,0.0,ytd_2026,high_conservative,CONSERVATIVE,MILP_M,M,principal
+2026-06-02,2026-06-01,"[[""NESTLEIND"",3],[""NTPC"",54],[""POWERGRID"",1]]","[[""NESTLEIND"",3],[""NTPC"",54],[""POWERGRID"",1]]",,24354.338451023756,0.0,ytd_2026,high_conservative,CONSERVATIVE,MILP_M,M,principal
+2026-07-02,2026-07-01,"[[""APOLLOHOSP"",2],[""COALINDIA"",1],[""NESTLEIND"",5]]","[[""APOLLOHOSP"",2],[""COALINDIA"",1],[""NESTLEIND"",4]]",,23651.135156131757,0.0,ytd_2026,high_conservative,CONSERVATIVE,MILP_M,M,principal
+2026-08-04,2026-08-03,"[[""NESTLEIND"",15],[""NTPC"",4],[""POWERGRID"",2]]","[[""NESTLEIND"",15],[""NTPC"",4],[""POWERGRID"",2]]",,24778.52443402395,0.0,ytd_2026,high_conservative,CONSERVATIVE,MILP_M,M,principal
+2026-09-02,2026-09-01,"[[""APOLLOHOSP"",2],[""ICICIBANK"",5],[""ONGC"",1]]","[[""APOLLOHOSP"",2],[""ICICIBANK"",5],[""ONGC"",1]]",,24845.224403999993,0.0,ytd_2026,high_conservative,CONSERVATIVE,MILP_M,M,principal
+2026-10-05,2026-10-01,"[[""ICICIBANK"",1],[""NTPC"",75]]","[[""ICICIBANK"",1],[""NTPC"",73]]",,24860.646619249597,0.0,ytd_2026,high_conservative,CONSERVATIVE,MILP_M,M,principal

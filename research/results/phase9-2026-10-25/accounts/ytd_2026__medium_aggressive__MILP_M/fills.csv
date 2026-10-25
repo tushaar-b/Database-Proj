@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""COALINDIA"",1],[""ICICIBANK"",1],[""SBILIFE"",6],[""SBIN"",1]]","[[""COALINDIA"",1],[""ICICIBANK"",1],[""SBILIFE"",6]]",,14208.988075371322,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,MILP_M,M,principal
+2026-02-03,2026-02-02,"[[""NESTLEIND"",1],[""NTPC"",39]]","[[""NESTLEIND"",1],[""NTPC"",38]]",,14955.306351886778,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,MILP_M,M,principal
+2026-03-04,2026-03-02,"[[""APOLLOHOSP"",1],[""SBIN"",6]]","[[""APOLLOHOSP"",1],[""SBIN"",6]]",,14735.076856499998,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,MILP_M,M,principal
+2026-04-02,2026-04-01,"[[""APOLLOHOSP"",1],[""NTPC"",21]]","[[""APOLLOHOSP"",1],[""NTPC"",21]]",,14892.462531708845,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,MILP_M,M,principal
+2026-05-05,2026-05-04,"[[""APOLLOHOSP"",1],[""NESTLEIND"",4],[""ONGC"",1],[""SBIN"",1]]","[[""APOLLOHOSP"",1],[""NESTLEIND"",4],[""ONGC"",1]]",,13994.116919405913,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,MILP_M,M,principal
+2026-06-02,2026-06-01,"[[""COALINDIA"",2],[""NESTLEIND"",3],[""NTPC"",26]]","[[""COALINDIA"",2],[""NESTLEIND"",3],[""NTPC"",26]]",,14714.846228540951,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,MILP_M,M,principal
+2026-07-02,2026-07-01,"[[""APOLLOHOSP"",1],[""COALINDIA"",1],[""NESTLEIND"",4]]","[[""APOLLOHOSP"",1],[""COALINDIA"",1],[""NESTLEIND"",4]]",,14942.086808131757,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,MILP_M,M,principal
+2026-08-04,2026-08-03,"[[""ICICIBANK"",1],[""NESTLEIND"",7],[""NTPC"",8]]","[[""ICICIBANK"",1],[""NESTLEIND"",7],[""NTPC"",8]]",,14866.07304854791,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,MILP_M,M,principal
+2026-09-02,2026-09-01,"[[""ICICIBANK"",2],[""NESTLEIND"",8],[""NTPC"",1],[""POWERGRID"",1]]","[[""ICICIBANK"",2],[""NESTLEIND"",8],[""NTPC"",1],[""POWERGRID"",1]]",,14872.08211267465,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,MILP_M,M,principal
+2026-10-05,2026-10-01,"[[""COALINDIA"",3],[""DIVISLAB"",1],[""ICICIBANK"",1],[""NTPC"",10]]","[[""COALINDIA"",3],[""DIVISLAB"",1],[""ICICIBANK"",1],[""NTPC"",9]]",,14721.556508059888,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,MILP_M,M,principal

@@ -1,0 +1,6 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions,window,scenario,tier,policy,regime,kind
+2026-01-02,"[1.0, [], false, false]","[1.0, [""Financial Services""], false, false]",0.672627588776636,0.00017521313314500635,0.0001065125429452926,True,False,False,0,ytd_2026,low_aggressive,AGGRESSIVE,MILP_M,M,principal
+2026-02-03,"[1.0, [""Financial Services""], false, false]","[1.0, [""Power""], false, false]",0.6146741428041737,0.0010708323041131063,0.0006509618869988489,True,False,False,0,ytd_2026,low_aggressive,AGGRESSIVE,MILP_M,M,principal
+2026-03-04,"[1.0, [""Power""], false, false]","[1.0, [""Financial Services""], false, false]",0.5047106867047849,0.0016389663973544778,0.0009963321564464911,True,False,False,0,ytd_2026,low_aggressive,AGGRESSIVE,MILP_M,M,principal
+2026-04-02,"[1.0, [""Financial Services""], false, false]","[1.0, [""Power""], false, false]",0.49449474399825977,0.002068256826621618,0.001257298982748704,True,False,False,0,ytd_2026,low_aggressive,AGGRESSIVE,MILP_M,M,principal
+2026-07-02,"[1.0, [""Power""], false, false]","[1.0, [], false, false]",0.22872861347245,0.001738723756337763,0.0010569749278649015,False,False,False,0,ytd_2026,low_aggressive,AGGRESSIVE,MILP_M,M,principal

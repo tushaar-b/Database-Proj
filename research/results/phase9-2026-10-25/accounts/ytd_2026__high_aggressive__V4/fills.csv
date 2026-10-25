@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""BRITANNIA"",4],[""MARUTI"",1],[""SBILIFE"",16]]","[[""BRITANNIA"",4],[""MARUTI"",1],[""SBILIFE"",16]]",,74087.40002335545,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V4,C,principal
+2026-02-03,2026-02-02,"[[""BPCL"",65],[""NTPC"",76],[""ULTRACEMCO"",2]]","[[""BPCL"",62],[""NTPC"",76],[""ULTRACEMCO"",2]]",,75697.11317069511,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V4,C,principal
+2026-03-04,2026-03-02,"[[""ADANIPORTS"",16],[""APOLLOHOSP"",3],[""BEL"",62]]","[[""ADANIPORTS"",16],[""APOLLOHOSP"",3],[""BEL"",62]]",,73763.6172467469,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V4,C,principal
+2026-04-02,2026-04-01,"[[""HEROMOTOCO"",4],[""JSWSTEEL"",23],[""TECHM"",21]]","[[""HEROMOTOCO"",3],[""JSWSTEEL"",23],[""TECHM"",21]]",,71663.27075268199,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V4,C,principal
+2026-05-05,2026-05-04,"[[""APOLLOHOSP"",3],[""NESTLEIND"",18],[""ONGC"",103]]","[[""APOLLOHOSP"",2],[""NESTLEIND"",18],[""ONGC"",103]]",,72117.30201906088,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V4,C,principal
+2026-06-02,2026-06-01,"[[""BAJAJ-AUTO"",2],[""BEL"",69],[""ULTRACEMCO"",3]]","[[""BAJAJ-AUTO"",2],[""BEL"",69],[""ULTRACEMCO"",3]]",,82321.98949609947,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V4,C,principal
+2026-07-02,2026-07-01,"[[""JSWSTEEL"",20],[""NTPC"",77],[""TECHM"",17]]","[[""JSWSTEEL"",20],[""NTPC"",77],[""TECHM"",16]]",,74914.29223647507,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V4,C,principal
+2026-08-04,2026-08-03,"[[""ADANIPORTS"",19],[""APOLLOHOSP"",2],[""ICICIBANK"",17]]","[[""ADANIPORTS"",19],[""APOLLOHOSP"",2],[""ICICIBANK"",17]]",,75368.41953296172,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V4,C,principal
+2026-09-02,2026-09-01,"[[""COALINDIA"",62],[""NESTLEIND"",17],[""NTPC"",78]]","[[""COALINDIA"",62],[""NESTLEIND"",17],[""NTPC"",75]]",,74994.06036983577,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V4,C,principal
+2026-10-05,2026-10-01,"[[""BAJAJ-AUTO"",2],[""BEL"",64],[""ICICIBANK"",23]]","[[""BAJAJ-AUTO"",2],[""BEL"",63],[""ICICIBANK"",23]]",,75041.98217487344,0.0,ytd_2026,high_aggressive,AGGRESSIVE,V4,C,principal

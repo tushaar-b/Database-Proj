@@ -1,0 +1,11 @@
+metric,breach_date,breach_index,resolved_date,resolved,first_changed_recommendation,response_sessions,left_censored,window,scenario,tier,policy,regime,kind
+hhi,2022-01-04,249,2023-05-03,True,2022-02-01,19.0,False,primary_2022_2025,medium_moderate,MODERATE,MILP_M,M,principal
+hhi,2023-06-06,600,2023-07-04,True,2023-07-03,18.0,False,primary_2022_2025,medium_moderate,MODERATE,MILP_M,M,principal
+hhi,2024-02-05,764,2024-04-05,True,2024-03-01,19.0,False,primary_2022_2025,medium_moderate,MODERATE,MILP_M,M,principal
+hhi,2024-10-09,930,2024-10-10,True,,,False,primary_2022_2025,medium_moderate,MODERATE,MILP_M,M,principal
+hhi,2024-10-22,939,2024-10-23,True,,,False,primary_2022_2025,medium_moderate,MODERATE,MILP_M,M,principal
+hhi,2024-10-25,942,2024-10-29,True,,,False,primary_2022_2025,medium_moderate,MODERATE,MILP_M,M,principal
+hhi,2024-11-19,958,2024-11-22,True,,,False,primary_2022_2025,medium_moderate,MODERATE,MILP_M,M,principal
+hhi,2024-12-19,979,2025-01-10,True,2025-01-01,8.0,False,primary_2022_2025,medium_moderate,MODERATE,MILP_M,M,principal
+hhi,2025-01-22,1002,2025-01-27,True,,,False,primary_2022_2025,medium_moderate,MODERATE,MILP_M,M,principal
+hhi,2025-11-13,1202,2025-12-18,True,,,False,primary_2022_2025,medium_moderate,MODERATE,MILP_M,M,principal

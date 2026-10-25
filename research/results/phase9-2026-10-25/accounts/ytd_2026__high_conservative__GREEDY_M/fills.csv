@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""MARUTI"",1],[""NTPC"",1],[""SBIN"",8]]","[[""MARUTI"",1],[""NTPC"",1],[""SBIN"",7]]",,24341.219369065104,0.0,ytd_2026,high_conservative,CONSERVATIVE,GREEDY_M,M,principal
+2026-02-03,2026-02-02,"[[""ICICIBANK"",16],[""NTPC"",3],[""SBIN"",2],[""TATASTEEL"",1]]","[[""ICICIBANK"",16],[""NTPC"",3],[""SBIN"",1],[""TATASTEEL"",1]]",,24604.843378655085,0.0,ytd_2026,high_conservative,CONSERVATIVE,GREEDY_M,M,principal
+2026-03-04,2026-03-02,"[[""APOLLOHOSP"",3],[""NTPC"",4]]","[[""APOLLOHOSP"",3],[""NTPC"",4]]",,24497.903981698604,0.0,ytd_2026,high_conservative,CONSERVATIVE,GREEDY_M,M,principal
+2026-04-02,2026-04-01,"[[""NTPC"",68]]","[[""NTPC"",68]]",,24492.896112438168,0.0,ytd_2026,high_conservative,CONSERVATIVE,GREEDY_M,M,principal
+2026-05-05,2026-05-04,"[[""APOLLOHOSP"",2],[""NESTLEIND"",6],[""ONGC"",2]]","[[""APOLLOHOSP"",2],[""NESTLEIND"",6],[""ONGC"",1]]",,24737.813781008696,0.0,ytd_2026,high_conservative,CONSERVATIVE,GREEDY_M,M,principal
+2026-06-02,2026-06-01,"[[""NESTLEIND"",4],[""NTPC"",51]]","[[""NESTLEIND"",4],[""NTPC"",51]]",,24368.709958748055,0.0,ytd_2026,high_conservative,CONSERVATIVE,GREEDY_M,M,principal
+2026-07-02,2026-07-01,"[[""APOLLOHOSP"",1],[""ICICIBANK"",5],[""NTPC"",26]]","[[""APOLLOHOSP"",1],[""ICICIBANK"",5],[""NTPC"",25]]",,24689.240701124996,0.0,ytd_2026,high_conservative,CONSERVATIVE,GREEDY_M,M,principal
+2026-08-04,2026-08-03,"[[""APOLLOHOSP"",1],[""NESTLEIND"",10],[""NTPC"",2]]","[[""APOLLOHOSP"",1],[""NESTLEIND"",10],[""NTPC"",2]]",,24974.71840642465,0.0,ytd_2026,high_conservative,CONSERVATIVE,GREEDY_M,M,principal
+2026-09-02,2026-09-01,"[[""APOLLOHOSP"",1],[""ICICIBANK"",11],[""NTPC"",1]]","[[""APOLLOHOSP"",1],[""ICICIBANK"",11],[""NTPC"",1]]",,24777.62312025,0.0,ytd_2026,high_conservative,CONSERVATIVE,GREEDY_M,M,principal
+2026-10-05,2026-10-01,"[[""ICICIBANK"",2],[""KOTAKBANK"",2],[""NTPC"",68]]","[[""ICICIBANK"",2],[""KOTAKBANK"",2],[""NTPC"",66]]",,24771.91376052703,0.0,ytd_2026,high_conservative,CONSERVATIVE,GREEDY_M,M,principal

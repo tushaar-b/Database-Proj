@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""COALINDIA"",1],[""ONGC"",1],[""SBILIFE"",1],[""SBIN"",1]]","[[""COALINDIA"",1],[""ONGC"",1],[""SBILIFE"",1],[""SBIN"",1]]",,3741.3153478888316,0.0,ytd_2026,low_aggressive,AGGRESSIVE,GREEDY_M,M,principal
+2026-02-03,2026-02-02,"[[""NTPC"",10],[""TATASTEEL"",1]]","[[""NTPC"",10]]",,3590.8799204965203,0.0,ytd_2026,low_aggressive,AGGRESSIVE,GREEDY_M,M,principal
+2026-03-04,2026-03-02,"[[""NESTLEIND"",1],[""SBIN"",2]]","[[""NESTLEIND"",1],[""SBIN"",2]]",,3599.6932960513914,0.0,ytd_2026,low_aggressive,AGGRESSIVE,GREEDY_M,M,principal
+2026-04-02,2026-04-01,"[[""COALINDIA"",2],[""NTPC"",7],[""POWERGRID"",1]]","[[""COALINDIA"",2],[""NTPC"",7],[""POWERGRID"",1]]",,3711.7611347619777,0.0,ytd_2026,low_aggressive,AGGRESSIVE,GREEDY_M,M,principal
+2026-05-05,2026-05-04,"[[""NESTLEIND"",2],[""ONGC"",2],[""TATASTEEL"",1]]","[[""NESTLEIND"",2],[""ONGC"",2]]",,3540.8051400034788,0.0,ytd_2026,low_aggressive,AGGRESSIVE,GREEDY_M,M,principal
+2026-06-02,2026-06-01,"[[""COALINDIA"",2],[""NESTLEIND"",2]]","[[""COALINDIA"",2],[""NESTLEIND"",2]]",,3747.3143108218683,0.0,ytd_2026,low_aggressive,AGGRESSIVE,GREEDY_M,M,principal
+2026-07-02,2026-07-01,"[[""COALINDIA"",1],[""ICICIBANK"",1],[""NTPC"",5]]","[[""COALINDIA"",1],[""ICICIBANK"",1],[""NTPC"",5]]",,3635.5970339623254,0.0,ytd_2026,low_aggressive,AGGRESSIVE,GREEDY_M,M,principal
+2026-08-04,2026-08-03,"[[""NESTLEIND"",1],[""ONGC"",1],[""SUNPHARMA"",1]]","[[""NESTLEIND"",1],[""ONGC"",1],[""SUNPHARMA"",1]]",,3731.5908629999994,0.0,ytd_2026,low_aggressive,AGGRESSIVE,GREEDY_M,M,principal
+2026-09-02,2026-09-01,"[[""ICICIBANK"",1],[""NESTLEIND"",1],[""NTPC"",2],[""TATASTEEL"",1]]","[[""ICICIBANK"",1],[""NESTLEIND"",1],[""NTPC"",2],[""TATASTEEL"",1]]",,3700.8948787876734,0.0,ytd_2026,low_aggressive,AGGRESSIVE,GREEDY_M,M,principal
+2026-10-05,2026-10-01,"[[""ICICIBANK"",1],[""NTPC"",7],[""ONGC"",1]]","[[""ICICIBANK"",1],[""NTPC"",7]]",,3589.978606722564,0.0,ytd_2026,low_aggressive,AGGRESSIVE,GREEDY_M,M,principal

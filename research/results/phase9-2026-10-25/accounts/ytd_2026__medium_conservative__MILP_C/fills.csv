@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""SBIN"",5]]","[[""SBIN"",4]]",,4001.795746801391,0.0,ytd_2026,medium_conservative,CONSERVATIVE,MILP_C,C,principal
+2026-02-03,2026-02-02,"[[""NTPC"",17]]","[[""NTPC"",16]]",,5745.4078727944325,0.0,ytd_2026,medium_conservative,CONSERVATIVE,MILP_C,C,principal
+2026-03-04,2026-03-02,"[[""COALINDIA"",1],[""ICICIBANK"",2],[""SBILIFE"",1]]","[[""COALINDIA"",1],[""ICICIBANK"",2],[""SBILIFE"",1]]",,5104.197391613021,0.0,ytd_2026,medium_conservative,CONSERVATIVE,MILP_C,C,principal
+2026-04-02,2026-04-01,"[[""COALINDIA"",1],[""NTPC"",12],[""POWERGRID"",1]]","[[""COALINDIA"",1],[""NTPC"",12],[""POWERGRID"",1]]",,5062.685122535933,0.0,ytd_2026,medium_conservative,CONSERVATIVE,MILP_C,C,principal
+2026-05-05,2026-05-04,"[[""ICICIBANK"",1],[""NESTLEIND"",2],[""ONGC"",3]]","[[""ICICIBANK"",1],[""NESTLEIND"",2],[""ONGC"",3]]",,5084.367846755218,0.0,ytd_2026,medium_conservative,CONSERVATIVE,MILP_C,C,principal
+2026-06-02,2026-06-01,"[[""COALINDIA"",2],[""ICICIBANK"",1],[""NESTLEIND"",2]]","[[""COALINDIA"",2],[""ICICIBANK"",1],[""NESTLEIND"",2]]",,4975.754799671173,0.0,ytd_2026,medium_conservative,CONSERVATIVE,MILP_C,C,principal
+2026-07-02,2026-07-01,"[[""NESTLEIND"",2],[""NTPC"",5],[""POWERGRID"",1]]","[[""NESTLEIND"",2],[""NTPC"",5],[""POWERGRID"",1]]",,4979.310175347564,0.0,ytd_2026,medium_conservative,CONSERVATIVE,MILP_C,C,principal
+2026-08-04,2026-08-03,"[[""COALINDIA"",1],[""NESTLEIND"",3]]","[[""COALINDIA"",1],[""NESTLEIND"",3]]",,4985.068894912673,0.0,ytd_2026,medium_conservative,CONSERVATIVE,MILP_C,C,principal
+2026-09-02,2026-09-01,"[[""ICICIBANK"",1],[""NTPC"",5],[""SUNPHARMA"",1]]","[[""ICICIBANK"",1],[""NTPC"",5],[""SUNPHARMA"",1]]",,5015.714755198607,0.0,ytd_2026,medium_conservative,CONSERVATIVE,MILP_C,C,principal
+2026-10-05,2026-10-01,"[[""ICICIBANK"",2],[""KOTAKBANK"",1],[""SUNPHARMA"",1],[""TATASTEEL"",1]]","[[""ICICIBANK"",2],[""KOTAKBANK"",1],[""SUNPHARMA"",1],[""TATASTEEL"",1]]",,5045.39922940734,0.0,ytd_2026,medium_conservative,CONSERVATIVE,MILP_C,C,principal

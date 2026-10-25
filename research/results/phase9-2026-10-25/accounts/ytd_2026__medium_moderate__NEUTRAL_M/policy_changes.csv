@@ -1,0 +1,3 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions,window,scenario,tier,policy,regime,kind
+2026-01-02,"[1.0, [], false, false]","[1.0, [""Services""], false, false]",0.3624179096241501,0.0008586026573444285,0.0005219469041607468,True,False,False,0,ytd_2026,medium_moderate,MODERATE,NEUTRAL_M,M,principal
+2026-02-03,"[1.0, [""Services""], false, false]","[1.0, [], false, false]",0.2376864328995995,0.003121045409364469,0.0018972920421668506,False,False,False,0,ytd_2026,medium_moderate,MODERATE,NEUTRAL_M,M,principal

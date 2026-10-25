@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""SBILIFE"",1],[""SBIN"",8]]","[[""SBILIFE"",1],[""SBIN"",7]]",,9073.64459279965,0.0,ytd_2026,medium_moderate,MODERATE,MILP_C,C,principal
+2026-02-03,2026-02-02,"[[""NTPC"",31]]","[[""NTPC"",30]]",,10772.639761489561,0.0,ytd_2026,medium_moderate,MODERATE,MILP_C,C,principal
+2026-03-04,2026-03-02,"[[""COALINDIA"",1],[""NESTLEIND"",1],[""SBIN"",7]]","[[""COALINDIA"",1],[""NESTLEIND"",1],[""SBIN"",7]]",,9916.807918763718,0.0,ytd_2026,medium_moderate,MODERATE,MILP_C,C,principal
+2026-04-02,2026-04-01,"[[""COALINDIA"",1],[""NTPC"",26],[""ONGC"",1]]","[[""COALINDIA"",1],[""NTPC"",26],[""ONGC"",1]]",,10102.586078133496,0.0,ytd_2026,medium_moderate,MODERATE,MILP_C,C,principal
+2026-05-05,2026-05-04,"[[""APOLLOHOSP"",1],[""NESTLEIND"",1],[""ONGC"",3]]","[[""APOLLOHOSP"",1],[""NESTLEIND"",1],[""ONGC"",2]]",,9844.449538202087,0.0,ytd_2026,medium_moderate,MODERATE,MILP_C,C,principal
+2026-06-02,2026-06-01,"[[""APOLLOHOSP"",1],[""COALINDIA"",1],[""NESTLEIND"",1],[""ONGC"",1]]","[[""APOLLOHOSP"",1],[""COALINDIA"",1],[""NESTLEIND"",1],[""ONGC"",1]]",,10240.743145460583,0.0,ytd_2026,medium_moderate,MODERATE,MILP_C,C,principal
+2026-07-02,2026-07-01,"[[""ICICIBANK"",2],[""NESTLEIND"",5]]","[[""ICICIBANK"",2],[""NESTLEIND"",5]]",,10046.05127099304,0.0,ytd_2026,medium_moderate,MODERATE,MILP_C,C,principal
+2026-08-04,2026-08-03,"[[""NESTLEIND"",5],[""NTPC"",5],[""POWERGRID"",2]]","[[""NESTLEIND"",5],[""NTPC"",5],[""POWERGRID"",2]]",,9899.882474736281,0.0,ytd_2026,medium_moderate,MODERATE,MILP_C,C,principal
+2026-09-02,2026-09-01,"[[""APOLLOHOSP"",1],[""NTPC"",4]]","[[""APOLLOHOSP"",1],[""NTPC"",4]]",,10054.063519499998,0.0,ytd_2026,medium_moderate,MODERATE,MILP_C,C,principal
+2026-10-05,2026-10-01,"[[""ICICIBANK"",1],[""KOTAKBANK"",2],[""NTPC"",25]]","[[""ICICIBANK"",1],[""KOTAKBANK"",2],[""NTPC"",24]]",,9902.035450191648,0.0,ytd_2026,medium_moderate,MODERATE,MILP_C,C,principal

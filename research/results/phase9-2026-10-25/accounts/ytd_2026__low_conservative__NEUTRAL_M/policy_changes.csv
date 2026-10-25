@@ -1,0 +1,6 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions,window,scenario,tier,policy,regime,kind
+2026-01-02,"[1.0, [], false, false]","[1.0, [""Capital Goods""], false, false]",0.33434936748788674,0.00018538728282822695,0.00011269743636974283,True,False,False,0,ytd_2026,low_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-02-03,"[1.0, [""Capital Goods""], false, false]","[1.0, [""Metals & Mining""], false, false]",0.2552081398309502,0.00047437099782164226,0.00028837142724719893,True,False,False,0,ytd_2026,low_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-02-17,"[1.0, [""Metals & Mining""], false, false]","[1.0, [], false, false]",0.24940978304559225,0.0004881174024228465,0.00029672790420841734,False,False,False,0,ytd_2026,low_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-02-18,"[1.0, [], false, false]","[1.0, [""Metals & Mining""], false, false]",0.25053778780764857,0.0004925531863033949,0.0002994244293637659,True,False,False,0,ytd_2026,low_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-03-04,"[1.0, [""Metals & Mining""], false, false]","[1.0, [], false, false]",0.19987878544911197,0.0005999810558578189,0.0003647301251415312,False,False,False,0,ytd_2026,low_conservative,CONSERVATIVE,NEUTRAL_M,M,principal

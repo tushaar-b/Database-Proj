@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""ADANIENT"",4],[""ADANIPORTS"",5],[""APOLLOHOSP"",1]]","[[""ADANIENT"",4],[""ADANIPORTS"",5],[""APOLLOHOSP"",1]]",,23731.75634370556,0.0,ytd_2026,high_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-02-03,2026-02-02,"[[""ASIANPAINT"",3],[""AXISBANK"",6],[""BAJAJ-AUTO"",1]]","[[""ASIANPAINT"",3],[""AXISBANK"",6]]",,15438.330214191647,0.0,ytd_2026,high_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-03-04,2026-03-02,"[[""BAJAJ-AUTO"",1],[""BEL"",18],[""BPCL"",18]]","[[""BAJAJ-AUTO"",1],[""BEL"",18],[""BPCL"",18]]",,24147.178555499995,0.0,ytd_2026,high_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-04-02,2026-04-01,"[[""HCLTECH"",7],[""LT"",2],[""NTPC"",22]]","[[""HCLTECH"",7],[""LT"",2],[""NTPC"",22]]",,24991.343045766997,0.0,ytd_2026,high_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-05-05,2026-05-04,"[[""ASIANPAINT"",3],[""AXISBANK"",6],[""BPCL"",33]]","[[""ASIANPAINT"",3],[""AXISBANK"",6],[""BPCL"",33]]",,24735.76010594165,0.0,ytd_2026,high_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-06-02,2026-06-01,"[[""APOLLOHOSP"",1],[""BEL"",21],[""LT"",2]]","[[""APOLLOHOSP"",1],[""BEL"",21],[""LT"",2]]",,24693.146485835583,0.0,ytd_2026,high_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-07-02,2026-07-01,"[[""ADANIPORTS"",4],[""HCLTECH"",9],[""NTPC"",23]]","[[""ADANIPORTS"",3],[""HCLTECH"",9],[""NTPC"",23]]",,23627.649804364562,0.0,ytd_2026,high_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-08-04,2026-08-03,"[[""ADANIENT"",2],[""ADANIPORTS"",4],[""BAJAJ-AUTO"",1]]","[[""ADANIENT"",2],[""ADANIPORTS"",4],[""BAJAJ-AUTO"",1]]",,24563.60226779443,0.0,ytd_2026,high_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-09-02,2026-09-01,"[[""ASIANPAINT"",3],[""AXISBANK"",6],[""NTPC"",29]]","[[""ASIANPAINT"",3],[""AXISBANK"",6],[""NTPC"",29]]",,24712.926334654174,0.0,ytd_2026,high_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-10-05,2026-10-01,"[[""BEL"",24],[""BPCL"",27],[""LT"",2]]","[[""BEL"",24],[""BPCL"",27],[""LT"",2]]",,24791.19392881356,0.0,ytd_2026,high_conservative,CONSERVATIVE,NEUTRAL_M,M,principal

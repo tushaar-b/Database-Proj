@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""ADANIENT"",4],[""ADANIPORTS"",5],[""APOLLOHOSP"",1]]","[[""ADANIENT"",4],[""ADANIPORTS"",5],[""APOLLOHOSP"",1]]",,23731.75634370556,0.0,ytd_2026,high_conservative,CONSERVATIVE,NEUTRAL_C,C,principal
+2026-02-03,2026-02-02,"[[""ASIANPAINT"",3],[""AXISBANK"",7],[""BAJAJ-AUTO"",1]]","[[""ASIANPAINT"",3],[""AXISBANK"",7]]",,16796.565143390257,0.0,ytd_2026,high_conservative,CONSERVATIVE,NEUTRAL_C,C,principal
+2026-03-04,2026-03-02,"[[""BAJAJ-AUTO"",1],[""BEL"",29],[""BPCL"",30]]","[[""BAJAJ-AUTO"",1],[""BEL"",29],[""BPCL"",30]]",,33353.12137046232,0.0,ytd_2026,high_conservative,CONSERVATIVE,NEUTRAL_C,C,principal
+2026-04-02,2026-04-01,"[[""HCLTECH"",7],[""LT"",2],[""NTPC"",25]]","[[""HCLTECH"",7],[""LT"",2],[""NTPC"",25]]",,26071.911991903973,0.0,ytd_2026,high_conservative,CONSERVATIVE,NEUTRAL_C,C,principal
+2026-05-05,2026-05-04,"[[""APOLLOHOSP"",1],[""ASIANPAINT"",3],[""LT"",2]]","[[""APOLLOHOSP"",1],[""ASIANPAINT"",3],[""LT"",2]]",,23205.768085499993,0.0,ytd_2026,high_conservative,CONSERVATIVE,NEUTRAL_C,C,principal
+2026-06-02,2026-06-01,"[[""ADANIPORTS"",5],[""BPCL"",32],[""HCLTECH"",7]]","[[""ADANIPORTS"",4],[""BPCL"",32],[""HCLTECH"",7]]",,25421.387446044435,0.0,ytd_2026,high_conservative,CONSERVATIVE,NEUTRAL_C,C,principal
+2026-07-02,2026-07-01,"[[""AXISBANK"",5],[""BAJAJ-AUTO"",1],[""NTPC"",27]]","[[""AXISBANK"",5],[""BAJAJ-AUTO"",1],[""NTPC"",27]]",,26382.27717412152,0.0,ytd_2026,high_conservative,CONSERVATIVE,NEUTRAL_C,C,principal
+2026-08-04,2026-08-03,"[[""ADANIENT"",2],[""AXISBANK"",6],[""BEL"",28]]","[[""ADANIENT"",2],[""AXISBANK"",6],[""BEL"",28]]",,24669.761809808344,0.0,ytd_2026,high_conservative,CONSERVATIVE,NEUTRAL_C,C,principal
+2026-09-02,2026-09-01,"[[""ADANIPORTS"",5],[""ASIANPAINT"",3],[""LT"",2]]","[[""ADANIPORTS"",5],[""ASIANPAINT"",3],[""LT"",2]]",,23943.87370949304,0.0,ytd_2026,high_conservative,CONSERVATIVE,NEUTRAL_C,C,principal
+2026-10-05,2026-10-01,"[[""ADANIENT"",3],[""APOLLOHOSP"",1],[""NTPC"",31]]","[[""ADANIENT"",2],[""APOLLOHOSP"",1],[""NTPC"",31]]",,23724.34466541421,0.0,ytd_2026,high_conservative,CONSERVATIVE,NEUTRAL_C,C,principal

@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""ADANIENT"",13],[""ADANIPORTS"",16],[""APOLLOHOSP"",3]]","[[""ADANIENT"",13],[""ADANIPORTS"",16],[""APOLLOHOSP"",3]]",,74970.22491466808,0.0,ytd_2026,high_aggressive,AGGRESSIVE,NEUTRAL_C,C,principal
+2026-02-03,2026-02-02,"[[""ASIANPAINT"",12],[""AXISBANK"",20],[""BAJAJ-AUTO"",2]]","[[""ASIANPAINT"",12],[""AXISBANK"",20],[""BAJAJ-AUTO"",1]]",,65930.27918772216,0.0,ytd_2026,high_aggressive,AGGRESSIVE,NEUTRAL_C,C,principal
+2026-03-04,2026-03-02,"[[""BEL"",63],[""BPCL"",74],[""HCLTECH"",20]]","[[""BEL"",63],[""BPCL"",74],[""HCLTECH"",20]]",,81927.89856033557,0.0,ytd_2026,high_aggressive,AGGRESSIVE,NEUTRAL_C,C,principal
+2026-04-02,2026-04-01,"[[""BAJAJ-AUTO"",2],[""LT"",9],[""NTPC"",73]]","[[""BAJAJ-AUTO"",2],[""LT"",9],[""NTPC"",73]]",,76403.82260367484,0.0,ytd_2026,high_aggressive,AGGRESSIVE,NEUTRAL_C,C,principal
+2026-05-05,2026-05-04,"[[""APOLLOHOSP"",3],[""BPCL"",90],[""HCLTECH"",21]]","[[""APOLLOHOSP"",3],[""BPCL"",90],[""HCLTECH"",21]]",,75498.31446567076,0.0,ytd_2026,high_aggressive,AGGRESSIVE,NEUTRAL_C,C,principal
+2026-06-02,2026-06-01,"[[""AXISBANK"",19],[""BEL"",63],[""NTPC"",66]]","[[""AXISBANK"",19],[""BEL"",63],[""NTPC"",66]]",,73824.45714902374,0.0,ytd_2026,high_aggressive,AGGRESSIVE,NEUTRAL_C,C,principal
+2026-07-02,2026-07-01,"[[""ADANIPORTS"",17],[""ASIANPAINT"",9],[""BAJAJ-AUTO"",2]]","[[""ADANIPORTS"",17],[""ASIANPAINT"",8],[""BAJAJ-AUTO"",2]]",,73794.96261087633,0.0,ytd_2026,high_aggressive,AGGRESSIVE,NEUTRAL_C,C,principal
+2026-08-04,2026-08-03,"[[""ADANIENT"",9],[""LT"",6],[""NTPC"",73]]","[[""ADANIENT"",9],[""LT"",6],[""NTPC"",73]]",,76591.20246699979,0.0,ytd_2026,high_aggressive,AGGRESSIVE,NEUTRAL_C,C,principal
+2026-09-02,2026-09-01,"[[""ASIANPAINT"",9],[""AXISBANK"",22],[""BEL"",61]]","[[""ASIANPAINT"",9],[""AXISBANK"",22],[""BEL"",61]]",,75196.7141549403,0.0,ytd_2026,high_aggressive,AGGRESSIVE,NEUTRAL_C,C,principal
+2026-10-05,2026-10-01,"[[""APOLLOHOSP"",3],[""BAJAJ-AUTO"",2],[""BPCL"",103]]","[[""APOLLOHOSP"",3],[""BAJAJ-AUTO"",2],[""BPCL"",103]]",,74700.77182863583,0.0,ytd_2026,high_aggressive,AGGRESSIVE,NEUTRAL_C,C,principal

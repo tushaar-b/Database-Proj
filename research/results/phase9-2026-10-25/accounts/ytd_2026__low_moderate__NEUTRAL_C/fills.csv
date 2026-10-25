@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""ADANIENT"",1]]","[[""ADANIENT"",1]]",,2283.2208888013915,0.0,ytd_2026,low_moderate,MODERATE,NEUTRAL_C,C,principal
+2026-02-03,2026-02-02,"[[""ADANIPORTS"",1],[""BEL"",2],[""BPCL"",1]]","[[""ADANIPORTS"",1],[""BEL"",2]]",,2412.314327702087,0.0,ytd_2026,low_moderate,MODERATE,NEUTRAL_C,C,principal
+2026-03-04,2026-03-02,"[[""ASIANPAINT"",1],[""BPCL"",1]]","[[""ASIANPAINT"",1],[""BPCL"",1]]",,2645.563665785934,0.0,ytd_2026,low_moderate,MODERATE,NEUTRAL_C,C,principal
+2026-04-02,2026-04-01,"[[""AXISBANK"",1],[""CIPLA"",1],[""WIPRO"",1]]","[[""AXISBANK"",1],[""CIPLA"",1],[""WIPRO"",1]]",,2589.089160173996,0.0,ytd_2026,low_moderate,MODERATE,NEUTRAL_C,C,principal
+2026-05-05,2026-05-04,"[[""BPCL"",1],[""HCLTECH"",1],[""NTPC"",2]]","[[""BPCL"",1],[""HCLTECH"",1],[""NTPC"",2]]",,2299.44508687326,0.0,ytd_2026,low_moderate,MODERATE,NEUTRAL_C,C,principal
+2026-06-02,2026-06-01,"[[""BEL"",2],[""BPCL"",4],[""NTPC"",2]]","[[""BEL"",2],[""BPCL"",4],[""NTPC"",2]]",,2732.1934895993036,0.0,ytd_2026,low_moderate,MODERATE,NEUTRAL_C,C,principal
+2026-07-02,2026-07-01,"[[""AXISBANK"",1],[""HCLTECH"",1]]","[[""AXISBANK"",1],[""HCLTECH"",1]]",,2444.362221448608,0.0,ytd_2026,low_moderate,MODERATE,NEUTRAL_C,C,principal
+2026-08-04,2026-08-03,"[[""BEL"",1],[""CIPLA"",1],[""NTPC"",2]]","[[""BEL"",1],[""CIPLA"",1],[""NTPC"",2]]",,2542.6094571746517,0.0,ytd_2026,low_moderate,MODERATE,NEUTRAL_C,C,principal
+2026-09-02,2026-09-01,"[[""ADANIPORTS"",1],[""BPCL"",1],[""NTPC"",1]]","[[""ADANIPORTS"",1],[""BPCL"",1],[""NTPC"",1]]",,2325.784568361282,0.0,ytd_2026,low_moderate,MODERATE,NEUTRAL_C,C,principal
+2026-10-05,2026-10-01,"[[""BEL"",3],[""BPCL"",3],[""NTPC"",2]]","[[""BEL"",3],[""BPCL"",3],[""NTPC"",2]]",,2693.0348750633693,0.0,ytd_2026,low_moderate,MODERATE,NEUTRAL_C,C,principal

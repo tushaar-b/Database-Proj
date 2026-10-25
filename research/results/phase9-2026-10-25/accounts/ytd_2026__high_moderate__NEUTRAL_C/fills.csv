@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""ADANIENT"",8],[""ADANIPORTS"",11],[""APOLLOHOSP"",2]]","[[""ADANIENT"",8],[""ADANIPORTS"",11],[""APOLLOHOSP"",2]]",,48955.24768216112,0.0,ytd_2026,high_moderate,MODERATE,NEUTRAL_C,C,principal
+2026-02-03,2026-02-02,"[[""ASIANPAINT"",10],[""AXISBANK"",13],[""BAJAJ-AUTO"",1]]","[[""ASIANPAINT"",10],[""AXISBANK"",13]]",,41953.4562095819,0.0,ytd_2026,high_moderate,MODERATE,NEUTRAL_C,C,principal
+2026-03-04,2026-03-02,"[[""BAJAJ-AUTO"",2],[""BEL"",43],[""BPCL"",53]]","[[""BAJAJ-AUTO"",2],[""BEL"",43],[""BPCL"",53]]",,57494.89176824824,0.0,ytd_2026,high_moderate,MODERATE,NEUTRAL_C,C,principal
+2026-04-02,2026-04-01,"[[""HCLTECH"",14],[""LT"",4],[""NTPC"",49]]","[[""HCLTECH"",14],[""LT"",4],[""NTPC"",48]]",,51423.44468638329,0.0,ytd_2026,high_moderate,MODERATE,NEUTRAL_C,C,principal
+2026-05-05,2026-05-04,"[[""APOLLOHOSP"",2],[""BPCL"",60],[""LT"",4]]","[[""APOLLOHOSP"",2],[""BPCL"",60],[""LT"",4]]",,49746.532836,0.0,ytd_2026,high_moderate,MODERATE,NEUTRAL_C,C,principal
+2026-06-02,2026-06-01,"[[""AXISBANK"",13],[""BEL"",41],[""HCLTECH"",14]]","[[""AXISBANK"",13],[""BEL"",40],[""HCLTECH"",14]]",,50062.30587029791,0.0,ytd_2026,high_moderate,MODERATE,NEUTRAL_C,C,principal
+2026-07-02,2026-07-01,"[[""ADANIPORTS"",9],[""BAJAJ-AUTO"",1],[""NTPC"",66]]","[[""ADANIPORTS"",8],[""BAJAJ-AUTO"",1],[""NTPC"",66]]",,48639.97454233887,0.0,ytd_2026,high_moderate,MODERATE,NEUTRAL_C,C,principal
+2026-08-04,2026-08-03,"[[""ADANIENT"",6],[""ASIANPAINT"",6],[""LT"",4]]","[[""ADANIENT"",6],[""ASIANPAINT"",6],[""LT"",4]]",,50986.390454999986,0.0,ytd_2026,high_moderate,MODERATE,NEUTRAL_C,C,principal
+2026-09-02,2026-09-01,"[[""ADANIPORTS"",10],[""AXISBANK"",13],[""BEL"",43]]","[[""ADANIPORTS"",10],[""AXISBANK"",13],[""BEL"",43]]",,50550.687491320125,0.0,ytd_2026,high_moderate,MODERATE,NEUTRAL_C,C,principal
+2026-10-05,2026-10-01,"[[""APOLLOHOSP"",2],[""BAJAJ-AUTO"",1],[""BPCL"",79]]","[[""APOLLOHOSP"",2],[""BAJAJ-AUTO"",1],[""BPCL"",79]]",,49527.25526732748,0.0,ytd_2026,high_moderate,MODERATE,NEUTRAL_C,C,principal

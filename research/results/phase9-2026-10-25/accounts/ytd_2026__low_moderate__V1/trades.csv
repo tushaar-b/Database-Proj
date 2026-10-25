@@ -1,0 +1,3 @@
+date,decision_date,ticker,side,quantity,notional,fee,slippage_cost,realized_gain,new_position,topup,feedback_attributable,window,scenario,tier,policy,regime,kind
+2026-02-03,2026-02-02,NTPC,BUY,2,717.4585255737304,0.7174585255737305,0.35854998779296876,0.0,True,False,False,ytd_2026,low_moderate,MODERATE,V1,M,principal
+2026-04-02,2026-04-01,COALINDIA,BUY,1,449.57468110656737,0.4495746811065674,0.2246750030517578,0.0,True,False,False,ytd_2026,low_moderate,MODERATE,V1,M,principal

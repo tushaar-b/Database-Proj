@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""MARUTI"",1],[""NTPC"",1],[""SBIN"",8]]","[[""MARUTI"",1],[""NTPC"",1],[""SBIN"",7]]",,24341.219369065104,0.0,ytd_2026,high_conservative,CONSERVATIVE,GREEDY_C,C,principal
+2026-02-03,2026-02-02,"[[""ICICIBANK"",17],[""NTPC"",4],[""SBIN"",1],[""TATASTEEL"",1]]","[[""ICICIBANK"",17],[""NTPC"",4],[""TATASTEEL"",1]]",,25289.919783454734,0.0,ytd_2026,high_conservative,CONSERVATIVE,GREEDY_C,C,principal
+2026-03-04,2026-03-02,"[[""APOLLOHOSP"",3],[""NTPC"",5]]","[[""APOLLOHOSP"",3],[""NTPC"",5]]",,24864.252852373254,0.0,ytd_2026,high_conservative,CONSERVATIVE,GREEDY_C,C,principal
+2026-04-02,2026-04-01,"[[""NTPC"",69],[""POWERGRID"",1]]","[[""NTPC"",69],[""POWERGRID"",1]]",,25143.470843350842,0.0,ytd_2026,high_conservative,CONSERVATIVE,GREEDY_C,C,principal
+2026-05-05,2026-05-04,"[[""APOLLOHOSP"",2],[""NESTLEIND"",6],[""ONGC"",3],[""TATASTEEL"",1]]","[[""APOLLOHOSP"",2],[""NESTLEIND"",6],[""ONGC"",3]]",,25318.58394540939,0.0,ytd_2026,high_conservative,CONSERVATIVE,GREEDY_C,C,principal
+2026-06-02,2026-06-01,"[[""COALINDIA"",1],[""NESTLEIND"",3],[""NTPC"",53],[""ONGC"",1]]","[[""COALINDIA"",1],[""NESTLEIND"",3],[""NTPC"",53],[""ONGC"",1]]",,24442.11996373608,0.0,ytd_2026,high_conservative,CONSERVATIVE,GREEDY_C,C,principal
+2026-07-02,2026-07-01,"[[""APOLLOHOSP"",1],[""ICICIBANK"",6],[""NTPC"",24]]","[[""APOLLOHOSP"",1],[""ICICIBANK"",6],[""NTPC"",23]]",,25373.766292875,0.0,ytd_2026,high_conservative,CONSERVATIVE,GREEDY_C,C,principal
+2026-08-04,2026-08-03,"[[""APOLLOHOSP"",1],[""NESTLEIND"",10],[""NTPC"",3]]","[[""APOLLOHOSP"",1],[""NESTLEIND"",10],[""NTPC"",2]]",,24974.71840642465,0.0,ytd_2026,high_conservative,CONSERVATIVE,GREEDY_C,C,principal
+2026-09-02,2026-09-01,"[[""APOLLOHOSP"",2],[""ICICIBANK"",5],[""NTPC"",1],[""TATASTEEL"",1]]","[[""APOLLOHOSP"",2],[""ICICIBANK"",5],[""NTPC"",1],[""TATASTEEL"",1]]",,25121.989073287667,0.0,ytd_2026,high_conservative,CONSERVATIVE,GREEDY_C,C,principal
+2026-10-05,2026-10-01,"[[""ICICIBANK"",7],[""NTPC"",50],[""WIPRO"",1]]",[],execution_hhi_limit,0.0,0.0,ytd_2026,high_conservative,CONSERVATIVE,GREEDY_C,C,principal

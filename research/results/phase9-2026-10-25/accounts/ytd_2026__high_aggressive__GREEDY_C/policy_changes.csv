@@ -1,0 +1,8 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions,window,scenario,tier,policy,regime,kind
+2026-01-02,"[1.0, [], false, false]","[1.0, [""Financial Services""], false, false]",0.49478707947832107,0.0043255024782606856,0.002629484789216222,True,False,False,0,ytd_2026,high_aggressive,AGGRESSIVE,GREEDY_C,C,principal
+2026-03-04,"[1.0, [""Financial Services""], false, false]","[1.0, [""Automobile""], false, false]",0.3663968831206474,0.011607488659614074,0.007056224109187887,True,False,False,0,ytd_2026,high_aggressive,AGGRESSIVE,GREEDY_C,C,principal
+2026-05-05,"[1.0, [""Automobile""], false, false]","[1.0, [""Power""], false, false]",0.26500961605506,0.013276408670320674,0.008070765149131109,True,False,False,0,ytd_2026,high_aggressive,AGGRESSIVE,GREEDY_C,C,principal
+2026-05-22,"[1.0, [""Power""], false, false]","[1.0, [""Healthcare""], false, false]",0.26612695926296304,0.008382706564474868,0.005095870251960406,True,False,False,0,ytd_2026,high_aggressive,AGGRESSIVE,GREEDY_C,C,principal
+2026-05-26,"[1.0, [""Healthcare""], false, false]","[1.0, [""Power""], false, false]",0.2650857312788264,0.008747819111290113,0.005317823167957515,True,False,False,0,ytd_2026,high_aggressive,AGGRESSIVE,GREEDY_C,C,principal
+2026-06-02,"[1.0, [""Power""], false, false]","[1.0, [""Healthcare""], false, false]",0.26484336157912847,0.007922469924016623,0.004816091139219832,True,False,False,0,ytd_2026,high_aggressive,AGGRESSIVE,GREEDY_C,C,principal
+2026-07-02,"[1.0, [""Healthcare""], false, false]","[1.0, [], false, false]",0.23009724675588605,0.0070750768890127415,0.004300958595144524,False,False,False,0,ytd_2026,high_aggressive,AGGRESSIVE,GREEDY_C,C,principal

@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""SBIN"",10]]","[[""SBIN"",9]]",,9004.04043030313,0.0,ytd_2026,medium_moderate,MODERATE,GREEDY_M,M,principal
+2026-02-03,2026-02-02,"[[""NTPC"",28]]","[[""NTPC"",27]]",,9695.375785340604,0.0,ytd_2026,medium_moderate,MODERATE,GREEDY_M,M,principal
+2026-03-04,2026-03-02,"[[""APOLLOHOSP"",1],[""NTPC"",5],[""POWERGRID"",1]]","[[""APOLLOHOSP"",1],[""NTPC"",5],[""POWERGRID"",1]]",,9801.635269573606,0.0,ytd_2026,medium_moderate,MODERATE,GREEDY_M,M,principal
+2026-04-02,2026-04-01,"[[""APOLLOHOSP"",1],[""COALINDIA"",5],[""ONGC"",1]]","[[""APOLLOHOSP"",1],[""COALINDIA"",5],[""ONGC"",1]]",,9866.232143513715,0.0,ytd_2026,medium_moderate,MODERATE,GREEDY_M,M,principal
+2026-05-05,2026-05-04,"[[""NESTLEIND"",2],[""NTPC"",17],[""TATASTEEL"",1]]","[[""NESTLEIND"",2],[""NTPC"",17],[""TATASTEEL"",1]]",,9958.890928207533,0.0,ytd_2026,medium_moderate,MODERATE,GREEDY_M,M,principal
+2026-06-02,2026-06-01,"[[""NESTLEIND"",7],[""WIPRO"",1]]","[[""NESTLEIND"",7]]",,9805.590903140257,0.0,ytd_2026,medium_moderate,MODERATE,GREEDY_M,M,principal
+2026-07-02,2026-07-01,"[[""ICICIBANK"",3],[""NTPC"",16]]","[[""ICICIBANK"",3],[""NTPC"",16]]",,9946.902965999998,0.0,ytd_2026,medium_moderate,MODERATE,GREEDY_M,M,principal
+2026-08-04,2026-08-03,"[[""NESTLEIND"",6],[""NTPC"",2]]","[[""NESTLEIND"",6],[""NTPC"",2]]",,9822.01584142465,0.0,ytd_2026,medium_moderate,MODERATE,GREEDY_M,M,principal
+2026-09-02,2026-09-01,"[[""APOLLOHOSP"",1],[""NTPC"",3],[""ONGC"",1]]","[[""APOLLOHOSP"",1],[""NTPC"",3],[""ONGC"",1]]",,9961.424723249997,0.0,ytd_2026,medium_moderate,MODERATE,GREEDY_M,M,principal
+2026-10-05,2026-10-01,"[[""ICICIBANK"",2],[""NTPC"",23]]",[],execution_hhi_limit,0.0,0.0,ytd_2026,medium_moderate,MODERATE,GREEDY_M,M,principal

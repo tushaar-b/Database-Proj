@@ -1,0 +1,2 @@
+date,decision_date,ticker,side,quantity,notional,fee,slippage_cost,realized_gain,new_position,topup,feedback_attributable,window,scenario,tier,policy,regime,kind
+2026-02-03,2026-02-02,NTPC,BUY,1,358.7292627868652,0.35872926278686523,0.17927499389648438,0.0,True,False,False,ytd_2026,low_conservative,CONSERVATIVE,V1,M,principal

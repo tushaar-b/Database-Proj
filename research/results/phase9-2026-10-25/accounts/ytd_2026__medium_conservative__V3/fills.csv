@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""COALINDIA"",4],[""NESTLEIND"",1],[""SBIN"",2]]","[[""COALINDIA"",4],[""NESTLEIND"",1],[""SBIN"",2]]",,4996.686245698607,0.0,ytd_2026,medium_conservative,CONSERVATIVE,V3,M,principal
+2026-02-03,2026-02-02,"[[""DRREDDY"",1],[""NTPC"",1],[""TCS"",1]]","[[""DRREDDY"",1],[""NTPC"",1],[""TCS"",1]]",,4826.481345751739,0.0,ytd_2026,medium_conservative,CONSERVATIVE,V3,M,principal
+2026-03-04,2026-03-02,"[[""BEL"",1],[""LT"",1],[""TATASTEEL"",2]]","[[""BEL"",1],[""LT"",1],[""TATASTEEL"",2]]",,4729.996821812713,0.0,ytd_2026,medium_conservative,CONSERVATIVE,V3,M,principal
+2026-04-02,2026-04-01,"[[""ADANIPORTS"",1],[""M&M"",1],[""NTPC"",1]]","[[""ADANIPORTS"",1],[""M&M"",1],[""NTPC"",1]]",,4756.075720010238,0.0,ytd_2026,medium_conservative,CONSERVATIVE,V3,M,principal
+2026-05-05,2026-05-04,"[[""BEL"",3],[""NTPC"",4],[""TATASTEEL"",9]]","[[""BEL"",3],[""NTPC"",4],[""TATASTEEL"",9]]",,4803.727253169204,0.0,ytd_2026,medium_conservative,CONSERVATIVE,V3,M,principal
+2026-06-02,2026-06-01,"[[""BEL"",4],[""NESTLEIND"",1],[""SUNPHARMA"",1]]","[[""BEL"",4],[""NESTLEIND"",1],[""SUNPHARMA"",1]]",,4827.232409999999,0.0,ytd_2026,medium_conservative,CONSERVATIVE,V3,M,principal
+2026-07-02,2026-07-01,"[[""ADANIPORTS"",1],[""COALINDIA"",4],[""TECHM"",1]]","[[""ADANIPORTS"",1],[""COALINDIA"",4]]",,3644.2599460479123,0.0,ytd_2026,medium_conservative,CONSERVATIVE,V3,M,principal
+2026-08-04,2026-08-03,"[[""ICICIBANK"",1],[""JSWSTEEL"",1],[""NTPC"",6]]","[[""ICICIBANK"",1],[""JSWSTEEL"",1],[""NTPC"",6]]",,4823.727097123259,0.0,ytd_2026,medium_conservative,CONSERVATIVE,V3,M,principal
+2026-09-02,2026-09-01,"[[""CIPLA"",1],[""NESTLEIND"",1],[""TECHM"",1]]","[[""CIPLA"",1],[""NESTLEIND"",1],[""TECHM"",1]]",,4467.493479301391,0.0,ytd_2026,medium_conservative,CONSERVATIVE,V3,M,principal
+2026-10-05,2026-10-01,"[[""BEL"",2],[""JSWSTEEL"",1],[""M&M"",1]]","[[""BEL"",2],[""JSWSTEEL"",1],[""M&M"",1]]",,4869.896490229522,0.0,ytd_2026,medium_conservative,CONSERVATIVE,V3,M,principal

@@ -1,0 +1,63 @@
+{
+  "equity_rows": 57400,
+  "equity_securities": 40,
+  "equity_dates": 1435,
+  "equity_duplicate_keys": 0,
+  "etf_admitted": true,
+  "etf_rows": 1236,
+  "etf_missing_common_sessions": 0,
+  "etf_spot_checks": [
+    {
+      "date": "2024-12-31",
+      "provider_close": 264.4700012207031,
+      "exchange_close": 264.47,
+      "match": true,
+      "exchange_file": "research/data/2026-10-23/exchange_raw/BhavCopy_NSE_CM_0_0_0_20241231_F_0000.csv.zip",
+      "exchange_sha256": "ce708924888c4ba8310c4f057e6135876275b99f08ab5e365ca0ebce8c4dcce6"
+    },
+    {
+      "date": "2025-12-31",
+      "provider_close": 295.30999755859375,
+      "exchange_close": 295.31,
+      "match": true,
+      "exchange_file": "research/data/2026-10-23/exchange_raw/BhavCopy_NSE_CM_0_0_0_20251231_F_0000.csv.zip",
+      "exchange_sha256": "05a2124e2234fbfe6ed9f9e13293768b1270331980e6836d975adfda07c8b678"
+    },
+    {
+      "date": "2024-06-28",
+      "provider_close": 267.4800109863281,
+      "exchange_close": 267.48,
+      "match": true,
+      "exchange_file": "research/data/2026-10-23/exchange_raw/cm28JUN2024bhav.csv.zip",
+      "exchange_sha256": "b5b084ce09183c70fa58dd171391f0773806e71a00d86d28058194ba9dc12f8b"
+    },
+    {
+      "date": "2023-12-29",
+      "provider_close": 239.6499938964844,
+      "exchange_close": 239.65,
+      "match": true,
+      "exchange_file": "research/data/2026-10-23/exchange_raw/cm29DEC2023bhav.csv.zip",
+      "exchange_sha256": "ba5c7e44708ea3df65a022cdf842eb3fd341421bbf4498c0ea06b3843f8a7cc3"
+    },
+    {
+      "date": "2022-12-30",
+      "provider_close": 198.0399932861328,
+      "exchange_close": 198.04,
+      "match": true,
+      "exchange_file": "research/data/2026-10-23/exchange_raw/cm30DEC2022bhav.csv.zip",
+      "exchange_sha256": "636cb895992d40dfbf92dfe4b634d4e4000be6f218f6075c30631402683e19e7"
+    },
+    {
+      "date": "2021-12-31",
+      "provider_close": 187.7899932861328,
+      "exchange_close": 187.79,
+      "match": true,
+      "exchange_file": "research/data/2026-10-23/exchange_raw/cm31DEC2021bhav.csv.zip",
+      "exchange_sha256": "2fe78bf6119e569626dc046d05dfe979ccf8047c4d0178fad2615d3a33366604"
+    }
+  ],
+  "etf_dividends": 0.0,
+  "etf_splits": 0.0,
+  "etf_adjusted_equals_close": true,
+  "independent_holdout": false
+}

@@ -1,0 +1,9 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions,window,scenario,tier,policy,regime,kind
+2026-01-02,"[1.0, [], false, false]","[1.0, [""Financial Services""], false, false]",1.0,0.000958386793312987,0.000582605953381755,True,False,False,0,ytd_2026,medium_moderate,MODERATE,MILP_M,M,principal
+2026-03-09,"[1.0, [""Financial Services""], false, false]","[1.0, [""Power""], false, false]",0.28958788304413496,0.00347774231777571,0.0021141290685566627,True,False,False,0,ytd_2026,medium_moderate,MODERATE,MILP_M,M,principal
+2026-03-10,"[1.0, [""Power""], false, false]","[1.0, [""Financial Services""], false, false]",0.28983195454783584,0.0034154008274182713,0.0020762315060293443,True,False,False,0,ytd_2026,medium_moderate,MODERATE,MILP_M,M,principal
+2026-03-11,"[1.0, [""Financial Services""], false, false]","[1.0, [""Power""], false, false]",0.2900248116522503,0.0033752500550774693,0.002051823741688431,True,False,False,0,ytd_2026,medium_moderate,MODERATE,MILP_M,M,principal
+2026-04-02,"[1.0, [""Power""], false, false]","[1.0, [""Healthcare""], false, false]",0.27756092124512366,0.003968949976503808,0.002412735548026631,True,False,False,0,ytd_2026,medium_moderate,MODERATE,MILP_M,M,principal
+2026-05-06,"[1.0, [""Healthcare""], false, false]","[1.0, [], false, false]",0.24894345791178887,0.0044738105981086814,0.0027196417009779216,False,False,False,0,ytd_2026,medium_moderate,MODERATE,MILP_M,M,principal
+2026-05-07,"[1.0, [], false, false]","[1.0, [""Healthcare""], false, false]",0.25013401457530177,0.004182604294456414,0.0025426165923747193,True,False,False,0,ytd_2026,medium_moderate,MODERATE,MILP_M,M,principal
+2026-06-02,"[1.0, [""Healthcare""], false, false]","[1.0, [], false, false]",0.24974188424615945,0.003205009335049872,0.0019483339422795573,False,False,False,0,ytd_2026,medium_moderate,MODERATE,MILP_M,M,principal

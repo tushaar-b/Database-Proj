@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""BPCL"",6]]","[[""BPCL"",6]]",,2292.1342677020875,0.0,ytd_2026,low_moderate,MODERATE,SIP_C,C,principal
+2026-02-03,2026-02-02,"[[""AXISBANK"",2]]","[[""AXISBANK"",1]]",,1358.2349291986081,0.0,ytd_2026,low_moderate,MODERATE,SIP_C,C,principal
+2026-03-04,2026-03-02,"[[""HCLTECH"",2]]","[[""HCLTECH"",2]]",,2732.093364,0.0,ytd_2026,low_moderate,MODERATE,SIP_C,C,principal
+2026-04-02,2026-04-01,"[[""ADANIENT"",1],[""NTPC"",4]]","[[""ADANIENT"",1],[""NTPC"",4]]",,3277.710763047912,0.0,ytd_2026,low_moderate,MODERATE,SIP_C,C,principal
+2026-05-05,2026-05-04,"[[""HCLTECH"",2],[""NTPC"",1]]",[],execution_hhi_limit,0.0,0.0,ytd_2026,low_moderate,MODERATE,SIP_C,C,principal
+2026-06-02,2026-06-01,"[[""ADANIPORTS"",1],[""NTPC"",9]]","[[""ADANIPORTS"",1],[""NTPC"",9]]",,5128.784155535934,0.0,ytd_2026,low_moderate,MODERATE,SIP_C,C,principal
+2026-07-02,2026-07-01,"[[""NTPC"",7]]","[[""NTPC"",7]]",,2511.512878875,0.0,ytd_2026,low_moderate,MODERATE,SIP_C,C,principal
+2026-08-04,2026-08-03,"[[""ADANIPORTS"",1],[""BEL"",2]]","[[""ADANIPORTS"",1],[""BEL"",2]]",,2493.435745948608,0.0,ytd_2026,low_moderate,MODERATE,SIP_C,C,principal
+2026-09-02,2026-09-01,"[[""BEL"",6]]","[[""BEL"",6]]",,2438.15296725,0.0,ytd_2026,low_moderate,MODERATE,SIP_C,C,principal
+2026-10-05,2026-10-01,"[[""BEL"",7]]","[[""BEL"",7]]",,2697.992314763717,0.0,ytd_2026,low_moderate,MODERATE,SIP_C,C,principal

@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""BRITANNIA"",2],[""MARUTI"",1],[""SBIN"",21]]","[[""BRITANNIA"",2],[""MARUTI"",1],[""SBIN"",21]]",,49981.8356352073,0.0,ytd_2026,high_moderate,MODERATE,V3,M,principal
+2026-02-03,2026-02-02,"[[""APOLLOHOSP"",2],[""NTPC"",67],[""ULTRACEMCO"",1]]","[[""APOLLOHOSP"",1],[""NTPC"",67],[""ULTRACEMCO"",1]]",,43766.923056576685,0.0,ytd_2026,high_moderate,MODERATE,V3,M,principal
+2026-03-04,2026-03-02,"[[""ADANIPORTS"",10],[""BEL"",34],[""COALINDIA"",46]]","[[""ADANIPORTS"",10],[""BEL"",34],[""COALINDIA"",46]]",,49628.15564805486,0.0,ytd_2026,high_moderate,MODERATE,V3,M,principal
+2026-04-02,2026-04-01,"[[""APOLLOHOSP"",2],[""JSWSTEEL"",13],[""TECHM"",14]]","[[""APOLLOHOSP"",2],[""JSWSTEEL"",13],[""TECHM"",14]]",,49727.40481216808,0.0,ytd_2026,high_moderate,MODERATE,V3,M,principal
+2026-05-05,2026-05-04,"[[""BAJAJ-AUTO"",1],[""NESTLEIND"",19],[""ULTRACEMCO"",1]]","[[""NESTLEIND"",19],[""ULTRACEMCO"",1]]",,40101.28274972644,0.0,ytd_2026,high_moderate,MODERATE,V3,M,principal
+2026-06-02,2026-06-01,"[[""BAJAJ-AUTO"",1],[""BEL"",58],[""JSWSTEEL"",12]]","[[""BAJAJ-AUTO"",1],[""BEL"",58],[""JSWSTEEL"",12]]",,49740.42462430178,0.0,ytd_2026,high_moderate,MODERATE,V3,M,principal
+2026-07-02,2026-07-01,"[[""ADANIPORTS"",9],[""COALINDIA"",42],[""TECHM"",11]]","[[""ADANIPORTS"",9],[""COALINDIA"",39],[""TECHM"",11]]",,49774.77500950849,0.0,ytd_2026,high_moderate,MODERATE,V3,M,principal
+2026-08-04,2026-08-03,"[[""ICICIBANK"",14],[""NTPC"",49],[""ULTRACEMCO"",1]]","[[""ICICIBANK"",14],[""NTPC"",49],[""ULTRACEMCO"",1]]",,49327.15385979423,0.0,ytd_2026,high_moderate,MODERATE,V3,M,principal
+2026-09-02,2026-09-01,"[[""ADANIPORTS"",12],[""APOLLOHOSP"",2],[""BAJAJ-AUTO"",1]]","[[""ADANIPORTS"",12],[""APOLLOHOSP"",2],[""BAJAJ-AUTO"",1]]",,49714.88483338329,0.0,ytd_2026,high_moderate,MODERATE,V3,M,principal
+2026-10-05,2026-10-01,"[[""BAJAJ-AUTO"",1],[""JSWSTEEL"",23],[""ULTRACEMCO"",1]]","[[""BAJAJ-AUTO"",1],[""JSWSTEEL"",23],[""ULTRACEMCO"",1]]",,49359.854617681995,0.0,ytd_2026,high_moderate,MODERATE,V3,M,principal

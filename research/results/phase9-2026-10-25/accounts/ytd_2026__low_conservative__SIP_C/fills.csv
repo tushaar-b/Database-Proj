@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""BPCL"",3]]","[[""BPCL"",3]]",,1146.0671338510438,0.0,ytd_2026,low_conservative,CONSERVATIVE,SIP_C,C,principal
+2026-02-03,2026-02-02,"[[""AXISBANK"",1]]",[],,0.0,0.0,ytd_2026,low_conservative,CONSERVATIVE,SIP_C,C,principal
+2026-03-04,2026-03-02,"[[""HCLTECH"",1]]","[[""HCLTECH"",1]]",,1366.046682,0.0,ytd_2026,low_conservative,CONSERVATIVE,SIP_C,C,principal
+2026-04-02,2026-04-01,"[[""ADANIENT"",1],[""NTPC"",1]]","[[""ADANIENT"",1],[""NTPC"",1]]",,2197.1418169109343,0.0,ytd_2026,low_conservative,CONSERVATIVE,SIP_C,C,principal
+2026-05-05,2026-05-04,"[[""HCLTECH"",1]]","[[""HCLTECH"",1]]",,1202.0008511986082,0.0,ytd_2026,low_conservative,CONSERVATIVE,SIP_C,C,principal
+2026-06-02,2026-06-01,"[[""NTPC"",4]]","[[""NTPC"",4]]",,1471.805110349304,0.0,ytd_2026,low_conservative,CONSERVATIVE,SIP_C,C,principal
+2026-07-02,2026-07-01,"[[""BEL"",3]]","[[""BEL"",3]]",,1247.0183108989559,0.0,ytd_2026,low_conservative,CONSERVATIVE,SIP_C,C,principal
+2026-08-04,2026-08-03,"[[""BEL"",3]]","[[""BEL"",3]]",,1176.2623372499997,0.0,ytd_2026,low_conservative,CONSERVATIVE,SIP_C,C,principal
+2026-09-02,2026-09-01,"[[""BEL"",3]]","[[""BEL"",3]]",,1219.076483625,0.0,ytd_2026,low_conservative,CONSERVATIVE,SIP_C,C,principal
+2026-10-05,2026-10-01,"[[""BEL"",2]]","[[""BEL"",2]]",,770.8549470753477,0.0,ytd_2026,low_conservative,CONSERVATIVE,SIP_C,C,principal

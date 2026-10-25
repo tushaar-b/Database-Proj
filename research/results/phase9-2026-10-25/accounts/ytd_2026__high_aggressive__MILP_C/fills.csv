@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""ICICIBANK"",2],[""MARUTI"",2],[""SBILIFE"",19]]","[[""ICICIBANK"",2],[""MARUTI"",2],[""SBILIFE"",18]]",,73954.80121045129,0.0,ytd_2026,high_aggressive,AGGRESSIVE,MILP_C,C,principal
+2026-02-03,2026-02-02,"[[""NESTLEIND"",4],[""NTPC"",166],[""ULTRACEMCO"",1]]",[],execution_position_limit,0.0,0.0,ytd_2026,high_aggressive,AGGRESSIVE,MILP_C,C,principal
+2026-03-04,2026-03-02,"[[""APOLLOHOSP"",10],[""EICHERMOT"",9],[""NTPC"",6],[""WIPRO"",1]]","[[""APOLLOHOSP"",10],[""EICHERMOT"",9],[""NTPC"",6],[""WIPRO"",1]]",,147910.45704912924,0.0,ytd_2026,high_aggressive,AGGRESSIVE,MILP_C,C,principal
+2026-04-02,2026-04-01,"[[""NTPC"",213],[""POWERGRID"",1]]","[[""NTPC"",213],[""POWERGRID"",1]]",,77010.78025792578,0.0,ytd_2026,high_aggressive,AGGRESSIVE,MILP_C,C,principal
+2026-05-05,2026-05-04,"[[""APOLLOHOSP"",5],[""NESTLEIND"",5],[""NTPC"",75]]","[[""APOLLOHOSP"",5],[""NESTLEIND"",5],[""NTPC"",74]]",,75862.76131671907,0.0,ytd_2026,high_aggressive,AGGRESSIVE,MILP_C,C,principal
+2026-06-02,2026-06-01,"[[""NESTLEIND"",35],[""NTPC"",69],[""POWERGRID"",1]]","[[""NESTLEIND"",35],[""NTPC"",69],[""POWERGRID"",1]]",,74699.1660291891,0.0,ytd_2026,high_aggressive,AGGRESSIVE,MILP_C,C,principal
+2026-07-02,2026-07-01,"[[""APOLLOHOSP"",3],[""NESTLEIND"",14],[""NTPC"",80],[""POWERGRID"",2]]","[[""APOLLOHOSP"",3],[""NESTLEIND"",14],[""NTPC"",80],[""POWERGRID"",1]]",,75395.96146910585,0.0,ytd_2026,high_aggressive,AGGRESSIVE,MILP_C,C,principal
+2026-08-04,2026-08-03,"[[""APOLLOHOSP"",2],[""NESTLEIND"",35],[""NTPC"",11]]","[[""APOLLOHOSP"",2],[""NESTLEIND"",35],[""NTPC"",10]]",,74848.64205712324,0.0,ytd_2026,high_aggressive,AGGRESSIVE,MILP_C,C,principal
+2026-09-02,2026-09-01,"[[""APOLLOHOSP"",2],[""NESTLEIND"",40]]","[[""APOLLOHOSP"",2],[""NESTLEIND"",40]]",,74549.694219,0.0,ytd_2026,high_aggressive,AGGRESSIVE,MILP_C,C,principal
+2026-10-05,2026-10-01,"[[""DIVISLAB"",6],[""ICICIBANK"",3],[""KOTAKBANK"",1],[""NESTLEIND"",1],[""NTPC"",46]]","[[""DIVISLAB"",6],[""ICICIBANK"",3],[""KOTAKBANK"",1],[""NESTLEIND"",1],[""NTPC"",45]]",,75479.18625845863,0.0,ytd_2026,high_aggressive,AGGRESSIVE,MILP_C,C,principal

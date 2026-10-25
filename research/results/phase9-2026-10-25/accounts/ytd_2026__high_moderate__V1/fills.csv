@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""BRITANNIA"",2],[""SBIN"",17]]","[[""BRITANNIA"",2],[""SBIN"",17]]",,28994.59140840591,0.0,ytd_2026,high_moderate,MODERATE,V1,M,principal
+2026-02-03,2026-02-02,"[[""APOLLOHOSP"",2],[""NTPC"",47],[""ULTRACEMCO"",1]]","[[""APOLLOHOSP"",2],[""NTPC"",47],[""ULTRACEMCO"",1]]",,43684.29950983364,0.0,ytd_2026,high_moderate,MODERATE,V1,M,principal
+2026-03-04,2026-03-02,"[[""BEL"",33],[""COALINDIA"",40],[""EICHERMOT"",2]]","[[""BEL"",33],[""COALINDIA"",40],[""EICHERMOT"",2]]",,47476.18123473627,0.0,ytd_2026,high_moderate,MODERATE,V1,M,principal
+2026-04-02,2026-04-01,"[[""ADANIPORTS"",11],[""JSWSTEEL"",14],[""TECHM"",12]]","[[""ADANIPORTS"",11],[""JSWSTEEL"",14],[""TECHM"",12]]",,48502.46933056182,0.0,ytd_2026,high_moderate,MODERATE,V1,M,principal
+2026-05-05,2026-05-04,"[[""BAJAJ-AUTO"",1],[""LT"",3],[""NESTLEIND"",11]]","[[""BAJAJ-AUTO"",1],[""LT"",3],[""NESTLEIND"",11]]",,38523.0177205653,0.0,ytd_2026,high_moderate,MODERATE,V1,M,principal
+2026-06-02,2026-06-01,"[[""ICICIBANK"",13],[""POWERGRID"",57],[""SUNPHARMA"",9]]","[[""ICICIBANK"",13],[""POWERGRID"",57],[""SUNPHARMA"",9]]",,48209.6797974998,0.0,ytd_2026,high_moderate,MODERATE,V1,M,principal
+2026-07-02,2026-07-01,"[[""ONGC"",73],[""TATASTEEL"",86],[""WIPRO"",97]]","[[""ONGC"",71],[""TATASTEEL"",86],[""WIPRO"",97]]",,49845.46137508284,0.0,ytd_2026,high_moderate,MODERATE,V1,M,principal
+2026-08-04,2026-08-03,"[[""BPCL"",46],[""MARUTI"",1],[""TITAN"",3]]","[[""BPCL"",46],[""MARUTI"",1],[""TITAN"",3]]",,43942.83743849999,0.0,ytd_2026,high_moderate,MODERATE,V1,M,principal
+2026-09-02,2026-09-01,"[[""DIVISLAB"",1],[""HINDALCO"",15],[""KOTAKBANK"",41]]","[[""DIVISLAB"",1],[""HINDALCO"",15],[""KOTAKBANK"",41]]",,41791.61454788021,0.0,ytd_2026,high_moderate,MODERATE,V1,M,principal
+2026-10-05,2026-10-01,"[[""HCLTECH"",12],[""HEROMOTOCO"",3],[""TATACONSUM"",18]]","[[""HCLTECH"",12],[""HEROMOTOCO"",3],[""TATACONSUM"",18]]",,46929.11192280834,0.0,ytd_2026,high_moderate,MODERATE,V1,M,principal

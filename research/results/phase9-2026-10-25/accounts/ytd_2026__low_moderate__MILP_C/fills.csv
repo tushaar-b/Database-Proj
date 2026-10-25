@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""COALINDIA"",1],[""SBILIFE"",1]]","[[""COALINDIA"",1],[""SBILIFE"",1]]",,2499.0440937345425,0.0,ytd_2026,low_moderate,MODERATE,MILP_C,C,principal
+2026-02-03,2026-02-02,"[[""NTPC"",7]]","[[""NTPC"",6]]",,2154.527952297912,0.0,ytd_2026,low_moderate,MODERATE,MILP_C,C,principal
+2026-03-04,2026-03-02,"[[""BPCL"",1],[""COALINDIA"",1],[""SBILIFE"",1]]","[[""BPCL"",1],[""COALINDIA"",1],[""SBILIFE"",1]]",,2726.234549398956,0.0,ytd_2026,low_moderate,MODERATE,MILP_C,C,principal
+2026-04-02,2026-04-01,"[[""COALINDIA"",1],[""NTPC"",5],[""POWERGRID"",1]]","[[""COALINDIA"",1],[""NTPC"",5],[""POWERGRID"",1]]",,2541.357581549652,0.0,ytd_2026,low_moderate,MODERATE,MILP_C,C,principal
+2026-05-05,2026-05-04,"[[""NESTLEIND"",1],[""SBIN"",1]]","[[""NESTLEIND"",1],[""SBIN"",1]]",,2541.507892202087,0.0,ytd_2026,low_moderate,MODERATE,MILP_C,C,principal
+2026-06-02,2026-06-01,"[[""NESTLEIND"",1],[""NTPC"",3]]","[[""NESTLEIND"",1],[""NTPC"",3]]",,2504.652533210586,0.0,ytd_2026,low_moderate,MODERATE,MILP_C,C,principal
+2026-07-02,2026-07-01,"[[""ICICIBANK"",1],[""TATACONSUM"",1]]","[[""ICICIBANK"",1],[""TATACONSUM"",1]]",,2510.9620046986083,0.0,ytd_2026,low_moderate,MODERATE,MILP_C,C,principal
+2026-08-04,2026-08-03,"[[""NESTLEIND"",1],[""NTPC"",1],[""POWERGRID"",2]]","[[""NESTLEIND"",1],[""NTPC"",1],[""POWERGRID"",2]]",,2434.096871886978,0.0,ytd_2026,low_moderate,MODERATE,MILP_C,C,principal
+2026-09-02,2026-09-01,"[[""NESTLEIND"",1],[""NTPC"",2],[""POWERGRID"",1],[""TATASTEEL"",1]]","[[""NESTLEIND"",1],[""NTPC"",2],[""POWERGRID"",1],[""TATASTEEL"",1]]",,2539.4547367123255,0.0,ytd_2026,low_moderate,MODERATE,MILP_C,C,principal
+2026-10-05,2026-10-01,"[[""COALINDIA"",1],[""KOTAKBANK"",5]]","[[""COALINDIA"",1],[""KOTAKBANK"",5]]",,2508.8589086626735,0.0,ytd_2026,low_moderate,MODERATE,MILP_C,C,principal

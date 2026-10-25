@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""ADANIENT"",1],[""ADANIPORTS"",1],[""BEL"",3]]","[[""ADANIENT"",1],[""ADANIPORTS"",1],[""BEL"",3]]",,4986.220644938369,0.0,ytd_2026,medium_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-02-03,2026-02-02,"[[""ASIANPAINT"",1],[""AXISBANK"",1],[""BPCL"",3]]","[[""ASIANPAINT"",1],[""AXISBANK"",1],[""BPCL"",3]]",,4909.906264049651,0.0,ytd_2026,medium_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-03-04,2026-03-02,"[[""CIPLA"",1],[""HCLTECH"",1],[""NTPC"",6]]","[[""CIPLA"",1],[""HCLTECH"",1],[""NTPC"",6]]",,4879.31031374652,0.0,ytd_2026,medium_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-04-02,2026-04-01,"[[""BPCL"",2],[""INDUSINDBK"",1],[""LT"",1]]","[[""BPCL"",2],[""INDUSINDBK"",1],[""LT"",1]]",,4955.524721852782,0.0,ytd_2026,medium_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-05-05,2026-05-04,"[[""BEL"",1],[""HCLTECH"",1],[""M&M"",1]]","[[""BEL"",1],[""HCLTECH"",1],[""M&M"",1]]",,4851.618953287673,0.0,ytd_2026,medium_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-06-02,2026-06-01,"[[""BEL"",4],[""BPCL"",6],[""CIPLA"",1]]","[[""BEL"",4],[""BPCL"",6],[""CIPLA"",1]]",,4784.268075226043,0.0,ytd_2026,medium_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-07-02,2026-07-01,"[[""ADANIPORTS"",1],[""HCLTECH"",1],[""NTPC"",5]]","[[""ADANIPORTS"",1],[""HCLTECH"",1],[""NTPC"",5]]",,4759.681127922912,0.0,ytd_2026,medium_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-08-04,2026-08-03,"[[""ASIANPAINT"",1],[""AXISBANK"",1],[""TATASTEEL"",4]]","[[""ASIANPAINT"",1],[""AXISBANK"",1],[""TATASTEEL"",4]]",,4807.803336976042,0.0,ytd_2026,medium_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-09-02,2026-09-01,"[[""CIPLA"",1],[""M&M"",1],[""ONGC"",1]]","[[""CIPLA"",1],[""M&M"",1],[""ONGC"",1]]",,4847.562919051391,0.0,ytd_2026,medium_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-10-05,2026-10-01,"[[""AXISBANK"",1],[""BEL"",5],[""NTPC"",5]]","[[""AXISBANK"",1],[""BEL"",5],[""NTPC"",5]]",,4762.585473260237,0.0,ytd_2026,medium_conservative,CONSERVATIVE,NEUTRAL_M,M,principal

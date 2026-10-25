@@ -1,0 +1,6 @@
+date,decision_date,ticker,side,quantity,notional,fee,slippage_cost,realized_gain,new_position,topup,feedback_attributable,window,scenario,tier,policy,regime,kind
+2026-02-03,2026-02-02,NTPC,BUY,3,1076.1877883605957,1.0761877883605957,0.5378249816894531,0.0,True,False,False,ytd_2026,low_aggressive,AGGRESSIVE,V1,M,principal
+2026-02-03,2026-02-02,SBIN,BUY,1,1064.7320511474609,1.064732051147461,0.5320999755859375,0.0,True,False,False,ytd_2026,low_aggressive,AGGRESSIVE,V1,M,principal
+2026-04-02,2026-04-01,COALINDIA,BUY,2,899.1493622131347,0.8991493622131348,0.4493500061035156,0.0,True,False,False,ytd_2026,low_aggressive,AGGRESSIVE,V1,M,principal
+2026-05-05,2026-05-04,BEL,BUY,2,867.1333622131348,0.8671333622131348,0.43335000610351565,0.0,True,False,False,ytd_2026,low_aggressive,AGGRESSIVE,V1,M,principal
+2026-10-05,2026-10-01,JSWSTEEL,BUY,1,1235.917698852539,1.2359176988525389,0.6176500244140625,0.0,True,False,False,ytd_2026,low_aggressive,AGGRESSIVE,V1,M,principal

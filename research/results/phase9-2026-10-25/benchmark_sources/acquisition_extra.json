@@ -1,0 +1,17 @@
+[
+  {
+    "name": "etf_missing_session",
+    "error": "HTTPSConnectionPool(host='nsearchives.nseindia.com', port=443): Read timed out. (read timeout=25)"
+  },
+  {
+    "name": "historical_page",
+    "error": "HTTPSConnectionPool(host='www.niftyindices.com', port=443): Read timed out. (read timeout=25)"
+  },
+  {
+    "name": "tri_retry",
+    "payload": {
+      "cinfo": "{\"name\": \"NIFTY 50\", \"startDate\": \"01-Jan-2022\", \"endDate\": \"31-Dec-2025\"}"
+    },
+    "status": 401
+  }
+]

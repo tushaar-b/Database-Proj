@@ -1,0 +1,3 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions,window,scenario,tier,policy,regime,kind
+2026-01-02,"[1.0, [], false, false]","[1.0, [""Metals & Mining""], false, false]",0.35819287606767625,0.000722217851424812,0.0004390382075530772,True,False,False,0,ytd_2026,medium_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-02-03,"[1.0, [""Metals & Mining""], false, false]","[1.0, [], false, false]",0.18079091748600098,0.0017489444901062445,0.0010631881398822155,False,False,False,0,ytd_2026,medium_conservative,CONSERVATIVE,NEUTRAL_M,M,principal

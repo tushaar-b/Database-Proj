@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""COALINDIA"",1],[""MARUTI"",2],[""NTPC"",1],[""SBIN"",16]]","[[""COALINDIA"",1],[""MARUTI"",2],[""NTPC"",1],[""SBIN"",15]]",,49758.80140050521,0.0,ytd_2026,high_moderate,MODERATE,GREEDY_M,M,principal
+2026-02-03,2026-02-02,"[[""ICICIBANK"",33],[""NTPC"",9],[""SBIN"",2]]","[[""ICICIBANK"",33],[""NTPC"",9]]",,49160.70339475093,0.0,ytd_2026,high_moderate,MODERATE,GREEDY_M,M,principal
+2026-03-04,2026-03-02,"[[""APOLLOHOSP"",6],[""NTPC"",8]]","[[""APOLLOHOSP"",6],[""NTPC"",8]]",,48995.80796339721,0.0,ytd_2026,high_moderate,MODERATE,GREEDY_M,M,principal
+2026-04-02,2026-04-01,"[[""NTPC"",136],[""POWERGRID"",1]]","[[""NTPC"",136],[""POWERGRID"",1]]",,49276.17730707668,0.0,ytd_2026,high_moderate,MODERATE,GREEDY_M,M,principal
+2026-05-05,2026-05-04,"[[""APOLLOHOSP"",5],[""NESTLEIND"",7],[""ONGC"",3]]","[[""APOLLOHOSP"",5],[""NESTLEIND"",7],[""ONGC"",2]]",,49859.20200901043,0.0,ytd_2026,high_moderate,MODERATE,GREEDY_M,M,principal
+2026-06-02,2026-06-01,"[[""NESTLEIND"",6],[""NTPC"",109],[""POWERGRID"",1]]","[[""NESTLEIND"",6],[""NTPC"",109],[""POWERGRID"",1]]",,48794.05481967251,0.0,ytd_2026,high_moderate,MODERATE,GREEDY_M,M,principal
+2026-07-02,2026-07-01,"[[""ICICIBANK"",22],[""NESTLEIND"",2],[""NTPC"",46],[""TATASTEEL"",1]]","[[""ICICIBANK"",22],[""NESTLEIND"",2],[""NTPC"",45]]",,49888.39528402221,0.0,ytd_2026,high_moderate,MODERATE,GREEDY_M,M,principal
+2026-08-04,2026-08-03,"[[""APOLLOHOSP"",4],[""COALINDIA"",2],[""NESTLEIND"",9]]","[[""APOLLOHOSP"",4],[""COALINDIA"",2],[""NESTLEIND"",8]]",,49269.01740982534,0.0,ytd_2026,high_moderate,MODERATE,GREEDY_M,M,principal
+2026-09-02,2026-09-01,"[[""ICICIBANK"",29],[""NESTLEIND"",5],[""NTPC"",3]]","[[""ICICIBANK"",29],[""NESTLEIND"",5],[""NTPC"",3]]",,49557.749991749995,0.0,ytd_2026,high_moderate,MODERATE,GREEDY_M,M,principal
+2026-10-05,2026-10-01,"[[""APOLLOHOSP"",1],[""NESTLEIND"",5],[""NTPC"",111],[""POWERGRID"",1]]","[[""APOLLOHOSP"",1],[""NESTLEIND"",5],[""NTPC"",110]]",,49943.32621720825,0.0,ytd_2026,high_moderate,MODERATE,GREEDY_M,M,principal

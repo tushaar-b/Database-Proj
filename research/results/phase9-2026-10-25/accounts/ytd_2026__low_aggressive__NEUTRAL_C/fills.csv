@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""ADANIENT"",1],[""ADANIPORTS"",1]]","[[""ADANIENT"",1]]",,2283.2208888013915,0.0,ytd_2026,low_aggressive,AGGRESSIVE,NEUTRAL_C,C,principal
+2026-02-03,2026-02-02,"[[""ADANIPORTS"",1],[""ASIANPAINT"",1],[""AXISBANK"",1]]","[[""ADANIPORTS"",1],[""ASIANPAINT"",1]]",,3962.737227301391,0.0,ytd_2026,low_aggressive,AGGRESSIVE,NEUTRAL_C,C,principal
+2026-03-04,2026-03-02,"[[""AXISBANK"",1],[""BEL"",4],[""BPCL"",4]]","[[""AXISBANK"",1],[""BEL"",4],[""BPCL"",4]]",,4571.14878105139,0.0,ytd_2026,low_aggressive,AGGRESSIVE,NEUTRAL_C,C,principal
+2026-04-02,2026-04-01,"[[""CIPLA"",1],[""HCLTECH"",1],[""NTPC"",4]]","[[""CIPLA"",1],[""HCLTECH"",1],[""NTPC"",4]]",,4039.251767698608,0.0,ytd_2026,low_aggressive,AGGRESSIVE,NEUTRAL_C,C,principal
+2026-05-05,2026-05-04,"[[""BPCL"",1],[""M&M"",1],[""WIPRO"",2]]","[[""M&M"",1],[""WIPRO"",2]]",,3615.7773916363217,0.0,ytd_2026,low_aggressive,AGGRESSIVE,NEUTRAL_C,C,principal
+2026-06-02,2026-06-01,"[[""LT"",1]]","[[""LT"",1]]",,4006.903252647216,0.0,ytd_2026,low_aggressive,AGGRESSIVE,NEUTRAL_C,C,principal
+2026-07-02,2026-07-01,"[[""AXISBANK"",1],[""BPCL"",4],[""HCLTECH"",1]]","[[""AXISBANK"",1],[""BPCL"",4],[""HCLTECH"",1]]",,3688.0255912499997,0.0,ytd_2026,low_aggressive,AGGRESSIVE,NEUTRAL_C,C,principal
+2026-08-04,2026-08-03,"[[""BEL"",3],[""CIPLA"",1],[""NTPC"",3]]","[[""BEL"",3],[""CIPLA"",1],[""NTPC"",3]]",,3670.9499893869774,0.0,ytd_2026,low_aggressive,AGGRESSIVE,NEUTRAL_C,C,principal
+2026-09-02,2026-09-01,"[[""ADANIPORTS"",1],[""AXISBANK"",1],[""NTPC"",3]]","[[""ADANIPORTS"",1],[""NTPC"",3]]",,2666.695332448608,0.0,ytd_2026,low_aggressive,AGGRESSIVE,NEUTRAL_C,C,principal
+2026-10-05,2026-10-01,"[[""ASIANPAINT"",1],[""AXISBANK"",1],[""BPCL"",4]]","[[""ASIANPAINT"",1],[""AXISBANK"",1],[""BPCL"",4]]",,4783.166388,0.0,ytd_2026,low_aggressive,AGGRESSIVE,NEUTRAL_C,C,principal

@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""ADANIENT"",1],[""ADANIPORTS"",1],[""BEL"",3]]","[[""ADANIENT"",1],[""ADANIPORTS"",1],[""BEL"",3]]",,4986.220644938369,0.0,ytd_2026,medium_conservative,CONSERVATIVE,NEUTRAL_C,C,principal
+2026-02-03,2026-02-02,"[[""ASIANPAINT"",1],[""AXISBANK"",1],[""BPCL"",3]]","[[""ASIANPAINT"",1],[""AXISBANK"",1],[""BPCL"",3]]",,4909.906264049651,0.0,ytd_2026,medium_conservative,CONSERVATIVE,NEUTRAL_C,C,principal
+2026-03-04,2026-03-02,"[[""CIPLA"",1],[""HCLTECH"",1],[""NTPC"",6]]","[[""CIPLA"",1],[""HCLTECH"",1],[""NTPC"",6]]",,4879.31031374652,0.0,ytd_2026,medium_conservative,CONSERVATIVE,NEUTRAL_C,C,principal
+2026-04-02,2026-04-01,"[[""HEROMOTOCO"",1]]","[[""HEROMOTOCO"",1]]",,5019.019755749999,0.0,ytd_2026,medium_conservative,CONSERVATIVE,NEUTRAL_C,C,principal
+2026-05-05,2026-05-04,"[[""BPCL"",2],[""LT"",1],[""WIPRO"",2]]","[[""BPCL"",2],[""LT"",1],[""WIPRO"",2]]",,5058.639113084929,0.0,ytd_2026,medium_conservative,CONSERVATIVE,NEUTRAL_C,C,principal
+2026-06-02,2026-06-01,"[[""AXISBANK"",1],[""BEL"",6],[""CIPLA"",1]]","[[""AXISBANK"",1],[""BEL"",6],[""CIPLA"",1]]",,5085.118849876739,0.0,ytd_2026,medium_conservative,CONSERVATIVE,NEUTRAL_C,C,principal
+2026-07-02,2026-07-01,"[[""ADANIPORTS"",1],[""BPCL"",7],[""HCLTECH"",1]]","[[""BPCL"",7],[""HCLTECH"",1]]",,3256.1285617517387,0.0,ytd_2026,medium_conservative,CONSERVATIVE,NEUTRAL_C,C,principal
+2026-08-04,2026-08-03,"[[""ADANIPORTS"",2],[""AXISBANK"",1],[""NTPC"",6]]","[[""ADANIPORTS"",2],[""AXISBANK"",1],[""NTPC"",6]]",,6747.208932972563,0.0,ytd_2026,medium_conservative,CONSERVATIVE,NEUTRAL_C,C,principal
+2026-09-02,2026-09-01,"[[""ASIANPAINT"",1],[""CIPLA"",1],[""HINDALCO"",1]]","[[""ASIANPAINT"",1],[""CIPLA"",1],[""HINDALCO"",1]]",,4957.427536126739,0.0,ytd_2026,medium_conservative,CONSERVATIVE,NEUTRAL_C,C,principal
+2026-10-05,2026-10-01,"[[""BEL"",6],[""BPCL"",5],[""HCLTECH"",1]]","[[""BEL"",6],[""BPCL"",5],[""HCLTECH"",1]]",,5003.246245128478,0.0,ytd_2026,medium_conservative,CONSERVATIVE,NEUTRAL_C,C,principal

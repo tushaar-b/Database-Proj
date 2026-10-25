@@ -1,0 +1,8 @@
+date,decision_date,ticker,side,quantity,notional,fee,slippage_cost,realized_gain,new_position,topup,feedback_attributable,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,SBILIFE,BUY,2,4136.867204589844,4.136867204589844,2.06739990234375,0.0,True,False,False,ytd_2026,medium_aggressive,AGGRESSIVE,V1,M,principal
+2026-02-03,2026-02-02,NESTLEIND,BUY,3,3925.962,3.925962,1.962,0.0,True,False,False,ytd_2026,medium_aggressive,AGGRESSIVE,V1,M,principal
+2026-02-03,2026-02-02,NTPC,BUY,14,5022.209679016113,5.022209679016113,2.5098499145507813,0.0,True,False,False,ytd_2026,medium_aggressive,AGGRESSIVE,V1,M,principal
+2026-04-02,2026-04-01,BEL,BUY,11,4639.918867172241,4.639918867172241,2.318800033569336,0.0,True,False,False,ytd_2026,medium_aggressive,AGGRESSIVE,V1,M,principal
+2026-04-02,2026-04-01,COALINDIA,BUY,11,4945.321492172241,4.9453214921722415,2.471425033569336,0.0,True,False,False,ytd_2026,medium_aggressive,AGGRESSIVE,V1,M,principal
+2026-05-05,2026-05-04,ADANIPORTS,BUY,2,3451.725,3.451725,1.725,0.0,True,False,False,ytd_2026,medium_aggressive,AGGRESSIVE,V1,M,principal
+2026-06-02,2026-06-01,JSWSTEEL,BUY,3,3934.366346557617,3.934366346557617,1.9662000732421876,0.0,True,False,False,ytd_2026,medium_aggressive,AGGRESSIVE,V1,M,principal

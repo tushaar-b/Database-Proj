@@ -1,0 +1,32 @@
+{
+  "utc": "2026-10-25T05:56:52.710627+00:00",
+  "log": [
+    {
+      "name": "membership",
+      "url": "https://archives.nseindia.com/content/indices/IndexInclExcl.xls",
+      "request": null,
+      "status": 200,
+      "bytes": 820736,
+      "sha256": "8869bb7c4df67403131a494a8cc65509e80828f9438bc150b506cdbf55378046"
+    },
+    {
+      "name": "tri",
+      "url": "https://www.niftyindices.com/Backpage.aspx/getTotalReturnIndexString",
+      "request": {
+        "name": "NIFTY 50",
+        "startDate": "01-Jan-2022",
+        "endDate": "31-Dec-2025"
+      },
+      "status": 401,
+      "bytes": 91,
+      "sha256": "2167b7b80b4dd880b96b3c76818d5f30bc2734b8b0b80f249357570e529e2664"
+    },
+    {
+      "name": "NIFTYBEES",
+      "source": "Yahoo/yfinance",
+      "rows": 1236,
+      "sha256": "1a460cd650d0f152f694da87816330ea42275fff76c2a849ce2f9151d90c8160",
+      "independent_equity_holdout": false
+    }
+  ]
+}

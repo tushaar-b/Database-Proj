@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""BEL"",1],[""BPCL"",1],[""NTPC"",1]]","[[""BEL"",1],[""BPCL"",1],[""NTPC"",1]]",,1138.4056305753477,0.0,ytd_2026,low_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-02-03,2026-02-02,"[[""HINDALCO"",1],[""WIPRO"",1]]","[[""HINDALCO"",1],[""WIPRO"",1]]",,1199.7875742147216,0.0,ytd_2026,low_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-03-04,2026-03-02,"[[""INDUSINDBK"",1],[""WIPRO"",1]]","[[""INDUSINDBK"",1],[""WIPRO"",1]]",,1124.785202380989,0.0,ytd_2026,low_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-04-02,2026-04-01,"[[""CIPLA"",1]]","[[""CIPLA"",1]]",,1194.1892206506957,0.0,ytd_2026,low_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-05-05,2026-05-04,"[[""TATACONSUM"",1]]","[[""TATACONSUM"",1]]",,1155.2308267499998,0.0,ytd_2026,low_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-06-02,2026-06-01,"[[""BEL"",1],[""BPCL"",1],[""NTPC"",1]]","[[""BEL"",1],[""BPCL"",1],[""NTPC"",1]]",,1071.2550037123258,0.0,ytd_2026,low_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-07-02,2026-07-01,"[[""HCLTECH"",1],[""TATASTEEL"",1]]","[[""HCLTECH"",1]]",,1079.717664599304,0.0,ytd_2026,low_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-08-04,2026-08-03,"[[""BEL"",1],[""BPCL"",1],[""NTPC"",1]]","[[""BEL"",1],[""BPCL"",1],[""NTPC"",1]]",,1060.7392484623258,0.0,ytd_2026,low_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-09-02,2026-09-01,"[[""BPCL"",1],[""KOTAKBANK"",1],[""NTPC"",1]]","[[""BPCL"",1],[""KOTAKBANK"",1],[""NTPC"",1]]",,1074.7101926626738,0.0,ytd_2026,low_conservative,CONSERVATIVE,NEUTRAL_M,M,principal
+2026-10-05,2026-10-01,"[[""BPCL"",1],[""HINDALCO"",1]]","[[""BPCL"",1],[""HINDALCO"",1]]",,1237.2036793510433,0.0,ytd_2026,low_conservative,CONSERVATIVE,NEUTRAL_M,M,principal

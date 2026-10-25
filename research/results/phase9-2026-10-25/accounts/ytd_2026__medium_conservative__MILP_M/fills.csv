@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""SBIN"",5]]","[[""SBIN"",4]]",,4001.795746801391,0.0,ytd_2026,medium_conservative,CONSERVATIVE,MILP_M,M,principal
+2026-02-03,2026-02-02,"[[""NTPC"",14]]","[[""NTPC"",13]]",,4668.143896645476,0.0,ytd_2026,medium_conservative,CONSERVATIVE,MILP_M,M,principal
+2026-03-04,2026-03-02,"[[""COALINDIA"",2],[""ICICIBANK"",3]]","[[""COALINDIA"",2],[""ICICIBANK"",3]]",,4973.952294376739,0.0,ytd_2026,medium_conservative,CONSERVATIVE,MILP_M,M,principal
+2026-04-02,2026-04-01,"[[""NTPC"",12],[""POWERGRID"",2]]","[[""NTPC"",12],[""POWERGRID"",2]]",,4903.0459489486075,0.0,ytd_2026,medium_conservative,CONSERVATIVE,MILP_M,M,principal
+2026-05-05,2026-05-04,"[[""NESTLEIND"",3],[""ONGC"",2]]","[[""NESTLEIND"",3],[""ONGC"",1]]",,4730.437545604523,0.0,ytd_2026,medium_conservative,CONSERVATIVE,MILP_M,M,principal
+2026-06-02,2026-06-01,"[[""COALINDIA"",2],[""ICICIBANK"",1],[""NESTLEIND"",2]]","[[""COALINDIA"",2],[""ICICIBANK"",1],[""NESTLEIND"",2]]",,4975.754799671173,0.0,ytd_2026,medium_conservative,CONSERVATIVE,MILP_M,M,principal
+2026-07-02,2026-07-01,"[[""NTPC"",7],[""POWERGRID"",2],[""SUNPHARMA"",1]]","[[""NTPC"",7],[""POWERGRID"",2],[""SUNPHARMA"",1]]",,4962.5852270256955,0.0,ytd_2026,medium_conservative,CONSERVATIVE,MILP_M,M,principal
+2026-08-04,2026-08-03,"[[""KOTAKBANK"",1],[""NESTLEIND"",3]]","[[""KOTAKBANK"",1],[""NESTLEIND"",3]]",,4965.439479,0.0,ytd_2026,medium_conservative,CONSERVATIVE,MILP_M,M,principal
+2026-09-02,2026-09-01,"[[""ICICIBANK"",2],[""SUNPHARMA"",1],[""TATASTEEL"",1]]","[[""ICICIBANK"",2],[""SUNPHARMA"",1],[""TATASTEEL"",1]]",,4976.0052664862815,0.0,ytd_2026,medium_conservative,CONSERVATIVE,MILP_M,M,principal
+2026-10-05,2026-10-01,"[[""NTPC"",10],[""SUNPHARMA"",1]]",[],execution_hhi_limit,0.0,0.0,ytd_2026,medium_conservative,CONSERVATIVE,MILP_M,M,principal

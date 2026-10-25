@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""BRITANNIA"",1],[""SBIN"",8]]","[[""BRITANNIA"",1],[""SBIN"",8]]",,13997.071235852782,0.0,ytd_2026,high_conservative,CONSERVATIVE,V1,M,principal
+2026-02-03,2026-02-02,"[[""APOLLOHOSP"",1],[""NTPC"",23]]","[[""APOLLOHOSP"",1],[""NTPC"",23]]",,15358.160111391997,0.0,ytd_2026,high_conservative,CONSERVATIVE,V1,M,principal
+2026-03-04,2026-03-02,"[[""COALINDIA"",19],[""EICHERMOT"",1]]","[[""COALINDIA"",19],[""EICHERMOT"",1]]",,15918.19935603419,0.0,ytd_2026,high_conservative,CONSERVATIVE,V1,M,principal
+2026-04-02,2026-04-01,"[[""BEL"",18],[""TECHM"",5]]","[[""BEL"",18],[""TECHM"",5]]",,14818.50195817813,0.0,ytd_2026,high_conservative,CONSERVATIVE,V1,M,principal
+2026-05-05,2026-05-04,"[[""ADANIPORTS"",4],[""TATASTEEL"",37]]","[[""ADANIPORTS"",4],[""TATASTEEL"",37]]",,14740.92589082272,0.0,ytd_2026,high_conservative,CONSERVATIVE,V1,M,principal
+2026-06-02,2026-06-01,"[[""NESTLEIND"",6]]","[[""NESTLEIND"",6]]",,8404.79220269165,0.0,ytd_2026,high_conservative,CONSERVATIVE,V1,M,principal
+2026-07-02,2026-07-01,"[[""JSWSTEEL"",6],[""WIPRO"",46]]","[[""JSWSTEEL"",6],[""WIPRO"",46]]",,15369.828166808347,0.0,ytd_2026,high_conservative,CONSERVATIVE,V1,M,principal
+2026-08-04,2026-08-03,"[[""ONGC"",34]]","[[""ONGC"",34]]",,8240.346113999998,0.0,ytd_2026,high_conservative,CONSERVATIVE,V1,M,principal
+2026-09-02,2026-09-01,"[[""POWERGRID"",33]]","[[""POWERGRID"",33]]",,8817.610598763518,0.0,ytd_2026,high_conservative,CONSERVATIVE,V1,M,principal
+2026-10-05,2026-10-01,"[[""ICICIBANK"",6]]","[[""ICICIBANK"",6]]",,8003.991995999999,0.0,ytd_2026,high_conservative,CONSERVATIVE,V1,M,principal

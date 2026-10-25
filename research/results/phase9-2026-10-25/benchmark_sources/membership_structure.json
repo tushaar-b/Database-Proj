@@ -1,0 +1,2185 @@
+{
+  "Nifty 50": {
+    "rows": 196,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty 50",
+        "Event Date": "1996-09-18",
+        "Scrip Name": "ABB India Ltd.",
+        "Description": "Inclusion into Index "
+      },
+      {
+        "Index Name": "Nifty 50",
+        "Event Date": "1996-09-18",
+        "Scrip Name": "Asian Paints Ltd.",
+        "Description": "Inclusion into Index "
+      },
+      {
+        "Index Name": "Nifty 50",
+        "Event Date": "1996-09-18",
+        "Scrip Name": "East India Hotels Ltd",
+        "Description": "Inclusion into Index "
+      },
+      {
+        "Index Name": "Nifty 50",
+        "Event Date": "1996-09-18",
+        "Scrip Name": "Glaxo (India) Ltd.",
+        "Description": "Inclusion into Index "
+      },
+      {
+        "Index Name": "Nifty 50",
+        "Event Date": "1996-09-18",
+        "Scrip Name": "Mahindra & Mahindra Ltd.",
+        "Description": "Inclusion into Index "
+      },
+      {
+        "Index Name": "Nifty 50",
+        "Event Date": "1996-09-18",
+        "Scrip Name": "Nestle India Limited",
+        "Description": "Inclusion into Index "
+      },
+      {
+        "Index Name": "Nifty 50",
+        "Event Date": "1996-09-18",
+        "Scrip Name": "Chambal Fertilizers & Chemicals Ltd.",
+        "Description": "Exclusion from Index "
+      },
+      {
+        "Index Name": "Nifty 50",
+        "Event Date": "1996-09-18",
+        "Scrip Name": "Hero Honda Motors Limited",
+        "Description": "Exclusion from Index "
+      }
+    ]
+  },
+  "Nifty Next 50": {
+    "rows": 382,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty Next 50",
+        "Event Date": "2000-01-12 00:00:00",
+        "Scrip Name": "Wockhardt Ltd.\u00a0",
+        "Description": "Exclusion from Index "
+      },
+      {
+        "Index Name": "Nifty Next 50",
+        "Event Date": "2000-01-12 00:00:00",
+        "Scrip Name": "HCL Infosystems Ltd",
+        "Description": "Inclusion into Index "
+      },
+      {
+        "Index Name": "Nifty Next 50",
+        "Event Date": "2000-05-24 00:00:00",
+        "Scrip Name": "Zee Telefilms Ltd",
+        "Description": "Exclusion from Index "
+      },
+      {
+        "Index Name": "Nifty Next 50",
+        "Event Date": "2000-05-24 00:00:00",
+        "Scrip Name": "HCL Infosystems Ltd",
+        "Description": "Exclusion from Index "
+      },
+      {
+        "Index Name": "Nifty Next 50",
+        "Event Date": "2000-05-24 00:00:00",
+        "Scrip Name": "Himachal Futuristic Communications Ltd",
+        "Description": "Inclusion into Index "
+      },
+      {
+        "Index Name": "Nifty Next 50",
+        "Event Date": "2000-05-24 00:00:00",
+        "Scrip Name": "Rolta India Ltd.\u00a0",
+        "Description": "Inclusion into Index "
+      },
+      {
+        "Index Name": "Nifty Next 50",
+        "Event Date": "2000-09-01 00:00:00",
+        "Scrip Name": "Digital Equipment (India) Ltd. - Computers - Software",
+        "Description": "Exclusion from Index "
+      },
+      {
+        "Index Name": "Nifty Next 50",
+        "Event Date": "2000-09-01 00:00:00",
+        "Scrip Name": " Asian Hotels Ltd. - Hotels",
+        "Description": "Exclusion from Index "
+      }
+    ]
+  },
+  "Nifty 100": {
+    "rows": 336,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty 100",
+        "Event Date": "19-03-2003",
+        "Scrip Name": "Indo Gulf Corporation Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty 100",
+        "Event Date": "19-03-2003",
+        "Scrip Name": "Steel Authority of India Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty 100",
+        "Event Date": "01-04-2003",
+        "Scrip Name": "Abbott India Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty 100",
+        "Event Date": "01-04-2003",
+        "Scrip Name": "Asian Paints Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty 100",
+        "Event Date": "01-04-2003",
+        "Scrip Name": "Carrier Aircon Ltd. ",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty 100",
+        "Event Date": "01-04-2003",
+        "Scrip Name": "Hindustan Zinc Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty 100",
+        "Event Date": "01-04-2003",
+        "Scrip Name": "IDBI Bank Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty 100",
+        "Event Date": "01-04-2003",
+        "Scrip Name": "Oracle Financial Services Software Ltd.",
+        "Description": "Inclusion into Index"
+      }
+    ]
+  },
+  "Nifty 200": {
+    "rows": 466,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty 200",
+        "Event Date": "22-11-2011",
+        "Scrip Name": "Apollo Hospitals Enterprises Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty 200",
+        "Event Date": "22-11-2011",
+        "Scrip Name": "Jindal Saw Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty 200",
+        "Event Date": "27-04-2012",
+        "Scrip Name": "Bata India Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty 200",
+        "Event Date": "27-04-2012",
+        "Scrip Name": "Bombay Rayon Fashions Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty 200",
+        "Event Date": "27-04-2012",
+        "Scrip Name": "CMC Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty 200",
+        "Event Date": "27-04-2012",
+        "Scrip Name": "CRISIL Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty 200",
+        "Event Date": "27-04-2012",
+        "Scrip Name": "Corporation Bank",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty 200",
+        "Event Date": "27-04-2012",
+        "Scrip Name": "GTL Ltd.",
+        "Description": "Exclusion from Index"
+      }
+    ]
+  },
+  "Nifty Midcap 100": {
+    "rows": 594,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty Free Float Midcap 100",
+        "Event Date": "08-12-2005",
+        "Scrip Name": "Colgate Palmolive (India) Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Free Float Midcap 100",
+        "Event Date": "08-12-2005",
+        "Scrip Name": "Ispat Industries Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Free Float Midcap 100",
+        "Event Date": "03-02-2006",
+        "Scrip Name": "Flextronics Software Systems Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Free Float Midcap 100",
+        "Event Date": "03-02-2006",
+        "Scrip Name": "JSW Steel Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Free Float Midcap 100",
+        "Event Date": "01-09-2006",
+        "Scrip Name": "Jaiprakash Associates Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Free Float Midcap 100",
+        "Event Date": "01-09-2006",
+        "Scrip Name": "Reliance Capital Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Free Float Midcap 100",
+        "Event Date": "01-09-2006",
+        "Scrip Name": "Indian Hotels Co. Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Free Float Midcap 100",
+        "Event Date": "01-09-2006",
+        "Scrip Name": "Kotak Mahindra Bank Ltd.",
+        "Description": "Exclusion from Index"
+      }
+    ]
+  },
+  "Nifty Smallcap 100": {
+    "rows": 594,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty Free Float Smallcap 100",
+        "Event Date": "2011-05-03 00:00:00",
+        "Scrip Name": "MOIL Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Free Float Smallcap 100",
+        "Event Date": "2011-05-03 00:00:00",
+        "Scrip Name": "Triveni Engineering & Industries Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Free Float Smallcap 100",
+        "Event Date": "2011-05-18 00:00:00",
+        "Scrip Name": "Essar Shipping Ports & Logistics Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Free Float Smallcap 100",
+        "Event Date": "2011-05-18 00:00:00",
+        "Scrip Name": "Tata Coffee Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Free Float Smallcap 100",
+        "Event Date": "2011-08-29 00:00:00",
+        "Scrip Name": "Nagarjuna Fertilizers & Chemicals Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Free Float Smallcap 100",
+        "Event Date": "2011-08-29 00:00:00",
+        "Scrip Name": "Kwality Dairy (India) Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Free Float Smallcap 100",
+        "Event Date": "2011-10-04 00:00:00",
+        "Scrip Name": "Aban Offshore Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Free Float Smallcap 100",
+        "Event Date": "2011-10-04 00:00:00",
+        "Scrip Name": "S.E. Investments Ltd.",
+        "Description": "Exclusion from Index"
+      }
+    ]
+  },
+  "Nifty 500": {
+    "rows": 2495,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty 500",
+        "Event Date": "01-08-1998",
+        "Scrip Name": "20th Century Finance Corporation Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty 500",
+        "Event Date": "01-08-1998",
+        "Scrip Name": "3M India Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty 500",
+        "Event Date": "01-08-1998",
+        "Scrip Name": "ABB India Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty 500",
+        "Event Date": "01-08-1998",
+        "Scrip Name": "ACC Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty 500",
+        "Event Date": "01-08-1998",
+        "Scrip Name": "AGC Networks Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty 500",
+        "Event Date": "01-08-1998",
+        "Scrip Name": "AP Paper Mills Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty 500",
+        "Event Date": "01-08-1998",
+        "Scrip Name": "APR Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty 500",
+        "Event Date": "01-08-1998",
+        "Scrip Name": "ATV Projects India Ltd.",
+        "Description": "Inclusion into Index"
+      }
+    ]
+  },
+  "Nifty Midcap 50": {
+    "rows": 366,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty Midcap 50",
+        "Event Date": "02-01-2004",
+        "Scrip Name": "Allahabad Bank",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Midcap 50",
+        "Event Date": "02-01-2004",
+        "Scrip Name": "Alstom Projects India Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Midcap 50",
+        "Event Date": "02-01-2004",
+        "Scrip Name": "Amtek Auto Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Midcap 50",
+        "Event Date": "02-01-2004",
+        "Scrip Name": "Andhra Bank",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Midcap 50",
+        "Event Date": "02-01-2004",
+        "Scrip Name": "Arvind Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Midcap 50",
+        "Event Date": "02-01-2004",
+        "Scrip Name": "Ashok Leyland Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Midcap 50",
+        "Event Date": "02-01-2004",
+        "Scrip Name": "Aurobindo Pharma Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Midcap 50",
+        "Event Date": "02-01-2004",
+        "Scrip Name": "BEML Ltd.",
+        "Description": "Inclusion into Index"
+      }
+    ]
+  },
+  "Nifty Smallcap 50": {
+    "rows": 194,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty Smallcap 50",
+        "Event Date": "2016-04-01",
+        "Scrip Name": "Aban Offshore Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Smallcap 50",
+        "Event Date": "2016-04-01",
+        "Scrip Name": "Amtek Auto Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Smallcap 50",
+        "Event Date": "2016-04-01",
+        "Scrip Name": "BEML Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Smallcap 50",
+        "Event Date": "2016-04-01",
+        "Scrip Name": "Castex Technologies Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Smallcap 50",
+        "Event Date": "2016-04-01",
+        "Scrip Name": "Jet Airways (India) Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Smallcap 50",
+        "Event Date": "2016-04-01",
+        "Scrip Name": "Jubilant Life Sciences Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Smallcap 50",
+        "Event Date": "2016-04-01",
+        "Scrip Name": "PTC India Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Smallcap 50",
+        "Event Date": "2016-04-01",
+        "Scrip Name": "Tata Elxsi Ltd.",
+        "Description": "Exclusion from Index"
+      }
+    ]
+  },
+  "NIFTY LargeMidcap 250": {
+    "rows": 770,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "NIFTY LargeMidcap 250",
+        "Event Date": "2005-09-26",
+        "Scrip Name": "Aftek Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "NIFTY LargeMidcap 250",
+        "Event Date": "2005-09-26",
+        "Scrip Name": "Flextronics Software Systems Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "NIFTY LargeMidcap 250",
+        "Event Date": "2005-09-26",
+        "Scrip Name": "iGate Global Solutions Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "NIFTY LargeMidcap 250",
+        "Event Date": "2005-09-26",
+        "Scrip Name": "JSW ISPAT Steel Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "NIFTY LargeMidcap 250",
+        "Event Date": "2005-09-26",
+        "Scrip Name": "NIIT Technologies Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "NIFTY LargeMidcap 250",
+        "Event Date": "2005-09-26",
+        "Scrip Name": "Prism Cement Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "NIFTY LargeMidcap 250",
+        "Event Date": "2005-09-26",
+        "Scrip Name": "Tata Infotech Ltd.-Merged",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "NIFTY LargeMidcap 250",
+        "Event Date": "2005-09-26",
+        "Scrip Name": "Thomas Cook (India) Ltd.",
+        "Description": "Exclusion from Index"
+      }
+    ]
+  },
+  "Nifty100 Liquid 15": {
+    "rows": 58,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty100 Liquid 15",
+        "Event Date": "2014-03-28",
+        "Scrip Name": "Cairn India Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty100 Liquid 15",
+        "Event Date": "2014-03-28",
+        "Scrip Name": "Jaiprakash Associates Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty100 Liquid 15",
+        "Event Date": "2014-03-28",
+        "Scrip Name": "Sesa Sterlite Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty100 Liquid 15",
+        "Event Date": "2014-03-28",
+        "Scrip Name": "Tech Mahindra Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty100 Liquid 15",
+        "Event Date": "2014-09-19",
+        "Scrip Name": "Bharat Heavy Electricals Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty100 Liquid 15",
+        "Event Date": "2014-09-19",
+        "Scrip Name": "HCL Technologies Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty100 Liquid 15",
+        "Event Date": "2014-09-19",
+        "Scrip Name": "Maruti Suzuki India Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty100 Liquid 15",
+        "Event Date": "2014-09-19",
+        "Scrip Name": "United Spirits Ltd.",
+        "Description": "Exclusion from Index"
+      }
+    ]
+  },
+  "Nifty Midcap Liquid 15": {
+    "rows": 88,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty Midcap Liquid 15",
+        "Event Date": "2015-03-27",
+        "Scrip Name": "Adani Enterprises Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Midcap Liquid 15",
+        "Event Date": "2015-03-27",
+        "Scrip Name": "Adani Ports and Special Economic Zone Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Midcap Liquid 15",
+        "Event Date": "2015-03-27",
+        "Scrip Name": "Indian Oil Corporation Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Midcap Liquid 15",
+        "Event Date": "2015-03-27",
+        "Scrip Name": "MRF Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Midcap Liquid 15",
+        "Event Date": "2015-09-28",
+        "Scrip Name": "Indian Oil Corporation Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Midcap Liquid 15",
+        "Event Date": "2015-09-28",
+        "Scrip Name": "LIC Housing Finance Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Midcap Liquid 15",
+        "Event Date": "2015-09-28",
+        "Scrip Name": "MRF Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Midcap Liquid 15",
+        "Event Date": "2015-09-28",
+        "Scrip Name": "Steel Authority of India Ltd.",
+        "Description": "Exclusion from Index"
+      }
+    ]
+  },
+  "Nifty Quality 30": {
+    "rows": 18,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty Quality 30",
+        "Event Date": "2015-12-07",
+        "Scrip Name": "ACC Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Quality 30",
+        "Event Date": "2015-12-07",
+        "Scrip Name": "UltraTech Cement Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Quality 30",
+        "Event Date": "2015-12-07",
+        "Scrip Name": "Emami Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Quality 30",
+        "Event Date": "2015-12-07",
+        "Scrip Name": "Page Industries Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Quality 30",
+        "Event Date": "2016-11-15",
+        "Scrip Name": "Ambuja Cements Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Quality 30",
+        "Event Date": "2016-11-15",
+        "Scrip Name": "Castrol India Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Quality 30",
+        "Event Date": "2016-11-15",
+        "Scrip Name": "Eicher Motors Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Quality 30",
+        "Event Date": "2016-11-15",
+        "Scrip Name": "Emami Ltd.",
+        "Description": "Exclusion from Index"
+      }
+    ]
+  },
+  "Nifty Auto": {
+    "rows": 12,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty Auto",
+        "Event Date": "2011-05-18",
+        "Scrip Name": "Escorts Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Auto",
+        "Event Date": "2011-05-18",
+        "Scrip Name": "HMT Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Auto",
+        "Event Date": "2012-04-27",
+        "Scrip Name": "Eicher Motors Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Auto",
+        "Event Date": "2012-04-27",
+        "Scrip Name": "Escorts Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Auto",
+        "Event Date": "2013-04-01",
+        "Scrip Name": "Amara Raja Batteries Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Auto",
+        "Event Date": "2013-04-01",
+        "Scrip Name": "TVS Motor Company Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Auto",
+        "Event Date": "2015-03-27",
+        "Scrip Name": "Amtek Auto Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Auto",
+        "Event Date": "2015-03-27",
+        "Scrip Name": "TVS Motor Company Ltd.",
+        "Description": "Inclusion into Index"
+      }
+    ]
+  },
+  "Nifty Bank": {
+    "rows": 28,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty Bank",
+        "Event Date": "2000-05-02",
+        "Scrip Name": "Jammu & Kashmir Bank Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Bank",
+        "Event Date": "2000-05-02",
+        "Scrip Name": "Syndicate Bank",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Bank",
+        "Event Date": "2001-11-01",
+        "Scrip Name": "Andhra Bank",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Bank",
+        "Event Date": "2001-11-01",
+        "Scrip Name": "ING Vysya Bank Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Bank",
+        "Event Date": "2002-11-01",
+        "Scrip Name": "Axis Bank Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Bank",
+        "Event Date": "2002-11-01",
+        "Scrip Name": "Punjab National Bank",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Bank",
+        "Event Date": "2003-03-01",
+        "Scrip Name": "IndusInd Bank Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Bank",
+        "Event Date": "2003-03-01",
+        "Scrip Name": "Union Bank of India",
+        "Description": "Inclusion into Index"
+      }
+    ]
+  },
+  "Nifty Commodities": {
+    "rows": 40,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty Commodities",
+        "Event Date": "2012-09-28",
+        "Scrip Name": "Shree Cement Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Commodities",
+        "Event Date": "2012-09-28",
+        "Scrip Name": "Sterlite Industries (India) Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Commodities",
+        "Event Date": "2013-04-01",
+        "Scrip Name": "National Aluminium Co. Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Commodities",
+        "Event Date": "2013-04-01",
+        "Scrip Name": "NMDC Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Commodities",
+        "Event Date": "2013-09-27",
+        "Scrip Name": "Adani Power Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Commodities",
+        "Event Date": "2013-09-27",
+        "Scrip Name": "Bhushan Steel Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Commodities",
+        "Event Date": "2013-09-27",
+        "Scrip Name": "Madras Cements Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Commodities",
+        "Event Date": "2013-09-27",
+        "Scrip Name": "Shree Renuka Sugars Ltd.",
+        "Description": "Exclusion from Index"
+      }
+    ]
+  },
+  "Nifty India Consumption": {
+    "rows": 44,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty India Consumption",
+        "Event Date": "2012-04-27",
+        "Scrip Name": "Britannia Industries Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty India Consumption",
+        "Event Date": "2012-04-27",
+        "Scrip Name": "Sun Pharmaceutical Industries Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty India Consumption",
+        "Event Date": "2012-04-27",
+        "Scrip Name": "Tata Global Beverages Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty India Consumption",
+        "Event Date": "2012-04-27",
+        "Scrip Name": "Titan Industries Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty India Consumption",
+        "Event Date": "2012-09-28",
+        "Scrip Name": "Glenmark Pharmaceuticals Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty India Consumption",
+        "Event Date": "2012-09-28",
+        "Scrip Name": "Jubilant Foodworks Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty India Consumption",
+        "Event Date": "2012-09-28",
+        "Scrip Name": "Piramal Enterprises Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty India Consumption",
+        "Event Date": "2012-09-28",
+        "Scrip Name": "United Breweries Ltd.",
+        "Description": "Inclusion into Index"
+      }
+    ]
+  },
+  "Nifty Dividend Opportunities 50": {
+    "rows": 228,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty Dividend Opportunities 50",
+        "Event Date": "2012-01-02",
+        "Scrip Name": "Ashok Leyland Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Dividend Opportunities 50",
+        "Event Date": "2012-01-02",
+        "Scrip Name": "Bajaj Auto Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Dividend Opportunities 50",
+        "Event Date": "2012-01-02",
+        "Scrip Name": "Bajaj Holdings & Investment Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Dividend Opportunities 50",
+        "Event Date": "2012-01-02",
+        "Scrip Name": "Bank of Maharashtra.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Dividend Opportunities 50",
+        "Event Date": "2012-01-02",
+        "Scrip Name": "Berger Paints India Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Dividend Opportunities 50",
+        "Event Date": "2012-01-02",
+        "Scrip Name": "Corporation Bank",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Dividend Opportunities 50",
+        "Event Date": "2012-01-02",
+        "Scrip Name": "Deepak Fertilisers & Petrochemicals Corp. Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Dividend Opportunities 50",
+        "Event Date": "2012-01-02",
+        "Scrip Name": "Graphite India Ltd.",
+        "Description": "Exclusion from Index"
+      }
+    ]
+  },
+  "Nifty Energy": {
+    "rows": 22,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty Energy",
+        "Event Date": "2005-02-07",
+        "Scrip Name": "Indian Petrochemicals Corporation Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Energy",
+        "Event Date": "2005-02-07",
+        "Scrip Name": "NTPC Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Energy",
+        "Event Date": "2007-04-04",
+        "Scrip Name": "Hindustan Petroleum Corporation Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Energy",
+        "Event Date": "2007-04-04",
+        "Scrip Name": "Reliance Petroleum Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Energy",
+        "Event Date": "2007-09-24",
+        "Scrip Name": "Neyveli Lignite Corporation Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Energy",
+        "Event Date": "2007-09-24",
+        "Scrip Name": "Cairn India Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Energy",
+        "Event Date": "2008-03-14",
+        "Scrip Name": "Bharat Petroleum Corporation Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Energy",
+        "Event Date": "2008-03-14",
+        "Scrip Name": "Neyveli Lignite Corporation Ltd.",
+        "Description": "Inclusion into Index"
+      }
+    ]
+  },
+  "Nifty Financial Services": {
+    "rows": 35,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty Financial Services",
+        "Event Date": "2011-01-03",
+        "Scrip Name": "IIFL Holdings Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Financial Services",
+        "Event Date": "2011-01-03",
+        "Scrip Name": "JM Financial Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Financial Services",
+        "Event Date": "2011-07-01",
+        "Scrip Name": "Bajaj Finserv Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Financial Services",
+        "Event Date": "2011-07-01",
+        "Scrip Name": "Edelweiss Financial Services Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Financial Services",
+        "Event Date": "2011-07-01",
+        "Scrip Name": "IIFL Holdings Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Financial Services",
+        "Event Date": "2011-07-01",
+        "Scrip Name": "Mahindra & Mahindra Financial Services Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Financial Services",
+        "Event Date": "2015-05-29",
+        "Scrip Name": "IDFC Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Financial Services",
+        "Event Date": "2015-05-29",
+        "Scrip Name": "Sundaram Finance Ltd.",
+        "Description": "Inclusion into Index"
+      }
+    ]
+  },
+  "Nifty FMCG": {
+    "rows": 68,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty FMCG",
+        "Event Date": "1998-11-01",
+        "Scrip Name": "Archies Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty FMCG",
+        "Event Date": "1998-11-01",
+        "Scrip Name": "Godfrey Phillips India Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty FMCG",
+        "Event Date": "2000-12-13",
+        "Scrip Name": "Agro Tech Foods Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty FMCG",
+        "Event Date": "2000-12-13",
+        "Scrip Name": "Nirma Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty FMCG",
+        "Event Date": "2001-06-20",
+        "Scrip Name": "McDowell & Co. Ltd. (Old)",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty FMCG",
+        "Event Date": "2001-06-20",
+        "Scrip Name": "United Breweries Ltd.-Old",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty FMCG",
+        "Event Date": "2002-01-17",
+        "Scrip Name": "Archies Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty FMCG",
+        "Event Date": "2002-01-17",
+        "Scrip Name": "Godrej Industries Ltd.-Old",
+        "Description": "Inclusion into Index"
+      }
+    ]
+  },
+  "Nifty Infrastructure": {
+    "rows": 119,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty Infrastructure",
+        "Event Date": "2004-09-15",
+        "Scrip Name": "Jaiprakash Associates Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Infrastructure",
+        "Event Date": "2004-09-15",
+        "Scrip Name": "Hindustan Construction Co. Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Infrastructure",
+        "Event Date": "2004-09-27",
+        "Scrip Name": "Larsen & Toubro Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Infrastructure",
+        "Event Date": "2004-09-27",
+        "Scrip Name": "Alfa Laval (India) Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Infrastructure",
+        "Event Date": "2005-02-07",
+        "Scrip Name": "NTPC Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Infrastructure",
+        "Event Date": "2005-02-07",
+        "Scrip Name": "Apollo Hospitals Enterprises Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Infrastructure",
+        "Event Date": "2005-06-14",
+        "Scrip Name": "Jet Airways (India) Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Infrastructure",
+        "Event Date": "2005-06-14",
+        "Scrip Name": "Tata Teleservices (Maharashtra) Ltd.",
+        "Description": "Exclusion from Index"
+      }
+    ]
+  },
+  "Nifty IT": {
+    "rows": 124,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty IT",
+        "Event Date": "1999-08-04",
+        "Scrip Name": "Aptech Ltd. (Erstwhile)",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty IT",
+        "Event Date": "1999-08-04",
+        "Scrip Name": "CMC Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty IT",
+        "Event Date": "1999-08-04",
+        "Scrip Name": "DSQ Software Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty IT",
+        "Event Date": "1999-08-04",
+        "Scrip Name": "Digital Globalsoft Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty IT",
+        "Event Date": "1999-08-04",
+        "Scrip Name": "GTL Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty IT",
+        "Event Date": "1999-08-04",
+        "Scrip Name": "HCL Infosystems Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty IT",
+        "Event Date": "1999-08-04",
+        "Scrip Name": "Infosys Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty IT",
+        "Event Date": "1999-08-04",
+        "Scrip Name": "Mastek Ltd.",
+        "Description": "Inclusion into Index"
+      }
+    ]
+  },
+  "Nifty Media": {
+    "rows": 51,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty Media",
+        "Event Date": "2012-09-28",
+        "Scrip Name": "Navneet Publications (India) Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Media",
+        "Event Date": "2012-09-28",
+        "Scrip Name": "Reliance MediaWorks Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Media",
+        "Event Date": "2013-01-23",
+        "Scrip Name": "Deccan Chronicle Holdings Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Media",
+        "Event Date": "2013-01-23",
+        "Scrip Name": "Hinduja Ventures Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Media",
+        "Event Date": "2013-09-27",
+        "Scrip Name": "Dish TV India Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Media",
+        "Event Date": "2013-09-27",
+        "Scrip Name": "PVR Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Media",
+        "Event Date": "2014-03-28",
+        "Scrip Name": "Entertainment Network India Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Media",
+        "Event Date": "2014-03-28",
+        "Scrip Name": "Hinduja Ventures Ltd.",
+        "Description": "Exclusion from Index"
+      }
+    ]
+  },
+  "Nifty Metal": {
+    "rows": 40,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty Metal",
+        "Event Date": "2011-11-22",
+        "Scrip Name": "Gujarat Mineral Development Corporation Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Metal",
+        "Event Date": "2011-11-22",
+        "Scrip Name": "Jindal Saw Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Metal",
+        "Event Date": "2012-04-27",
+        "Scrip Name": "Gujarat NRE Coke Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Metal",
+        "Event Date": "2012-04-27",
+        "Scrip Name": "Jindal Saw Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Metal",
+        "Event Date": "2012-09-28",
+        "Scrip Name": "MOIL Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Metal",
+        "Event Date": "2012-09-28",
+        "Scrip Name": "Sterlite Industries (India) Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Metal",
+        "Event Date": "2013-04-01",
+        "Scrip Name": "Monnet Ispat and Energy Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Metal",
+        "Event Date": "2013-04-01",
+        "Scrip Name": "National Aluminium Co. Ltd.",
+        "Description": "Exclusion from Index"
+      }
+    ]
+  },
+  "Nifty MNC": {
+    "rows": 266,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty MNC",
+        "Event Date": "01-08-1998",
+        "Scrip Name": "3M India Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty MNC",
+        "Event Date": "01-08-1998",
+        "Scrip Name": "ABB Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty MNC",
+        "Event Date": "01-08-1998",
+        "Scrip Name": "Abbott India Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty MNC",
+        "Event Date": "01-08-1998",
+        "Scrip Name": "Agrevo India Ltd.(old)",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty MNC",
+        "Event Date": "01-08-1998",
+        "Scrip Name": "Akzo Nobel India Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty MNC",
+        "Event Date": "01-08-1998",
+        "Scrip Name": "Alfa Laval (India) Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty MNC",
+        "Event Date": "01-08-1998",
+        "Scrip Name": "Aventis Pharma Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty MNC",
+        "Event Date": "01-08-1998",
+        "Scrip Name": "BASF India Ltd.",
+        "Description": "Inclusion into Index"
+      }
+    ]
+  },
+  "Nifty PSU Bank": {
+    "rows": 22,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty PSU Bank",
+        "Event Date": "01-07-2005",
+        "Scrip Name": "IDBI Bank Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty PSU Bank",
+        "Event Date": "01-07-2005",
+        "Scrip Name": "Allahabad Bank",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty PSU Bank",
+        "Event Date": "22-10-2009",
+        "Scrip Name": "Corporation Bank",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty PSU Bank",
+        "Event Date": "22-10-2009",
+        "Scrip Name": "Allahabad Bank",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty PSU Bank",
+        "Event Date": "2016-09-30 00:00:00",
+        "Scrip Name": "Indian Overseas Bank ",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty PSU Bank",
+        "Event Date": "2017-09-29 00:00:00",
+        "Scrip Name": "Indian Bank",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty PSU Bank",
+        "Event Date": "2018-09-28 00:00:00",
+        "Scrip Name": "Allahabad Bank",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty PSU Bank",
+        "Event Date": "2018-09-28 00:00:00",
+        "Scrip Name": "Andhra Bank",
+        "Description": "Exclusion from Index"
+      }
+    ]
+  },
+  "Nifty Pharma": {
+    "rows": 26,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty Pharma",
+        "Event Date": "02-05-2003",
+        "Scrip Name": "Lupin Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Pharma",
+        "Event Date": "02-05-2003",
+        "Scrip Name": "Novartis India Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Pharma",
+        "Event Date": "12-07-2004",
+        "Scrip Name": "Biocon Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Pharma",
+        "Event Date": "12-07-2004",
+        "Scrip Name": "Pfizer Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Pharma",
+        "Event Date": "10-12-2004",
+        "Scrip Name": "Glenmark Pharmaceuticals Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Pharma",
+        "Event Date": "10-12-2004",
+        "Scrip Name": "Lupin Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Pharma",
+        "Event Date": "15-02-2008",
+        "Scrip Name": "Piramal Healthcare Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Pharma",
+        "Event Date": "15-02-2008",
+        "Scrip Name": "Divi's Laboratories Ltd.",
+        "Description": "Inclusion into Index"
+      }
+    ]
+  },
+  "Nifty PSE": {
+    "rows": 100,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty PSE",
+        "Event Date": "1998-08-01",
+        "Scrip Name": "BEML Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty PSE",
+        "Event Date": "1998-08-01",
+        "Scrip Name": "Bharat Heavy Electricals Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty PSE",
+        "Event Date": "1998-08-01",
+        "Scrip Name": "Bharat Petroleum Corporation Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty PSE",
+        "Event Date": "1998-08-01",
+        "Scrip Name": "Bongaigaon Refinery & Petrochemicals Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty PSE",
+        "Event Date": "1998-08-01",
+        "Scrip Name": "Chennai Petroleum Corporation Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty PSE",
+        "Event Date": "1998-08-01",
+        "Scrip Name": "Container Corporation of India Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty PSE",
+        "Event Date": "1998-08-01",
+        "Scrip Name": "GAIL (India) Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty PSE",
+        "Event Date": "1998-08-01",
+        "Scrip Name": "Hindustan Organic Chemicals Ltd.",
+        "Description": "Inclusion into Index"
+      }
+    ]
+  },
+  "Nifty Realty": {
+    "rows": 43,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty Realty",
+        "Event Date": "2007-01-22",
+        "Scrip Name": "Sobha Developers Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Realty",
+        "Event Date": "2007-02-08",
+        "Scrip Name": "Ackruti City Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Realty",
+        "Event Date": "2007-04-23",
+        "Scrip Name": "Indiabulls Real Estate Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Realty",
+        "Event Date": "2007-05-23",
+        "Scrip Name": "Phoenix Mills Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Realty",
+        "Event Date": "2007-08-06",
+        "Scrip Name": "DLF Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Realty",
+        "Event Date": "2007-08-27",
+        "Scrip Name": "Ackruti City Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Realty",
+        "Event Date": "2007-08-27",
+        "Scrip Name": "Housing Development and Infrastructure Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Realty",
+        "Event Date": "2008-09-10",
+        "Scrip Name": "Orbit Corporation Ltd.",
+        "Description": "Inclusion into Index"
+      }
+    ]
+  },
+  "Nifty Services Sector": {
+    "rows": 98,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty Services Sector",
+        "Event Date": "30-06-2000",
+        "Scrip Name": "GAIL (India) Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Services Sector",
+        "Event Date": "30-06-2000",
+        "Scrip Name": "IDBI Bank Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Services Sector",
+        "Event Date": "01-01-2001",
+        "Scrip Name": "HCL Technologies Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Services Sector",
+        "Event Date": "01-01-2001",
+        "Scrip Name": "Silverline Technologies Ltd. -Sus",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Services Sector",
+        "Event Date": "02-04-2001",
+        "Scrip Name": "Blue Dart Express Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Services Sector",
+        "Event Date": "02-04-2001",
+        "Scrip Name": "LIC Housing Finance Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Services Sector",
+        "Event Date": "02-07-2001",
+        "Scrip Name": "Flextronics Software Systems Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Services Sector",
+        "Event Date": "02-07-2001",
+        "Scrip Name": "Reliance Capital Ltd.",
+        "Description": "Exclusion from Index"
+      }
+    ]
+  },
+  "Nifty Alpha 50": {
+    "rows": 704,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty Alpha 50",
+        "Event Date": "14-01-2013",
+        "Scrip Name": "Ambuja Cements Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Alpha 50",
+        "Event Date": "14-01-2013",
+        "Scrip Name": "Apollo Tyres Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Alpha 50",
+        "Event Date": "14-01-2013",
+        "Scrip Name": "Aurobindo Pharma Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Alpha 50",
+        "Event Date": "14-01-2013",
+        "Scrip Name": "Bajaj Auto Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Alpha 50",
+        "Event Date": "14-01-2013",
+        "Scrip Name": "Bajaj Finance Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Alpha 50",
+        "Event Date": "14-01-2013",
+        "Scrip Name": "Balkrishna Industries Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Alpha 50",
+        "Event Date": "14-01-2013",
+        "Scrip Name": "D B Realty Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Alpha 50",
+        "Event Date": "14-01-2013",
+        "Scrip Name": "Den Networks Ltd.",
+        "Description": "Inclusion into Index"
+      }
+    ]
+  },
+  "Nifty High Beta 50": {
+    "rows": 244,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty High Beta 50",
+        "Event Date": "14-01-2013",
+        "Scrip Name": "Aban Offshore Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty High Beta 50",
+        "Event Date": "14-01-2013",
+        "Scrip Name": "Adani Power Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty High Beta 50",
+        "Event Date": "14-01-2013",
+        "Scrip Name": "Delta Corp Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty High Beta 50",
+        "Event Date": "14-01-2013",
+        "Scrip Name": "Indiabulls Real Estate Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty High Beta 50",
+        "Event Date": "14-01-2013",
+        "Scrip Name": "JSW ISPAT Steel Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty High Beta 50",
+        "Event Date": "14-01-2013",
+        "Scrip Name": "TVS Motor Company Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty High Beta 50",
+        "Event Date": "08-04-2013",
+        "Scrip Name": "Anant Raj Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty High Beta 50",
+        "Event Date": "08-04-2013",
+        "Scrip Name": "Bajaj Hindusthan Ltd.",
+        "Description": "Exclusion from Index"
+      }
+    ]
+  },
+  "Nifty Low Volatility 50": {
+    "rows": 168,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty Low Volatility 50",
+        "Event Date": "2013-01-14 00:00:00",
+        "Scrip Name": "Container Corporation of India Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Low Volatility 50",
+        "Event Date": "2013-01-14 00:00:00",
+        "Scrip Name": "Engineers India Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Low Volatility 50",
+        "Event Date": "2013-01-14 00:00:00",
+        "Scrip Name": "L&T Finance Holdings Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Low Volatility 50",
+        "Event Date": "2013-01-14 00:00:00",
+        "Scrip Name": "Bhushan Steel Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Low Volatility 50",
+        "Event Date": "2013-01-14 00:00:00",
+        "Scrip Name": "Castrol (India) Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Low Volatility 50",
+        "Event Date": "2013-01-14 00:00:00",
+        "Scrip Name": "Emami Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Low Volatility 50",
+        "Event Date": "2013-04-08 00:00:00",
+        "Scrip Name": "CORE Education & Technologies Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Low Volatility 50",
+        "Event Date": "2013-04-08 00:00:00",
+        "Scrip Name": "NHPC Ltd.",
+        "Description": "Exclusion from Index"
+      }
+    ]
+  },
+  "Nifty CPSE": {
+    "rows": 24,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty CPSE",
+        "Event Date": "2014-02-07",
+        "Scrip Name": "Bharat Electronics Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty CPSE",
+        "Event Date": "2014-02-07",
+        "Scrip Name": "Coal India Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty CPSE",
+        "Event Date": "2014-02-07",
+        "Scrip Name": "Container Corporation of India Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty CPSE",
+        "Event Date": "2014-02-07",
+        "Scrip Name": "Engineers India Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty CPSE",
+        "Event Date": "2014-02-07",
+        "Scrip Name": "GAIL (India) Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty CPSE",
+        "Event Date": "2014-02-07",
+        "Scrip Name": "Indian Oil Corporation Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty CPSE",
+        "Event Date": "2014-02-07",
+        "Scrip Name": "Oil & Natural Gas Corporation Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty CPSE",
+        "Event Date": "2014-02-07",
+        "Scrip Name": "Oil India Ltd.",
+        "Description": "Inclusion into Index"
+      }
+    ]
+  },
+  "Nifty Growth Sectors 15": {
+    "rows": 50,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty Growth Sectors 15",
+        "Event Date": "2014-09-19",
+        "Scrip Name": "Dabur India Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Growth Sectors 15",
+        "Event Date": "2014-09-19",
+        "Scrip Name": "United Spirits Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Growth Sectors 15",
+        "Event Date": "2015-03-27",
+        "Scrip Name": "Cipla Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Growth Sectors 15",
+        "Event Date": "2015-03-27",
+        "Scrip Name": "Colgate Palmolive (India) Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Growth Sectors 15",
+        "Event Date": "2015-03-27",
+        "Scrip Name": "Mahindra & Mahindra Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Growth Sectors 15",
+        "Event Date": "2015-03-27",
+        "Scrip Name": "Sun Pharmaceutical Industries Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty Growth Sectors 15",
+        "Event Date": "2015-03-27",
+        "Scrip Name": "Aurobindo Pharma Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty Growth Sectors 15",
+        "Event Date": "2015-03-27",
+        "Scrip Name": "Eicher Motors Ltd.",
+        "Description": "Inclusion into Index"
+      }
+    ]
+  },
+  "Nifty50 Value 20": {
+    "rows": 28,
+    "columns": [
+      "Index Name",
+      "Event Date",
+      "Scrip Name",
+      "Description"
+    ],
+    "preview": [
+      {
+        "Index Name": "Nifty50 Value 20",
+        "Event Date": "2015-03-27",
+        "Scrip Name": "ACC Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty50 Value 20",
+        "Event Date": "2015-03-27",
+        "Scrip Name": "Bharat Heavy Electricals Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty50 Value 20",
+        "Event Date": "2015-03-27",
+        "Scrip Name": "Coal India Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty50 Value 20",
+        "Event Date": "2015-03-27",
+        "Scrip Name": "HCL Technologies Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty50 Value 20",
+        "Event Date": "2015-12-07",
+        "Scrip Name": "Mahindra & Mahindra Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty50 Value 20",
+        "Event Date": "2015-12-07",
+        "Scrip Name": "NMDC Ltd.",
+        "Description": "Exclusion from Index"
+      },
+      {
+        "Index Name": "Nifty50 Value 20",
+        "Event Date": "2015-12-07",
+        "Scrip Name": "Bharti Airtel Ltd.",
+        "Description": "Inclusion into Index"
+      },
+      {
+        "Index Name": "Nifty50 Value 20",
+        "Event Date": "2015-12-07",
+        "Scrip Name": "Wipro Ltd.",
+        "Description": "Inclusion into Index"
+      }
+    ]
+  }
+}

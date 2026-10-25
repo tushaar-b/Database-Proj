@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""ASIANPAINT"",5],[""BPCL"",3]]","[[""ASIANPAINT"",5],[""BPCL"",2]]",,14647.84667641461,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,SIP_C,C,principal
+2026-02-03,2026-02-02,"[[""AXISBANK"",11]]","[[""AXISBANK"",11]]",,14940.58422118469,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,SIP_C,C,principal
+2026-03-04,2026-03-02,"[[""APOLLOHOSP"",1],[""HCLTECH"",5]]","[[""APOLLOHOSP"",1],[""HCLTECH"",5]]",,14507.736243,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,SIP_C,C,principal
+2026-04-02,2026-04-01,"[[""ADANIENT"",1],[""HCLTECH"",10],[""NTPC"",1]]",[],execution_hhi_limit,0.0,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,SIP_C,C,principal
+2026-05-05,2026-05-04,"[[""ADANIENT"",12],[""NTPC"",2]]","[[""ADANIENT"",12],[""NTPC"",2]]",,30386.827108424644,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,SIP_C,C,principal
+2026-06-02,2026-06-01,"[[""NTPC"",40]]","[[""NTPC"",40]]",,14718.051103493039,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,SIP_C,C,principal
+2026-07-02,2026-07-01,"[[""NTPC"",44]]","[[""NTPC"",44]]",,15786.6523815,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,SIP_C,C,principal
+2026-08-04,2026-08-03,"[[""ADANIPORTS"",8],[""BEL"",3]]","[[""ADANIPORTS"",8],[""BEL"",3]]",,14850.349172838865,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,SIP_C,C,principal
+2026-09-02,2026-09-01,"[[""BAJAJ-AUTO"",1],[""BEL"",6]]","[[""BAJAJ-AUTO"",1],[""BEL"",6]]",,14586.354032249998,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,SIP_C,C,principal
+2026-10-05,2026-10-01,"[[""BEL"",40]]","[[""BEL"",40]]",,15417.098941506954,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,SIP_C,C,principal

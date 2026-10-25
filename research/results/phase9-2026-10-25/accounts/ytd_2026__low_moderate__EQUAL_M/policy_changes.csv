@@ -1,0 +1,6 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions,window,scenario,tier,policy,regime,kind
+2026-01-02,"[1.0, [], false, false]","[1.0, [""Metals & Mining""], false, false]",1.0,0.0005176999430862421,0.00031471121160257874,True,False,False,0,ytd_2026,low_moderate,MODERATE,EQUAL_M,M,principal
+2026-03-04,"[1.0, [""Metals & Mining""], false, false]","[1.0, [""Consumer Goods""], false, false]",0.2765712190033839,0.0018673151399857682,0.0011351459817542664,True,False,False,0,ytd_2026,low_moderate,MODERATE,EQUAL_M,M,principal
+2026-03-05,"[1.0, [""Consumer Goods""], false, false]","[1.0, [""Metals & Mining""], false, false]",0.2746684165105351,0.0018545167640667039,0.0011273658140223124,True,False,False,0,ytd_2026,low_moderate,MODERATE,EQUAL_M,M,principal
+2026-03-06,"[1.0, [""Metals & Mining""], false, false]","[1.0, [""Consumer Goods""], false, false]",0.27403692244447003,0.001833036608468834,0.0011143079686740632,True,False,False,0,ytd_2026,low_moderate,MODERATE,EQUAL_M,M,principal
+2026-04-02,"[1.0, [""Consumer Goods""], false, false]","[1.0, [], false, false]",0.1841771992839329,0.0020401696087392843,0.0012402246861636986,False,False,False,0,ytd_2026,low_moderate,MODERATE,EQUAL_M,M,principal

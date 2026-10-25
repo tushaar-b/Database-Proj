@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""BRITANNIA"",1],[""MARUTI"",1],[""SBIN"",2]]","[[""BRITANNIA"",1],[""MARUTI"",1],[""SBIN"",2]]",,24979.826095650693,0.0,ytd_2026,high_conservative,CONSERVATIVE,V3,M,principal
+2026-02-03,2026-02-02,"[[""APOLLOHOSP"",1],[""NTPC"",15],[""ULTRACEMCO"",1]]","[[""NTPC"",15],[""ULTRACEMCO"",1]]",,17995.21117574478,0.0,ytd_2026,high_conservative,CONSERVATIVE,V3,M,principal
+2026-03-04,2026-03-02,"[[""APOLLOHOSP"",1],[""BEL"",15],[""COALINDIA"",24]]","[[""APOLLOHOSP"",1],[""BEL"",15],[""COALINDIA"",24]]",,24849.58087616093,0.0,ytd_2026,high_conservative,CONSERVATIVE,V3,M,principal
+2026-04-02,2026-04-01,"[[""ADANIPORTS"",5],[""JSWSTEEL"",7],[""TECHM"",7]]","[[""ADANIPORTS"",5],[""JSWSTEEL"",6],[""TECHM"",7]]",,23862.05153430487,0.0,ytd_2026,high_conservative,CONSERVATIVE,V3,M,principal
+2026-05-05,2026-05-04,"[[""ICICIBANK"",7],[""NESTLEIND"",5],[""NTPC"",21]]","[[""ICICIBANK"",7],[""NESTLEIND"",5],[""NTPC"",21]]",,24556.542343325542,0.0,ytd_2026,high_conservative,CONSERVATIVE,V3,M,principal
+2026-06-02,2026-06-01,"[[""APOLLOHOSP"",1],[""BEL"",22],[""JSWSTEEL"",6]]","[[""APOLLOHOSP"",1],[""BEL"",22],[""JSWSTEEL"",6]]",,24964.40339138717,0.0,ytd_2026,high_conservative,CONSERVATIVE,V3,M,principal
+2026-07-02,2026-07-01,"[[""ADANIPORTS"",4],[""COALINDIA"",21],[""TECHM"",6]]","[[""ADANIPORTS"",4],[""COALINDIA"",20],[""TECHM"",6]]",,24875.8702948493,0.0,ytd_2026,high_conservative,CONSERVATIVE,V3,M,principal
+2026-08-04,2026-08-03,"[[""ICICIBANK"",5],[""NTPC"",15],[""ULTRACEMCO"",1]]","[[""ICICIBANK"",5],[""NTPC"",15],[""ULTRACEMCO"",1]]",,24514.478649931407,0.0,ytd_2026,high_conservative,CONSERVATIVE,V3,M,principal
+2026-09-02,2026-09-01,"[[""ADANIPORTS"",2],[""BAJAJ-AUTO"",1],[""NESTLEIND"",6]]","[[""ADANIPORTS"",2],[""BAJAJ-AUTO"",1],[""NESTLEIND"",6]]",,24061.450014897215,0.0,ytd_2026,high_conservative,CONSERVATIVE,V3,M,principal
+2026-10-05,2026-10-01,"[[""BEL"",21],[""JSWSTEEL"",6],[""NTPC"",30]]","[[""BEL"",21],[""JSWSTEEL"",6],[""NTPC"",29]]",,24863.10125516441,0.0,ytd_2026,high_conservative,CONSERVATIVE,V3,M,principal

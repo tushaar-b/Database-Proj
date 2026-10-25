@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""COALINDIA"",1],[""MARUTI"",2],[""NTPC"",1],[""SBIN"",16]]","[[""COALINDIA"",1],[""MARUTI"",2],[""NTPC"",1],[""SBIN"",15]]",,49758.80140050521,0.0,ytd_2026,high_moderate,MODERATE,MILP_M,M,principal
+2026-02-03,2026-02-02,"[[""COALINDIA"",1],[""ICICIBANK"",34],[""NTPC"",7],[""SBIN"",1]]",[],execution_hhi_limit,0.0,0.0,ytd_2026,high_moderate,MODERATE,MILP_M,M,principal
+2026-03-04,2026-03-02,"[[""APOLLOHOSP"",1],[""NTPC"",1],[""SBIN"",35]]","[[""APOLLOHOSP"",1],[""NTPC"",1],[""SBIN"",35]]",,49213.03350742465,0.0,ytd_2026,high_moderate,MODERATE,MILP_M,M,principal
+2026-04-02,2026-04-01,"[[""NTPC"",136],[""POWERGRID"",1]]","[[""NTPC"",136],[""POWERGRID"",1]]",,49276.17730707668,0.0,ytd_2026,high_moderate,MODERATE,MILP_M,M,principal
+2026-05-05,2026-05-04,"[[""APOLLOHOSP"",6],[""NESTLEIND"",2],[""ONGC"",2]]","[[""APOLLOHOSP"",6],[""NESTLEIND"",2],[""ONGC"",1]]",,49952.391373803126,0.0,ytd_2026,high_moderate,MODERATE,MILP_M,M,principal
+2026-06-02,2026-06-01,"[[""NESTLEIND"",10],[""NTPC"",95]]","[[""NESTLEIND"",10],[""NTPC"",95]]",,48963.35837528205,0.0,ytd_2026,high_moderate,MODERATE,MILP_M,M,principal
+2026-07-02,2026-07-01,"[[""APOLLOHOSP"",4],[""ICICIBANK"",6],[""NESTLEIND"",3],[""NTPC"",7],[""POWERGRID"",1]]","[[""APOLLOHOSP"",4],[""ICICIBANK"",6],[""NESTLEIND"",3],[""NTPC"",6]]",,49746.63283934581,0.0,ytd_2026,high_moderate,MODERATE,MILP_M,M,principal
+2026-08-04,2026-08-03,"[[""APOLLOHOSP"",3],[""NESTLEIND"",14],[""NTPC"",5],[""POWERGRID"",1]]","[[""APOLLOHOSP"",3],[""NESTLEIND"",14],[""NTPC"",4]]",,49879.3317778493,0.0,ytd_2026,high_moderate,MODERATE,MILP_M,M,principal
+2026-09-02,2026-09-01,"[[""ICICIBANK"",34],[""NTPC"",3]]","[[""ICICIBANK"",34],[""NTPC"",3]]",,49565.26124549999,0.0,ytd_2026,high_moderate,MODERATE,MILP_M,M,principal
+2026-10-05,2026-10-01,"[[""APOLLOHOSP"",2],[""ICICIBANK"",1],[""NESTLEIND"",4],[""NTPC"",86]]","[[""APOLLOHOSP"",2],[""ICICIBANK"",1],[""NESTLEIND"",4],[""NTPC"",85]]",,49918.18888474264,0.0,ytd_2026,high_moderate,MODERATE,MILP_M,M,principal

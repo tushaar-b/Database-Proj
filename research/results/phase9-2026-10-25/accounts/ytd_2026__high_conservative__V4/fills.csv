@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""BRITANNIA"",1],[""MARUTI"",1],[""SBIN"",2]]","[[""BRITANNIA"",1],[""MARUTI"",1],[""SBIN"",2]]",,24979.826095650693,0.0,ytd_2026,high_conservative,CONSERVATIVE,V4,C,principal
+2026-02-03,2026-02-02,"[[""APOLLOHOSP"",1],[""NTPC"",15],[""ULTRACEMCO"",1]]","[[""NTPC"",15],[""ULTRACEMCO"",1]]",,17995.21117574478,0.0,ytd_2026,high_conservative,CONSERVATIVE,V4,C,principal
+2026-03-04,2026-03-02,"[[""APOLLOHOSP"",1],[""BEL"",20],[""COALINDIA"",35]]","[[""APOLLOHOSP"",1],[""BEL"",20],[""COALINDIA"",35]]",,31881.015699934887,0.0,ytd_2026,high_conservative,CONSERVATIVE,V4,C,principal
+2026-04-02,2026-04-01,"[[""ADANIPORTS"",5],[""JSWSTEEL"",7],[""TECHM"",7]]","[[""ADANIPORTS"",5],[""JSWSTEEL"",7],[""TECHM"",7]]",,25005.06410385626,0.0,ytd_2026,high_conservative,CONSERVATIVE,V4,C,principal
+2026-05-05,2026-05-04,"[[""ICICIBANK"",7],[""NESTLEIND"",5],[""NTPC"",22]]","[[""ICICIBANK"",7],[""NESTLEIND"",5],[""NTPC"",22]]",,24955.790511537867,0.0,ytd_2026,high_conservative,CONSERVATIVE,V4,C,principal
+2026-06-02,2026-06-01,"[[""ADANIPORTS"",4],[""APOLLOHOSP"",1],[""BEL"",24]]","[[""ADANIPORTS"",4],[""APOLLOHOSP"",1],[""BEL"",24]]",,25173.61656465417,0.0,ytd_2026,high_conservative,CONSERVATIVE,V4,C,principal
+2026-07-02,2026-07-01,"[[""JSWSTEEL"",7],[""TECHM"",3],[""ULTRACEMCO"",1]]","[[""JSWSTEEL"",7],[""TECHM"",3],[""ULTRACEMCO"",1]]",,24403.062422263913,0.0,ytd_2026,high_conservative,CONSERVATIVE,V4,C,principal
+2026-08-04,2026-08-03,"[[""ICICIBANK"",6],[""NESTLEIND"",5],[""NTPC"",26]]","[[""ICICIBANK"",6],[""NESTLEIND"",5],[""NTPC"",26]]",,25300.4060756163,0.0,ytd_2026,high_conservative,CONSERVATIVE,V4,C,principal
+2026-09-02,2026-09-01,"[[""ADANIPORTS"",2],[""BAJAJ-AUTO"",1],[""COALINDIA"",23]]","[[""ADANIPORTS"",2],[""BAJAJ-AUTO"",1],[""COALINDIA"",23]]",,25123.591510763712,0.0,ytd_2026,high_conservative,CONSERVATIVE,V4,C,principal
+2026-10-05,2026-10-01,"[[""APOLLOHOSP"",1],[""BEL"",20],[""TECHM"",6]]","[[""APOLLOHOSP"",1],[""BEL"",20],[""TECHM"",6]]",,24934.75881765765,0.0,ytd_2026,high_conservative,CONSERVATIVE,V4,C,principal

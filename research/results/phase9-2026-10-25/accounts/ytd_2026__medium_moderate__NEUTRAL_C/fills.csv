@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""ADANIENT"",1],[""ADANIPORTS"",3],[""ASIANPAINT"",1]]","[[""ADANIENT"",1],[""ADANIPORTS"",3],[""ASIANPAINT"",1]]",,9535.186257154173,0.0,ytd_2026,medium_moderate,MODERATE,NEUTRAL_C,C,principal
+2026-02-03,2026-02-02,"[[""APOLLOHOSP"",1],[""AXISBANK"",2],[""BEL"",2]]","[[""APOLLOHOSP"",1],[""AXISBANK"",2],[""BEL"",1]]",,10255.214809347563,0.0,ytd_2026,medium_moderate,MODERATE,NEUTRAL_C,C,principal
+2026-03-04,2026-03-02,"[[""BAJAJ-AUTO"",1],[""BPCL"",1]]","[[""BAJAJ-AUTO"",1],[""BPCL"",1]]",,10023.918348337325,0.0,ytd_2026,medium_moderate,MODERATE,NEUTRAL_C,C,principal
+2026-04-02,2026-04-01,"[[""HCLTECH"",2],[""LT"",1],[""NTPC"",10]]","[[""HCLTECH"",2],[""LT"",1],[""NTPC"",10]]",,10029.025945873258,0.0,ytd_2026,medium_moderate,MODERATE,NEUTRAL_C,C,principal
+2026-05-05,2026-05-04,"[[""BEL"",7],[""BPCL"",15],[""HCLTECH"",2]]","[[""BEL"",7],[""BPCL"",15],[""HCLTECH"",2]]",,9926.221925660933,0.0,ytd_2026,medium_moderate,MODERATE,NEUTRAL_C,C,principal
+2026-06-02,2026-06-01,"[[""ADANIENT"",1],[""ASIANPAINT"",1],[""AXISBANK"",3]]","[[""ADANIENT"",1],[""ASIANPAINT"",1],[""AXISBANK"",3]]",,9396.177816599302,0.0,ytd_2026,medium_moderate,MODERATE,NEUTRAL_C,C,principal
+2026-07-02,2026-07-01,"[[""BEL"",8],[""LT"",1],[""NTPC"",9]]","[[""BEL"",8],[""LT"",1],[""NTPC"",9]]",,10619.961181419432,0.0,ytd_2026,medium_moderate,MODERATE,NEUTRAL_C,C,principal
+2026-08-04,2026-08-03,"[[""ADANIPORTS"",2],[""BPCL"",12],[""HCLTECH"",2]]","[[""ADANIPORTS"",2],[""BPCL"",12],[""HCLTECH"",2]]",,10056.266771698605,0.0,ytd_2026,medium_moderate,MODERATE,NEUTRAL_C,C,principal
+2026-09-02,2026-09-01,"[[""ADANIENT"",1],[""ASIANPAINT"",1],[""NTPC"",14]]","[[""ADANIENT"",1],[""ASIANPAINT"",1],[""NTPC"",14]]",,10054.36401855139,0.0,ytd_2026,medium_moderate,MODERATE,NEUTRAL_C,C,principal
+2026-10-05,2026-10-01,"[[""ASIANPAINT"",1],[""AXISBANK"",3],[""BEL"",10]]","[[""ASIANPAINT"",1],[""AXISBANK"",3],[""BEL"",10]]",,9895.926504972562,0.0,ytd_2026,medium_moderate,MODERATE,NEUTRAL_C,C,principal

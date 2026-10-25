@@ -1,0 +1,7 @@
+date,previous_policy,updated_policy,hhi,var,volatility,hhi_breach,var_breach,volatility_breach,policy_effective_delay_sessions,window,scenario,tier,policy,regime,kind
+2022-01-04,"[1.0, [], false, false]","[1.0, [""Services""], false, false]",1.0,0.0013649258245126191,0.0008297421425608627,True,False,False,0,primary_2022_2025,low_aggressive,AGGRESSIVE,SIP_M,M,principal
+2022-02-24,"[1.0, [""Services""], false, false]","[1.0, [""Information Technology""], false, false]",0.5000053050676871,0.001934122054138389,0.001175758087622121,True,False,False,0,primary_2022_2025,low_aggressive,AGGRESSIVE,SIP_M,M,principal
+2022-02-25,"[1.0, [""Information Technology""], false, false]","[1.0, [""Services""], false, false]",0.500079661362332,0.0022301508395056115,0.0013557147960520436,True,False,False,0,primary_2022_2025,low_aggressive,AGGRESSIVE,SIP_M,M,principal
+2022-03-03,"[1.0, [""Services""], false, false]","[1.0, [""Information Technology""], false, false]",0.32401730407330953,0.003170190362682165,0.0019271673937277598,True,False,False,0,primary_2022_2025,low_aggressive,AGGRESSIVE,SIP_M,M,principal
+2022-04-06,"[1.0, [""Information Technology""], false, false]","[1.0, [""Power""], false, false]",0.2684498025486355,0.003845389543705693,0.002337622822921394,True,False,False,0,primary_2022_2025,low_aggressive,AGGRESSIVE,SIP_M,M,principal
+2022-05-04,"[1.0, [""Power""], false, false]","[1.0, [], false, false]",0.21189325489129932,0.0034194356750391745,0.0020786843009356682,False,False,False,0,primary_2022_2025,low_aggressive,AGGRESSIVE,SIP_M,M,principal

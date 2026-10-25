@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""BRITANNIA"",1],[""COALINDIA"",12],[""SBILIFE"",2]]","[[""BRITANNIA"",1],[""COALINDIA"",11],[""SBILIFE"",2]]",,14848.446450255018,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,V4,C,principal
+2026-02-03,2026-02-02,"[[""BEL"",1],[""NTPC"",6],[""ULTRACEMCO"",1]]","[[""NTPC"",6],[""ULTRACEMCO"",1]]",,14763.419247297912,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,V4,C,principal
+2026-03-04,2026-03-02,"[[""APOLLOHOSP"",1],[""BEL"",4],[""HEROMOTOCO"",1]]","[[""APOLLOHOSP"",1],[""BEL"",4],[""HEROMOTOCO"",1]]",,14975.837601150693,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,V4,C,principal
+2026-04-02,2026-04-01,"[[""ADANIPORTS"",3],[""JSWSTEEL"",4],[""TECHM"",4]]","[[""ADANIPORTS"",3],[""JSWSTEEL"",4],[""TECHM"",4]]",,14485.703354253477,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,V4,C,principal
+2026-05-05,2026-05-04,"[[""BEL"",12],[""NTPC"",13],[""SBIN"",5]]","[[""BEL"",12],[""NTPC"",13],[""SBIN"",5]]",,15705.681182215803,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,V4,C,principal
+2026-06-02,2026-06-01,"[[""BAJAJ-AUTO"",1],[""JSWSTEEL"",1],[""NESTLEIND"",2]]","[[""BAJAJ-AUTO"",1],[""JSWSTEEL"",1],[""NESTLEIND"",2]]",,14410.790945698605,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,V4,C,principal
+2026-07-02,2026-07-01,"[[""ADANIPORTS"",2],[""COALINDIA"",18],[""TECHM"",3]]","[[""ADANIPORTS"",1],[""COALINDIA"",18],[""TECHM"",3]]",,14068.37796142465,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,V4,C,principal
+2026-08-04,2026-08-03,"[[""BEL"",15],[""JSWSTEEL"",4],[""NTPC"",16]]","[[""BEL"",15],[""JSWSTEEL"",4],[""NTPC"",16]]",,16595.764537647214,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,V4,C,principal
+2026-09-02,2026-09-01,"[[""ADANIPORTS"",3],[""ICICIBANK"",3],[""NESTLEIND"",4]]","[[""ADANIPORTS"",3],[""ICICIBANK"",3],[""NESTLEIND"",4]]",,15020.103752095822,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,V4,C,principal
+2026-10-05,2026-10-01,"[[""DIVISLAB"",1],[""LT"",1],[""TECHM"",1]]","[[""DIVISLAB"",1],[""LT"",1],[""TECHM"",1]]",,14503.630115400694,0.0,ytd_2026,medium_aggressive,AGGRESSIVE,V4,C,principal

@@ -1,0 +1,11 @@
+date,decision_date,requested,executed,cancel_reason,cost,sold_net_proceeds,window,scenario,tier,policy,regime,kind
+2026-01-02,2026-01-01,"[[""ADANIENT"",1],[""ADANIPORTS"",3],[""ASIANPAINT"",1]]","[[""ADANIENT"",1],[""ADANIPORTS"",3],[""ASIANPAINT"",1]]",,9535.186257154173,0.0,ytd_2026,medium_moderate,MODERATE,NEUTRAL_M,M,principal
+2026-02-03,2026-02-02,"[[""APOLLOHOSP"",1],[""AXISBANK"",1],[""BEL"",3]]","[[""APOLLOHOSP"",1],[""AXISBANK"",1],[""BEL"",3]]",,9776.19719354965,0.0,ytd_2026,medium_moderate,MODERATE,NEUTRAL_M,M,principal
+2026-03-04,2026-03-02,"[[""BAJAJ-AUTO"",1],[""WIPRO"",1]]","[[""BAJAJ-AUTO"",1],[""WIPRO"",1]]",,9862.827002081336,0.0,ytd_2026,medium_moderate,MODERATE,NEUTRAL_M,M,principal
+2026-04-02,2026-04-01,"[[""BPCL"",11],[""LT"",1],[""NTPC"",9]]","[[""BPCL"",11],[""LT"",1],[""NTPC"",9]]",,9924.469330349302,0.0,ytd_2026,medium_moderate,MODERATE,NEUTRAL_M,M,principal
+2026-05-05,2026-05-04,"[[""AXISBANK"",2],[""BEL"",8],[""HCLTECH"",3]]","[[""AXISBANK"",2],[""BEL"",8],[""HCLTECH"",3]]",,9601.184797794433,0.0,ytd_2026,medium_moderate,MODERATE,NEUTRAL_M,M,principal
+2026-06-02,2026-06-01,"[[""ADANIENT"",1],[""ASIANPAINT"",1],[""BPCL"",14]]","[[""ADANIENT"",1],[""ASIANPAINT"",1],[""BPCL"",14]]",,9765.030438523954,0.0,ytd_2026,medium_moderate,MODERATE,NEUTRAL_M,M,principal
+2026-07-02,2026-07-01,"[[""HCLTECH"",2],[""LT"",1],[""NTPC"",10]]","[[""HCLTECH"",2],[""LT"",1],[""NTPC"",10]]",,9812.801902345824,0.0,ytd_2026,medium_moderate,MODERATE,NEUTRAL_M,M,principal
+2026-08-04,2026-08-03,"[[""ADANIPORTS"",1],[""AXISBANK"",4],[""BEL"",8]]","[[""ADANIPORTS"",1],[""AXISBANK"",4],[""BEL"",8]]",,9900.733939654172,0.0,ytd_2026,medium_moderate,MODERATE,NEUTRAL_M,M,principal
+2026-09-02,2026-09-01,"[[""ADANIENT"",1],[""ASIANPAINT"",1],[""NTPC"",13]]","[[""ADANIENT"",1],[""ASIANPAINT"",1],[""NTPC"",13]]",,9723.86885355139,0.0,ytd_2026,medium_moderate,MODERATE,NEUTRAL_M,M,principal
+2026-10-05,2026-10-01,"[[""ADANIPORTS"",1],[""ASIANPAINT"",1],[""HCLTECH"",4]]","[[""ADANIPORTS"",1],[""ASIANPAINT"",1],[""HCLTECH"",4]]",,8961.025971602781,0.0,ytd_2026,medium_moderate,MODERATE,NEUTRAL_M,M,principal
