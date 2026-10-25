@@ -1,0 +1,78 @@
+Git HEAD: ad21a5240171cac28d2f6caafca3182cd08507ba
+No research commit created. Pre-existing application changes were present before this task. Research work created files only under research/.
+
+ M .env.example
+ M backend/README.md
+ M backend/config.py
+ M backend/main.py
+ M backend/routers/alerts.py
+ M backend/routers/cashflow.py
+ M backend/routers/portfolios.py
+ M backend/routers/rebalance.py
+ M backend/routers/recommendations.py
+ M backend/routers/users.py
+ M backend/schemas.py
+ M backend/services.py
+ M etl/pipeline.py
+ M frontend/.env.example
+ M frontend/README.md
+ M frontend/index.html
+ M frontend/package-lock.json
+ M frontend/package.json
+ M frontend/src/App.jsx
+ M frontend/src/api.js
+ M frontend/src/index.css
+ M frontend/src/main.jsx
+ M frontend/vite.config.js
+?? .gitignore
+?? README.md
+?? backend/__init__.py
+?? backend/__main__.py
+?? backend/auth.py
+?? backend/market_data.py
+?? backend/market_trends.py
+?? backend/ownership.py
+?? backend/routers/auth.py
+?? backend/routers/intelligence.py
+?? backend/routers/market.py
+?? backend/stock_analytics.py
+?? db/README.md
+?? db/init-scripts/
+?? db/migrations/advisory/007_recommendation_freshness.sql
+?? db/migrations/advisory/008_market_trend_evidence.sql
+?? db/migrations/risk/001_initial_risk_schema.sql
+?? docs/RECOMMENDATION_TRENDS.md
+?? docs/ROADMAP.md
+?? docs/STOCK_INTELLIGENCE.md
+?? docs/yfinance-symbol-coverage.json
+?? etl/__init__.py
+?? etl/benchmark.py
+?? etl/db.py
+?? etl/run_daily_refresh.py
+?? files/
+?? frontend/src/App.css
+?? frontend/src/CashflowEditorial.css
+?? frontend/src/GuidedOnboarding.css
+?? frontend/src/GuidedOnboarding.jsx
+?? frontend/src/HoldingsChart.jsx
+?? frontend/src/StockIntelligence.css
+?? frontend/src/StockIntelligence.jsx
+?? frontend/src/WorkspaceApp.jsx
+?? frontend/src/WorkspaceComponents.css
+?? frontend/src/WorkspaceEditorial.css
+?? frontend/src/components/
+?? frontend/src/hooks/
+?? frontend/src/styles/
+?? frontend/test-placeholder.js
+?? pyproject.toml
+?? pytest.ini
+?? requirements.txt
+?? research/
+?? tests/__init__.py
+?? tests/backend/__init__.py
+?? tests/backend/test_scaffold.py
+?? tests/conftest.py
+?? tests/db/__init__.py
+?? tests/etl/
+?? tests/test_scaffolding.py
+?? video/

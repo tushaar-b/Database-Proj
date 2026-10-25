@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "checks": [
+    "inclusive-tail CVaR hand calculation",
+    "VaR linear percentile hand calculation",
+    "drawdown includes initial wealth",
+    "episode durations include censored terminal run",
+    "combined breach multiplier",
+    "sector-only policy",
+    "Risk Only proposed overspend is measurable",
+    "Full proposal respects household buffer",
+    "No Feedback suppresses multiplier and blocks",
+    "Full sector block actually changes decision",
+    "nonnegative cash throughout synthetic replay",
+    "whole integer share executions",
+    "strictly delayed execution",
+    "unique signal/security execution",
+    "execution including fees respects saved batch budget",
+    "contribution-adjusted return identity",
+    "point-in-time ranker ignores changed future observations",
+    "historical clock produces available momentum",
+    "flat prices / zero cost / contributions yield zero return",
+    "split ledger preserves nominal wealth"
+  ],
+  "fixture": "synthetic mathematical diagnostics only"
+}

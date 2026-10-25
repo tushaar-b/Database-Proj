@@ -1,0 +1,11 @@
+# Data-quality interpretation
+
+Final admitted dataset: 40 securities, 57,400 observations, ['2021-01-01', '2026-10-22']. There are 1,435 common observed sessions per admitted security, with no calendar removal or interpolation.
+
+All 60,613 overlapping stored raw-close observations for 49 resolved symbols matched the fresh provider within the documented float/rounding tolerance. Adjusted closes matched in 59,376 overlaps: TECHM had 1,237 adjustment disagreements, and TATAMOTORS was unresolved. No stored row matched the exact rounded synthetic 0.98 adjustment fingerprint; that absence alone does not prove provenance. The fresh provider series, rather than stored prices, was used in replay.
+
+NSE checks compared 293 provider/exchange pairs across six sessions; 271 matched before exclusions. Every retained pair (240) matched, and each retained security had six sampled exchange comparisons. This corroborates sampled nominal prices and dates, not every adjusted observation. Full discrepancy rows and archived exchange ZIPs are retained. Provider adjustment-factor changes were checked for alignment with reported dividend/split actions; no unexplained factor change was admitted. Provider first-trade metadata preceded the first observation for every retained security, but complete exchange-certified listing/delisting identity and index-membership histories remain unavailable.
+
+Ten security-master entries were excluded: BAJAJFINSV, BAJFINANCE, BHARTIARTL, GRASIM, HDFCBANK, ITC, RELIANCE, SHRIRAMFIN, TATAMOTORS, TRENT. Merger/demerger/rights exclusions and failed nominal split reconstruction were used rather than silent substitutions or synthetic fills. See exclusions.json for exact reasons. Historical current-symbol identity for SHRIRAMFIN was specifically excluded after the initial execution; the initial null feedback finding was retained.
+
+Source provenance is established for the fresh provider download. Corporate-action verification remains partial, historical vendor adjustments may be revised, current sector classifications are used, and the universe excludes delisted securities. The evidence classification is exploratory restricted-universe historical research, not a publication-ready market-wide efficacy study.
