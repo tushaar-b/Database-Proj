@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "checks": [
+    "frozen dataset SHA256 matches executed config",
+    "all frozen source files match recorded code hashes",
+    "every principal account reconciles returns, contributions, equity and gain",
+    "all buys have delayed execution, integer quantities and no duplicates",
+    "all fills including fees respect their saved monthly batch budget",
+    "five independent representative replays reproduce every summary and numeric daily ledger column"
+  ],
+  "deterministic_replays": [
+    {
+      "kind": "principal",
+      "scenario": "medium_moderate",
+      "strategy": "Affordability Only",
+      "status": "identical_within_1e-10_relative_tolerance"
+    },
+    {
+      "kind": "principal",
+      "scenario": "medium_moderate",
+      "strategy": "Risk Only",
+      "status": "identical_within_1e-10_relative_tolerance"
+    },
+    {
+      "kind": "principal",
+      "scenario": "medium_moderate",
+      "strategy": "No Feedback",
+      "status": "identical_within_1e-10_relative_tolerance"
+    },
+    {
+      "kind": "principal",
+      "scenario": "medium_moderate",
+      "strategy": "Full IntelliVest",
+      "status": "identical_within_1e-10_relative_tolerance"
+    },
+    {
+      "kind": "feedback_stress",
+      "scenario": "low_conservative",
+      "strategy": "Full IntelliVest",
+      "status": "identical_within_1e-10_relative_tolerance"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "time_utc": "2026-10-23T18:31:47.871063+00:00",
+  "source": "research/generate_results.py",
+  "sha256": "561984f43848d354e6aa00a064747b7b27d648f8abcf25de5970db347edccca3",
+  "changes": [
+    "Plot all three concentrated-start profiles so the three changed high-surplus proposals are visible",
+    "Clarify principal versus supplementary feedback conclusions and absent response times",
+    "Report global maximum overspend rather than the mean of profile maxima",
+    "Explain live acceptance intent versus simulated execution and cash-heavy negative Sharpe"
+  ],
+  "simulation_outputs_changed": false,
+  "reproduction": "Regenerate with research.generate_results on the frozen CSV outputs; the postprocessing source is separately archived."
+}
