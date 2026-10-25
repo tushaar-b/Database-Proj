@@ -1,0 +1,15 @@
+Reproduced low_conservative
+Reproduced low_moderate
+Reproduced low_aggressive
+Reproduced medium_conservative
+Reproduced medium_moderate
+Reproduced medium_aggressive
+Reproduced high_conservative
+Reproduced high_moderate
+Reproduced high_aggressive
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();

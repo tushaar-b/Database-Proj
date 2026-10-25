@@ -1,0 +1,3 @@
+# Install alongside the repository requirements; exact executed versions in config.json.
+matplotlib>=3.9
+pypdf>=6

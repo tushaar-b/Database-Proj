@@ -1,0 +1,51 @@
+security_id,ticker_symbol,company_name,sector_name,exchange_code,beta_index
+bed4fe6b-79e7-4e59-8a1d-89f7254918d4,ADANIENT,Adani Enterprises Limited,Metals & Mining,NSE,1.65
+8a539aec-16a7-415a-9863-887737d670a2,ADANIPORTS,Adani Ports and Special Economic Zone Limited,Services,NSE,1.22
+ad05b34a-b6de-4df0-9ca0-244ba693c33b,APOLLOHOSP,Apollo Hospitals Enterprise Limited,Healthcare,NSE,0.88
+6b6f4fbb-9867-4cff-ac0c-f93b4f4170d7,ASIANPAINT,Asian Paints Limited,Consumer Goods,NSE,0.75
+fb95ed1a-5a0c-4677-b730-0194da2ba5f7,AXISBANK,Axis Bank Limited,Financial Services,NSE,1.20
+0f90fc9d-9eca-4858-8db0-e9a27a2c5cd5,BAJAJ-AUTO,Bajaj Auto Limited,Automobile,NSE,0.82
+cd573713-b948-4577-91b0-79a676eafec3,BAJAJFINSV,Bajaj Finserv Limited,Financial Services,NSE,1.28
+1b3efaa7-9b77-4b45-a45a-58744532920d,BAJFINANCE,Bajaj Finance Limited,Financial Services,NSE,1.35
+0d0ca8c3-2095-4ab8-80b9-be9234a16d30,BEL,Bharat Electronics Limited,Capital Goods,NSE,1.10
+422599bb-bfd0-41f1-b686-3b186169c6ea,BHARTIARTL,Bharti Airtel Limited,Telecommunication,NSE,0.85
+6d812e96-8f57-4aa1-962e-df9ed0af9c49,BPCL,Bharat Petroleum Corporation Limited,Energy,NSE,1.18
+e2d80834-2ac6-4cf7-9596-98632c202cb1,BRITANNIA,Britannia Industries Limited,Consumer Goods,NSE,0.55
+4408b948-d47f-4b3f-b781-eeb23914998a,CIPLA,Cipla Limited,Healthcare,NSE,0.60
+b688762b-3b9d-4de9-a3f0-b8780d3edf0a,COALINDIA,Coal India Limited,Energy,NSE,0.85
+a170ed00-7c7d-4dd9-b412-7a30a4129bdc,DIVISLAB,Divi's Laboratories Limited,Healthcare,NSE,0.80
+6ac8926c-569b-45cf-9bb6-ebc805fce871,DRREDDY,Dr. Reddy's Laboratories Limited,Healthcare,NSE,0.64
+f45b2593-0178-4fb9-88d0-534c53ff07fe,EICHERMOT,Eicher Motors Limited,Automobile,NSE,0.96
+4604d5bd-e1ee-41b5-bb7a-84218250edd3,GRASIM,Grasim Industries Limited,Construction,NSE,1.14
+27f807bc-f01a-4139-975b-bb11080aa1dd,HCLTECH,HCL Technologies Limited,Information Technology,NSE,0.84
+3e55ea2d-079f-4392-ba5e-3c8e432e9c3e,HDFCBANK,HDFC Bank Limited,Financial Services,NSE,0.95
+764f8548-4369-472d-80c3-11fa80456250,HEROMOTOCO,Hero MotoCorp Limited,Automobile,NSE,0.90
+8e207c59-6aba-44df-a10c-83ad76a6524c,HINDALCO,Hindalco Industries Limited,Metals & Mining,NSE,1.38
+6f947757-59e2-4b54-a9ca-c46bbe230874,HINDUNILVR,Hindustan Unilever Limited,Consumer Goods,NSE,0.58
+cf8fa782-9366-4388-8d1e-224ba1f42f47,ICICIBANK,ICICI Bank Limited,Financial Services,NSE,1.12
+c21d08a8-14a2-4c3c-9e81-34d765e37bd6,INDUSINDBK,IndusInd Bank Limited,Financial Services,NSE,1.42
+a2b3068e-090c-4b60-8c54-98786b5c7c90,INFY,Infosys Limited,Information Technology,NSE,0.92
+551bf454-8497-49ab-b62c-ded42afe3354,ITC,ITC Limited,Consumer Goods,NSE,0.65
+ec8e00e0-d888-46f3-b869-bf5478ad2444,JSWSTEEL,JSW Steel Limited,Metals & Mining,NSE,1.30
+106555d0-521d-4a2a-891e-0356f5ca7665,KOTAKBANK,Kotak Mahindra Bank Limited,Financial Services,NSE,0.98
+98168cf7-a25b-4ad0-87d2-451e309934c5,LT,Larsen & Toubro Limited,Construction,NSE,1.08
+573c5d20-63fa-4a06-93c5-9a595914ab20,M&M,Mahindra & Mahindra Limited,Automobile,NSE,1.15
+2812f343-4a33-4630-9fa1-3b5cdc38680c,MARUTI,Maruti Suzuki India Limited,Automobile,NSE,0.88
+6b0d3f92-2b84-4bad-8f57-5173d032b031,NESTLEIND,Nestle India Limited,Consumer Goods,NSE,0.52
+0771c0a4-f285-440e-ab55-19ebc9262fc9,NTPC,NTPC Limited,Power,NSE,0.82
+1edc7274-7f4f-4955-805d-61e41c3dceea,ONGC,Oil & Natural Gas Corporation Limited,Energy,NSE,1.10
+87dafde4-c0c5-4bd2-a5eb-954b623dd1a8,POWERGRID,Power Grid Corporation of India Limited,Power,NSE,0.62
+68ad7a46-338c-4e7e-82c5-046858e81222,RELIANCE,Reliance Industries Limited,Energy,NSE,1.05
+8b7fdbe3-2b7d-4b9a-9039-bd507504419c,SBILIFE,SBI Life Insurance Company Limited,Financial Services,NSE,0.86
+5ebce1d4-a0b2-4935-9493-086fd7d02204,SBIN,State Bank of India,Financial Services,NSE,1.25
+8ef260a7-47dc-4848-94aa-cc973e73bb94,SHRIRAMFIN,Shriram Finance Limited,Financial Services,NSE,1.26
+cfce69ce-42da-4767-818b-593078054074,SUNPHARMA,Sun Pharmaceutical Industries Limited,Healthcare,NSE,0.72
+6344ee9f-7ca9-4c1b-8363-be8dc246ad03,TATACONSUM,Tata Consumer Products Limited,Consumer Goods,NSE,0.76
+6c7ac1f1-1f00-4490-9156-6f55dc7fb4b2,TATAMOTORS,Tata Motors Limited,Automobile,NSE,1.45
+774a7d67-ead0-4227-9df6-f1b1d9c5cccc,TATASTEEL,Tata Steel Limited,Metals & Mining,NSE,1.40
+2975c49b-2607-43fa-aff7-260bfa2a9279,TCS,Tata Consultancy Services Limited,Information Technology,NSE,0.78
+dc5a1d52-6b75-4ec4-bb82-c395df23fdf8,TECHM,Tech Mahindra Limited,Information Technology,NSE,1.02
+80d19d79-434c-4240-b033-958bd46e2247,TITAN,Titan Company Limited,Consumer Goods,NSE,0.94
+f213f88c-b4b5-4c2a-a7d9-6ea889762cb2,TRENT,Trent Limited,Consumer Goods,NSE,1.16
+91de73d1-9863-4a34-9d98-b61356100c22,ULTRACEMCO,UltraTech Cement Limited,Construction,NSE,0.98
+3d8b365c-afdf-4e35-b07f-939b146485e6,WIPRO,Wipro Limited,Information Technology,NSE,0.89

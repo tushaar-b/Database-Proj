@@ -1,0 +1,7 @@
+mode,metric,mean_difference,median_monthly_mean,ci95_low,ci95_high,months,profiles,block_months,draws,seed,interpretation
+F3,V3_minus_greedy_U_norm,-0.3482808032215181,-0.32608660473802353,-0.403882276133019,-0.29866423710940937,48,9,3,2000,20261025,conditional descriptive path interval; not synthetic-investor population inference
+F3,V3_minus_greedy_HHI,-0.012113066413656804,-0.0010565381067801946,-0.02677686779415451,-0.0017517641554893376,48,9,3,2000,20261025,conditional descriptive path interval; not synthetic-investor population inference
+F3,V3_minus_greedy_budget_fill,-0.013300828353228086,-0.012244411496639098,-0.017089114113807986,-0.00936619784487586,48,9,3,2000,20261025,conditional descriptive path interval; not synthetic-investor population inference
+Fwide,V3_minus_greedy_U_norm,-0.3520798641524985,-0.3283088133889658,-0.40729896194840354,-0.3033501417888435,48,9,3,2000,20261025,conditional descriptive path interval; not synthetic-investor population inference
+Fwide,V3_minus_greedy_HHI,-0.014041450416519455,-0.001064618760429765,-0.03242599324857877,-0.0017829232765613284,48,9,3,2000,20261025,conditional descriptive path interval; not synthetic-investor population inference
+Fwide,V3_minus_greedy_budget_fill,-0.014759619598456,-0.012916288634781522,-0.018226503805280327,-0.01113707342104887,48,9,3,2000,20261025,conditional descriptive path interval; not synthetic-investor population inference

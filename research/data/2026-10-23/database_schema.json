@@ -1,0 +1,62 @@
+[
+  [
+    "daily_market_quote",
+    "quote_id",
+    "uuid"
+  ],
+  [
+    "daily_market_quote",
+    "security_id",
+    "uuid"
+  ],
+  [
+    "daily_market_quote",
+    "trade_date",
+    "date"
+  ],
+  [
+    "daily_market_quote",
+    "close_price",
+    "numeric"
+  ],
+  [
+    "daily_market_quote",
+    "adjusted_close",
+    "numeric"
+  ],
+  [
+    "daily_market_quote",
+    "volume",
+    "bigint"
+  ],
+  [
+    "security_master",
+    "security_id",
+    "uuid"
+  ],
+  [
+    "security_master",
+    "ticker_symbol",
+    "character varying"
+  ],
+  [
+    "security_master",
+    "company_name",
+    "character varying"
+  ],
+  [
+    "security_master",
+    "sector_name",
+    "character varying"
+  ],
+  [
+    "security_master",
+    "exchange_code",
+    "character varying"
+  ],
+  [
+    "security_master",
+    "beta_index",
+    "numeric"
+  ]
+]

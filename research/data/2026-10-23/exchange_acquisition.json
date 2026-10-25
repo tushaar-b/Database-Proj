@@ -1,0 +1,50 @@
+[
+  {
+    "date": "2021-12-31",
+    "url": "https://nsearchives.nseindia.com/content/historical/EQUITIES/2021/DEC/cm31DEC2021bhav.csv.zip",
+    "status": "acquired",
+    "sha256": "2fe78bf6119e569626dc046d05dfe979ccf8047c4d0178fad2615d3a33366604",
+    "comparisons": 48,
+    "matches": 42
+  },
+  {
+    "date": "2022-12-30",
+    "url": "https://nsearchives.nseindia.com/content/historical/EQUITIES/2022/DEC/cm30DEC2022bhav.csv.zip",
+    "status": "acquired",
+    "sha256": "636cb895992d40dfbf92dfe4b634d4e4000be6f218f6075c30631402683e19e7",
+    "comparisons": 49,
+    "matches": 44
+  },
+  {
+    "date": "2023-12-29",
+    "url": "https://nsearchives.nseindia.com/content/historical/EQUITIES/2023/DEC/cm29DEC2023bhav.csv.zip",
+    "status": "acquired",
+    "sha256": "ba5c7e44708ea3df65a022cdf842eb3fd341421bbf4498c0ea06b3843f8a7cc3",
+    "comparisons": 49,
+    "matches": 45
+  },
+  {
+    "date": "2024-06-28",
+    "url": "https://nsearchives.nseindia.com/content/historical/EQUITIES/2024/JUN/cm28JUN2024bhav.csv.zip",
+    "status": "acquired",
+    "sha256": "b5b084ce09183c70fa58dd171391f0773806e71a00d86d28058194ba9dc12f8b",
+    "comparisons": 49,
+    "matches": 46
+  },
+  {
+    "date": "2024-12-31",
+    "url": "https://nsearchives.nseindia.com/content/cm/BhavCopy_NSE_CM_0_0_0_20241231_F_0000.csv.zip",
+    "status": "acquired",
+    "sha256": "ce708924888c4ba8310c4f057e6135876275b99f08ab5e365ca0ebce8c4dcce6",
+    "comparisons": 49,
+    "matches": 46
+  },
+  {
+    "date": "2025-12-31",
+    "url": "https://nsearchives.nseindia.com/content/cm/BhavCopy_NSE_CM_0_0_0_20251231_F_0000.csv.zip",
+    "status": "acquired",
+    "sha256": "05a2124e2234fbfe6ed9f9e13293768b1270331980e6836d975adfda07c8b678",
+    "comparisons": 49,
+    "matches": 48
+  }
+]
